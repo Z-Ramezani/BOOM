@@ -168,16 +168,7 @@ class LoginSerializers(serializers.Serializer):
 
 
 
-# class LoginCustomerSerializers(serializers.Serializer):
 
-#     # phone = serializers.DecimalField(max_digits=11 , decimal_places=0)
-#     # password = serializers.CharField()
-
-#     def validate(self, data):
-#         user = authenticate(**data)
-#         if user and user.is_active:
-#             return user
-#         raise serializers.ValidationError('Incorrect Credentials Passed.')
 
 
 

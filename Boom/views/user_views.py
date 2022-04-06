@@ -9,24 +9,24 @@ from rest_framework import status
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
 from rest_framework.response import Response
-from rest_framework.serializers import Serializer
+# from rest_framework.serializers import Serializer
 from rest_framework import generics , permissions
-from rest_framework.authtoken.models import Token
-from rest_framework.viewsets import ModelViewSet
+# from rest_framework.authtoken.models import Token
+# from rest_framework.viewsets import ModelViewSet
 from knox.models import AuthToken
-from rest_framework.permissions import AllowAny
-from rest_framework.generics import RetrieveAPIView
+# from rest_framework.permissions import AllowAny
+# from rest_framework.generics import RetrieveAPIView
 from rest_framework.decorators import api_view
 # Rest Framework JWT 
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.views import TokenObtainPairView
+# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+# from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
+# from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 
 #Local import
 
-from ..models import Artist , Expert , Artwork_advertisement , Customer
-from ..serializers import ArtistSerializer ,RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer , LoginSerializers 
+# from ..models import Artist , Expert , Artwork_advertisement , Customer
+from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer , LoginSerializers 
 
 
 
@@ -109,93 +109,10 @@ class LoginAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
-        # artist = Artist.objects.filter(national_id_number=request.data['national_id_number'])
+        
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]})
 
 
 
-# class LoginExpertAPI(generics.GenericAPIView):
-#     serializer_class = LoginSerializers
-
-#     def post(self, request):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         return Response({
-#             "user": ExpertSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]})
-
-
-# class LoginCustomerAPI(generics.GenericAPIView):
-#     serializer_class = LoginSerializers
-
-#     def post(self, request):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         return Response({
-#             "user": CustomerSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]})
-
-
-
-
-
-# class LoginExpertAPI(generics.GenericAPIView):
-#     serializer_class = LoginSerializers
-
-#     def post(self, request):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         return Response({
-#             "user": ExpertSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]
-#         })
-
-
-
-# class LoginCustomerAPI(generics.GenericAPIView):
-#     serializer_class = LoginCustomerSerializers
-
-#     def post(self, request):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         return Response({
-#             "user": CustomerSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]
-#         })
-
-
-# class ArtistAPI(generics.RetrieveAPIView):
-#   permission_classes = [
-#       permissions.IsAuthenticated
-#   ]
-#   serializer_class = ArtistSerializer
-
-#   def get_object(self):
-#     return self.request.name
-
-
-# class ExpertAPI(generics.RetrieveAPIView):
-#   permission_classes = [
-#       permissions.IsAuthenticated
-#   ]
-#   serializer_class = ExpertSerializer
-
-#   def get_object(self):
-#     return self.request.name
-
-
-
-# class CustomerAPI(generics.RetrieveAPIView):
-#   permission_classes = [
-#       permissions.IsAuthenticated
-#   ]
-#   serializer_class = CustomerSerializer
-
-#   def get_object(self):
-#     return self.request.name

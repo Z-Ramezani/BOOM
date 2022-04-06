@@ -80,11 +80,11 @@ class Customer(models.Model):
     lastname = models.CharField(max_length=200 ,null=True)
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
-    #user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     USERNAME_FIELD = 'phone'
-    #REQUIRED_FIELDS = ['name' , 'lastname' , 'phone' , 'password']
+
     objects = UserManager()
 
 
@@ -105,11 +105,11 @@ class Expert(models.Model):
     birth_date = models.DateField()
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
-    #user = models.OneToOneField(User, null=True , on_delete=models.CASCADE)
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     USERNAME_FIELD = 'national_id_number'
-    #REQUIRED_FIELDS = ['name' , 'lastname' , 'national_id_number' , 'phone' , 'password']
+
     objects = UserManager()
 
 
