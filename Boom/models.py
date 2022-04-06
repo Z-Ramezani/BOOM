@@ -18,6 +18,7 @@ class UserManager(BaseUserManager):
         user = self.model(username = username)
         user.set_password(password)
         user.is_artist = True
+        user.user = users.objects.get(username=username)
         user.save(using=self._db)
         return user
 
@@ -29,6 +30,7 @@ class UserManager(BaseUserManager):
         user = self.model(username = username)
         user.set_password(password)
         user.is_expert = True
+        user.user = users.objects.get(username=username)
         user.save(using=self._db)
         return user
 
@@ -40,6 +42,7 @@ class UserManager(BaseUserManager):
         user = self.model(username = username)
         user.set_password(password)
         user.is_customer = True
+        user.user = users.objects.get(username=username)
         user.save(using=self._db)
         return user
 
@@ -49,6 +52,8 @@ class User(AbstractBaseUser ,models.Model):
     is_expert = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False) 
     is_active = models.BooleanField(default=True) 
+    user = models.OneToOneField(users, on_delete=models.CASCADE, null=True)
+
 
     objects=UserManager()
 
@@ -63,7 +68,7 @@ class Artist(models.Model):
     password = models.CharField(max_length=200,null=True)
     free_post_artwork = models.IntegerField(null=True , default=2)
     created_at = models.DateTimeField(auto_now_add=True , null=True)
-    user = models.OneToOneField(users, on_delete=models.SET_NULL, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
     USERNAME_FIELD = 'national_id_number'
@@ -81,7 +86,7 @@ class Customer(models.Model):
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     USERNAME_FIELD = 'phone'
 
@@ -106,7 +111,7 @@ class Expert(models.Model):
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     USERNAME_FIELD = 'national_id_number'
 

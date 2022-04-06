@@ -12,6 +12,7 @@ from .models import Artist , Expert , Artwork_advertisement , Customer , User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth.hashers import make_password
 
+# from .backends import ArtistBackend , ExpertBackend , CustomerBackend
 
 
 
@@ -20,12 +21,20 @@ JWT_PAYLOAD_HANDLER = api_settings.JWT_PAYLOAD_HANDLER
 JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 
 
+# class UserSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+
+#         model = users
+#         fields = ['username' , 'password'  ]
+
+
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model = users
-        fields = ['username' , 'password'  ]
+        model = User
+        fields = ['username' , 'password' , 'is_active' , 'is_artist' , 'is_expert' , 'is_customer'  ]
 
 class ArtistSerializer(serializers.ModelSerializer):
 
@@ -67,17 +76,22 @@ class RegisterArtistSerializer(ArtistSerializer):
 
     def create(self, validated_data):
         
-        User.objects.create_artist(
-            username=validated_data['national_id_number'],
-            password=validated_data['password'])
+
 
         artist = users.objects.create(
             username=validated_data['national_id_number'])
         artist.set_password(validated_data['password'])
         artist.save()
-            
-        
-        
+
+
+        User.objects.create_artist(
+            username=validated_data['national_id_number'],
+            password=validated_data['password'],
+            is_active=True,
+            is_artist=True,
+            is_expert=False,
+            is_customer=False)
+
         
         user1 = Artist.objects.create(
             name=validated_data['name'],
@@ -87,7 +101,7 @@ class RegisterArtistSerializer(ArtistSerializer):
             phone=validated_data['phone'],
             password=validated_data['password'],
             free_post_artwork=2,
-            user=users.objects.get(username=validated_data['national_id_number'])
+            user=User.objects.get(username=validated_data['national_id_number'])
              )
         
         return  user1
@@ -100,14 +114,20 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         
-        User.objects.create_expert(
-            username=validated_data['national_id_number'],
-            password=validated_data['password'])
+
 
         expert = users.objects.create(
             username=validated_data['national_id_number'])
         expert.set_password(validated_data['password'])
         expert.save()
+
+        User.objects.create_expert(
+            username=validated_data['national_id_number'],
+            password=validated_data['password'],
+            is_active=True,
+            is_artist=False,
+            is_expert=True,
+            is_customer=False)
         
         user1 = Expert.objects.create(
             name=validated_data['name'],
@@ -133,14 +153,21 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         
-        User.objects.create_customer(
-            username=validated_data['phone'],
-            password=validated_data['password'])
+
 
         customer = users.objects.create(
             username=validated_data['phone'])
         customer.set_password(validated_data['password'])
         customer.save()
+
+
+        User.objects.create_customer(
+            username=validated_data['phone'],
+            password=validated_data['password'],
+            is_active=True,
+            is_artist=False,
+            is_expert=False,
+            is_customer=True)
 
 
         user1 = Customer.objects.create(
@@ -167,10 +194,20 @@ class LoginSerializers(serializers.Serializer):
         
 
 
+# class LoginArtistSerializers(serializers.Serializer):
+
+#     username = serializers.CharField()
+#     password = serializers.CharField()
+#     is_artist = serializers.BooleanField(default=False) 
+
+#     def validate(self, data):
+#         user = authenticate(**data)
+#         if user :
+#             return user
+#         raise serializers.ValidationError('Incorrect Credentials Passed.')
 
 
 
 
-
-
+# and user.is_active
 

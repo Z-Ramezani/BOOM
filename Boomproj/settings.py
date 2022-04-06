@@ -51,6 +51,13 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication', ),
 }
 
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+#     'Boom.backends.CustomerBackend',
+#     'Boom.backends.ArtistBackend',
+#     'Boom.backends.ExpertBackend',
+
+# ]
 
 from datetime import timedelta
 
