@@ -14,6 +14,7 @@ from django.contrib.auth.hashers import make_password
 
 # from .backends import ArtistBackend , ExpertBackend , CustomerBackend
 
+from django import forms
 
 
 
@@ -211,3 +212,7 @@ class LoginSerializers(serializers.Serializer):
 
 # and user.is_active
 
+class advertisementCreate(forms.ModelForm):
+    class Meta :
+        model = Artwork_advertisement
+        fields = '__all__'

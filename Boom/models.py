@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User as users
 from phonenumber_field.modelfields import PhoneNumberField
@@ -74,6 +75,9 @@ class Artist(models.Model):
     USERNAME_FIELD = 'national_id_number'
     objects = UserManager()
 
+    # def Create_ad(self):
+        
+
     def __str__(self):
         return self.name + " " +self.lastname
 
@@ -127,10 +131,11 @@ class Expert(models.Model):
 class Artwork_advertisement (models.Model):
     name = models.CharField(max_length=200,null=True)
     style = models.CharField (max_length=200,null=True , blank=True)
-    artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
+    
     description =  models.CharField (max_length=200,null=True)
     price = models.IntegerField(default=0)
     examined_price = models.IntegerField(default=0)
+    Admin_perm = models.BooleanField(default=False)
     STATUS = {
         ('sold','sold'),
         ('available' ,'available'),
@@ -144,6 +149,15 @@ class Artwork_advertisement (models.Model):
     image_3 = models.ImageField(null=True , blank=True)
     image_4 = models.ImageField(null=True , blank=True)
     image_5 = models.ImageField(null=True , blank=True)
-    createAt = models.DateTimeField(auto_now_add=True , null=True)
+    createAt = models.DateField(auto_now_add=True , null=True)
+    # class Meta:
+    artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
+
+
+
+
     def __str__(self):
         return self.name
+
+################################################################################
+
