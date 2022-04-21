@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Yekan;
+    src: url('../../assets/fonts/Yekan.eot') format('eot');
+    src: url('../../assets/fonts/Yekan.ttf') format('ttf');
+    src: url('../../assets/fonts/Yekan.woff') format('woff');
+}
+ *{
+    font-family: 'Yekan';
+ }
 .footer {
     position: fixed;
     right: 0;
@@ -28,7 +37,8 @@
   .footer-link{
       text-decoration: none;
       color: #000;
-      font-size: 14px;
+      font-size: 17px;
+      font-family: 'Yekan';
       margin: 0 0.5rem;
   }
   
