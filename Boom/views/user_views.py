@@ -1,15 +1,12 @@
 # Django Import 
-from cv2 import sort
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
-from matplotlib import artist
-from Boom.models import *
 from rest_framework import status
-
+from Boom.models import *
+from django.shortcuts import render,redirect
 from Boom.serializers import advertisementCreate
-
 # Rest Framework Import
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
@@ -136,5 +133,3 @@ class LoginAPI(generics.GenericAPIView):
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]})
-
-

@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'Boom',
-
     'rest_framework',
     'corsheaders',
 
@@ -182,3 +181,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
