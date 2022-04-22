@@ -1,16 +1,9 @@
-import {Component} from 'react';
-import Button from './components/button';
-import headerSlide from './components/header-slide';
-import 'bootstrap';
-import logo from './assets/logo.png';
-import './components/navBar/navBar.css';
+import { Component } from "react";
+import logo from '../../assets/images/logo.png';
 
-class App extends Component {
-  
-  render() { 
-    return (
-      <>
-      
+class navBar extends Component {
+    render() {
+        return(
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           
             <div className="container-fluid"> 
@@ -52,11 +45,11 @@ class App extends Component {
                 />
               </a>
             </div>  
-            
+          
           </nav>
-      </>
-    )
-  }
+        
+        )
+    }
 }
- 
-export default App;
+
+export default navBar;

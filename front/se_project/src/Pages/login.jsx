@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import Button from '../components/button';
+import Navbar from '../components/navBar/navBar';
 
 class Login extends Component {
     state = {  } 
     render() { 
         return (
+            <div>
+            <Navbar/>
             <div className='container'>
                 <div className="row d-flex justify-content-center" >  
                     <div className="col-md-3">
@@ -25,6 +28,7 @@ class Login extends Component {
                         </form>
                     </div>
                 </div>
+            </div>
             </div>
         ); 
     }
