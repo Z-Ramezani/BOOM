@@ -10,7 +10,7 @@ class Button extends Component {
                     <button /*onClick={this.props.reference} */ className="btn btn-primary" type="button" style={{width: this.props.width, height:this.props.height, backgroundColor:'#BB1542', borderColor:'#BB1542', fontSize:'23px'}}>{this.props.text}</button>
                 </div>
             </>
-        );
+        )
     }
 }
 
