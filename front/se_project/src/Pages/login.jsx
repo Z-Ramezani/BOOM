@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import Button from '../components/button';
 
+import Button from '../components/button';
+import Input_text from '../components/input_form';
 class Login extends Component {
-    state = {  } 
     render() { 
+        const {username, setUsername}=this.setState;
+        const {password, setPassword}=this.setState;
+
         return (
             <div className='container'>
                 <div className="row d-flex justify-content-center" >  
@@ -11,15 +14,15 @@ class Login extends Component {
                         <form  className="form-control me_2 ">
                             <div className="mb-3">
                                 <label for="InputEmail1" className="form-label">نام کاربری</label>
-                                <input type="text" className="form-control" id="userNameInput" />
+                                <Input_text type='text' value={username} onChange={(e)=>setUsername(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <label for="InputPassword1" className="form-label">رمز عبور</label>
-                                <input type="password" className="form-control" id="InputPassword1" />
+                                <Input_text type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
                             </div>
                             <div className="mb-3 form-check">
-                                <input type="checkbox" className="form-check-input" id="Check1" style={{direction: "ltr"}}/>
-                                <label className="form-check-label" for="Check1">مرا به یاد بسپار</label>
+                                <input type="checkbox" className="justify-content-right" id="Check1"/>
+                                <label className="mx-2" for="Check1">مرا به یاد بسپار</label>
                             </div>
                             <Button width= '337px' height= '49px' text= 'ورود' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                         </form>

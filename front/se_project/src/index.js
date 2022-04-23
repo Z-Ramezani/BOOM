@@ -5,4 +5,4 @@ import App from './App';
 import Login from './Pages/login';
 import "./index.css";
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+root.render(<Login/>);
