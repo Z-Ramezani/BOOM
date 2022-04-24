@@ -8,6 +8,7 @@ import App from './App';
 import Login from './Pages/login';
 import Navbar from './components/navBar/navBar';
 import Footer from './components/footer';
+import Breadcrumbb from './components/breadcrumb';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Footer/>);
+root.render(<Login/>);

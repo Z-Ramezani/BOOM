@@ -1,16 +1,53 @@
 import {Component} from 'react';
-class breadCrumb extends Component {
+class Breadcrumbb extends Component {
     state = {} 
     render() { 
         return (
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
-                 </ol>
-            </nav>
+            <div style={{float: 'right', marginTop:'4px', marginRight:'10px'}}>
+                <div>
+                    {
+                        this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '9px'}}>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item" >{this.props.first}</li>
+                                </ol>
+                            </nav>
+                        </div> 
+                        : <div></div>
+                    }
+                </div>
+
+                <div>
+                    {
+                        this.props.is2OrNot ? <div  style={{color:'#222222', fontSize: '9px'}}>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item" >{this.props.second}</li>
+                                    <li class="breadcrumb-item" >{this.props.first}</li>
+                                </ol>
+                            </nav>
+                        </div> 
+                        : <div></div>
+                    }
+                </div>
+
+                <div>
+                    {
+                        this.props.is3OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '9px'}}>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item" >{this.props.third}</li>
+                                    <li class="breadcrumb-item" >{this.props.second}</li>
+                                    <li class="breadcrumb-item" >{this.props.first}</li>
+                                </ol>
+                            </nav>
+                        </div> 
+                        : <div></div>
+                    }
+                </div>
+            </div>
         );
     }
 }
- 
-export default Breadcrumb;
+
+export default Breadcrumbb;

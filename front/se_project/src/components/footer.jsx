@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { MDBFooter } from 'mdb-react-ui-kit';
 
-class footer extends Component {
+class Footer extends Component {
     render() {
         return(
             <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
@@ -126,4 +126,4 @@ class footer extends Component {
     }
 }
 
-export default footer;
+export default Footer;
