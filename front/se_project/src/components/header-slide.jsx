@@ -35,3 +35,5 @@ class headerSlide extends Component {
         )
     }
 }
+
+export default headerSlide;
