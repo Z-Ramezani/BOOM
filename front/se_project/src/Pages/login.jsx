@@ -3,10 +3,13 @@ import Button from '../components/button';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
 import Breadcrumbb from '../components/breadcrumb';
-
+import Button from '../components/button';
+import Input_text from '../components/input_form';
 class Login extends Component {
-    state = {  } 
     render() { 
+        const {username, setUsername}=this.setState;
+        const {password, setPassword}=this.setState;
+
         return (
             <div>
                 <Navbar/>
