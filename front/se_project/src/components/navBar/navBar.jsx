@@ -1,12 +1,11 @@
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
-import Breadcrumbb from '../breadcrumb';
 
 class navBar extends Component {
     render() {
         return(
           <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
             
               <div className="container-fluid"> 
                 <a className="navbar-brand" href="#"></a>

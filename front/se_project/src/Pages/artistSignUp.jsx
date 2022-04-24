@@ -20,8 +20,8 @@ class artistSignUp extends Component {
     return (
         <div>
             <Navbar/>
-            <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='اثر'/>
-            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded' style={{marginTop:'30px'}} >
+            <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند یا کارشناس'/>
+            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded mt-4' >
                  <div className='row justify-content-center' >
                       <div>  
                            <form>
@@ -116,8 +116,8 @@ class artistSignUp extends Component {
                       </div>
                   </div>
             </div>
-            <div className='container w-75 p-3' >
-                 <div className='justify-content-center mt-0' >
+            <div className='container w-75 p-0' >
+                 <div className='justify-content-center mt-0 mx-0' >
                                 <div className='d-flex'>
                                     <div className='mx-1'>
                                         <Button width= 'auto' height= 'auto' text= 'بازنشانی' /*reference=''*//*sholde use axios library for connect backend in next edit*//>

@@ -1,43 +1,76 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 import Button from '../components/button';
+import Input_text from '../components/input_form';
+import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
-import Breadcrumbb from '../components/breadcrumb';
-import Input_text from '../components/input_form';
-class Login extends Component {
-    render() { 
-        const {username, setUsername}=this.setState;
-        const {password, setPassword}=this.setState;
 
-        return (
-            <div>
-                <Navbar/>
-                <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='اثر'/>
-                <div className='container'style={{marginTop:'30px'}}>
-                <div className="row d-flex justify-content-center" >  
-                    <div className="col-md-3">
-                        <form  className="form-control me_2 ">
-                            <div className="mb-3">
-                                <label for="InputEmail1" className="form-label">نام کاربری</label>
-                                <Input_text type='text' value={username} onChange={(e)=>setUsername(e.target.value)} />
-                            </div>
-                            <div className="mb-3">
-                                <label for="InputPassword1" className="form-label">رمز عبور</label>
-                                <Input_text type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
-                            </div>
-                            <div className="mb-3 form-check">
-                                <input type="checkbox" className="justify-content-right" id="Check1"/>
-                                <label className="mx-2" for="Check1">مرا به یاد بسپار</label>
-                            </div>
-                            <Button width= '337px' height= '49px' text= 'ورود' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
-                        </form>
-                    </div>
-                </div>
+class buyerSignUp extends Component {
+  render() { 
+    const {names, setNames}=this.setState;
+    const {phone, setPhone}=this.setState;
+    const {password, setPassword}=this.setState;
+
+
+
+    return (
+        <div>
+            <Navbar/>
+            <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان خریدار'/>
+            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded mt-4' >
+                 <div className='row justify-content-center' >
+                      <div>  
+                           <form>
+                               <div className='row mb-2'>
+                                        <div class='col row '>
+                                            <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
+                                            <div className='col-8'> 
+                                                <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
+                                            </div>
+                                        </div>
+                                        <div className='col row'>
+                                            <label className="col-sm-3 col-form-label mx-auto">شماره تماس</label>
+                                            <div className="col-8">
+                                                <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+                                            </div>
+                                        </div>
+                                </div>
+
+
+                                <div className='row mb-2'>
+                                <div class="row col">
+                                    <label class="col-sm-4 col-form-label">رمز عبور</label>
+                                    <div class="col-8">
+                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                    </div>
+                                </div>
+                                <div class="row col">
+                                    <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
+                                    <div class="col-8">
+                                        <Input_text type="password"/>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>
+                      </div>
+                  </div>
             </div>
-                
-            </div>
-        ); 
-    }
+            <div className='container w-75 p-0' >
+                 <div className='justify-content-center mt-0 mx-0' >
+                                <div className='d-flex'>
+                                    <div className='mx-1'>
+                                        <Button width= 'auto' height= 'auto' text= 'بازنشانی' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    </div>
+                                    <div className='mx-1'>
+                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    </div> 
+                                </div>   
+                            </div>
+                        </div>
+                        <Footer/>
+                    </div>                    
+    );
+  }
 }
  
-export default Login;
+export default buyerSignUp;

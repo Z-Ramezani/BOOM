@@ -5,10 +5,9 @@ import logo from '../assets/images/logo.png';
 class Footer extends Component {
     render() {
         return(
-            <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-
-            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'> 
-              
+          <div className="mt-auto">
+            <MDBFooter className='text-center text-lg-start text-muted'>
+            <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                 <div className='container text-center text-md-start mt-2'>
                   <div className='col-md-2 col-md-offset-3'>
                     <a href='' className='me-4 text-reset'>
@@ -27,7 +26,7 @@ class Footer extends Component {
 
 
                   <div className='row mt-1'>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav className="navbar navbar-expand-lg navbar-light">
                       
                       <ul className="navbar-nav">
                         <li className="nav-item">
@@ -55,15 +54,12 @@ class Footer extends Component {
                   loading='lazy'
                 />
               </a>
-              
             </section>
-
-            
-      
-            <div className='text-center p-2' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+            <div className='text-center p-1' style={{ backgroundColor:"#f9ffff" }}>
               © تمامی حقوق محفوظ است
             </div>
           </MDBFooter>
+          </div>
         
         )
     }
