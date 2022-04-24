@@ -1,6 +1,8 @@
 import {Component} from 'react';
-import Button from './components/button';
-import Input_text from './components/input_form';
+import Button from '../components/button';
+import Input_text from '../components/input_form';
+import Breadcrumbb from '../components/breadcrumb';
+import Navbar from '../components/navBar/navBar';
 
 class artistSignUp extends Component {
   render() { 
@@ -17,7 +19,9 @@ class artistSignUp extends Component {
 
     return (
         <div>
-            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded' >
+            <Navbar/>
+            <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='اثر'/>
+            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded' style={{marginTop:'30px'}} >
                  <div className='row justify-content-center' >
                       <div>  
                            <form>
