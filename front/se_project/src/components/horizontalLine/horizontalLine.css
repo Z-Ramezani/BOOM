@@ -1,24 +1,16 @@
-@mixin hr-line {
-    flex: 1;
-    background: #c7c7c7;
-    content: "";
-    height: 1px;
-}
-
-.text-hr text-hr--right {
+.text-hr {
     display: flex;
-    align-items: center;
-    font-family: sans-serif;
-    width: 100%;
-    margin: 15px auto;
-    color: #444;
-}
-.text-hr text-hr--right::after {
-    @include hr-line;
-}
-
-.text-hr__text {
-    order: 1;
-    padding: 0 0 0 15px;
-    padding: right 15px;
+    flex-direction: row;
+  }
+.text-hr:before, .text-hr:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+  }
+.text-hr:before {
+    margin-right: 10px
+  }
+.text-hr:after {
+    margin-left: 10px
   }
