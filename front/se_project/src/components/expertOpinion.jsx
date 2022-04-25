@@ -1,3 +1,6 @@
+import { Component } from "react";
+
+
 class ExpertOpinion extends Component {
     state = {  } 
     render() { 

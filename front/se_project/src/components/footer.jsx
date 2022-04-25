@@ -55,8 +55,8 @@ class Footer extends Component {
                 />
               </a>
             </section>
-            <div className='text-center p-1' style={{ backgroundColor:"#f9ffff" }}>
-              © تمامی حقوق محفوظ است
+            <div className='text-center p-0' style={{ backgroundColor:"#f9ffff" , fontSize:'1rem'}}>
+               <span style={{ fontSize:'25px'}}>©</span>۱۴۰۱  تمامی حقوق محفوظ است   
             </div>
           </MDBFooter>
           </div>
