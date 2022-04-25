@@ -8,7 +8,7 @@ class Footer extends Component {
           
           <div className="mt-auto"  style={{backgroundColor:"#FFFFFF"}}>
             <MDBFooter className='text-center text-lg-start text-muted'>
-            <div className='container text-center text-md-start mt-5'></div>
+            <hr class="mt-2 mb-3"/>
             <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                 <div className='container text-center text-md-start mt-2'>
                   <div className='col-md-2 col-md-offset-3'>
@@ -57,8 +57,8 @@ class Footer extends Component {
                 />
               </a>
             </section>
-            <div className='text-center p-0' style={{ backgroundColor:"#f9ffff" , fontSize:'1rem'}}>
-               <span style={{ fontSize:'25px'}}>©</span>۱۴۰۱  تمامی حقوق محفوظ است   
+            <div className='text-center p-1' style={{ backgroundColor:"#f9ffff" }}>
+              © تمامی حقوق محفوظ است
             </div>
           </MDBFooter>
           </div>

@@ -14,6 +14,8 @@ import ArtistSignUp from './Pages/artistSignUp'
 import BuyerSighUp from './Pages/buyerSignUp'
 import Login from './Pages/login';
 import Guide from './Pages/guide';
+import ArtistProfile from './Pages/artistProfile';
+import HorizontalLine from './components/horizontalLine/horizontalLine';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistSignUp/>);
+root.render(<HorizontalLine/>);

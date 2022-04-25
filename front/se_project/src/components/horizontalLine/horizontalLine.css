@@ -1,0 +1,24 @@
+@mixin hr-line {
+    flex: 1;
+    background: #c7c7c7;
+    content: "";
+    height: 1px;
+}
+
+.text-hr text-hr--right {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100%;
+    margin: 15px auto;
+    color: #444;
+}
+.text-hr text-hr--right::after {
+    @include hr-line;
+}
+
+.text-hr__text {
+    order: 1;
+    padding: 0 0 0 15px;
+    padding: right 15px;
+  }
