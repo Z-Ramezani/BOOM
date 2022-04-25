@@ -5,8 +5,10 @@ import logo from '../assets/images/logo.png';
 class Footer extends Component {
     render() {
         return(
-          <div className="mt-auto">
+          
+          <div className="mt-auto"  style={{backgroundColor:"#FFFFFF"}}>
             <MDBFooter className='text-center text-lg-start text-muted'>
+            <div className='container text-center text-md-start mt-5'></div>
             <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                 <div className='container text-center text-md-start mt-2'>
                   <div className='col-md-2 col-md-offset-3'>
@@ -25,7 +27,7 @@ class Footer extends Component {
                   </div>
 
 
-                  <div className='row mt-1'>
+                  <div className='row mt-1 mx-3'>
                     <nav className="navbar navbar-expand-lg navbar-light">
                       
                       <ul className="navbar-nav">

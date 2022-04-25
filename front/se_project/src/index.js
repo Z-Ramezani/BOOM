@@ -11,4 +11,4 @@ import Footer from './components/footer';
 import Breadcrumbb from './components/breadcrumb';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Login/>);
+root.render(<Footer/>);
