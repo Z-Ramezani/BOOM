@@ -3,7 +3,7 @@ import a from "../assets/x.png";
 import b from "../assets/z.png";
 import c from "../assets/c.png";
 
-class headerSlide extends Component {
+class HeaderSlide extends Component {
     render() {
         return (
             <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
@@ -36,4 +36,4 @@ class headerSlide extends Component {
     }
 }
 
-export default headerSlide;
+export default HeaderSlide;

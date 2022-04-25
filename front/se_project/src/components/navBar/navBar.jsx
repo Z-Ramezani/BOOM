@@ -28,9 +28,12 @@ class navBar extends Component {
                     <li className="nav-item">
                       <a className="nav-link" href="#">درباره‌ما</a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" >
                       <a className="nav-link" href="#">ثبت نام</a>
                     </li>
+                                                                <li>
+                                                                  <a className="nav-link" href="#">|</a>
+                                                                </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">ورود</a>
                     </li>
