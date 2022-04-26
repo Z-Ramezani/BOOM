@@ -9,11 +9,12 @@ import HeaderSlide from './components/header-slide'
 import Navbar from './components/navBar/navBar';
 import Footer from './components/footer';
 import Breadcrumbb from './components/breadcrumb';
-import ExpertOpinion from './components/expertOpinion'
+import ArtworkAdAdditionalInfo from './components/artworkAdAdditionalInfo';
 import ArtistSignUp from './Pages/artistSignUp'
 import BuyerSighUp from './Pages/buyerSignUp'
 import Login from './Pages/login';
 import Guide from './Pages/guide';
+import TicketPart from './Pages/TicketPart';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<BuyerSighUp/>);
+root.render(<ArtworkAdAdditionalInfo/>);

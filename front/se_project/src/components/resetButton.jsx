@@ -11,7 +11,7 @@ class ResetButton extends Component {
                             type="reset" 
                             style={{width:'auto', height:'auto', 
                             backgroundColor:'#BB1542', borderColor:'#BB1542',
-                             fontSize:'23px'}}>
+                             fontSize:'18px'}}>
                                  بازنشانی
                     </button>
                 </div>

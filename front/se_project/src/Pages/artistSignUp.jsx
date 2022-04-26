@@ -20,7 +20,7 @@ class ArtistSignUp extends Component {
 
 
     return (
-        <div className='d-flex flex-column min-vh-100'>
+        <div>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند یا کارشناس'/>
             <form>
@@ -126,10 +126,10 @@ class ArtistSignUp extends Component {
                                         <ResetButton/>
                                     </div>
                                     <div className='mx-1'>
-                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='18px' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                     </div> 
                                     <div className='mx-1 '>
-                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='18px'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                     </div>
                                 </div>   
                             </div>

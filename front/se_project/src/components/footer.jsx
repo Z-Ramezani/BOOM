@@ -5,11 +5,14 @@ import logo from '../assets/images/logo.png';
 class Footer extends Component {
     render() {
         return(
-          <div className="mt-auto">
+          <div className="sticky-bottom ">
+            <div className="d-flex justify-content-center">
+              <hr style={{height:'2px', width:'75%', borderWidth:'0', color:'#222222', backgroundColor:'#222222'}}></hr>
+            </div>
             <MDBFooter className='text-center text-lg-start text-muted'>
             <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
-                <div className='container text-center text-md-start mt-2'>
-                  <div className='col-md-2 col-md-offset-3'>
+                <div className='container text-center text-md-start'>
+                  <div className='col-md-4 col-md-offset-3  mx-1'>
                     <a href='' className='me-4 text-reset'>
                       <i class="bi bi-envelope"></i>
                     </a>
@@ -23,7 +26,6 @@ class Footer extends Component {
                       <i class="bi bi-telegram"></i>
                     </a>
                   </div>
-
 
                   <div className='row mt-1'>
                     <nav className="navbar navbar-expand-lg navbar-light">
@@ -46,12 +48,13 @@ class Footer extends Component {
                   </div>
                 </div>
 
-              <a className="navbar-brand" href="#">
-                <img
+              <a className="navbar-brand" href="#" /*style={{marginLeft:'20px', marginTop:'5px'}}*/>
+                <img 
+                  className="img-fluid"
                   src={logo}
-                  height='50'
                   alt='React Bootstrap logo'
                   loading='lazy'
+                  style={{width:"35%"}}
                 />
               </a>
             </section>
