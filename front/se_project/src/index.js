@@ -15,6 +15,10 @@ import BuyerSighUp from './Pages/buyerSignUp'
 import Login from './Pages/login';
 import Guide from './Pages/guide';
 import TicketPart from './Pages/TicketPart';
+import Button from './components/button';
+import Input_text from './components/input_form';
+import ResetButton from './components/resetButton';
+import ArtistProfile from './Pages/artistProfile';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtworkAdAdditionalInfo/>);
+root.render(<TicketPart/>);

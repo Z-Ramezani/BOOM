@@ -3,7 +3,7 @@ class Breadcrumbb extends Component {
     state = {} 
     render() { 
         return (
-            <div style={{float: 'right',marginTop:'4px', marginRight:'10px'}} >
+            <div style={{float: 'right' ,marginTop:'4px', marginRight:'10px'}} >
                 <div>
                     {
                         this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '9px'}}>
