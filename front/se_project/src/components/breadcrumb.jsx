@@ -19,7 +19,7 @@ class Breadcrumbb extends Component {
 
                 <div>
                     {
-                        this.props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '9px'}}>
+                        this.props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '10px'}}>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item" >{this.props.second}</li>

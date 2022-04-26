@@ -10,6 +10,7 @@ class Footer extends Component {
               <hr style={{height:'2px', width:'75%', borderWidth:'0', color:'#222222', backgroundColor:'#222222'}}></hr>
             </div>
             <MDBFooter className='text-center text-lg-start text-muted'>
+            <hr class="mt-2 mb-3"/>
             <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                 <div className='container text-center text-md-start'>
                   <div className='col-md-4 col-md-offset-3  mx-1'>
@@ -58,8 +59,8 @@ class Footer extends Component {
                 />
               </a>
             </section>
-            <div className='text-center p-0' style={{ backgroundColor:"#f9ffff" , fontSize:'1rem'}}>
-               <span style={{ fontSize:'25px'}}>©</span>۱۴۰۱  تمامی حقوق محفوظ است   
+            <div className='text-center p-1' style={{ backgroundColor:"#f9ffff" }}>
+              © تمامی حقوق محفوظ است
             </div>
           </MDBFooter>
           </div>
