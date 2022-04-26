@@ -43,9 +43,8 @@ class navBar extends Component {
                 
                 <a className="navbar-brand" href="#">
                   <img
-                    className="img-fluid float-left"
+                    className="img-responsive"
                     src={logo}
-                    height='30'
                     alt='logo'
                     loading='lazy'
                     style={{width:"10%"}}
