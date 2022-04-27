@@ -16,10 +16,10 @@ class Login extends Component {
         <div>
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
-            <div className='container mt-4'>
-                <div className="row d-flex justify-content-center" >  
+            <div className='container flex-column min-vh-100'>
+                <div className="row d-flex justify-content-center " >   
                     <div className="col-md-3">
-                        <form  className="form-control me_2 ">
+                        <form  className="form-control" style={{marginTop: 'auto'}}>
                             <div className="mb-3">
                                 <label for="InputEmail1" className="form-label">نام کاربری</label>
                                 <input type="text" className="form-control" id="userNameInput" />

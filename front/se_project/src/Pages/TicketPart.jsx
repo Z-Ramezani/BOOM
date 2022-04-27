@@ -16,7 +16,7 @@ class TicketPart extends Component {
             <div>
                 <Navbar/>
                 <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان خریدار'/>
-                <div className='container w-75 p-3'>
+                <div className='container w-75 p-3 mt-4 flex-column min-vh-100'>
                     <div className='d-flex mb-3'>
                     <label className="form-label ps-2 mt-2">تعداد تیکت باقیمانده</label>
                     <input type="text" class="form-control" disabled value={this.state.count} style={{width:'auto', height:'auto' , backgroundColor:'#f9ffff'}} ></input>

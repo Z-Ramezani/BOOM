@@ -23,8 +23,9 @@ class ArtistSignUp extends Component {
         <div>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند یا کارشناس'/>
-            <form>
-            <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5' >
+            <div className='d-flex flex-column min-vh-100'>
+            <form style={{marginTop: 'auto'}}>
+            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded mt-4' >
                  <div className='row justify-content-center' >
                       <div>  
                                <div className='row mb-2'>
@@ -104,7 +105,7 @@ class ArtistSignUp extends Component {
                                     <div class="d-flex col mt-2" required>
                                         <div class="form-check">
                                              <label class="form-check-label">زن</label>
-                                             <input class="justify-content-right form-check-input" type="radio" name='gridRadios'  checked/>
+                                             <input class="justify-content-right form-check-input" type="radio" name='gridRadios' />
                                         </div>
                                         <div class="form-check">
                                         <label class="form-check-label me-5">مرد</label>
@@ -119,7 +120,7 @@ class ArtistSignUp extends Component {
                   </div>
             </div>
             
-            <div className='container w-75 p-0 mb-4' >
+            <div className='container w-75 p-3 mb-4' >
                  <div className='justify-content-center mt-0 mx-0' >
                                 <div className='d-flex'>
                                     <div className='mx-1'>
@@ -136,7 +137,8 @@ class ArtistSignUp extends Component {
                         </div>
                      </form>
                      <Footer/>
-                 </div>                    
+                 </div>     
+                 </div> 
     );
   }
 }

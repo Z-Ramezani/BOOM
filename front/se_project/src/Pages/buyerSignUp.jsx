@@ -17,11 +17,10 @@ class BuyerSighUp extends Component {
         <div>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان خریدار'/>
-            <form>
-            <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded mt-4' >
+            <div className='d-flex flex-column min-vh-100'>
+            <form style={{marginTop: 'auto'}}>
+            <div className='container w-75 p-3 shadow mb-5 bg-white rounded' >
                  <div className='row justify-content-center' >
-                      <div>  
-                           
                                <div className='row mb-2'>
                                         <div class='col row '>
                                             <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
@@ -36,23 +35,21 @@ class BuyerSighUp extends Component {
                                             </div>
                                         </div>
                                 </div>
-
                                 <div className='row mb-2'>
-                                <div class="row col">
-                                    <label class="col-sm-4 col-form-label">رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                    <div class="row col">
+                                        <label class="col-sm-4 col-form-label">رمز عبور</label>
+                                        <div class="col-8">
+                                            <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row col">
-                                    <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password"/>
+                                    <div class="row col">
+                                        <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
+                                        <div class="col-8">
+                                            <Input_text type="password"/>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             
-                      </div>
                   </div>
             </div>
             <div className='container w-75 p-0' >
@@ -69,7 +66,8 @@ class BuyerSighUp extends Component {
                         </div>
                         </form>
                         <Footer/>
-                    </div>                    
+                    </div> 
+                    </div>  
     );
   }
 }

@@ -24,7 +24,7 @@ class ArtistProfile extends Component {
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='حساب کاربری' second='اطلاعات حساب کاربری'/>
             <HorizontalLine value='اطلاعات کاربری'/>
-            <form>
+            <form style={{marginTop: 'auto'}}>
                 <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                     <div className='row justify-content-center'>
 

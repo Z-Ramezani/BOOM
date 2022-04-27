@@ -21,4 +21,4 @@ import ResetButton from './components/resetButton';
 import ArtistProfile from './Pages/artistProfile';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Navbar/>);
+root.render(<Login/>);

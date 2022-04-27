@@ -3,10 +3,10 @@ class Breadcrumbb extends Component {
     state = {} 
     render() { 
         return (
-            <div style={{float: 'right' ,marginTop:'4px', marginRight:'10px'}} >
+            <div className='d-flex justify-content-start' style={{marginTop:'0.3%', marginRight:'0.5%'}} >
                 <div>
                     {
-                        this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '9px'}}>
+                        this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '5%'}}>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item" >{this.props.first}</li>
@@ -33,7 +33,7 @@ class Breadcrumbb extends Component {
 
                 <div>
                     {
-                        this.props.is3OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.5rem'}}>
+                        this.props.is3OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '55%'}}>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item" >{this.props.third}</li>

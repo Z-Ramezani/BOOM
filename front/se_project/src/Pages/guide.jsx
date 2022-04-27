@@ -11,16 +11,89 @@ class Guide extends Component {
             <div>
                 <Navbar/>
                 <Breadcrumbb is1OrNot='true' first='راهنمای سایت' />
-                <div className='mt-4'>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, earum nulla, adipisci velit eaque distinctio incidunt modi sed quasi deserunt iste quos facere molestias dignissimos totam harum aliquid. Nobis, sunt dolorem provident earum illo temporibus odit repudiandae harum neque aliquid a corporis minus ullam eaque obcaecati tempore sit? Error, ipsam beatae velit quia repudiandae mollitia magnam tempore quod harum aperiam laborum expedita possimus illo nobis accusamus itaque asperiores aliquid architecto vel nesciunt atque cupiditate ullam quidem. Nihil soluta, molestiae ipsum eos pariatur aliquam, amet placeat incidunt facilis blanditiis aspernatur laudantium ullam ut tenetur dolor ipsam? Provident dolor consequuntur, eius omnis, mollitia corporis facere soluta impedit aperiam, illum nesciunt. Voluptates eaque, eligendi totam corporis maxime deserunt placeat consequuntur cum nostrum eos! Quas molestias est, nemo minima in voluptate veniam eum commodi officiis modi, officia recusandae reprehenderit numquam sit cupiditate autem eaque? Qui consectetur incidunt nemo maxime pariatur quidem non aperiam, quisquam inventore recusandae, quam quia doloremque iusto consequatur! Ea cupiditate quam illum, debitis officiis quis eligendi! Eligendi nostrum impedit eaque non saepe temporibus blanditiis dolores. Debitis eaque harum, distinctio voluptate iure corrupti voluptas error ratione soluta necessitatibus numquam, explicabo iusto in laudantium! Sint officiis, voluptatum facere natus sit expedita fugit placeat eius quasi distinctio? Rerum libero et dolorem molestiae suscipit facere, exercitationem minus harum recusandae? Consequatur quos debitis, eveniet architecto sequi quibusdam earum quae? Excepturi numquam beatae corporis totam maxime placeat est, voluptate aut quasi molestiae nostrum. Expedita voluptatum qui in consectetur, quaerat voluptatibus! Laudantium aut blanditiis illum earum amet architecto sequi accusamus minima non alias, ea recusandae numquam rem soluta sint voluptatibus nemo quo fugit mollitia tempora aliquid id? Omnis mollitia voluptatibus cumque. Nam, repellendus quidem adipisci sequi expedita soluta corporis. Nemo accusantium quis quasi amet modi nisi aliquid, praesentium veniam ipsa adipisci repudiandae laboriosam! Cumque tempora harum quia. Praesentium ratione repellendus unde odio inventore optio recusandae similique eius dolore, veritatis dignissimos consequatur minima sed est animi, vitae doloribus a architecto voluptas quam id. Nisi, accusamus? Ipsum, perspiciatis eum, optio consequatur aliquam blanditiis, quas vitae repellendus in provident fugit ad rerum incidunt hic illum eaque quae id dolore asperiores deleniti inventore. Perferendis est ea, pariatur facere voluptatibus iure ut laudantium, asperiores omnis veritatis fugit, laborum distinctio in praesentium assumenda exercitationem! Ipsum placeat magni numquam necessitatibus veniam nulla officia sit, libero porro blanditiis quasi earum incidunt maxime impedit? Autem doloribus, ipsum ea ad soluta amet excepturi recusandae in, tempora repellat consequuntur!
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias perspiciatis beatae doloremque cumque rerum, quibusdam necessitatibus suscipit exercitationem cum eveniet magnam voluptatem, porro ex nihil commodi? Veritatis repudiandae accusantium enim vel assumenda! Repudiandae nisi minima beatae ipsa magni accusamus blanditiis explicabo, exercitationem non? Fugit dolor impedit eaque mollitia animi repellat ipsam nisi repudiandae veritatis obcaecati. Omnis tempora, reiciendis odio adipisci ducimus fugit eos eum totam doloremque eaque ad ullam alias doloribus odit est cupiditate, in officia iure iusto quidem, veniam quo! Dolore laborum ullam hic, dicta iusto maiores suscipit, assumenda quam placeat expedita non adipisci natus possimus consectetur beatae porro quaerat et facere fugiat quae, dolorum ex exercitationem. Soluta doloribus consequatur quas odio nam hic adipisci cupiditate qui eaque, laborum, nostrum sunt ea! Facere repellat, harum eaque molestias voluptas atque porro, quod repudiandae sapiente tempora magnam, doloremque iste vero sit quos itaque impedit. Ex accusantium aliquid impedit molestiae modi officiis qui facilis est cum, tenetur consequuntur, distinctio officia itaque a, quia quasi vel. Non obcaecati veritatis maxime provident, reprehenderit expedita impedit suscipit enim distinctio ab recusandae, dicta voluptatum culpa saepe, nam voluptatem nulla accusamus harum dignissimos dolore accusantium doloribus explicabo? Non consequatur a, impedit eaque asperiores rem deserunt itaque. Assumenda sunt tenetur nostrum culpa ut. Adipisci laborum atque placeat eaque. Ipsa sit atque praesentium laborum. Tenetur totam dolorum doloremque, vero temporibus cupiditate et magni non blanditiis perferendis error, eaque eos quam, laboriosam amet dolor natus porro est asperiores ullam voluptates consequuntur! Rem eum laudantium quaerat suscipit eaque excepturi natus porro vero, delectus laboriosam! Eveniet mollitia assumenda porro non molestiae nostrum, magnam similique? Non neque ipsum nihil iste rem corporis dolor molestiae at, sed ab veritatis quidem accusantium atque illo iure distinctio. Veniam minima eveniet adipisci maiores. Veniam quod facere impedit officiis nulla vel optio harum, ratione aut quaerat mollitia assumenda ipsa maiores perferendis dicta facilis voluptas laborum atque eos labore possimus esse. Ad quia doloremque laudantium veniam pariatur nihil, autem, in eaque esse vel facilis veritatis totam ducimus mollitia sit possimus voluptate porro, tempore nemo aut tempora consequatur? Dolorum possimus dicta dolor accusamus repellat voluptatibus dolorem ex aliquid iusto rem deleniti similique amet eos asperiores consequuntur, consequatur quod numquam animi architecto saepe voluptates odit aperiam beatae adipisci. Accusantium incidunt sed veritatis itaque et delectus, aut a tenetur beatae magni debitis earum excepturi, necessitatibus eaque dolore qui ullam dolorum temporibus voluptas dolor rem, voluptates modi. Blanditiis voluptas tenetur, magnam accusamus quibusdam iure facere fuga omnis atque sint dolor tempora adipisci obcaecati iste excepturi nulla consequatur vel minima? Accusamus, atque animi rerum assumenda illum ipsa odio enim natus quia ullam debitis, quam aspernatur tenetur? Corporis esse adipisci libero. Harum sit beatae consequuntur, sunt enim modi cum accusantium ducimus voluptatem alias temporibus earum quos impedit repellat aliquid praesentium doloribus! Error magni aperiam blanditiis, laborum dignissimos eaque unde, nihil ipsa nemo fuga quidem voluptates rem accusantium velit voluptatum libero, possimus quia eum laboriosam repellat iure. Cumque ducimus, ad magnam nemo quaerat, repudiandae excepturi ratione assumenda vel corporis, id dicta! Assumenda obcaecati rem inventore accusamus harum ex totam ut eligendi architecto quas quidem unde doloremque nesciunt, fugit, quis tenetur amet porro eius ullam magni libero nulla, a ad quam? Eaque, amet. Voluptas veritatis voluptate consectetur nihil facere. Quaerat incidunt aut atque veritatis consequuntur fuga ut alias explicabo vitae nesciunt a, ipsam ad amet numquam. Quod, aspernatur quia! Possimus odio voluptatem voluptatibus nihil tempora suscipit alias hic fugit magni? Dolor tempora debitis aliquam, nemo quo vero aut suscipit sunt ut repellendus illo consectetur nesciunt consequatur fuga expedita, tempore quibusdam saepe. Temporibus aut consectetur a eligendi, excepturi itaque quae optio porro, quam error nihil tempora totam quisquam ut fugit nobis corporis autem. Molestiae, repellat quasi? Iusto, voluptates ipsum, suscipit corporis sunt vitae totam deserunt magni animi accusantium sapiente dicta dolorum provident sit nisi ab! Nihil tempore molestias minus fugit laborum. Incidunt eaque voluptate odit dignissimos laboriosam eligendi vitae aspernatur, beatae obcaecati eveniet culpa impedit? Voluptas, laborum nostrum aspernatur sapiente voluptatem ea esse dolore tempora aperiam vero! Quisquam maxime aperiam molestias quasi eius? Unde quae necessitatibus enim illo expedita eius rerum id, nam illum quidem et. Sapiente, culpa eum. Optio veritatis eveniet molestias fugit officiis praesentium, atque impedit maiores aspernatur maxime cupiditate, commodi illum eos accusamus a possimus porro sint. Sunt ipsa illum quae iure, repellendus beatae voluptatibus in nobis laudantium veritatis quisquam quas amet sapiente unde voluptates hic architecto voluptas modi odit, delectus dicta! Adipisci nihil nulla porro soluta rerum expedita architecto? Et fugit, eius perferendis minus libero atque quis aliquam repellat ratione iure facere expedita praesentium beatae. Nisi cumque alias, explicabo harum rem repellat qui velit vel ipsa eveniet minima rerum nobis, quis ab illum. Eaque molestiae delectus qui quo error optio reprehenderit quas cum doloremque a libero ab voluptate ipsa in eius corporis temporibus neque, sit et natus labore laudantium! Aliquid veniam id doloribus. Accusantium sequi totam possimus officiis amet obcaecati esse ad sed? Adipisci est laborum porro accusantium repudiandae, asperiores quam ipsa optio laudantium nesciunt numquam eos debitis quisquam inventore modi praesentium, fugit natus? Reiciendis, magni voluptatem. Minima iusto debitis quisquam? Maiores, tenetur eaque est ab, quaerat, quia accusamus sit delectus nam eum praesentium placeat. Veritatis doloremque quod minima asperiores sed incidunt, earum debitis quas fugiat provident necessitatibus quo, nostrum vero minus. Numquam recusandae magni amet sit eligendi, quia optio ea doloribus id sequi alias praesentium sunt quisquam nobis quasi dolor sapiente minus mollitia ullam nostrum cupiditate fugit repellendus dolores odit. Nulla earum, consequuntur voluptatem omnis alias molestiae modi suscipit! Consequuntur deserunt architecto debitis officiis consequatur, ad perspiciatis sint ducimus error voluptate laboriosam eveniet inventore eaque repellat? Autem optio distinctio at quisquam deleniti repellat! Deserunt quae eveniet illum ipsum autem rerum aliquam, voluptatum corporis iusto vel saepe quam doloremque assumenda quibusdam quisquam sapiente et quis aperiam velit! Fuga hic totam architecto, iste voluptates optio ducimus, ipsam adipisci qui iusto vero debitis, recusandae non. Enim deserunt fugit, reprehenderit earum inventore possimus? Voluptatum, ut numquam? Dolor porro nihil sint ipsa cupiditate deserunt. Asperiores, doloremque eum repudiandae minima aperiam, dolores labore laboriosam culpa, necessitatibus totam nostrum placeat.
-                </p>
+                <div className='container w-75 p-3 mt-4'>
+                    <div className='d-flex flex-column min-vh-100'>
+                        <h5><strong>راهنمای کار با سایت</strong></h5>
+                        <div className="text-muted">
+                            <p ><small>
+                                    بوم، پلتفرم آنلاین خریدوفروش و قیمت‌گذاری انواع تابلو نقاشی و خوشنویسی است. 
+                                    بوم این امکان را به شما می‌دهد تا از میان صدها اثر هنری، بهترین انتخاب با بهترین قیمت را داشته باشید. هنرمندان می‌توانند از بوم برای به نمایش گذاشتن و فروش آثار خود استفاده کنند.
+                            </small></p>
+                            <p><small>  
+                                    ما در بوم تلاش می‌کنیم تا خرید آثار هنری برای شما تبدیل به تجربه‌ای خوش‌آیند شود چرا که آثار توسط کارشناسان ارزیابی شده و قیمت پیشنهادی آن‌ها در زیر هر اثر ثبت می‌شود. شما می‌توانید با ارزیابی قیمت هنرمند و کارشناس، خرید به صرفه‌ای داشته باشید.
+                                        بوم همچنین یک گالری هنری آنلاین برای علاقمندان آثار هنری است که همه اطلاعات درباره اثر را به مخاطب می‌دهد.
+                            </small></p>
+                            <p><small>
+                                     در این صفحه راهنمایی‌های لازم جهت کار با بوم نوشته شده است.
+                            </small></p>
+                        </div>
+                        
+                        <div className='container me-4'>
+                            <h5><strong>۱. ثبت نام</strong></h5>
+                            <div className='text-muted'>
+                            <p className='me-3'><small>
+                                    اولین مرحله برای کار با بوم، ثبت‌نام به عنوان یکی از کاربران کارشناس، هنرمند و خریدار است. 
+                                    نکته قابل ذکر این است که شما میتوانید با عنوان‌های متفاوتی (کارشناس، هنرمند، خریدار) برای خود حساب کاربری بسازید و در هر حساب کاربری، از امکانات مخصوص به آن بهره ببرید.
+                            </small></p>
+                            <p className='me-5'><small>
+                                        ثبت‌نام خریدار: در این قسمت، علاقمندان پس از ثبت‌نام در سایت، می‌توانند با پرداخت مبلغ مشخصی، راه ارتباطی با هنرمند اثر منتخب خود در هر آگهی را دریافت کرده و همچنین نظرات خود را درباره آثار ثبت کنند.
+                            </small></p>
+                            <p className='me-5'><small>
+                                        ثبت‌نام هنرمند: هنرمندان با ثبت‌نام در سایت می‌توانند برای ثبت آثار هنری خود در بوم و قیمت‌گذاری پیشنهادی توسط کارشناسان اقدام کنند. شایان ذکر است که قیمت‌گذاری توسط کارشناسان، تنها جنبه پیشنهادی دارد و در نهایت، هر اثر با قیمت مشخص شده از سمت خود هنرمند به فروش خواهد رسید.
+                            </small></p>
+                            <p className='me-5'><small>
+                                        ثبت‌نام کارشناس: کارشناسان پس از این مرحله می‌توانند درباره آثار هنری، نظر خود را ثبت و قیمت پیشنهادی را اعلام کنند.
+                            </small></p>
+                            </div>
+
+                            <h5><strong>۲.  ورود</strong></h5>
+                            <div className='text-muted'>
+                            <p className='me-3'><small>
+                                        تمامی کاربران پس از ثبت‌نام در سایت، می‌توانند وارد حساب کاربری خود شوند.
+                            </small></p>
+                            </div>
+
+
+                            <h5><strong>۳.  امکانات بوم</strong></h5>
+                             <div className='text-muted'>
+                            <p className='me-3'><small>
+                                        در صفحه اصلی این وب‌سایت، تمامی آثار به ثبت رسیده توسط هنرمندان به صورت آگهی‌هایی به نمایش گذاشته می‌شود علاقمندان می‌توانند با اعمال فیلتر و جستجو، اثر هنری موردنظر خود را پیدا کنند.
+                            </small></p>
+                            <p className='me-3'><small>
+                                        برای هر هنرمند، قابلیت خرید تیکت و همچنین اعمال نردبان برای هر اثر وجود خواهد داشت. هر هنرمند، با پرداخت مبلغ مشخصی می‌تواند تیکت خریداری کند و هر تیکت، اجازه ثبت یک آگهی جدید را برای هنرمند فراهم می‌سازد. علاوه بر آن، نردبان نیز قابلیتی است که هنرمند می‌تواند روی آگهی اثر خود اعمال کند تا دوباره به ابتدای صفحه رفته و به عنوان اولین آگهی‌ها نمایش داده شود.
+                            </small></p>
+                            <p className='me-3'><small>
+                                       آگهی آثاری که نردبان بر روی آن‌ها اعمال شده است، علامت نردبان را خواهد داشت تا به بازدیدکننده آگاهی را دهد که این اثر جدید نیست و قبلا به ثبت رسیده است و اکنون هنرمند از قابلیت نردبان برای این آگهی استفاده کرده است. 
+                            </small></p>
+                            </div>
+
+
+                            <h5><strong>۳.   کاربران بوم</strong></h5>
+                            <div className='text-muted'>
+                            <p className='me-3'><small>
+                                        <strong className='ms-2'>هنرمندان:</strong> 
+                                        هنرمندان در حساب کاربری خود می‌توانند رزومه و سوابق کاری خود را ثبت کنند.
+                                         بوم این امکان را به هنرمند می‌دهد تا آثار خود را با ثبت همه اطلاعات آن اثر و همچنین قیمت فروش آن، آگهی کند و همچنین آثاری که مدت‌ها پیش آگهی شده را با خرید نردبان به صفحه اول آگهی بازگرداند. (امکان خرید نردبان حداکثر دو بار در ماه و برای هر اثر، حداکثر دو بار وجود دارد.) 
+
+                            </small></p>
+                            <p className='me-3'><small>
+                                        <strong className='ms-2'>کارشناسان:</strong>
+                                        بوم این امکان را به کارشناسان می‌دهد تا آثار هنرمندان را بررسی کرده و قیمت پیشنهادی خود را به همراه توضیحات و دلایل کارشناسی خود ثبت کنند. این کارشناسی در حساب کاربری آن‌ها ثبت شده و به همه کاربران نمایش داده می‌شود.
+                            </small></p>
+                            <p className='me-3'><small>
+                                        <strong className='ms-2'>خریداران:</strong>
+                                        افراد علاقه‌مند به حوزه هنر، می‌توانند با داشتن حساب کاربری مخصوص به خود، راه‌های ارتباطی با خالق هر اثر هنری را دریافت کنند. قابل ذکر است که در این سایت، خرید و فروش به صورت آنلاین میان خریدار و هنرمند صورت نمی‌گیرد و بوم، صرفا یک بستر برای به اشتراک‌گذاری و نمایش آثار هنری هنرمندان است که با داشتن کارشناسان ماهر، خرید به‌صرفه و آگاهانه را برای خریدار به ارمغان می‌آورد.
+                            </small></p>
+                            </div>
+                        </div>
+                </div>
+                
+                
                 </div>
                 <Footer/>
+
             </div>
         );
     }
 }
- 
 export default Guide;

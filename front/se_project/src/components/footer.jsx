@@ -5,14 +5,15 @@ import logo from '../assets/images/logo.png';
 class Footer extends Component {
     render() {
         return(
-          <div className="fixed-bottom ">
+          <div class="mt-auto">
+          <div className="sticky-bottom" style={{ backgroundColor:"#f9ffff"}}>
             <div className="d-flex justify-content-center">
-              <hr style={{height:'2px', width:'75%', borderWidth:'0', color:'#222222', backgroundColor:'#222222'}}></hr>
+            <hr style={{height:'0.11vw', width:'75%', borderWidth:'0', color:'#222222', backgroundColor:'#222222'}}></hr>
             </div>
             <MDBFooter className='text-center text-lg-start text-muted'>
             <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                 <div className='container text-center text-md-start'>
-                  <div className='col-md-4 col-md-offset-3  mx-1'>
+                <div className='col-md-4' style={{marginRight:'1vw'}}>
                     <a href='' className='me-4 text-reset'>
                       <i class="bi bi-envelope"></i>
                     </a>
@@ -27,7 +28,7 @@ class Footer extends Component {
                     </a>
                   </div>
 
-                  <div className='row mt-1' style={{marginRight:'6em'}}>
+                  <div className='row' style={{marginRight:'7.1vw'}}>
                     <nav className="navbar navbar-expand-lg navbar-light">
                       
                       <ul className="navbar-nav">
@@ -48,7 +49,7 @@ class Footer extends Component {
                   </div>
                 </div>
 
-              <a className="navbar-brand" href="#" style={{marginLeft:'9em', marginTop:'0.3em', marginRight:'-14em'}}>
+                <a className="navbar-brand" href="#" style={{marginLeft:'12.4vw', marginTop:'0.5vw', marginRight:'-14vw'}}>
                 <img 
                   className="img-fluid"
                   src={logo}
@@ -58,12 +59,12 @@ class Footer extends Component {
                 />
               </a>
             </section>
-            <div className='text-center p-0' style={{ backgroundColor:"#f9ffff" , fontSize:'1rem'}}>
-               <span style={{ fontSize:'25px'}}>©</span>۱۴۰۱  تمامی حقوق محفوظ است   
+            <div className='text-center' style={{ backgroundColor:"#f9ffff" , fontSize:'1vw'}}>
+               <span style={{ fontSize:'1.5vw'}}>©</span>۱۴۰۱  تمامی حقوق محفوظ است  
             </div>
           </MDBFooter>
           </div>
-        
+        </div>
         )
     }
 }
