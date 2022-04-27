@@ -14,7 +14,7 @@ class BuyerSighUp extends Component {
  
 
     return (
-        <div className='d-flex flex-column min-vh-100'>
+        <div>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان خریدار'/>
             <form>
@@ -62,7 +62,7 @@ class BuyerSighUp extends Component {
                                         <ResetButton/>
                                     </div>
                                     <div className='mx-1'>
-                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                        <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='18px'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                     </div> 
                                 </div>   
                             </div>

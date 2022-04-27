@@ -13,7 +13,7 @@ class Login extends Component {
 
 
     return (
-        <div className='d-flex flex-column min-vh-100'>
+        <div>
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
             <div className='container mt-4'>
@@ -32,7 +32,7 @@ class Login extends Component {
                                 <input type="checkbox"  id="Check1"/>
                                 <label className="form-check-label" data-ng-model="rememberMe">مرا به یاد بسپار</label>
                             </div>
-                            <Button  width= '337px' height= '49px' text= 'ورود' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                            <Button  width= '337px' height= '49px' text= 'ورود' fontSize='23px' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                         </form>
                     </div>
                 </div>

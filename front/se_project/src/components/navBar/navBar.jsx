@@ -32,9 +32,9 @@ class navBar extends Component {
                     <li className="nav-item" >
                       <a className="nav-link" href="#">ثبت نام</a>
                     </li>
-                                                                <li>
-                                                                  <a className="nav-link" href="#">|</a>
-                                                                </li>
+                    <li>
+                      <a className="nav-link" href="#">|</a>
+                    </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">ورود</a>
                     </li>
@@ -43,10 +43,11 @@ class navBar extends Component {
                 
                 <a className="navbar-brand" href="#">
                   <img
+                    className="img-responsive"
                     src={logo}
-                    height='30'
-                    alt='React Bootstrap logo'
+                    alt='logo'
                     loading='lazy'
+                    style={{width:"10%"}}
                   />
                 </a>
               </div>  
