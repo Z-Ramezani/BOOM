@@ -15,11 +15,18 @@ class navBar extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                   <ul className="navbar-nav">
-                    <li className="nav-item">
-                      <a className="nav-link waves-effect waves-light">
+                    
+                    <li class="nav-item dropdown rtl">
+                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle"></i>
                       </a>
+                      <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">اطلاعات حساب کاربری</a></li>
+                        <li><a class="dropdown-item" href="#">ثبت آگهی و تیکت</a></li>
+                        <li><a class="dropdown-item" href="#">خروج</a></li>
+                      </ul>
                     </li>
+
                     <li className="nav-item">
                       <a className="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
                     </li>
@@ -29,8 +36,15 @@ class navBar extends Component {
                     <li className="nav-item">
                       <a className="nav-link" href="#">درباره‌ما</a>
                     </li>
-                    <li className="nav-item" >
-                      <a className="nav-link" href="#">ثبت نام</a>
+                    
+                    <li class="nav-item dropdown rtl">
+                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ثبت نام
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
+                        <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                      </ul>
                     </li>
                     <li>
                       <a className="nav-link" href="#">|</a>

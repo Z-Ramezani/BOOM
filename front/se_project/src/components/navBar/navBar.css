@@ -5,3 +5,12 @@
 .nav-item {
     color: #222222;
 }
+
+.rtl { direction: rtl; }
+.rtl .dropdown-menu { 
+    text-align: right;
+    right:0;  
+    background-color:#FFFFFF;
+    font-size: small;
+    
+ }
