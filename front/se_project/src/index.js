@@ -18,4 +18,4 @@ import ArtistProfile from './Pages/artistProfile';
 import HorizontalLine from './components/horizontalLine/horizontalLine';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<HorizontalLine/>);
+root.render(<ArtistProfile/>);

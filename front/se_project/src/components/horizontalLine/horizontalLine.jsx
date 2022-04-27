@@ -3,12 +3,11 @@ import '../horizontalLine/horizontalLine.css'
 
 class HorizontalLine extends Component {
 
-    state = {  } 
+    state = {} 
     render() { 
         return (
-            <div className="text-hr">
-                <span class="text-hr__text">Right Aligned</span>
-                <span class="text-hr__text">{this.props}</span>
+            <div className="text-hr text-hr--right">
+                <span className="text-hr__text">{this.props.value}</span> 
             </div>
                 
         )
