@@ -20,4 +20,4 @@ import Input_text from './components/input_form';
 import ResetButton from './components/resetButton';
 import ArtistProfile from './Pages/artistProfile';
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistProfile/>);
+root.render(<ArtworkAdAdditionalInfo showImages='true' showCostInput='true'/>);

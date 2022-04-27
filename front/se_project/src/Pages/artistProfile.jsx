@@ -20,8 +20,6 @@ class ArtistProfile extends Component {
     const {artisticBackground, setartisticBackground}=this.setState;
     const {workStyle, setWorkStyle}=this.setState;
     const {experience, setExperience}=this.setState;
-
-
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>

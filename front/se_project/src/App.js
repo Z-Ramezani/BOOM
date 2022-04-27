@@ -12,10 +12,10 @@ class App extends Component {
   render() { 
 
     return (
-      <div>
-        <label for="startDate">Start</label>
-          <input id="startDate" class="form-control" type="date" />
-      </div>     
+      <div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile"/>
+  <label class="custom-file-label" for="customFile">Choose file</label>
+</div>  
     );
   }
 }

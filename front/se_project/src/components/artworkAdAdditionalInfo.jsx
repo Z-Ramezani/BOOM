@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Input_text from "./input_form";
 import a from "../assets/ig.jpg";
 import b from "../assets/ig.jpg";
 import c from "../assets/ig.jpg";
@@ -6,74 +7,152 @@ import d from "../assets/ig.jpg";
 import e from "../assets/ig.jpg";
 
 class ArtworkAdAdditionalInfo extends Component {
-    showCost=()=>{
-        this.setState({text: '999.000 تومان'});
-    }
-    state = { 
-        text: 'نمایش قیمت اثر'
-     } 
+    state = {  } 
     render() { 
+        const {names, setNames}=this.setState;
+        const {size, setSize}=this.setState;
+        const {method, setMethod}=this.setState;
+        const {material, setMaterial}=this.setState;
+        const {date, setDate}=this.setState;
+        const {cost, setCost}=this.setState;
         return (
-            <div className="container w-75 p-3 shadow mb-5 rounded">
+            <div className="container w-75 p-3 mb-5 rounded">
                 <div class="row g-0 position-relative" dir="LTR">
-                    <div class="col-md-6 mb-md-0 p-md-4">
-                        {/* images for artWork */}
-                        <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
-                            <div className='carousel-indicators'>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <div class="col-md-6 mb-md-0 p-md-4">{
+                        this.props.showImages ?
+                            <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
+                                <div className='carousel-indicators'>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                </div>
+                                <div className='carousel-inner'>
+                                    <div className='carousel-item active'>
+                                        <img src={a} className='d-block w-100' alt="j1" style={{width:'543px', height:'543px'}}/>
+                                    </div>
+                                    <div className='carousel-item'>
+                                        <img src={b} className='d-block w-100' alt="j2" style={{width:'543px', height:'543px'}}/>
+                                    </div>
+                                    <div className='carousel-item'>
+                                        <img src={c} className='d-block w-100' alt="j3" style={{width:'543px', height:'543px'}}/>
+                                    </div>
+                                    <div className='carousel-item'>
+                                        <img src={d} className='d-block w-100' alt="j4" style={{width:'543px', height:'543px'}}/>
+                                    </div>
+                                    <div className='carousel-item'>
+                                        <img src={e} className='d-block w-100' alt="j5" style={{width:'543px', height:'543px'}}/>
+                                    </div>
+                                </div>
+                                <button className='carousel-control-prev' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span className='carousel-control-prev-icon' aria-hidden="true"></span>
+                                    <span className='visually-hidden'>Previous</span>
+                                </button>
+                                <button className='carousel-control-next' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span className='carousel-control-next-icon' aria-hidden="true"></span>
+                                    <span className='visually-hidden'>Next</span>
+                                </button>
                             </div>
-                            <div className='carousel-inner'>
-                                <div className='carousel-item active'>
-                                    <img src={a} className='d-block w-100' alt="j1" style={{width:'543px', height:'543px'}}/>
-                                </div>
-                                <div className='carousel-item'>
-                                    <img src={b} className='d-block w-100' alt="j2" style={{width:'543px', height:'543px'}}/>
-                                </div>
-                                <div className='carousel-item'>
-                                    <img src={c} className='d-block w-100' alt="j3" style={{width:'543px', height:'543px'}}/>
-                                </div>
-                                <div className='carousel-item'>
-                                    <img src={d} className='d-block w-100' alt="j4" style={{width:'543px', height:'543px'}}/>
-                                </div>
-                                <div className='carousel-item'>
-                                    <img src={e} className='d-block w-100' alt="j5" style={{width:'543px', height:'543px'}}/>
-                                </div>
+                        :<form>
+                            <div class="form-group" style={{width:'23vw', height:'23vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
+                                <input type="file" class="form-control-file"/>
                             </div>
-                            <button className='carousel-control-prev' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span className='carousel-control-prev-icon' aria-hidden="true"></span>
-                                <span className='visually-hidden'>Previous</span>
-                            </button>
-                            <button className='carousel-control-next' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span className='carousel-control-next-icon' aria-hidden="true"></span>
-                                <span className='visually-hidden'>Next</span>
-                            </button>
-                        </div>
-
+                      </form>
+                    }  
                     </div>
-                    <div class="col-md-6 p-4 ps-md-0" dir="RTL">
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>نام اثر: {}</h2>
-                        <br/>
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>ابعاد اثر: {}*{} سانتی متر</h2>
-                        <br/>
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>سبک کار: {}</h2>
-                        <br/>
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>متریال استفاده شده: {}</h2>
-                        <br/>
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>تاریخ ایجاد اثر: {}</h2>
-                        <br/>
-                        <button onClick={this.showCost} className="btn btn-primary" type="button" style={{width:'auto', height:'auto', fonotSize:'18px', backgroundColor:'#BB1542', borderColor:'#BB1542'}}>{this.state.text}</button>
-                        <br/>
-                        <br/>
-                        <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>توضیحات تکمیلی: {}</h2>
+
+                    <div class="col-md-6 p-4 ps-md-0" dir="RTL">{
+                        /*for just show informations:   */
+                        this.props.showText ? 
+                            <div>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
+                                <br/>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
+                                <br/>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
+                                <br/>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
+                                <br/>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
+                                <br/>
+                                <div>{
+                                        this.props.showCostText ?
+                                            <h2 class="mt-0" dir="LTR" style={{fontSize:'18px', fontWeight:'bold'}}>{/*recive from back*/} تومان</h2>
+                                        : <div></div>
+                                    }
+                                </div>
+                                
+                                <br/>
+                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
+                            </div>
+                        /*for fill inputs:  */ 
+                        :<div className='row justify-content-center'>
+
+                                <div className='row mb-2'>     
+                                    <div class='col row '>
+                                        <label className='col-4 col-form-label'>نام اثر</label>
+                                        <div className='col-8'> 
+                                            <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row mb-2'>     
+                                    <div class='col row '>
+                                        <label className='col-4 col-form-label'>ابعاد اثر</label>
+                                        <div className='col-8'> 
+                                            <Input_text type="text" placeholder='80*50 سانتی‌متر' value={size} onChange={(e)=>setSize(e.target.value)}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row mb-2'>     
+                                    <div class='col row '>
+                                        <label className='col-4 col-form-label'>سبک کار</label>
+                                        <div className='col-8'> 
+                                            <Input_text type="text" value={method} onChange={(e)=>setMethod(e.target.value)}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row mb-2'>     
+                                    <div class='col row '>
+                                        <label className='col-4 col-form-label'>متریال استفاده شده</label>
+                                        <div className='col-8'> 
+                                            <Input_text type="text" value={material} onChange={(e)=>setMaterial(e.target.value)}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row mb-2'>     
+                                    <div class='col row'>
+                                        <label className='col-4 col-form-label'>تاریخ ایجاد اثر</label>
+                                        <div className='col-8'> 
+                                            <Input_text type="text" placeholder='24/06/00' value={date} onChange={(e)=>setDate(e.target.value)}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-2 form-group">
+                                    <label for="exampleFormControlTextarea1" style={{marginBottom:'2%'}}>توضیحات تکمیلی</label>
+                                    <textarea class="col-4 form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                
+                                <div>{
+                                    this.props.showCostInput ?
+                                        <div className='row mb-2'>     
+                                            <div class='col row'>
+                                                <label className='col-4 col-form-label'>قیمت</label>
+                                                <div className='col-8'> 
+                                                    <Input_text type="text" placeholder='تومان' value={cost} onChange={(e)=>setCost(e.target.value)}/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        :<div></div>
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         );
     }
 }
- 
 export default ArtworkAdAdditionalInfo;
