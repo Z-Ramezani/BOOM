@@ -5,7 +5,7 @@ import logo from '../assets/images/logo.png';
 class Footer extends Component {
     render() {
         return(
-          <div class="mt-auto">
+          <div className="mt-auto navbar-fixed-bottom">
           <div className="sticky-bottom" style={{ backgroundColor:"#f9ffff"}}>
             <div className="d-flex justify-content-center">
             <hr style={{height:'0.11vw', width:'75%', borderWidth:'0', color:'#222222', backgroundColor:'#222222'}}></hr>
