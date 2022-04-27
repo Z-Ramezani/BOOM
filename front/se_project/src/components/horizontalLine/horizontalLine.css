@@ -1,16 +1,2 @@
 .text-hr {
-    display: flex;
-    flex-direction: row;
-  }
-.text-hr:before, .text-hr:after{
-    content: "";
-    flex: 1 1;
-    border-bottom: 1px solid;
-    margin: auto;
-  }
-.text-hr:before {
-    margin-right: 10px
-  }
-.text-hr:after {
-    margin-left: 10px
-  }
+  display: flex;
