@@ -14,8 +14,8 @@ class ArtworkAdAdditionalInfo extends Component {
      } 
     render() { 
         return (
-            <div className="container w-65 p-3">
-                <div class="row g-0 bg-light position-relative" dir="LTR">
+            <div className="container w-75 p-3 shadow mb-5 rounded">
+                <div class="row g-0 position-relative" dir="LTR">
                     <div class="col-md-6 mb-md-0 p-md-4">
                         {/* images for artWork */}
                         <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">

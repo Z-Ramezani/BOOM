@@ -21,4 +21,8 @@ import ResetButton from './components/resetButton';
 import ArtistProfile from './Pages/artistProfile';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
+<<<<<<< Updated upstream
 root.render(<Login/>);
+=======
+root.render(<ArtworkAdAdditionalInfo/>);
+>>>>>>> Stashed changes

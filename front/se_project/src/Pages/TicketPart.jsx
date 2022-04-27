@@ -21,9 +21,7 @@ class TicketPart extends Component {
                     <label className="form-label ps-2 mt-2">تعداد تیکت باقیمانده</label>
                     <input type="text" class="form-control" disabled value={this.state.count} style={{width:'auto', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
                     </div>
-                    <div className="d-grid gap-2 d-md-flex justify-content-md-end" dir='LTR'>
-                        <button className="btn btn-primary" type="button" style={{width:'auto', height:'auto', fonotSize:'18px', backgroundColor:'#BB1542', borderColor:'#BB1542'}} onClick={this.setValue}>خرید تیکت</button>
-                    </div>
+                    <Button width='auto' height='auto' fontSize='18px' text='خرید تیکت' onClick={this.setValue}/>
                 </div>
                 <Footer/>
             </div>
