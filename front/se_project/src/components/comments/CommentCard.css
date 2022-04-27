@@ -1,0 +1,13 @@
+.comment-card {
+  box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  width: 75vw;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: white;
+}
+
+.comment-inp {
+  margin-right: 1rem;
+  width: 85%;
+  height: 5rem;
+}

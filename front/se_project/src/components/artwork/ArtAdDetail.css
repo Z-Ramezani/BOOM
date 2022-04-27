@@ -1,0 +1,50 @@
+.adCard {
+  box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  width: 75vw;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.artAd-inputs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.artAd-inp {
+  border: none;
+  outline: none;
+  border-bottom: 3px dotted #000;
+  width: 5rem;
+}
+
+.cal-inp {
+  width: 5px;
+}
+
+.artAd-price {
+  color: #bb1542;
+  font-weight: bold;
+  /* float: left; */
+  /* margin-right: 60%; */
+}
+
+.owner {
+  box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  width: 75vw;
+  margin: 1rem auto;
+  /* border-radius: 10px; */
+  padding: 1rem 2rem 1rem 1rem;
+
+  background-color: white;
+}
+
+.owner-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-size: 14px;
+}

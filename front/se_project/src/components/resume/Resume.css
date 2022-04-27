@@ -1,0 +1,46 @@
+.dropdowns{
+	margin-right: 12rem;
+}
+
+#account-text{
+/* width: 20rem; */
+
+}
+
+#dropdown-item {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 10px;
+}
+
+#account-button {
+  background-color: #fff;
+	box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  color: var(--dark-gray);
+  border: none;
+  outline: none;
+	margin-right: 1rem;
+  /* font-family: "IRANSans";
+  font-weight: bold;
+  font-size: 12px; */
+  /* padding: 0.4rem 1rem; */
+}
+
+
+.history {
+  background-color: #fff;
+	box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  border: none;
+  outline: none;
+	margin-right: 2rem;
+	border-radius: 5px;
+	width: 17.5rem;
+	height: 2rem;
+
+}
+
+#dropdown-menu {
+  width: 18rem;
+  /* margin-left: -0.5rem; */
+}
+
