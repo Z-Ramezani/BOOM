@@ -24,4 +24,4 @@ import ArtworkAd from './Pages/artwokAd';
 import ViewArtistProfile from './Pages/viewArtistProfile';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistProfile/>);
+root.render(<ViewArtistProfile/>);
