@@ -6,7 +6,7 @@ class Button extends Component {
 
         return (
             <>
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end" dir='LTR'>
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end" dir={this.props.dir}>
                     <button 
                     onClick={this.props.onClick} 
                     className="btn btn-primary" 

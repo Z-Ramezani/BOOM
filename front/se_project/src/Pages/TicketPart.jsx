@@ -3,6 +3,8 @@ import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
+import HorizontalLine from '../components/horizontalLine/horizontalLine';
+import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
 
 class TicketPart extends Component {
     setValue=()=>{
@@ -15,15 +17,43 @@ class TicketPart extends Component {
         return (
             <div>
                 <Navbar/>
-                <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان خریدار'/>
-                <div className='container w-75 p-3 mt-4 flex-column min-vh-100'>
-                    <div className='d-flex mb-3'>
-                    <label className="form-label ps-2 mt-2">تعداد تیکت باقیمانده</label>
-                    <input type="text" class="form-control" disabled value={this.state.count} style={{width:'auto', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
+                <Breadcrumbb is2OrNot='true' first='حساب کاربری' second='ثبت آگهی و تیکت'/>
+                <div className='d-flex flex-column min-vh-100'>
+                    <HorizontalLine value='تیکت'/>
+                    <div className='container w-75 p-3'>
+                        <div className='d-flex mb-3'>
+                        <label className="form-label ps-2 mt-2">تعداد تیکت باقیمانده</label>
+                        <input type="text" class="form-control" disabled value={this.state.count} style={{width:'3.5vw', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
+                        </div>
+                        <Button width='auto' height='auto' fontSize='1.2vw' text='خرید تیکت' dir='LTR' onClick={this.setValue}/>
                     </div>
-                    <Button width='auto' height='auto' fontSize='18px' text='خرید تیکت' onClick={this.setValue}/>
+                    <HorizontalLine value='آگهی اثر هنری'/>
+                    <div>
+                        <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
+                            <ArtworkAdAdditionalInfo showCostInput/>
+                            <div style={{marginRight:'3.5%'}}>
+                                <Button width= 'auto' height= 'auto' text= 'ارسال درخواست ثبت آگهی' dir='LTR'/*onClick*//>
+                            </div>
+                        </div>
+                        <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
+                            <ArtworkAdAdditionalInfo  showImages showText showCostText/>
+                            <div className='d-flex' style={{marginRight:'2%'}}>
+                                <div className='ms-2'>
+                                    <Button width= 'auto' height= 'auto' text= 'ویرایش' /*onClick*//>
+                                </div>
+                                <div className='ms-2'>
+                                    <Button width= 'auto' height= 'auto' text= 'حذف' /*onClick*//>
+                                </div>
+                                <Button width= 'auto' height= 'auto' text= 'خرید نردبان' /*onClick*//>
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <Footer/>
                 </div>
-                <Footer/>
             </div>
         );
     }

@@ -16,7 +16,7 @@ class ArtworkAdAdditionalInfo extends Component {
         const {date, setDate}=this.setState;
         const {cost, setCost}=this.setState;
         return (
-            <div className="container w-75 p-3 mb-5 rounded">
+            <div className="">
                 <div class="row g-0 position-relative" dir="LTR">
                     <div class="col-md-6 mb-md-0 p-md-4">{
                         this.props.showImages ?
@@ -30,19 +30,19 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div className='carousel-inner'>
                                     <div className='carousel-item active'>
-                                        <img src={a} className='d-block w-100' alt="j1" style={{width:'543px', height:'543px'}}/>
+                                        <img src={a} className='d-block w-100' alt="img1" style={{width:'30vw', height:'30vw'}}/>
                                     </div>
                                     <div className='carousel-item'>
-                                        <img src={b} className='d-block w-100' alt="j2" style={{width:'543px', height:'543px'}}/>
+                                        <img src={b} className='d-block w-100' alt="img2" style={{width:'30vw', height:'30vw'}}/>
                                     </div>
                                     <div className='carousel-item'>
-                                        <img src={c} className='d-block w-100' alt="j3" style={{width:'543px', height:'543px'}}/>
+                                        <img src={c} className='d-block w-100' alt="img3" style={{width:'30vw', height:'30vw'}}/>
                                     </div>
                                     <div className='carousel-item'>
-                                        <img src={d} className='d-block w-100' alt="j4" style={{width:'543px', height:'543px'}}/>
+                                        <img src={d} className='d-block w-100' alt="img4" style={{width:'30vw', height:'30vw'}}/>
                                     </div>
                                     <div className='carousel-item'>
-                                        <img src={e} className='d-block w-100' alt="j5" style={{width:'543px', height:'543px'}}/>
+                                        <img src={e} className='d-block w-100' alt="img5" style={{width:'30vw', height:'30vw'}}/>
                                     </div>
                                 </div>
                                 <button className='carousel-control-prev' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -66,25 +66,25 @@ class ArtworkAdAdditionalInfo extends Component {
                         /*for just show informations:   */
                         this.props.showText ? 
                             <div>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                                 <br/>
                                 <div>{
                                         this.props.showCostText ?
-                                            <h2 class="mt-0" dir="LTR" style={{fontSize:'18px', fontWeight:'bold'}}>{/*recive from back*/} تومان</h2>
+                                            <h2 class="mt-0" dir="RTL" style={{fontSize:'1.2vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
                                         : <div></div>
                                     }
                                 </div>
                                 
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'18px', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                             </div>
                         /*for fill inputs:  */ 
                         :<div className='row justify-content-center'>
@@ -131,15 +131,15 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div class="row mb-2 form-group">
                                     <label for="exampleFormControlTextarea1" style={{marginBottom:'2%'}}>توضیحات تکمیلی</label>
-                                    <textarea class="col-4 form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="col-4 form-control" id="exampleFormControlTextarea1" rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
                                 </div>
                                 
                                 <div>{
                                     this.props.showCostInput ?
                                         <div className='row mb-2'>     
                                             <div class='col row'>
-                                                <label className='col-4 col-form-label'>قیمت</label>
-                                                <div className='col-8'> 
+                                                <label className='col-4 col-form-label' style={{marginRight:'0%',marginLeft:'-0.1vw'}}>قیمت</label>
+                                                <div className='col-8'style={{width:'64%'}}> 
                                                     <Input_text type="text" placeholder='تومان' value={cost} onChange={(e)=>setCost(e.target.value)}/>
                                                 </div>
                                             </div>

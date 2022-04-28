@@ -6,7 +6,7 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
 import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-
+import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo'
 class ArtistProfile extends Component {
   render() { 
     const {names, setNames}=this.setState;
@@ -28,7 +28,6 @@ class ArtistProfile extends Component {
             <form style={{marginTop: 'auto'}}>
                 <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                     <div className='row justify-content-center'>
-
                         <div className='row mb-2'>     
                             <div class='col row '>
                                 <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
@@ -163,7 +162,13 @@ class ArtistProfile extends Component {
                     </div>
                 </div>
             </form>
-            
+            <HorizontalLine value='نمونه آثار'/>
+            <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
+                <ArtworkAdAdditionalInfo/>
+                <div style={{marginRight:'3.5%'}}>
+                    <Button width= 'auto' height= 'auto' text= 'ثبت' dir='LTR' /*onClick*//>
+                </div>
+            </div>
             <Footer/>
         </div>                    
     );

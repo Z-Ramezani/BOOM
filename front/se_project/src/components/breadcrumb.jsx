@@ -6,7 +6,7 @@ class Breadcrumbb extends Component {
             <div className='d-flex justify-content-start' style={{marginTop:'0.3%', marginRight:'0.5%'}} >
                 <div>
                     {
-                        this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '5%'}}>
+                        this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '55%'}}>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item" >{this.props.first}</li>
@@ -19,7 +19,7 @@ class Breadcrumbb extends Component {
 
                 <div>
                     {
-                        this.props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '10px'}}>
+                        this.props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '55%'}}>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item" >{this.props.second}</li>

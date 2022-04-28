@@ -19,5 +19,7 @@ import Button from './components/button';
 import Input_text from './components/input_form';
 import ResetButton from './components/resetButton';
 import ArtistProfile from './Pages/artistProfile';
+import Admin from './Pages/admin'; 
+import ArtworkAd from './Pages/artwokAd';
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtworkAdAdditionalInfo showImages='true' showCostInput='true'/>);
+root.render(<Login/>);
