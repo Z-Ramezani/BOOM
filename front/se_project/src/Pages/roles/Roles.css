@@ -1,0 +1,21 @@
+.buttons {
+  margin-top: 2rem;
+  margin-right: 16%;
+  display: flex;
+  /* justify-content: flex-start; */
+}
+
+.role-label {
+  font-size: 13px;
+}
+
+.radio-btns {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.radio {
+  margin-top: 1rem;
+  margin-right: 5rem;
+  font-size: 14px;
+}

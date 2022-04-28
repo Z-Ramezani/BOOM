@@ -1,0 +1,29 @@
+#search-inp {
+  width: 11rem;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 2px 0px 5px rgb(174, 174, 174);
+  color: var(--dark-gray);
+  border: none;
+  outline: none;
+  padding-right: 2rem;
+}
+
+.search-filter-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.inner-input {
+  display: flex;
+  justify-content: center;
+}
+
+.search-icon {
+  margin-left: -2.5rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  z-index: 2;
+  height: 55%;
+}
