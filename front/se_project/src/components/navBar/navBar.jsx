@@ -7,8 +7,6 @@ class navBar extends Component {
         return(
           <div>
             <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
-            
-              <div className="container-fluid"> 
                 
                 <div className="collapse navbar-collapse" id="navbarNav">
                   <ul className="navbar-nav">
@@ -61,8 +59,7 @@ class navBar extends Component {
                   style={{width:"9%"}}
                 />
               </a>
-              
-              </div>  
+               
             </nav>
           </div>
         )
