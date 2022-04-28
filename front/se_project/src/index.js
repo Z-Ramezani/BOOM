@@ -21,5 +21,7 @@ import ResetButton from './components/resetButton';
 import ArtistProfile from './Pages/artistProfile';
 import Admin from './Pages/admin'; 
 import ArtworkAd from './Pages/artwokAd';
+import ViewArtistProfile from './Pages/viewArtistProfile';
+
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Login/>);
+root.render(<ArtistProfile/>);
