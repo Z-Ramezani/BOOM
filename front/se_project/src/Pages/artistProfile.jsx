@@ -22,7 +22,7 @@ class ArtistProfile extends Component {
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                 <ArtworkAdAdditionalInfo/>
                 <div style={{marginRight:'3.5%'}}>
-                    <Button width= 'auto' height= 'auto' text= 'ثبت' dir='LTR' /*onClick*//>
+                    <Button width= 'auto' height= 'auto' text= 'ثبت' dir='LTR' fontSize='1.17vw'/*onClick*//>
                 </div>
             </div>
             <Footer/>

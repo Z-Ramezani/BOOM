@@ -4,7 +4,8 @@
     src: url('../src/assets/fonts/Yekan.ttf') format('ttf');
     src: url('../src/assets/fonts/Yekan.woff') format('woff');
 }
- *{
+
+*{
     font-family: 'Yekan';
  }
 

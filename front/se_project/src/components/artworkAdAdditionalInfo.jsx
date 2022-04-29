@@ -66,32 +66,32 @@ class ArtworkAdAdditionalInfo extends Component {
                         /*for just show informations:   */
                         this.props.showText ? 
                             <div>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                                 <br/>
                                 <div>{
                                         this.props.showCostText ?
-                                            <h2 class="mt-0" dir="RTL" style={{fontSize:'1.2vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
+                                            <h2 class="mt-0" dir="RTL" style={{fontSize:'1.1vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
                                         : <div></div>
                                     }
                                 </div>
                                 
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
+                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                             </div>
                         /*for fill inputs:  */ 
                         :<div className='row justify-content-center'>
 
                                 <div className='row mb-2'>     
                                     <div class='col row '>
-                                        <label className='col-4 col-form-label'>نام اثر</label>
+                                        <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام اثر</label>
                                         <div className='col-8'> 
                                             <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
                                         </div>
@@ -99,7 +99,7 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div className='row mb-2'>     
                                     <div class='col row '>
-                                        <label className='col-4 col-form-label'>ابعاد اثر</label>
+                                        <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>ابعاد اثر</label>
                                         <div className='col-8'> 
                                             <Input_text type="text" placeholder='80*50 سانتی‌متر' value={size} onChange={(e)=>setSize(e.target.value)}/>
                                         </div>
@@ -107,7 +107,7 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div className='row mb-2'>     
                                     <div class='col row '>
-                                        <label className='col-4 col-form-label'>سبک کار</label>
+                                        <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>سبک کار</label>
                                         <div className='col-8'> 
                                             <Input_text type="text" value={method} onChange={(e)=>setMethod(e.target.value)}/>
                                         </div>
@@ -115,7 +115,7 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div className='row mb-2'>     
                                     <div class='col row '>
-                                        <label className='col-4 col-form-label'>متریال استفاده شده</label>
+                                        <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>متریال استفاده شده</label>
                                         <div className='col-8'> 
                                             <Input_text type="text" value={material} onChange={(e)=>setMaterial(e.target.value)}/>
                                         </div>
@@ -123,14 +123,14 @@ class ArtworkAdAdditionalInfo extends Component {
                                 </div>
                                 <div className='row mb-2'>     
                                     <div class='col row'>
-                                        <label className='col-4 col-form-label'>تاریخ ایجاد اثر</label>
+                                        <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>تاریخ ایجاد اثر</label>
                                         <div className='col-8'> 
-                                            <Input_text type="text" placeholder='24/06/00' value={date} onChange={(e)=>setDate(e.target.value)}/>
+                                            <Input_text type="date" value={date} onChange={(e)=>setDate(e.target.value)}/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-2 form-group">
-                                    <label for="exampleFormControlTextarea1" style={{marginBottom:'2%'}}>توضیحات تکمیلی</label>
+                                    <label for="exampleFormControlTextarea1" style={{marginBottom:'2%', fontSize:'1.1vw'}}>توضیحات تکمیلی</label>
                                     <textarea class="col-4 form-control" id="exampleFormControlTextarea1" rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
                                 </div>
                                 
@@ -138,8 +138,8 @@ class ArtworkAdAdditionalInfo extends Component {
                                     this.props.showCostInput ?
                                         <div className='row mb-2'>     
                                             <div class='col row'>
-                                                <label className='col-4 col-form-label' style={{marginRight:'0%',marginLeft:'-0.1vw'}}>قیمت</label>
-                                                <div className='col-8'style={{width:'64%'}}> 
+                                                <label className='col-4 col-form-label' style={{marginRight:'0%',marginLeft:'-0.1vw', fontSize:'1.1vw'}}>قیمت</label>
+                                                <div className='col-8'style={{width:'64%', fontSize:'1.1vw'}}> 
                                                     <Input_text type="text" placeholder='تومان' value={cost} onChange={(e)=>setCost(e.target.value)}/>
                                                 </div>
                                             </div>
@@ -155,4 +155,5 @@ class ArtworkAdAdditionalInfo extends Component {
         );
     }
 }
+
 export default ArtworkAdAdditionalInfo;

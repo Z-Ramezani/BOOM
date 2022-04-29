@@ -3,7 +3,6 @@ import {Component} from 'react';
 class Button extends Component {
     state = {  } 
     render() { 
-
         return (
             <>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end" dir={this.props.dir}>

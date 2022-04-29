@@ -13,8 +13,8 @@ class Guide extends Component {
                 <Breadcrumbb is1OrNot='true' first='راهنمای سایت' />
                 <div className='container w-75 p-3 mt-4'>
                     <div className='d-flex flex-column min-vh-100'>
-                        <h5><strong>راهنمای کار با سایت</strong></h5>
-                        <div className="text-muted">
+                        <h5><strong style={{fontSize:'1.1vw'}}>راهنمای کار با سایت</strong></h5>
+                        <div className="text-muted" style={{fontSize:'1.1vw'}}>
                             <p ><small>
                                     بوم، پلتفرم آنلاین خریدوفروش و قیمت‌گذاری انواع تابلو نقاشی و خوشنویسی است. 
                                     بوم این امکان را به شما می‌دهد تا از میان صدها اثر هنری، بهترین انتخاب با بهترین قیمت را داشته باشید. هنرمندان می‌توانند از بوم برای به نمایش گذاشتن و فروش آثار خود استفاده کنند.
@@ -28,8 +28,8 @@ class Guide extends Component {
                             </small></p>
                         </div>
                         
-                        <div className='container me-4'>
-                            <h5><strong>۱. ثبت نام</strong></h5>
+                        <div className='container me-4' style={{fontSize:'1.1vw'}}>
+                            <h5><strong  style={{fontSize:'1.1vw'}}>۱. ثبت نام</strong></h5>
                             <div className='text-muted'>
                             <p className='me-3'><small>
                                     اولین مرحله برای کار با بوم، ثبت‌نام به عنوان یکی از کاربران کارشناس، هنرمند و خریدار است. 
@@ -46,7 +46,7 @@ class Guide extends Component {
                             </small></p>
                             </div>
 
-                            <h5><strong>۲.  ورود</strong></h5>
+                            <h5><strong  style={{fontSize:'1.1vw'}}>۲.  ورود</strong></h5>
                             <div className='text-muted'>
                             <p className='me-3'><small>
                                         تمامی کاربران پس از ثبت‌نام در سایت، می‌توانند وارد حساب کاربری خود شوند.
@@ -54,7 +54,7 @@ class Guide extends Component {
                             </div>
 
 
-                            <h5><strong>۳.  امکانات بوم</strong></h5>
+                            <h5><strong  style={{fontSize:'1.1vw'}}>۳.  امکانات بوم</strong></h5>
                              <div className='text-muted'>
                             <p className='me-3'><small>
                                         در صفحه اصلی این وب‌سایت، تمامی آثار به ثبت رسیده توسط هنرمندان به صورت آگهی‌هایی به نمایش گذاشته می‌شود علاقمندان می‌توانند با اعمال فیلتر و جستجو، اثر هنری موردنظر خود را پیدا کنند.
@@ -68,7 +68,7 @@ class Guide extends Component {
                             </div>
 
 
-                            <h5><strong>۳.   کاربران بوم</strong></h5>
+                            <h5><strong  style={{fontSize:'1.1vw'}}>۳.   کاربران بوم</strong></h5>
                             <div className='text-muted'>
                             <p className='me-3'><small>
                                         <strong className='ms-2'>هنرمندان:</strong> 

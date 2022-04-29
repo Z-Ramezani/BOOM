@@ -23,7 +23,7 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>     
                             <div class='col row '>
-                                <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
+                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام و نام‌خانوادگی</label>
                                 <div className='col-4'> 
                                     <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
                                 </div>
@@ -32,7 +32,7 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>
                             <div className='col row'>
-                                <label className='col-4 col-form-label'>کدملی</label>
+                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>کدملی</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={codeNumber} onChange={(e)=>setcodeNumber(e.target.value)}/>
                                 </div>
@@ -41,7 +41,7 @@ class UserInformation extends Component {
     
                         <div className='row mb-2'>
                             <div className="col row ">
-                                <label  className="col-4 col-form-label ">سال تولد</label>
+                                <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سال تولد</label>
                                 <div className='col-4'>
                                     <Input_text type="date" value={birthay} onChange={(e)=>setBirthay(e.target.value)}/>
                                 </div>
@@ -50,7 +50,7 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>
                             <div className='col row'>
-                                <label className='col-4 col-form-label'>شماره تماس</label>
+                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                 </div>
@@ -59,7 +59,7 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>
                             <div className="row col">
-                                <label  className="col-sm-4 col-form-label">ایمیل</label>
+                                <label  className="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>ایمیل</label>
                                 <div className='col-4'>
                                     <Input_text type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                                 </div>
@@ -68,17 +68,16 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>
                             <div className="row col ">
-                                <label  className='col-4 col-form-label'>راه ارتباطی جهت نمایش در آگهی</label>
+                                <label  className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>راه ارتباطی جهت نمایش در آگهی</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={showNumber} onChange={(e)=>setShowNumber(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
                                     
-
                         <div className='row mb-2'>
                             <div className="row col">
-                                <label  className='col-4 col-form-label'>آدرس</label>
+                                <label  className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>آدرس</label>
                                 <div className="col-8">
                                     <Input_text type="text" value={address} onChange={(e)=>setAddress(e.target.value)}/>
                                 </div>
@@ -87,7 +86,7 @@ class UserInformation extends Component {
 
                         <div className='row mb-2'>
                             <div className="row col">
-                                <label className="col-sm-4 col-form-label">رمز عبور جدید</label>
+                                <label className="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>رمز عبور جدید</label>
                                 <div className='col-4'>
                                     <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                 </div>
@@ -100,7 +99,7 @@ class UserInformation extends Component {
                         <div className='justify-content-center mt-0 mx-0' >
                             <div className='d-flex'>
                                 <div className='mx-3'>
-                                    <Button width= 'auto' height= 'auto' text= 'ویرایش' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ویرایش' fontSize='1.17vw'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div>               
                             </div>   
                         </div>
@@ -111,4 +110,5 @@ class UserInformation extends Component {
     )
   }
 }
+
 export default UserInformation;
