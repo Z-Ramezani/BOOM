@@ -10,7 +10,11 @@ class ArtworkAdMainPage extends Component {
                 
                     <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                     <figcaption class="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
+<<<<<<< Updated upstream
                     ۲۰*۳۰{/*recive from back*/}
+=======
+                    ۲۰*۳۰ cm{/*recive from back*/}
+>>>>>>> Stashed changes
                     </figcaption>
                 
                     <div class="card-body pt-0">

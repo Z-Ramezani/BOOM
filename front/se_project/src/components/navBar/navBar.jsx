@@ -19,36 +19,36 @@ class navBar extends Component {
                         <i className="bi bi-person-circle"></i>
                       </a>
                       <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">اطلاعات حساب کاربری</a></li>
-                        <li><a class="dropdown-item" href="#">ثبت آگهی و تیکت</a></li>
-                        <li><a class="dropdown-item" href="#">خروج</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>خروج</a></li>
                       </ul>
                     </li>
 
                     <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
+                      <a className="nav-link active" aria-current="page" href="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">راهنمای سایت</a>
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>راهنمای سایت</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">درباره‌ما</a>
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>درباره‌ما</a>
                     </li>
                     
                     <li class="nav-item dropdown rtl">
-                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
                         ثبت نام
                       </a>
                       <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
-                        <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
                       </ul>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">|</a>
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>|</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">ورود</a>
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>ورود</a>
                     </li>
                   </ul>
                 </div>

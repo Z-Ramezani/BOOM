@@ -1,11 +1,18 @@
 import {Component} from 'react';
+// import axios from 'axios';
 import Navbar from '../components/navBar/navBar';
 import Breadcrumbb from '../components/breadcrumb';
 import Footer from '../components/footer';
 import ArtworkGroup from '../components/artworkGroup';
 import HeaderSlide from '../components/header-slide';
 class MainPage extends Component {
-    state = {  } 
+    state = { 
+         // ads: []
+     } 
+    // async componentDidMount(){
+    //     const response = await axios.get(/'url from back'/);
+    // this.setState.ads({ads: response./this is based on back variables/});
+    // }
     render() { 
         return (
             <div>
