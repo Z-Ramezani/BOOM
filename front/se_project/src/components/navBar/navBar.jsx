@@ -55,7 +55,7 @@ class navBar extends Component {
                   </ul>
                 </div>
                 
-                <a className="navbar-brand d-flex justify-content-end" href="#" style={{marginTop:'-0.4vw',marginLeft:'0.2vw'}}>
+                <a className="navbar-brand d-flex justify-content-end" href="#">
                 <img 
                   className="img-fluid"
                   src={logo}
