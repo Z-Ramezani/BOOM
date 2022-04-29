@@ -45,6 +45,7 @@ class App extends Component {
             <Route index element={<Guide />} />
             <Route path="login" element={<Login />} />
             <Route path="artworkAd" element={<ArtworkAd />} />
+            <Route path='/artistProfile' Component={ArtistProfile}/>
           </Route>
         </Routes>
       </BrowserRouter>
