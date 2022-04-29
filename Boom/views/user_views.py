@@ -29,7 +29,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 # from ..models import Artist , Expert , Artwork_advertisement , Customer
 from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  , LoginSerializers
-
+from rest_framework import permissions
+from Boom.permissions import *
 
 
 
@@ -37,7 +38,7 @@ from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer ,
 
 class RegisterArtistAPI(generics.GenericAPIView):
     serializer_class = RegisterArtistSerializer
-
+    permission_classes = [Is_anybody,]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -61,7 +62,7 @@ class RegisterArtistAPI(generics.GenericAPIView):
 
 class RegisterExpertAPI(generics.GenericAPIView):
     serializer_class = RegisterExpertSerializer
-
+    permission_classes = [Is_anybody,]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -81,7 +82,7 @@ class RegisterExpertAPI(generics.GenericAPIView):
 
 class RegisterCustomerAPI(generics.GenericAPIView):
     serializer_class = RegisterCustomerSerializer
-
+    permission_classes = [Is_anybody,]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -120,7 +121,7 @@ class RegisterCustomerAPI(generics.GenericAPIView):
 
 class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginSerializers
-
+    permission_classes = [Is_anybody,]
     def post(self, request):
         
 

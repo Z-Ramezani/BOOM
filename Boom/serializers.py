@@ -5,11 +5,11 @@ from django.contrib.auth.models import update_last_login
 from django.contrib.auth.models import User as users
 from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
-from .models import Artist , Expert , Artwork_advertisement , Customer , User , Sample_artwork , Expert_comment
+from .models import *
 # from django.contrib.auth import authenticate
 # from rest_framework_simplejwt.settings import api_settings
 # from django.contrib.auth.models import update_last_login
-# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth.hashers import make_password
 from django import forms
 
@@ -40,7 +40,6 @@ class UserSerializer(serializers.ModelSerializer):
 class ArtistSerializer(serializers.ModelSerializer):
 
     class Meta:
-
         model = Artist
         fields = ['name' , 'lastname' , 'birth_date' , 'phone' ,'national_id_number', 'free_post_artwork' , 'created_at' , 'password'  ]
 
@@ -216,8 +215,16 @@ class LoginSerializers(serializers.Serializer):
 class Artist_Profile_Serializers(serializers.ModelSerializer):#change2
     class Meta:
         model = Artist
-        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone' ,'address']
+        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone' ,'address', 'password']
         #fields = '__all__'
+
+
+class Artist_Profile_show_Serializers(serializers.ModelSerializer):#change2
+    class Meta:
+        model = Artist
+        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone']
+        #fields = '__all__'
+
 
 
 class Artist_Experience_Serializer(serializers.ModelSerializer):#change2
@@ -231,6 +238,8 @@ class Sample_artwork_Serializer(serializers.ModelSerializer):#changw2
     class Meta:
         model = Sample_artwork
         fields =  ['name','artist','style','materials','description','date_created' , 'image']
+        extra_kwrags = {'artist':{'required':False}}
+        read_only_fields =['artist','date_created']
 
 
 class advertisementCreate(forms.ModelForm):
@@ -238,6 +247,11 @@ class advertisementCreate(forms.ModelForm):
         model = Artwork_advertisement
         fields = '__all__'
 
+
+class AdvertisementSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = Artwork_advertisement
+        fields = '__all__'
 
 
 class Comment_Serializer(serializers.ModelSerializer):#changw2
@@ -264,11 +278,6 @@ class Save_Comment_Serializer():
         validated_data["expert"] = expert
         self.instance = self.create(validated_data)
         return self.instance
-
-
-
-
-
 
 
 

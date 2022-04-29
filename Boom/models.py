@@ -122,7 +122,7 @@ class Expert(models.Model):
     birth_date = models.DateField()
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
-
+#21
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     USERNAME_FIELD = 'national_id_number'
@@ -153,11 +153,11 @@ class Artwork_advertisement (models.Model):
     length_in_cm = models.FloatField()
     width_in_cm = models.FloatField()
     status = models.CharField(max_length=200, null=True, choices=STATUS)
-    image_1 = models.ImageField(null=True , blank=True)
-    image_2 = models.ImageField(null=True , blank=True)
-    image_3 = models.ImageField(null=True , blank=True)
-    image_4 = models.ImageField(null=True , blank=True)
-    image_5 = models.ImageField(null=True , blank=True)
+    image_1 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    image_2 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    image_3 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    image_4 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    image_5 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
     createAt = models.DateTimeField(auto_now_add=True , null=True)
     def __str__(self):
         return self.name
