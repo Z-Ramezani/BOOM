@@ -7,6 +7,8 @@ class navBar extends Component {
         return(
           <div>
             <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
+            
+              <div className="container-fluid"> 
                 
                 <div className="collapse navbar-collapse" id="navbarNav">
                   <ul className="navbar-nav">
@@ -16,17 +18,17 @@ class navBar extends Component {
                         <i className="bi bi-person-circle"></i>
                       </a>
                       <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">اطلاعات حساب کاربری</a></li>
-                        <li><a class="dropdown-item" href="#">ثبت آگهی و تیکت</a></li>
+                        <li><a class="dropdown-item" href="/artistProfile">اطلاعات حساب کاربری</a></li>
+                        <li><a class="dropdown-item" href="TicketPart">ثبت آگهی و تیکت</a></li>
                         <li><a class="dropdown-item" href="#">خروج</a></li>
                       </ul>
                     </li>
 
                     <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
+                      <a className="nav-link active" aria-current="page" href="/">صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">راهنمای سایت</a>
+                      <a className="nav-link" href="/guide">راهنمای سایت</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">درباره‌ما</a>
@@ -37,15 +39,15 @@ class navBar extends Component {
                         ثبت نام
                       </a>
                       <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
-                        <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                        <li><a class="dropdown-item" href="/artistSignUp">ثبت نام هنرمند یا کارشناس</a></li>
+                        <li><a class="dropdown-item" href="/buyerSignUp">ثبت نام خریدار</a></li>
                       </ul>
                     </li>
                     <li>
                       <a className="nav-link" href="#">|</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">ورود</a>
+                      <a className="nav-link" href="/login">ورود</a>
                     </li>
                   </ul>
                 </div>
@@ -59,7 +61,8 @@ class navBar extends Component {
                   style={{width:"9%"}}
                 />
               </a>
-               
+              
+              </div>  
             </nav>
           </div>
         )

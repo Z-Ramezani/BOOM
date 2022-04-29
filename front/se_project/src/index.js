@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
@@ -24,4 +25,4 @@ import ArtworkAd from './Pages/artwokAd';
 import ViewArtistProfile from './Pages/viewArtistProfile';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ViewArtistProfile/>);
+root.render(<ArtistProfile/>);

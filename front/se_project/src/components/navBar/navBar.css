@@ -1,9 +1,3 @@
-.navbar-nav{
-    padding:0;
-    margin:0;
-}
-
-
 .nav-link active {
     color: #BB1542;
 }
@@ -18,4 +12,4 @@
     right:0;  
     background-color:#FFFFFF;
     font-size: small;
-}
+ }
