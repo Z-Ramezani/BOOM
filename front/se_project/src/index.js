@@ -28,4 +28,4 @@ import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistProfile/>);
+root.render(<App/>);

@@ -18,6 +18,7 @@ import ViewArtistProfile from './Pages/viewArtistProfile';
 import navBar from './components/navBar/navBar'
 import Footer from './components/footer';
 import ArtworkAd from './Pages/artwokAd';
+import MainPage from './Pages/mainPage';
   
 
 class App extends Component {
@@ -41,10 +42,10 @@ class App extends Component {
       //  </div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Admin />}>
+          <Route path="/" element={<MainPage />}>
             <Route index element={<Guide />} />
-            <Route path="login" element={<Login />} />
-            <Route path="artworkAd" element={<ArtworkAd />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/artworkAd" element={<ArtworkAd />} />
             <Route path='/artistProfile' Component={ArtistProfile}/>
           </Route>
         </Routes>
