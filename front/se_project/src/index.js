@@ -28,8 +28,4 @@ import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-<<<<<<< Updated upstream
-root.render(<App/>);
-=======
 root.render(<MainPage/>);
->>>>>>> Stashed changes

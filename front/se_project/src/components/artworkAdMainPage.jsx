@@ -1,20 +1,21 @@
 import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import x from "../assets/ig.jpg";
 
 class ArtworkAdMainPage extends Component {
     state = {  } 
     render() { 
+        // const navigator = useNavigate();
+        // handlePage=()=>{
+        //     navigator(`/artworkAd`);
+        // }
         return (
             <div className="">
                 <div class="card shadow bg-white rounded">
                 
                     <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                     <figcaption class="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
-<<<<<<< Updated upstream
-                    ۲۰*۳۰{/*recive from back*/}
-=======
                     ۲۰*۳۰ cm{/*recive from back*/}
->>>>>>> Stashed changes
                     </figcaption>
                 
                     <div class="card-body pt-0">
@@ -24,7 +25,7 @@ class ArtworkAdMainPage extends Component {
                         <div className="card-text">
                            
                             <h2 class="card-text" style={{color:'#222222',fontSize:'1vw',width:'vw'}}>نام هنرمند {/*recive from back*/}</h2>
-                            <a href="#"/*recive from back*/ class="stretched-link"></a>
+                            <a href={this.handlePage}/*recive from back*/ class="stretched-link"></a>
                             <br></br>
                             <div className="row" dir="LTR">
                                 <div className="col-4" dir="LTR" style={{paddingRight:'0%'}}>
