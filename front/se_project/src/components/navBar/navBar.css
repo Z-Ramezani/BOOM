@@ -2,15 +2,10 @@
     padding:0;
     margin:0;
 }
+.navbar { flex-wrap: inherit; }
 
-
-.nav-link active {
-    color: #BB1542;
-}
-
-.nav-item {
-    color: #222222;
-}
+.nav-link active { color: #BB1542;}
+.nav-item { color: #222222; }
 
 .rtl { direction: rtl; }
 .rtl .dropdown-menu { 
