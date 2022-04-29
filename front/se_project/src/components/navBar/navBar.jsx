@@ -52,6 +52,21 @@ class navBar extends Component {
                       </li>
                     </ul>
                     
+                    <li class="nav-item dropdown rtl">
+                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
+                        ثبت نام
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
+                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
+                      </ul>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>|</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>ورود</a>
+                    </li>
                   </ul>
                 </div>
                 
