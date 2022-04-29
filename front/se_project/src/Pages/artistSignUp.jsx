@@ -28,7 +28,7 @@ class ArtistSignUp extends Component {
                         <div className='row justify-content-center' >
                             <div>  
                                 <div className='row mb-2'>
-                                    <div class='col row '>
+                                    <div className='col row '>
                                         <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
                                         <div className='col-8'> 
                                             <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
@@ -43,9 +43,9 @@ class ArtistSignUp extends Component {
                                 </div>
 
                                 <div className='row mb-2'>
-                                    <div class="col row ">
-                                        <label  class="col-4 col-form-label ">سال تولد</label>
-                                        <div class="col-8">
+                                    <div className="col row ">
+                                        <label  className="col-4 col-form-label ">سال تولد</label>
+                                        <div className="col-8">
                                             <Input_text type="date" value={birthay} onChange={(e)=>setBirthay(e.target.value)}/>
                                         </div>
                                     </div>
@@ -59,55 +59,55 @@ class ArtistSignUp extends Component {
 
                                 <div className='row '>
                                     <div className="row col">
-                                        <label  class="col-sm-4 col-form-label">ایمیل</label>
-                                        <div class="col-8">
+                                        <label  className="col-sm-4 col-form-label">ایمیل</label>
+                                        <div className="col-8">
                                             <Input_text type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                                         </div>
                                     </div>
 
-                                    <div class="row col ">
-                                        <label  class="col-sm-3 col-form-label  mx-auto">راه ارتباطی جهت نمایش در آگهی</label>
-                                        <div class="col-8">
+                                    <div className="row col ">
+                                        <label  className="col-sm-3 col-form-label  mx-auto">راه ارتباطی جهت نمایش در آگهی</label>
+                                        <div className="col-8">
                                             <Input_text type="text" value={showNumber} onChange={(e)=>setShowNumber(e.target.value)}/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='row mb-2'>
-                                    <div class="row col">
-                                        <label  class="col-sm-3 col-form-label ">آدرس</label>
-                                        <div class="col-12 me-4">
+                                    <div className="row col">
+                                        <label  className="col-sm-3 col-form-label ">آدرس</label>
+                                        <div className="col-12 me-4">
                                             <Input_text type="text" value={address} onChange={(e)=>setAddress(e.target.value)}/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='row mb-2'>
-                                    <div class="row col">
-                                        <label class="col-sm-4 col-form-label">رمز عبور</label>
-                                        <div class="col-8">
+                                    <div className="row col">
+                                        <label className="col-sm-4 col-form-label">رمز عبور</label>
+                                        <div className="col-8">
                                             <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                         </div>
                                     </div>
-                                    <div class="row col">
-                                        <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
-                                        <div class="col-8">
+                                    <div className="row col">
+                                        <label className="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
+                                        <div className="col-8">
                                             <Input_text type="password"/>
                                         </div>
                                     </div>
                                 </div>
                                         
                                 <div className='row mb-2 '>
-                                    <fieldset class="row">
-                                        <label class="col-form-label col-sm-2">جنسیت</label>
-                                        <div class="d-flex col mt-2" required>
-                                            <div class="form-check">
-                                                <label class="form-check-label">زن</label>
-                                                <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
+                                    <fieldset className="row">
+                                        <label className="col-form-label col-sm-2">جنسیت</label>
+                                        <div className="d-flex col mt-2" required>
+                                            <div className="form-check">
+                                                <label className="form-check-label">زن</label>
+                                                <input className="justify-content-right form-check-input" type="radio" name='gridRadios'/>
                                             </div>
-                                            <div class="form-check">
-                                                <label class="form-check-label me-5">مرد</label>
-                                                    <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
+                                            <div className="form-check">
+                                                <label className="form-check-label me-5">مرد</label>
+                                                    <input className="justify-content-right form-check-input" type="radio" name='gridRadios'/>
                                             </div>
                                         </div>
                                     </fieldset>

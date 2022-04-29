@@ -28,13 +28,13 @@ class ArtworkAd extends Component {
                     <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                         <div className='row'>
                             <div className='col'>
-                                <h2 class="mt-0" style={{fontSize:'1.3vw', fontWeight:'bold'}}>نام هنرمند : {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.3vw', fontWeight:'bold'}}>نام هنرمند : {/*recive from back*/}</h2>
                             </div>
                             <div className='col' style={{marginLeft:'33.9%', display:this.state.visibilityButton}}>
                                 <Button width= 'auto' height= 'auto' text= 'مشاهده راه ارتباطی' dir='RTL' onClick={this.showText}/>
                             </div>
                             <div className='col' style={{display:this.state.visibilityCost}}>
-                                <h2 class="mt-0" style={{fontSize:'1.3vw', fontWeight:'bold'}}>09130000000{/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.3vw', fontWeight:'bold'}}>09130000000{/*recive from back*/}</h2>
                             </div>
                             <a className='nav-link' href='#' style={{fontSize:'0.8vw',color:'#BB1542'}} >مشاهده سابقه کاری هنرمند</a>
                         </div>

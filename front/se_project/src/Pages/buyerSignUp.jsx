@@ -35,15 +35,15 @@ class BuyerSighUp extends Component {
                                 </div>
                             </div>
                             <div className='row mb-2'>
-                                <div class="row col">
-                                    <label class="col-sm-4 col-form-label">رمز عبور</label>
-                                    <div class="col-8">
+                                <div className="row col">
+                                    <label className="col-sm-4 col-form-label">رمز عبور</label>
+                                    <div className="col-8">
                                         <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                     </div>
                                 </div>
-                                <div class="row col">
-                                    <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
-                                    <div class="col-8">
+                                <div className="row col">
+                                    <label className="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
+                                    <div className="col-8">
                                         <Input_text type="password"/>
                                     </div>
                                 </div>
