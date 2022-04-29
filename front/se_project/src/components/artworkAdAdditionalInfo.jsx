@@ -1,10 +1,10 @@
 import { Component } from "react";
 import Input_text from "./input_form";
-import a from "../assets/ig.jpg";
-import b from "../assets/ig.jpg";
-import c from "../assets/ig.jpg";
-import d from "../assets/ig.jpg";
-import e from "../assets/ig.jpg";
+import a from "../assets/11.jpg";
+import b from "../assets/11.jpg";
+import c from "../assets/11.jpg";
+import d from "../assets/11.jpg";
+import e from "../assets/11.jpg";
 
 class ArtworkAdAdditionalInfo extends Component {
     state = {  } 

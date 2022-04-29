@@ -1,7 +1,7 @@
 import { Component } from "react";
-import a from "../assets/ig.jpg";
-import b from "../assets/ig.jpg";
-import c from "../assets/ig.jpg";
+import a from "../assets/11.jpg";
+import b from "../assets/11.jpg";
+import c from "../assets/11.jpg";
 
 class HeaderSlide extends Component {
     render() {
