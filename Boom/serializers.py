@@ -5,12 +5,13 @@ from django.contrib.auth.models import update_last_login
 from django.contrib.auth.models import User as users
 from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
-from .models import Artist , Expert , Artwork_advertisement , Customer , User
+from .models import Artist , Expert , Artwork_advertisement , Customer , User , Sample_artwork , Expert_comment
 # from django.contrib.auth import authenticate
 # from rest_framework_simplejwt.settings import api_settings
 # from django.contrib.auth.models import update_last_login
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth.hashers import make_password
+from django import forms
 
 # from .backends import ArtistBackend , ExpertBackend , CustomerBackend
 
@@ -194,6 +195,10 @@ class LoginSerializers(serializers.Serializer):
         
 
 
+
+
+
+
 # class LoginArtistSerializers(serializers.Serializer):
 
 #     username = serializers.CharField()
@@ -206,8 +211,66 @@ class LoginSerializers(serializers.Serializer):
 #             return user
 #         raise serializers.ValidationError('Incorrect Credentials Passed.')
 
-
-
-
 # and user.is_active
+
+class Artist_Profile_Serializers(serializers.ModelSerializer):#change2
+    class Meta:
+        model = Artist
+        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone' ,'address']
+        #fields = '__all__'
+
+
+class Artist_Experience_Serializer(serializers.ModelSerializer):#change2
+    class Meta:
+        model = Artist
+        fields = ['artfield', 'stylework', 'Experience_in_month']
+
+
+
+class Sample_artwork_Serializer(serializers.ModelSerializer):#changw2
+    class Meta:
+        model = Sample_artwork
+        fields =  ['name','artist','style','materials','description','date_created' , 'image']
+
+
+class advertisementCreate(forms.ModelForm):
+    class Meta :
+        model = Artwork_advertisement
+        fields = '__all__'
+
+
+
+class Comment_Serializer(serializers.ModelSerializer):#changw2
+    class Meta:
+        model = Expert_comment
+        fields = "__all__"
+
+
+
+
+class Save_Comment_Serializer():
+
+    class Meta:
+        model = Expert_comment
+        fields = ["artwork_advertisement", "expert", "description" , "price"]
+
+    def save(self, **kwargs):
+        User = self.context["request"].user
+        expert = Expert.objects.get(User=User)
+        validated_data = dict(
+            list(self.validated_data.items()) +
+            list(kwargs.items())
+        )
+        validated_data["expert"] = expert
+        self.instance = self.create(validated_data)
+        return self.instance
+
+
+
+
+
+
+
+
+
 

@@ -1,9 +1,13 @@
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User as users
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.conf import settings
+from datetime import datetime,date
+from django.db.models.fields import BLANK_CHOICE_DASH
 # Create your models here.
+
 
 
 
@@ -68,6 +72,12 @@ class Artist(models.Model):
     password = models.CharField(max_length=200,null=True)
     free_post_artwork = models.IntegerField(null=True , default=2)
     created_at = models.DateTimeField(auto_now_add=True , null=True)
+    address = models.CharField(max_length=400 , null=True)#change2
+    email = models.EmailField(max_length=254,null=True,unique=True)#change2
+    artfield = models.CharField(max_length=200,null=True)#change2
+    stylework =  models.CharField(max_length=200,null=True)#change2
+    Experience_in_month = models.IntegerField(null=True)#change2
+  #  _id = models.AutoField(primary_key=True, editable=False)#change2
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
@@ -81,6 +91,7 @@ class Artist(models.Model):
 
 
 class Customer(models.Model):
+ #   _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200 ,null=True)
     lastname = models.CharField(max_length=200 ,null=True)
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
@@ -104,6 +115,7 @@ class Customer(models.Model):
 
 
 class Expert(models.Model):
+#    _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200 ,null=True )
     lastname = models.CharField(max_length=200 ,null=True)
     national_id_number = models.IntegerField(unique=True)
@@ -125,12 +137,14 @@ class Expert(models.Model):
 
 
 class Artwork_advertisement (models.Model):
+#    _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200,null=True)
     style = models.CharField (max_length=200,null=True , blank=True)
     artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
     description =  models.CharField (max_length=200,null=True)
     price = models.IntegerField(default=0)
-    examined_price = models.IntegerField(default=0)
+  #  examined_price = models.IntegerField(default=0) change2
+    Admin_perm = models.BooleanField(default=False)
     STATUS = {
         ('sold','sold'),
         ('available' ,'available'),
@@ -147,3 +161,28 @@ class Artwork_advertisement (models.Model):
     createAt = models.DateTimeField(auto_now_add=True , null=True)
     def __str__(self):
         return self.name
+
+################################################################################
+
+
+class Expert_comment(models.Model):#change2
+  #  _id = models.AutoField(primary_key=True, editable=False)
+    artwork_advertisement = models.ForeignKey(Artwork_advertisement, null=True, on_delete=models.SET_NULL)
+    expert = models.ForeignKey(Expert, null=True, on_delete=models.SET_NULL)
+    description = models.CharField(max_length=200, null=True)
+    price = models.IntegerField(default=0)
+    createAt = models.DateTimeField(auto_now_add=True , null=True)
+    def __str__(self):
+        return self.expert.name + " " + self.artwork_advertisement.name
+
+################################################################################
+
+class Sample_artwork(models.Model):#change2
+   # _id = models.AutoField(primary_key=True, editable=False)
+    name = models.CharField(max_length=200, null=True)
+    artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
+    style = models.CharField(max_length=200, null=True, blank=True)
+    materials = models.CharField(max_length=200, null=True, blank=True)
+    date_created = models.DateField(auto_now_add=True , null=True)
+    image = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    description = models.CharField(max_length=200, null=True)
