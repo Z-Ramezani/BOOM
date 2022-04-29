@@ -2,7 +2,6 @@ import {Component} from 'react';
 import Navbar from '../components/navBar/navBar';
 import Breadcrumbb from '../components/breadcrumb';
 import Footer from '../components/footer';
-import ArtworkAdMainPage from '../components/artworkAdMainPage';
 import ArtworkGroup from '../components/artworkGroup';
 class MainPage extends Component {
     state = {  } 

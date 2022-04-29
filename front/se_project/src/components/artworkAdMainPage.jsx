@@ -6,9 +6,9 @@ class ArtworkAdMainPage extends Component {
     render() { 
         return (
             <div className="">
-                <div class="card shadow bg-white rounded" style={{Width: "100vw"}}>
+                <div class="card shadow bg-white rounded">
                 
-                    <img src={x}/*get the first img from back */ alt="art image"/>
+                    <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                     <figcaption class="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
                         20*30cm{/*recive from back*/}
                     </figcaption>
