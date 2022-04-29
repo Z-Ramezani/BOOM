@@ -33,16 +33,16 @@ class Footer extends Component {
                         
                         <ul className="navbar-nav">
                           <li className="nav-item">
-                            <a className="nav-link" href="#">تماس با ما</a>
+                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>تماس با ما</a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="#">سوالات متداول</a>
+                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>سوالات متداول</a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="#">قوانین</a>
+                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>قوانین</a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="#">پیشنهادات و انتقادات</a>
+                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>پیشنهادات و انتقادات</a>
                           </li>
                         </ul>
                       </nav>

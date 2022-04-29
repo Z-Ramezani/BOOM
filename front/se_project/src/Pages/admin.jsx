@@ -19,9 +19,9 @@ class Admin extends Component {
                             <ArtworkAdAdditionalInfo  showImages showText showCostText/>
                             <div className='d-flex' style={{marginRight:'2%'}}>
                                 <div className='ms-2'>
-                                    <Button width= 'auto' height= 'auto' text= 'تایید' /*onClick*//>
+                                    <Button width= 'auto' height= 'auto' text= 'تایید' fontSize='1.17vw'/*onClick*//>
                                 </div>
-                                <Button width= 'auto' height= 'auto' text= 'حذف' /*onClick*//>
+                                <Button width= 'auto' height= 'auto' text= 'حذف' fontSize='1.17vw'/*onClick*//>
                             </div>
                     </div>
                 </div>

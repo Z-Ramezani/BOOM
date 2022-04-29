@@ -22,13 +22,13 @@ class BuyerSighUp extends Component {
                         <div className='row justify-content-center' >
                             <div className='row mb-2'>
                                 <div class='col row '>
-                                    <label className='col-4 col-form-label'>نام و نام‌خانوادگی</label>
+                                    <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام و نام‌خانوادگی</label>
                                     <div className='col-8'> 
                                         <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
                                     </div>
                                 </div>
                                 <div className='col row'>
-                                    <label className="col-sm-3 col-form-label mx-auto">شماره تماس</label>
+                                    <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                     <div className="col-8">
                                         <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                     </div>
@@ -36,13 +36,13 @@ class BuyerSighUp extends Component {
                             </div>
                             <div className='row mb-2'>
                                 <div class="row col">
-                                    <label class="col-sm-4 col-form-label">رمز عبور</label>
+                                    <label class="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>رمز عبور</label>
                                     <div class="col-8">
                                         <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                     </div>
                                 </div>
                                 <div class="row col">
-                                    <label class="col-sm-3 col-form-label  mx-auto">تکرار رمز عبور</label>
+                                    <label class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>تکرار رمز عبور</label>
                                     <div class="col-8">
                                         <Input_text type="password"/>
                                     </div>
@@ -57,7 +57,7 @@ class BuyerSighUp extends Component {
                                     <ResetButton/>
                                 </div>
                                 <div className='mx-1'>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='18px'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='1.17vw'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div> 
                             </div>   
                         </div>

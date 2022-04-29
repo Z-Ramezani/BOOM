@@ -23,6 +23,7 @@ import ArtistProfile from './Pages/artistProfile';
 import Admin from './Pages/admin'; 
 import ArtworkAd from './Pages/artwokAd';
 import ViewArtistProfile from './Pages/viewArtistProfile';
+import UserInformation from './components/userInformation';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(<ArtworkAd/>);

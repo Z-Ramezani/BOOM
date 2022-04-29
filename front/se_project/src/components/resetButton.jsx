@@ -12,7 +12,7 @@ class ResetButton extends Component {
                         height:'auto', 
                         backgroundColor:'#BB1542', 
                         borderColor:'#BB1542',
-                        fontSize:'18px'}}>
+                        fontSize:'1.17vw'}}>
                             بازنشانی
                     </button>
                 </div>
