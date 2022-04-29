@@ -2,7 +2,7 @@ import { Component } from "react";
 import logo from '../../assets/images/logo.png';
 import '../navBar/navBar.css';
 
-class navBar extends Component {
+class NavBar extends Component {
     render() {
         return(
           <div>
@@ -71,4 +71,4 @@ class navBar extends Component {
     }
 }
 
-export default navBar;
+export default NavBar;
