@@ -11,7 +11,12 @@ class BuyerSighUp extends Component {
     const {names, setNames}=this.setState;;
     const {phone, setPhone}=this.setState;
     const {password, setPassword}=this.setState;
- 
+
+    function validateFormFields() {
+        return password.length > 0 && names.length > 0 && phone.length > 0;
+        
+    }
+
     return (
         <div>
             <Navbar/>
@@ -57,7 +62,7 @@ class BuyerSighUp extends Component {
                                     <ResetButton/>
                                 </div>
                                 <div className='mx-1'>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='1.17vw'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='1.17vw' disabled={!validateFormFields()}/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div> 
                             </div>   
                         </div>

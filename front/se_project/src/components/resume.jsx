@@ -13,7 +13,7 @@ class Resume extends Component {
         <div>
             <HorizontalLine value='سوابق کاری'/>
             <form>
-                <div className='container w-75 p-3 p-3 bg-white rounded mb-5'>
+                <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
 
                         <div className='row mb-2'>     

@@ -10,7 +10,8 @@ class Button extends Component {
                     onClick={this.props.onClick} 
                     className="btn btn-primary" 
                     type="button" 
-                    style={{width: this.props.width, height:this.props.height, backgroundColor:'#BB1542', borderColor:'#BB1542', fontSize:this.props.fontSize}}>
+                    style={{width: this.props.width, height:this.props.height, backgroundColor:'#BB1542', borderColor:'#BB1542', fontSize:this.props.fontSize}}
+                    disabled={this.props.disabled}>
                         {this.props.text}
                     </button>
                 </div>
