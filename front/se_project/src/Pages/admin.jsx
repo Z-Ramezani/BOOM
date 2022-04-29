@@ -23,9 +23,9 @@ class Admin extends Component {
                                 </div>
                                 <Button width= 'auto' height= 'auto' text= 'حذف' /*onClick*//>
                             </div>
-                        </div>
                     </div>
                 </div>
+            </div>
         );
     }
 }

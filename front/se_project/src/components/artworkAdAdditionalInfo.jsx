@@ -125,7 +125,7 @@ class ArtworkAdAdditionalInfo extends Component {
                                     <div class='col row'>
                                         <label className='col-4 col-form-label'>تاریخ ایجاد اثر</label>
                                         <div className='col-8'> 
-                                            <Input_text type="text" placeholder='24/06/00' value={date} onChange={(e)=>setDate(e.target.value)}/>
+                                            <Input_text type="date" value={date} onChange={(e)=>setDate(e.target.value)}/>
                                         </div>
                                     </div>
                                 </div>
@@ -155,4 +155,5 @@ class ArtworkAdAdditionalInfo extends Component {
         );
     }
 }
+
 export default ArtworkAdAdditionalInfo;

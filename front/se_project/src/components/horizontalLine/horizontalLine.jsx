@@ -8,8 +8,7 @@ class HorizontalLine extends Component {
         return (
             <div className="text-hr text-hr--right">
                 <span className="text-hr__text">{this.props.value}</span> 
-            </div>
-                
+            </div> 
         )
     }
 }

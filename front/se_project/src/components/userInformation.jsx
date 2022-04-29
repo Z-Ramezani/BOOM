@@ -75,7 +75,6 @@ class UserInformation extends Component {
                             </div>
                         </div>
                                     
-
                         <div className='row mb-2'>
                             <div className="row col">
                                 <label  className='col-4 col-form-label'>آدرس</label>
@@ -111,4 +110,5 @@ class UserInformation extends Component {
     )
   }
 }
+
 export default UserInformation;
