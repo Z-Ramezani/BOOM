@@ -28,7 +28,7 @@ class Footer extends Component {
                         </a>
                     </div>
 
-                    <div className='row' style={{marginRight:'19%'}}>
+                    <div className='row' style={{marginRight:'18.6%'}}>
                       <nav className="navbar navbar-expand-lg navbar-light">
                         
                         <ul className="navbar-nav">
@@ -49,7 +49,7 @@ class Footer extends Component {
                     </div>
                   </div>
 
-                  <a className="navbar-brand" href="#" style={{marginLeft:'12.4vw', marginTop:'0.5vw', marginRight:'-14vw'}}>
+                  <a className="navbar-brand" href="#" style={{marginLeft:'14%', marginTop:'0.5vw', marginRight:'-14vw'}}>
                     <img 
                       className="img-fluid"
                       src={logo}

@@ -34,22 +34,24 @@ class navBar extends Component {
                     <li className="nav-item">
                       <a className="nav-link" href="#">درباره‌ما</a>
                     </li>
+                    <ul class="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
+                      <li class="nav-item dropdown rtl">
+                        <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          ثبت نام
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
+                          <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                        </ul>
+                      </li>
+                      <li className="nav-item mx-2">
+                        <a className="nav-link" href="#">|</a>
+                      </li>
+                      <li className="nav-item">
+                        <a className="nav-link" href="#">ورود</a>
+                      </li>
+                    </ul>
                     
-                    <li class="nav-item dropdown rtl">
-                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ثبت نام
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
-                        <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
-                      </ul>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">|</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">ورود</a>
-                    </li>
                   </ul>
                 </div>
                 
