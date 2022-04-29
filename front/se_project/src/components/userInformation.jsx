@@ -95,7 +95,7 @@ class UserInformation extends Component {
                                 
                     </div>
                     <form className='col-3 justify-content-end'>
-                            <div class="form-group " style={{width:'2vw', height:'2vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
+                            <div class="form-group " style={{width:'15vw', height:'15vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
                                 <input type="file" class="form-control-file"/>
                             </div>
                       </form>
