@@ -13,7 +13,7 @@
   flex: 1;
   background: #282727;
   content: "";
-  height: 2px;
+  height: 0.1vw;
 }
 
 .text-hr__text {

@@ -18,7 +18,7 @@ class Resume extends Component {
 
                         <div className='row mb-2'>     
                             <div class='col row '>
-                                <label className='col-4 col-form-label'>زمینه هنری</label>
+                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه هنری</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={artisticBackground} onChange={(e)=>setartisticBackground(e.target.value)}/>
                                 </div>
@@ -27,7 +27,7 @@ class Resume extends Component {
 
                         <div className='row mb-2'>
                             <div className='col row'>
-                                <label className='col-4 col-form-label'>سبک کاری</label>
+                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>سبک کاری</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={workStyle} onChange={(e)=>setWorkStyle(e.target.value)}/>
                                 </div>
@@ -36,7 +36,7 @@ class Resume extends Component {
     
                         <div className='row mb-2'>
                             <div className="col row ">
-                                <label  className="col-4 col-form-label ">سابقه فعالیت</label>
+                                <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سابقه فعالیت</label>
                                 <div className='col-4'>
                                     <Input_text type="text" value={experience} onChange={(e)=>setExperience(e.target.value)} placeholder="سال"/>
                                 </div>
@@ -44,21 +44,18 @@ class Resume extends Component {
                         </div>     
                                 
                     </div>
-                    {
 
-                        this.props.is2OrNot ? <div className='row mb-2' >
-                            <div className='justify-content-center mt-0 mx-0' >
-                                <div className='d-flex'>
-                                    <div className='mx-3'>
-                                        <Button width= 'auto' height= 'auto' text= 'ثبت' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
-                                    </div>               
-                                </div>   
-                            </div> 
-                        </div>
-                        : <div></div>
-                    }
+<                   div className='row mb-2' >
+                        <div className='justify-content-center mt-0 mx-0' >
+                            <div className='d-flex'>
+                                <div className='mx-3'>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت' fontSize='1.17vw'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                </div>               
+                            </div>   
+                        </div> 
+                    </div>
+
                 </div>
-            
             </form>
         </div>                    
     );
