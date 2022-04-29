@@ -28,7 +28,7 @@ class Footer extends Component {
                     </a>
                   </div>
 
-                  <div className='row' style={{marginRight:'12vw'}}>
+                  <div className='row' style={{marginRight:'19%'}}>
                     <nav className="navbar navbar-expand-lg navbar-light">
                       
                       <ul className="navbar-nav">
