@@ -26,6 +26,7 @@ import ViewArtistProfile from './Pages/viewArtistProfile';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
+import HorizontalLine from './components/horizontalLine/horizontalLine';
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(<BuyerSighUp/>);
