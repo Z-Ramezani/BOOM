@@ -7,6 +7,9 @@
 .nav-link active { color: #BB1542;}
 .nav-item { color: #222222; }
 
+.dropdown-item {font-size:0.8vw;}
+.nav-link {font-size:1.1vw;}
+
 .rtl { direction: rtl; }
 .rtl .dropdown-menu { 
     text-align: right;

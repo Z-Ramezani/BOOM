@@ -1,22 +1,108 @@
-import { Component } from "react";
 import Input_text from "./input_form";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import a from "../assets/11.jpg";
 import b from "../assets/11.jpg";
 import c from "../assets/11.jpg";
 import d from "../assets/11.jpg";
 import e from "../assets/11.jpg";
 
-class ArtworkAdAdditionalInfo extends Component {
-    state = {  } 
-    render() { 
-        const {names, setNames}=this.setState;
-        const {size, setSize}=this.setState;
-        const {method, setMethod}=this.setState;
-        const {material, setMaterial}=this.setState;
-        const {date, setDate}=this.setState;
-        const {cost, setCost}=this.setState;
-        return (
-            <div className="">
+const ArtworkAdAdditionalInfo = ({props}) => {
+
+    const [names, setNames]=useState([]);
+    useEffect(() => {
+        fetchNames();
+    }, []);
+    const fetchNames = () => {
+        axios
+            .get('http://localhost:8000/api/names')
+            .then((res) => {
+                // console.log(res);
+                setNames(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [size, setSize]=useState([]);
+    useEffect(() => {
+        fetchSize();
+    }, []);
+    const fetchSize = () => {
+        axios
+            .get('http://localhost:8000/api/size')
+            .then((res) => {
+                // console.log(res);
+                setSize(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [method, setMethod]=useState([]);
+    useEffect(() => {
+        fetchMethod();
+    }, []);
+    const fetchMethod = () => {
+        axios
+            .get('http://localhost:8000/api/method')
+            .then((res) => {
+                // console.log(res);
+                setMethod(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    const [material, setMaterial]=useState([]);
+    useEffect(() => {
+        fetchMaterial();
+    }, []);
+    const fetchMaterial = () => {
+        axios
+            .get('http://localhost:8000/api/material')
+            .then((res) => {
+                // console.log(res);
+                setMaterial(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    const [date, setDate]=useState([]);
+    useEffect(() => {
+        fetchData();
+    }, []);
+    const fetchData = () => {
+        axios
+            .get('http://localhost:8000/api/data')
+            .then((res) => {
+                // console.log(res);
+                setDate(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    const [cost, setCost]=useState([]);
+    useEffect(() => {
+        fetchCost();
+    }, []);
+    const fetchCost = () => {
+        axios
+            .get('http://localhost:8000/api/data')
+            .then((res) => {
+                // console.log(res);
+                setCost(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    return ( 
+        <div className="">
                 <div class="row g-0 position-relative" dir="LTR">
                     <div class="col-md-6 mb-md-0 p-md-4">{
                         this.props.showImages ?
@@ -152,8 +238,6 @@ class ArtworkAdAdditionalInfo extends Component {
                     </div>
                 </div>
             </div>
-        );
-    }
+     );
 }
-
 export default ArtworkAdAdditionalInfo;

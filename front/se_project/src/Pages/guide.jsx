@@ -1,8 +1,10 @@
 import {Component} from 'react';
 import Footer from '../components/footer';
 import Navbar from '../components/navBar/navBar';
-import Breadcrumbb
- from '../components/breadcrumb';
+import Breadcrumbb from '../components/breadcrumb';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+
 class Guide extends Component {
 
     state = {  } 

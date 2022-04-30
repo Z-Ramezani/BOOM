@@ -2,15 +2,10 @@ import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import x from "../assets/ig.jpg";
 
-class ArtworkAdMainPage extends Component {
-    state = {  } 
-    render() { 
-        // const navigator = useNavigate();
-        // handlePage=()=>{
-        //     navigator(`/artworkAd`);
-        // }
-        return (
-            <div className="">
+const ArtworkAdMainPage = () => {
+
+    return ( 
+        <div className="">
                 <div class="card shadow bg-white rounded">
                 
                     <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
@@ -46,8 +41,7 @@ class ArtworkAdMainPage extends Component {
                     </div>
                 </div>
             </div>
-        );
-    }
+     );
 }
  
-export default ArtworkAdMainPage ;
+export default ArtworkAdMainPage;
