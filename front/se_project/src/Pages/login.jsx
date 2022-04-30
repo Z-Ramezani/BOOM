@@ -4,11 +4,15 @@ import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
 import color from '../assets/images/color.png'
+import Input_text from '../components/input_form';
 class Login extends Component {
   render() { 
-    const {names, setNames}=this.setState;
-    const {phone, setPhone}=this.setState;
+    const {userName, setUserName}=this.setState;
     const {password, setPassword}=this.setState;
+
+    function validateFormFields() {
+        return userName.length > 0 && password.length > 0;
+    }
     return (
         <div className='bg-image' style={{backgroundImage:color}}>
             <Navbar/>
@@ -19,11 +23,11 @@ class Login extends Component {
                         <form  className="form-control">
                             <div className="mb-3">
                                 <label for="InputEmail1" className="form-label"  style={{fontSize:'1.1vw'}}>نام کاربری</label>
-                                <input type="text" className="form-control" id="userNameInput" />
+                                <Input_text type="text" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                             </div>
                             <div className="mb-3">
                                 <label for="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
-                                <input type="password" className="form-control" id="InputPassword1" />
+                                <Input_text type="text" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                 <a className='nav-link' href='#' style={{fontSize:'0.7vw',color:'#222222',marginTop:'0%'}} >بازیابی رمز عبور</a>
 
                             </div>
@@ -32,7 +36,7 @@ class Login extends Component {
                                 <label className="form-check-label me-1" data-ng-model="rememberMe"  style={{fontSize:'0.9vw'}}>مرا به یاد بسپار</label>
                             </div>
                             <div className="mb-3">
-                                <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' disabled={!validateFormFields()} /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                             </div>
                         </form>
                     </div>

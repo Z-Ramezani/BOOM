@@ -15,8 +15,14 @@ class ArtistSignUp extends Component {
     const {email, setEmail}=this.setState;
     const {address, setAddress}=this.setState;
     const {password, setPassword}=this.setState;
-    const {gender, setGender}=this.setState;
+    //const {gender, setGender}=this.setState;
     const {showNumber, setShowNumber}=this.setState;
+
+    function validateFormFields() {
+        return email.length > 0 && password.length > 0 && names.length > 0
+        && codeNumber.length > 0 && birthay.length > 0 && phone.length > 0
+        && address.length > 0  && showNumber.length>0;
+    }
 
     return (
         <div>
@@ -123,10 +129,10 @@ class ArtistSignUp extends Component {
                                     <ResetButton/>
                                 </div>
                                 <div className='mx-1'>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw' disabled={!validateFormFields()} /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div> 
                                 <div className='mx-1 '>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw'/*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw' disabled={!validateFormFields()}/*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div>
                             </div>   
                         </div>
