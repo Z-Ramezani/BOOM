@@ -1,11 +1,12 @@
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
 import '../navBar/navBar.css';
 
-class navBar extends Component {
-    render() {
-        return(
-          <div>
+const NavBar = () => {
+  return ( 
+    <div>
             <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,33 +30,30 @@ class navBar extends Component {
                       <a className="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">راهنمای سایت</a>
+                      <a className="nav-link" href="../../Pages/guide">راهنمای سایت</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">درباره‌ما</a>
+                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>درباره ما</a>
                     </li>
                     <ul class="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
                       <li class="nav-item dropdown rtl">
-                        <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
                           ثبت نام
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
-                          <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                          <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
+                          <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
                         </ul>
                       </li>
-                      <li className="nav-item mx-2">
-                        <a className="nav-link" href="#">|</a>
-                      </li>
+                      <li className="nav-item mx-2">|</li>
                       <li className="nav-item">
-                        <a className="nav-link" href="#">ورود</a>
+                        <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>ورود</a>
                       </li>
                     </ul>
-                    
                   </ul>
                 </div>
                 
-                <a className="navbar-brand d-flex justify-content-end" href="#" style={{marginTop:'-0.4vw',marginLeft:'0.2vw'}}>
+                <a className="navbar-brand d-flex justify-content-end" href="#">
                 <img 
                   className="img-fluid"
                   src={logo}
@@ -67,8 +65,6 @@ class navBar extends Component {
               </div>
             </nav>
           </div>
-        )
-    }
+   );
 }
-
-export default navBar;
+export default NavBar;

@@ -1,26 +1,72 @@
 import {Component} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import Button from '../components/button';
 import Input_text from '../components/input_form';
 import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
-class Resume extends Component {
-  render() { 
-    const {artisticBackground, setartisticBackground}=this.setState;
-    const {workStyle, setWorkStyle}=this.setState;
-    const {experience, setExperience}=this.setState;
+const Resume = () => {
+    const [artisticBackground, setArtisticBackground]=useState([]);
+    useEffect(() => {
+        fetchArtisticBackground();
+    }, []);
+    const fetchArtisticBackground = () => {
+        axios
+            .get('http://localhost:8000/api/artisticBackground')
+            .then((res) => {
+                // console.log(res);
+                setArtisticBackground(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [workStyle, setWorkStyle]=useState([]);
+    useEffect(() => {
+        fetchWorkStyle();
+    }, []);
+    const fetchWorkStyle = () => {
+        axios
+            .get('http://localhost:8000/api/workStyle')
+            .then((res) => {
+                // console.log(res);
+                setWorkStyle(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [experience, setExperience]=useState([]);
+    useEffect(() => {
+        fetchExperience();
+    }, []);
+    const fetchExperience = () => {
+        axios
+            .get('http://localhost:8000/api/experience')
+            .then((res) => {
+                // console.log(res);
+                setExperience(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     return (
         <div>
             <HorizontalLine value='سوابق کاری'/>
             <form>
-                <div className='container w-75 p-3 p-3 bg-white rounded mb-5'>
+                <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
 
                         <div className='row mb-2'>     
                             <div class='col row '>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه هنری</label>
                                 <div className='col-4'>
-                                    <Input_text type="text" value={artisticBackground} onChange={(e)=>setartisticBackground(e.target.value)}/>
+                                    <Input_text type="text" value={artisticBackground} onChange={(e)=>setArtisticBackground(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +105,6 @@ class Resume extends Component {
             </form>
         </div>                    
     );
-  }
 }
  
 export default Resume;
