@@ -6,8 +6,7 @@ import Footer from '../components/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
 import ExportOpinion from '../components/exportOpinion';
-
-class ArtworkAd extends Component {
+const ArtworkAd = () => {
     showText=()=>{
         this.setState({visibilityButton: 'none'});
         this.setState({visibilityCost: 'block'});
@@ -16,9 +15,8 @@ class ArtworkAd extends Component {
         visibilityButton: 'block',
         visibilityCost: 'none'
      } 
-    render() { 
-        return (
-            <div>
+    return ( 
+        <div>
                 <Navbar/>
                 <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='آگهی اثر'/>
                 <div className='d-flex flex-column min-vh-100'>
@@ -49,8 +47,7 @@ class ArtworkAd extends Component {
                     <Footer/>
                 </div>
             </div>
-        );
-    }
+     );
 }
  
 export default ArtworkAd;

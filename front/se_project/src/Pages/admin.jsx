@@ -5,12 +5,9 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
-
-class Admin extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div>
+const Admin = () => {
+    return ( 
+        <div>
                 <Navbar/>
                 <Breadcrumbb is1OrNot='true' first='حساب کاربری'/>
                 <div className='d-flex flex-column min-vh-100'>
@@ -26,8 +23,7 @@ class Admin extends Component {
                     </div>
                 </div>
             </div>
-        );
-    }
+     );
 }
  
 export default Admin;

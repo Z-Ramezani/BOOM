@@ -1,8 +1,7 @@
-import {Component} from 'react';
-import {BrowserRouter, BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom';
-import Button from './components/button';
 import 'bootstrap';
 import './components/navBar/navBar.css';
+import {BrowserRouter, BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom';
+import Button from './components/button';
 import Breadcrumbb from './components/breadcrumb';
 import Input_text from './components/input_form';
 import Guide from './Pages/guide';
@@ -27,16 +26,13 @@ import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
   
-
-class App extends Component {
-  render() { 
-
-    return (
-      
-      <>
-        {/* <AlertProvider template={AlertTemplate} {...Options}> */}
-          <BrowserRouter>
+const App = () => {
+  return ( 
+    <BrowserRouter>
             <Routes>
+              {/* <Route exact path='/' exact element={<MainPage />} /> */}
+              <Route index element={<MainPage/>}/>
+
               {/* components */}
               <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
               <Route path='/navBar/navBar' element={<NavBar/>}/>
@@ -54,7 +50,6 @@ class App extends Component {
               <Route path='/userInformation' element={<UserInformation/>}/>
               
               {/* Pages */}
-              <Route index element={<MainPage/>}/>
               <Route path='/admin' element={<Admin/>}/>
               <Route path='/artistProfile' element={<ArtistProfile/>}/>
               <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
@@ -68,13 +63,7 @@ class App extends Component {
               <Route path='/' Component={App}/>
             </Routes>
           </BrowserRouter>
-        {/* </AlertProvider> */}
-        
-      </>
-      
-    );
-  }
+   );
 }
  
 export default App;
-
