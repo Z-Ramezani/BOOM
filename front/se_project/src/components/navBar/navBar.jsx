@@ -29,7 +29,7 @@ class NavBar extends Component {
                       <a className="nav-link active" aria-current="page" href="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>راهنمای سایت</a>
+                      <a className="nav-link" href="../../Pages/guide" style={{fontSize:'1.1vw'}}>راهنمای سایت</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>درباره‌ما</a>
