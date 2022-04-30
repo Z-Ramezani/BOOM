@@ -11,7 +11,7 @@ class Resume extends Component {
     const {experience, setExperience}=this.setState;
     return (
         <div>
-            <HorizontalLine value='سوابق کاری'/>
+            
             <form>
                 <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
@@ -44,8 +44,8 @@ class Resume extends Component {
                         </div>     
                                 
                     </div>
-
-<                   div className='row mb-2' >
+                    
+                    < div className='row mb-2' >
                         <div className='justify-content-center mt-0 mx-0' >
                             <div className='d-flex'>
                                 <div className='mx-3'>

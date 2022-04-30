@@ -17,6 +17,7 @@ class ArtistProfile extends Component {
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='حساب کاربری' second='اطلاعات حساب کاربری'/>
             <UserInformation/>
+            <HorizontalLine value='سوابق کاری'/>
             <Resume/>
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
