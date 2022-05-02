@@ -7,7 +7,7 @@ urlpatterns = [
     path("artists_experience/list", Artists_Experience_list.as_view()),
     path("artist_experience/datails/<pk>", Artist_Experience_Datails.as_view()),
     path("update/<pk>", Artist_Profile_Datails_update.as_view()),
-    path("artist_experience/save", Artist_Experience_Datails_save.as_view()),
+    path("artist_experience/save/<pk>", Artist_Experience_Datails_save.as_view()),
     path("artist_experience/update/<pk>", Artist_Experience_Datails_update.as_view()),
     path("sample/save",Sample_artwork_save.as_view()),
     path("sample/edit/<pk>", Sample_artwork_Edit.as_view()),

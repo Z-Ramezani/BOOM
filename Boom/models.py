@@ -180,7 +180,7 @@ class Expert_comment(models.Model):#change2
 class Sample_artwork(models.Model):#change2
    # _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200, null=True)
-    artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
+    artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     style = models.CharField(max_length=200, null=True, blank=True)
     materials = models.CharField(max_length=200, null=True, blank=True)
     date_created = models.DateField(auto_now_add=True , null=True)

@@ -85,7 +85,7 @@ class Artists_Experience_list(generics.ListAPIView):
 #    return Response(artist.data)
 
 
-class Artist_Experience_Datails_save(generics.CreateAPIView):
+class Artist_Experience_Datails_save(generics.RetrieveUpdateAPIView):
     queryset = Artist.objects.all()
     serializer_class = Artist_Experience_Serializer
     permission_classes = [Is_artist_or_Readonly,]
@@ -122,7 +122,8 @@ class Sample_artwork_save(generics.CreateAPIView):
     queryset = Sample_artwork.objects.all()
     serializer_class = Sample_artwork_Serializer
     permission_classes = [Is_authenticated_artist,]
-
+    def perform_create(self, serializer):
+        serializer.save(artist=self.request.user.user)
 
 ###########################
 

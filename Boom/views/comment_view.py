@@ -11,7 +11,7 @@ from rest_framework import status
 
 
 @api_view(["POST"])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def review_artwork(request):
     if request.method == "POST":
         serializer = Save_Comment_Serializer(
