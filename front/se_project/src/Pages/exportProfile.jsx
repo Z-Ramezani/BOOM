@@ -5,7 +5,6 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import UserInformation from '../components/userInformation';
-import Resume from '../components/resume';
 import ExportResume from '../components/exportResume';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
