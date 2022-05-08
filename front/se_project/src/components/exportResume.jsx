@@ -1,5 +1,7 @@
 import { Component } from 'react';
-
+import HorizontalLine from './horizontalLine/horizontalLine';
+import Input_text from './input_form';
+import Button from './button';
 class ExportResume extends Component {
     render() { 
         const {activityfield, setactivityfield}=this.setState;
@@ -14,7 +16,7 @@ class ExportResume extends Component {
                                 <div class='col row '>
                                     <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه فعالیت</label>
                                     <div className='col-4'>
-                                        <Input_text type="text" value={artisticBackground} onChange={(e)=>setactivityfield(e.target.value)}/>
+                                        <Input_text type="text" value={activityfield} onChange={(e)=>setactivityfield(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>

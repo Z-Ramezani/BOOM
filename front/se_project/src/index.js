@@ -10,7 +10,6 @@ import HeaderSlide from './components/header-slide'
 import Navbar from './components/navBar/navBar';
 import Footer from './components/Footer/footer';
 import Breadcrumbb from './components/breadcrumb';
-import ArtworkAdAdditionalInfo from './components/showartworkAdAdditionalInfo';
 import ArtistSignUp from './Pages/artistSignUp'
 import BuyerSighUp from './Pages/buyerSignUp'
 import Login from './Pages/login';
@@ -28,4 +27,4 @@ import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
 import ExportProfile from './Pages/exportProfile';
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistProfile/>);
+root.render(<Admin/>);

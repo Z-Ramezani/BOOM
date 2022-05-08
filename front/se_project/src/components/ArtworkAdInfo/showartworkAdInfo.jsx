@@ -1,12 +1,11 @@
 import { Component } from "react";
-import Input_text from "./input_form";
-import a from "../assets/11.jpg";
-import b from "../assets/11.jpg";
-import c from "../assets/11.jpg";
-import d from "../assets/11.jpg";
-import e from "../assets/11.jpg";
+import a from "../../assets/11.jpg";
+import b from "../../assets/11.jpg";
+import c from "../../assets/11.jpg";
+import d from "../../assets/11.jpg";
+import e from "../../assets/11.jpg";
 
-class ArtworkAdAdditionalInfo extends Component {
+class ShowArtworkAdInfo extends Component {
     state = {  } 
     render() { 
         const {names, setNames}=this.setState;
@@ -68,13 +67,6 @@ class ArtworkAdAdditionalInfo extends Component {
                                 <br/>
                                 <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                                 <br/>
-                                <div>{
-                                        this.props.showCostText ?
-                                            <h2 class="mt-0" dir="RTL" style={{fontSize:'1.1vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
-                                        : <div></div>
-                                    }
-                                </div>
-                                
                                 <br/>
                                 <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                             </div>
@@ -85,4 +77,4 @@ class ArtworkAdAdditionalInfo extends Component {
     }
 }
 
-export default ArtworkAdAdditionalInfo;
+export default ShowArtworkAdInfo;

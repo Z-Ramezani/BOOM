@@ -5,8 +5,8 @@ import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/showartworkAdAdditionalInfo'
 import Resume from '../components/resume';
+import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 
 class ViewArtistProfile extends Component {
 
@@ -67,7 +67,7 @@ class ViewArtistProfile extends Component {
             <div className='container w-75 p-3 p-3 rounded mb-5' ><Resume/></div> 
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
-                <ArtworkAdAdditionalInfo/>
+                <ShowArtworkAdInfo/>
             </div> 
             <Footer/>
         </div>                    

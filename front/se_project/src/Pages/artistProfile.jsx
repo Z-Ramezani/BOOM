@@ -6,8 +6,9 @@ import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import UserInformation from '../components/userInformation';
 import Resume from '../components/resume';
-import ShowArtworkAdAdditionalInfo from '../components/showartworkAdAdditionalInfo';
-import SetArtworkAdAdditionalInfo from '../components/setArtworkAdAdditionalInfo';
+import SetArtworkAdInfo from '../components/ArtworkAdInfo/setArtworkAdInfo';
+import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
+
 class ArtistProfile extends Component {
 
   render() { 
@@ -19,13 +20,13 @@ class ArtistProfile extends Component {
             <Resume/>
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
-                <SetArtworkAdAdditionalInfo/>
+                <SetArtworkAdInfo/>
                 <div style={{marginRight:'3.5%'}}>
                     <Button width= 'auto' height= 'auto' text= 'ثبت' dir='LTR' fontSize='1.17vw'/*onClick*//>
                 </div>
               </div>
               <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
-                <ShowArtworkAdAdditionalInfo/>
+                <ShowArtworkAdInfo/>
                 <div className='d-flex' style={{marginRight:'3.5%'}}>
                   <div className='ms-2'>
                     <Button width= 'auto' height= 'auto' text= 'ویرایش' dir='LTR' fontSize='1.17vw'/*onClick*//>

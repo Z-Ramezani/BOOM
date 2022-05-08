@@ -4,9 +4,9 @@ import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/showartworkAdAdditionalInfo'
 import UserInformation from '../components/userInformation';
 import Resume from '../components/resume';
+import ExportResume from '../components/exportResume';
 
 
 class ExportProfile extends Component {
@@ -17,7 +17,7 @@ class ExportProfile extends Component {
                 <Navbar/>
                 <Breadcrumbb is1OrNot='true' first='حساب کاربری'/>
                 <UserInformation/>
-                <Resume/>
+                <ExportResume/>
 
             </div>
         );

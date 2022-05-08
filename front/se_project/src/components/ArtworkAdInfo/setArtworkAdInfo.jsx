@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import Input_text from './input_form';
+import Input_text from '../input_form';
 
-class SetArtworkAdAdditionalInfo  extends Component {
+class SetArtworkInfo  extends Component {
     state = {  } 
     render() { 
         const {names, setNames}=this.setState;
@@ -67,8 +67,7 @@ class SetArtworkAdAdditionalInfo  extends Component {
                             <textarea class="col-4 form-control" id="exampleFormControlTextarea1" rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
                         </div>
                     
-                        <div>{
-                            this.props.showCostInput ?
+                        <div>
                                 <div className='row mb-2'>     
                                     <div class='col row'>
                                         <label className='col-4 col-form-label' style={{marginRight:'0%',marginLeft:'-0.1vw', fontSize:'1.1vw'}}>قیمت</label>
@@ -77,8 +76,6 @@ class SetArtworkAdAdditionalInfo  extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                :<div></div>
-                            }
                         </div>
                     </div>
                 </div>
@@ -87,4 +84,4 @@ class SetArtworkAdAdditionalInfo  extends Component {
     }
 }
  
-export default SetArtworkAdAdditionalInfo ;
+export default  SetArtworkInfo;

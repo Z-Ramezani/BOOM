@@ -1,7 +1,6 @@
 import {Component} from 'react';
 import Button from '../components/button';
 import Input_text from '../components/input_form';
-import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 class Resume extends Component {

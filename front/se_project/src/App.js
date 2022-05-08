@@ -17,7 +17,6 @@ import Footer from './components/Footer/footer';
 import ArtworkAd from './Pages/artwokAd';
 import MainPage from './Pages/mainPage';
 import HorizontalLine from './components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from './components/showartworkAdAdditionalInfo';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import ArtworkGroup from './components/artworkGroup';
 import ExportOpinion from './components/exportOpinion';
@@ -26,7 +25,7 @@ import ResetButton from './components/resetButton';
 import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
-  
+import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 
 class App extends Component {
   render() { 
@@ -40,7 +39,7 @@ class App extends Component {
               {/* components */}
               <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
               <Route path='/navBar/navBar' element={<NavBar/>}/>
-              <Route path='/artworkAdAdditionalInfo' element={<ArtworkAdAdditionalInfo/>}/>
+              <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
               <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
               <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
               <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
