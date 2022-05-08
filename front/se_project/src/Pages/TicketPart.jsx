@@ -2,10 +2,10 @@ import {Component} from 'react';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
-
+import SetArtworkAdInfo from '../components/ArtworkAdInfo/setArtworkAdInfo';
+import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 class TicketPart extends Component {
     setValueIncrease=()=>{
         this.setState({count: this.state.count + 1});
@@ -33,13 +33,13 @@ class TicketPart extends Component {
                     <HorizontalLine value='آگهی اثر هنری'/>
                     <div>
                         <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                            <ArtworkAdAdditionalInfo showCostInput/>
+                            <SetArtworkAdInfo/>
                             <div style={{marginRight:'3.5%'}}>
                                 <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'ارسال درخواست ثبت آگهی' dir='LTR' onClick={this.setValueDecrease}/>
                             </div>
                         </div>
                         <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                            <ArtworkAdAdditionalInfo  showImages showCostText/>
+                            <ShowArtworkAdCost/>
                             <div className='d-flex' style={{marginRight:'2%'}}>
                                 <div className='ms-2'>
                                     <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'ویرایش' /*onClick*//>

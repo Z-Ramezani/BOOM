@@ -2,10 +2,10 @@ import {Component} from 'react';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
 import ExportOpinion from '../components/exportOpinion';
+import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 class ArtworkAd extends Component {
     showText=()=>{
@@ -22,15 +22,15 @@ class ArtworkAd extends Component {
                 <Navbar/>
                 <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='آگهی اثر'/>
                 <div className='d-flex flex-column min-vh-100'>
-                    <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                        <ArtworkAdAdditionalInfo showImages showText showCostText/>
+                    <div className='container w-75 p-3 shadow bg-white rounded mb-2'>
+                        <ShowArtworkAdCost/>
                     </div>
                     <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                         <div className='row'>
                             <div className='col'>
                                 <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>نام هنرمند : {/*recive from back*/}</h2>
                             </div>
-                            <div className='col' style={{marginLeft:'33.9%', display:this.state.visibilityButton}}>
+                            <div className='col' style={{marginLeft:'32.8%', display:this.state.visibilityButton}}>
                                 <Button width= 'auto' height= 'auto' text= 'مشاهده راه ارتباطی' dir='RTL' onClick={this.showText} fontSize='1.1vw'/>
                             </div>
                             <div className='col' style={{display:this.state.visibilityCost}}>

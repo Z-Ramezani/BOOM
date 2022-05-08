@@ -8,9 +8,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import App from './App';
 import HeaderSlide from './components/header-slide'
 import Navbar from './components/navBar/navBar';
-import Footer from './components/footer';
+import Footer from './components/Footer/footer';
 import Breadcrumbb from './components/breadcrumb';
-import ArtworkAdAdditionalInfo from './components/artworkAdAdditionalInfo';
 import ArtistSignUp from './Pages/artistSignUp'
 import BuyerSighUp from './Pages/buyerSignUp'
 import Login from './Pages/login';
@@ -26,6 +25,6 @@ import ViewArtistProfile from './Pages/viewArtistProfile';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
-
+import ExportProfile from './Pages/exportProfile';
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);

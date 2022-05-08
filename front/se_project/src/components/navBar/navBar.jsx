@@ -1,6 +1,13 @@
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
 import '../navBar/navBar.css';
+<<<<<<< Updated upstream
+import NavLink from "./navLink";
+import NavLinks from "./navLinks";
+=======
+import {Outlet, Link} from 'react-router-dom';
+
+>>>>>>> Stashed changes
 
 class NavBar extends Component {
     render() {
@@ -11,6 +18,9 @@ class NavBar extends Component {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
+<<<<<<< Updated upstream
+                <NavLinks/>
+=======
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul className="navbar-nav ml-auto">
                     
@@ -29,47 +39,32 @@ class NavBar extends Component {
                       <a className="nav-link active" aria-current="page" href="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="../../Pages/guide" style={{fontSize:'1.1vw'}}>راهنمای سایت</a>
+                      <Link className="nav-link" to="../../Pages/guide" style={{fontSize:'1.1vw'}}>راهنمای سایت</Link>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>درباره‌ما</a>
                     </li>
                     <ul class="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
                       <li class="nav-item dropdown rtl">
-                        <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
                           ثبت نام
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">ثبت نام هنرمند یا کارشناس</a></li>
-                          <li><a class="dropdown-item" href="#">ثبت نام خریدار</a></li>
+                          <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
+                          <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
                         </ul>
                       </li>
                       <li className="nav-item mx-2">
                         <a className="nav-link" href="#">|</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="#">ورود</a>
+                        <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>ورود</a>
                       </li>
                     </ul>
-                    
-                    <li class="nav-item dropdown rtl">
-                      <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
-                        ثبت نام
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
-                        <li><a class="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
-                      </ul>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>|</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>ورود</a>
-                    </li>
                   </ul>
                 </div>
                 
+>>>>>>> Stashed changes
                 <a className="navbar-brand d-flex justify-content-end" href="#">
                 <img 
                   className="img-fluid"
@@ -81,6 +76,7 @@ class NavBar extends Component {
               </a>
               </div>
             </nav>
+            <Outlet />
           </div>
         )
     }

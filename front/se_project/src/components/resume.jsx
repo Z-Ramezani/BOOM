@@ -1,7 +1,6 @@
 import {Component} from 'react';
 import Button from '../components/button';
 import Input_text from '../components/input_form';
-import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 class Resume extends Component {
@@ -44,8 +43,8 @@ class Resume extends Component {
                         </div>     
                                 
                     </div>
-
-<                   div className='row mb-2' >
+                    
+                    < div className='row mb-2' >
                         <div className='justify-content-center mt-0 mx-0' >
                             <div className='d-flex'>
                                 <div className='mx-3'>

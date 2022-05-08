@@ -3,7 +3,7 @@ import Button from '../components/button';
 import Input_text from '../components/input_form';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import ResetButton from '../components/resetButton';
 
 class BuyerSighUp extends Component {
