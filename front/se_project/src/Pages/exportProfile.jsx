@@ -7,6 +7,7 @@ import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import UserInformation from '../components/userInformation';
 import Resume from '../components/resume';
 import ExportResume from '../components/exportResume';
+import ExportArtworkAd from '../components/ArtworkAdInfo/ExportArtworkAd';
 
 
 class ExportProfile extends Component {
@@ -18,7 +19,9 @@ class ExportProfile extends Component {
                 <Breadcrumbb is1OrNot='true' first='حساب کاربری'/>
                 <UserInformation/>
                 <ExportResume/>
-
+                <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
+                    <ExportArtworkAd/>
+                </div>
             </div>
         );
     }
