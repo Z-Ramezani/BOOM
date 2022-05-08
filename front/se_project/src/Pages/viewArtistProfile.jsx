@@ -4,10 +4,8 @@ import Input_text from '../components/input_form';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
-import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo'
-import UserInformation from '../components/userInformation';
+import ArtworkAdAdditionalInfo from '../components/showartworkAdAdditionalInfo'
 import Resume from '../components/resume';
 
 class ViewArtistProfile extends Component {
@@ -35,7 +33,6 @@ class ViewArtistProfile extends Component {
                                 </div>
                             </div>
                         </div>
-    
                         <div className='row mb-2'>
                             <div className="col row ">
                                 <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سال تولد</label>
@@ -67,10 +64,7 @@ class ViewArtistProfile extends Component {
                     </div>
                 </div>
             </form>
-
-            <HorizontalLine value='سوابق کاری'/>
             <div className='container w-75 p-3 p-3 rounded mb-5' ><Resume/></div> 
-            
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                 <ArtworkAdAdditionalInfo/>

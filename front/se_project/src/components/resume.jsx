@@ -11,7 +11,7 @@ class Resume extends Component {
     const {experience, setExperience}=this.setState;
     return (
         <div>
-            
+            <HorizontalLine value='سوابق کاری'/>
             <form>
                 <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>

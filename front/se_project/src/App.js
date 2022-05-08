@@ -17,7 +17,7 @@ import Footer from './components/Footer/footer';
 import ArtworkAd from './Pages/artwokAd';
 import MainPage from './Pages/mainPage';
 import HorizontalLine from './components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from './components/artworkAdAdditionalInfo';
+import ArtworkAdAdditionalInfo from './components/showartworkAdAdditionalInfo';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import ArtworkGroup from './components/artworkGroup';
 import ExportOpinion from './components/exportOpinion';

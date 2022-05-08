@@ -4,7 +4,7 @@ import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
+import ArtworkAdAdditionalInfo from '../components/showartworkAdAdditionalInfo';
 import ExportOpinion from '../components/exportOpinion';
 
 class ArtworkAd extends Component {
