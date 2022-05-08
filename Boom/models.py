@@ -138,9 +138,10 @@ class Expert(models.Model):
 
 class Artwork_advertisement (models.Model):
 #    _id = models.AutoField(primary_key=True, editable=False)
+
     name = models.CharField(max_length=200,null=True)
     style = models.CharField (max_length=200,null=True , blank=True)
-    artist = models.ForeignKey(Artist, null=True, on_delete=models.SET_NULL)
+    artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     description =  models.CharField (max_length=200,null=True)
     price = models.IntegerField(default=0)
   #  examined_price = models.IntegerField(default=0) change2
@@ -149,9 +150,10 @@ class Artwork_advertisement (models.Model):
         ('sold','sold'),
         ('available' ,'available'),
     }
-    height_in_cm = models.FloatField()
+    height_in_cm = models.FloatField(null=True)
     length_in_cm = models.FloatField()
     width_in_cm = models.FloatField()
+    order_value = models.IntegerField(default=0)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
     image_1 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
     image_2 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
@@ -159,8 +161,11 @@ class Artwork_advertisement (models.Model):
     image_4 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
     image_5 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
     createAt = models.DateTimeField(auto_now_add=True , null=True)
+    date = models.DateField(null=True , blank=True)
     def __str__(self):
         return self.name
+
+
 
 ################################################################################
 
@@ -186,3 +191,11 @@ class Sample_artwork(models.Model):#change2
     date_created = models.DateField(auto_now_add=True , null=True)
     image = models.ImageField(null=True , blank=True,upload_to='Boom/media')
     description = models.CharField(max_length=200, null=True)
+
+
+#################################################################################
+
+
+
+class Order_counter(models.Model):
+    order_counter = models.IntegerField(default=1)

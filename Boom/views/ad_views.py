@@ -96,18 +96,72 @@ from Boom.permissions import *
 # cbv crud
 
 class add_advertisements(generics.CreateAPIView):
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [Is_authenticated_artist,Able_to_advertise]
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
+    def perform_create(self, serializer):
+        username = self.request.user.user.username
+        artist = Artist.objects.get(national_id_number=username)
+        order_counter_query = Order_counter.objects.all()
+        order_counter = order_counter_query.first()
+        artist.free_post_artwork = artist.free_post_artwork -1
+        artist.save()
+        serializer.save(artist=self.request.user.user,order_value = order_counter.order_counter)
+        order_counter.order_counter = order_counter.order_counter + 1
+        order_counter.save()
+
     # Artwork_advertisement.objects.get(Artist)
     # Artist.free_post_artwork_decreaser()
     # Artist.save()
+
+@api_view(['GET'])
+def buy_ticket(request):
+    username = request.user.user.username
+    artist = Artist.objects.filter(national_id_number=int(username))
+    my_artist = artist.first()
+    print(my_artist)
+    my_artist.free_post_artwork = my_artist.free_post_artwork + 1
+    my_artist.save()
+    serializer = Artist_ticket_Serializers(data=artist, many=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def Up_Ad(request, pk):
+    target_atad = Artwork_advertisement.objects.get(id=pk)
+    order_counter_query = Order_counter.objects.all()
+    order_counter = order_counter_query.first()
+    target_atad.order_value=order_counter.order_counter
+    target_atad.save()
+    order_counter.order_counter=order_counter.order_counter+1
+    order_counter.save()
+    ad_list = Artwork_advertisement.objects.all().order_by('order_value')
+    serializer = AdvertisementSerializer(data=ad_list, many=True)
+    if serializer.is_valid():
+         serializer.save()
+    return  Response(serializer.data)
+
+
+
+
+
+
+
+
 
 
 class view_advertisements(generics.ListAPIView):
     permission_classes = [IsAuthenticated,]
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
+
+    def list(self, request):
+        # Note the use of `get_queryset()` instead of `self.queryset`
+        queryset = self.get_queryset().all().order_by('order_value')
+        serializer = AdvertisementSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 class update_advertisements(generics.RetrieveUpdateAPIView):
