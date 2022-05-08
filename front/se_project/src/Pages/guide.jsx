@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import Navbar from '../components/navBar/navBar';
 import Breadcrumbb
  from '../components/breadcrumb';

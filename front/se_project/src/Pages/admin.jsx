@@ -2,7 +2,7 @@ import {Component} from 'react';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
 

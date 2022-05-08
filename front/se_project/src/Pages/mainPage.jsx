@@ -2,7 +2,7 @@ import {Component} from 'react';
 // import axios from 'axios';
 import Navbar from '../components/navBar/navBar';
 import Breadcrumbb from '../components/breadcrumb';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import ArtworkGroup from '../components/artworkGroup';
 import HeaderSlide from '../components/header-slide';
 class MainPage extends Component {

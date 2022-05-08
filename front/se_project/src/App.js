@@ -13,7 +13,7 @@ import Admin from './Pages/admin';
 import BuyerSighUp from './Pages/buyerSignUp';
 import TicketPart from './Pages/TicketPart';
 import ViewArtistProfile from './Pages/viewArtistProfile';
-import Footer from './components/footer';
+import Footer from './components/Footer/footer';
 import ArtworkAd from './Pages/artwokAd';
 import MainPage from './Pages/mainPage';
 import HorizontalLine from './components/horizontalLine/horizontalLine';

@@ -8,7 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import App from './App';
 import HeaderSlide from './components/header-slide'
 import Navbar from './components/navBar/navBar';
-import Footer from './components/footer';
+import Footer from './components/Footer/footer';
 import Breadcrumbb from './components/breadcrumb';
 import ArtworkAdAdditionalInfo from './components/artworkAdAdditionalInfo';
 import ArtistSignUp from './Pages/artistSignUp'

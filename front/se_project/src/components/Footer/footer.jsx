@@ -1,6 +1,9 @@
 import { Component } from "react";
 import { MDBFooter } from 'mdb-react-ui-kit';
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
+import FooterIcon from "./footerIcon";
+import { Nav } from "react-bootstrap";
+import NavLink from "../navBar/navLink";
 
 class Footer extends Component {
     render() {
@@ -13,37 +16,16 @@ class Footer extends Component {
             <MDBFooter className='text-center text-lg-start text-muted'>
               <section className='d-flex justify-content-center justify-content-lg-between p-1 border-bottom'> 
                   <div className='container text-center text-md-start'>
-                    <div className='col-md-4' style={{marginRight:'1vw'}}>
-                        <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-envelope"></i>
-                        </a>
-                        <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-telegram"></i>
-                        </a>
-                    </div>
+                    <FooterIcon/>
 
                     <div className='row' style={{marginRight:'18.6%'}}>
                       <nav className="navbar navbar-expand-lg navbar-light">
                         
                         <ul className="navbar-nav">
-                          <li className="nav-item">
-                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>تماس با ما</a>
-                          </li>
-                          <li className="nav-item">
-                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>سوالات متداول</a>
-                          </li>
-                          <li className="nav-item">
-                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>قوانین</a>
-                          </li>
-                          <li className="nav-item">
-                            <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>پیشنهادات و انتقادات</a>
-                          </li>
+                            <NavLink href="#" text='تماس با ما'/>
+                            <NavLink href="#" text='سوالات متداول'/>
+                            <NavLink href="#" text='قوانین'/>
+                            <NavLink href="#" text='پیشنهادات و انتقادات'/>
                         </ul>
                       </nav>
                     </div>

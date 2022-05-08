@@ -3,7 +3,7 @@ import Button from '../components/button';
 import Input_text from '../components/input_form';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo'
@@ -50,6 +50,7 @@ class ViewArtistProfile extends Component {
                                 <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>تاریخ ثبت حساب کاربری</label>
                                 <div className='col-6'>
                                     <Input_text type="date" value={dataUserAccount} onChange={(e)=>setDataUserAccount(e.target.value)}/>
+                                
                                 </div>
                             </div>
                         </div> 
@@ -68,7 +69,7 @@ class ViewArtistProfile extends Component {
             </form>
 
             <HorizontalLine value='سوابق کاری'/>
-            <div className='container w-75 p-3 p-3 bg-white rounded mb-5' ><Resume/></div> 
+            <div className='container w-75 p-3 p-3 rounded mb-5' ><Resume/></div> 
             
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
