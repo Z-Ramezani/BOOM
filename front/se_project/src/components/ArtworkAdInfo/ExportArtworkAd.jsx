@@ -64,9 +64,6 @@ class ExportArtworkAd extends Component {
                             <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                             <br/>
                             <br/>
-                            <h2 class="mt-0 text-danger" style={{fontSize:'1.1vw', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
-                            <br/>
-                            <h2 class="mt-0 text-danger" style={{fontSize:'1.1vw', fontWeight:'bold', }}> توضیحات: {/*recive from back*/}</h2>
 
                         </div>
 

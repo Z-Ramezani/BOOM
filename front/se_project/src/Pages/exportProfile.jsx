@@ -7,7 +7,7 @@ import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import UserInformation from '../components/userInformation';
 import Resume from '../components/resume';
 import ExportResume from '../components/exportResume';
-import ExportArtworkAd from '../components/ArtworkAdInfo/ExportArtworkAd';
+import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 
 class ExportProfile extends Component {
@@ -20,7 +20,10 @@ class ExportProfile extends Component {
                 <UserInformation/>
                 <ExportResume/>
                 <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                    <ExportArtworkAd/>
+                    <ShowArtworkAdCost/>
+                    <h2 class="mt-0 text-danger" style={{fontSize:'1.3vw', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
+                    <br/>
+                    <h2 class="mt-0 text-danger" style={{fontSize:'1.1vw', fontWeight:'bold', }}> توضیحات: {/*recive from back*/}</h2>
                 </div>
             </div>
         );

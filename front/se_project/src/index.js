@@ -28,4 +28,4 @@ import UserInformation from './components/userInformation';
 import ExportProfile from './Pages/exportProfile';
 import ExportArtworkAd from './components/ArtworkAdInfo/ExportArtworkAd';
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ExportProfile/>);
+root.render(<Admin/>);
