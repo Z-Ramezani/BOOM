@@ -27,4 +27,4 @@ import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
 import ExportProfile from './Pages/exportProfile';
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ExportProfile/>);
+root.render(<ViewArtistProfile/>);

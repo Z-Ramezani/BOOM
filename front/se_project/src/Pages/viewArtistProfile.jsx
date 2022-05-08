@@ -7,6 +7,7 @@ import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import Resume from '../components/resume';
 import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
+import x from "../assets/ig.jpg";
 
 class ViewArtistProfile extends Component {
 
@@ -22,45 +23,20 @@ class ViewArtistProfile extends Component {
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='نمایش حساب کاربری هنرمند'/>
             <HorizontalLine value='اطلاعات فردی'/>
             <form style={{backgroundColor:'#F9FFFF'}}>
-                <div className='container w-75 p-3 p-3 rounded mb-5'>
+                <div className='container w-75 p-3 p-3 rounded mb-1'>
                     <div className='row justify-content-center'>
-                      <div className='col-9'>
-                        <div className='row mb-2'>     
-                            <div class='col row '>
-                                <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام و نام‌خانوادگی</label>
-                                <div className='col-6'> 
-                                    <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
+                        <div class="row g-0 position-relative" dir="LTR"  >
+                            <div class="col-md-6 p-md-4">
+                                    <img class="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                    <figcaption class="figure-caption" dir="RTL" style={{marginRight:'18.2vw',fontSize:'0.9vw'}} >
+                                    تاریخ ثبت حساب کاربری: {/*recive from back*/}
+                                    </figcaption>
                                 </div>
+                            <div class="col-md-6 p-4 ps-md-0" dir="RTL">
+                                    <h5 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام و نام‌خانوادگی: {/*recive from back*/}</h5>
+                                    <h2 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سال تولد : {/*recive from back*/}</h2>
                             </div>
                         </div>
-                        <div className='row mb-2'>
-                            <div className="col row ">
-                                <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سال تولد</label>
-                                <div className='col-6'>
-                                    <Input_text type="date" value={birthay} onChange={(e)=>setBirthay(e.target.value)}/>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div className='row mb-2'>
-                            <div className="col row ">
-                                <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>تاریخ ثبت حساب کاربری</label>
-                                <div className='col-6'>
-                                    <Input_text type="date" value={dataUserAccount} onChange={(e)=>setDataUserAccount(e.target.value)}/>
-                                
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div className='row mb-2'>
-                            <div className="row col ">
-                                <label  className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>راه ارتباطی جهت نمایش در آگهی</label>
-                                <div className='col-6'>
-                                    <Input_text type="text" value={showNumber} onChange={(e)=>setShowNumber(e.target.value)}/>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
                     </div>
                 </div>
             </form>
