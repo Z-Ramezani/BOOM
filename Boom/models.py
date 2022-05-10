@@ -1,6 +1,7 @@
 from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User as users
+from django.forms import ValidationError
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.conf import settings
@@ -84,6 +85,14 @@ class Artist(models.Model):
     USERNAME_FIELD = 'national_id_number'
     objects = UserManager()
 
+    def decreaseToken(self):
+        if self.free_post_artwork > 0 :
+            self.free_post_artwork -= 1
+        else:
+            raise ValidationError('Not enough ticket!')
+            
+
+
     def __str__(self):
         return self.name + " " +self.lastname
 
@@ -122,6 +131,9 @@ class Expert(models.Model):
     birth_date = models.DateField()
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
     password = models.CharField(max_length=200 ,null=True)
+    createAt = models.DateTimeField(auto_now_add=True , null=True)
+    fieldofExpertise = models.CharField(max_length=200 ,null=True)
+    backgroundinMonth = models.DecimalField(max_digits=10 , decimal_places=0 , null=False, blank=False) #سابقه کاری
 #21
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 

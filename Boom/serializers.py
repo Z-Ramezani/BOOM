@@ -242,11 +242,6 @@ class Sample_artwork_Serializer(serializers.ModelSerializer):#changw2
         read_only_fields =['artist','date_created']
 
 
-class advertisementCreate(forms.ModelForm):
-    class Meta :
-        model = Artwork_advertisement
-        fields = '__all__'
-
 
 class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta :
@@ -260,9 +255,7 @@ class Comment_Serializer(serializers.ModelSerializer):#changw2
         fields = "__all__"
 
 
-
-
-class Save_Comment_Serializer():
+class Save_Comment_Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = Expert_comment
@@ -279,7 +272,16 @@ class Save_Comment_Serializer():
         self.instance = self.create(validated_data)
         return self.instance
 
+class ExpertinfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Expert
+        fields = ["name", "lastname", "phone", "createAt", "fieldofExpertise", "backgroundinMonth"]
 
+class ExpertRecordsSerializer(serializers.ModelSerializer):
+    artwork = AdvertisementSerializer
+    # expert = ExpertinfoSerializer
+    
 
-
-
+    class Meta:
+        model = Expert_comment
+        fields = ["artwork", "price",  "description"]
