@@ -115,11 +115,12 @@ class add_advertisements(generics.CreateAPIView):
     # Artist.save()
 
 @api_view(['GET'])
+@permission_classes([able_to_buy,])
 def buy_ticket(request):
     username = request.user.user.username
     artist = Artist.objects.filter(national_id_number=int(username))
     my_artist = artist.first()
-    print(my_artist)
+    my_artist.budget= my_artist.budget - 50000
     my_artist.free_post_artwork = my_artist.free_post_artwork + 1
     my_artist.save()
     serializer = Artist_ticket_Serializers(data=artist, many=True)
@@ -129,11 +130,13 @@ def buy_ticket(request):
 
 
 @api_view(['GET'])
+@permission_classes([able_to_buy,able_to_Hipe,])
 def Up_Ad(request, pk):
     target_atad = Artwork_advertisement.objects.get(id=pk)
     order_counter_query = Order_counter.objects.all()
     order_counter = order_counter_query.first()
     target_atad.order_value=order_counter.order_counter
+    target_atad.Hipe = True
     target_atad.save()
     order_counter.order_counter=order_counter.order_counter+1
     order_counter.save()

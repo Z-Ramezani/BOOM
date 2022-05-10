@@ -77,6 +77,9 @@ class Artist(models.Model):
     artfield = models.CharField(max_length=200,null=True)#change2
     stylework =  models.CharField(max_length=200,null=True)#change2
     Experience_in_month = models.IntegerField(null=True)#change2
+    hipe_count = models.IntegerField(default=2)
+    budget = models.IntegerField(default=10000000)
+    last_hipe_month = models.IntegerField(default=0)
   #  _id = models.AutoField(primary_key=True, editable=False)#change2
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
@@ -139,10 +142,10 @@ class Expert(models.Model):
 class Artwork_advertisement (models.Model):
 #    _id = models.AutoField(primary_key=True, editable=False)
 
-    name = models.CharField(max_length=200,null=True)
-    style = models.CharField (max_length=200,null=True , blank=True)
+    name = models.CharField(null=True,max_length=200)
+    style = models.CharField (null=True,max_length=200,)
     artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-    description =  models.CharField (max_length=200,null=True)
+    description =  models.CharField (max_length=200,null=True,blank=True)
     price = models.IntegerField(default=0)
   #  examined_price = models.IntegerField(default=0) change2
     Admin_perm = models.BooleanField(default=False)
@@ -154,12 +157,13 @@ class Artwork_advertisement (models.Model):
     length_in_cm = models.FloatField()
     width_in_cm = models.FloatField()
     order_value = models.IntegerField(default=0)
+    Hipe = models.BooleanField(default=False)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
-    image_1 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
-    image_2 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
-    image_3 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
-    image_4 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
-    image_5 = models.ImageField(null=True , blank=True,upload_to='Boom/media')
+    image_1 = models.ImageField(null=True,upload_to='Boom/media')
+    image_2 = models.ImageField(null=True,upload_to='Boom/media')
+    image_3 = models.ImageField(null=True,upload_to='Boom/media')
+    image_4 = models.ImageField(null=True,upload_to='Boom/media')
+    image_5 = models.ImageField(null=True,upload_to='Boom/media')
     createAt = models.DateTimeField(auto_now_add=True , null=True)
     date = models.DateField(null=True , blank=True)
     def __str__(self):
