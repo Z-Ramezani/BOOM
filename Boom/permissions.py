@@ -118,8 +118,9 @@ class able_to_Hipe(permissions.BasePermission): #اجازه نردبان زدن
            if(hipe_count < 1 ):
                return False
            else:
-               hipe_count-=1
-               artist.hipe_count = hipe_count
+               #hipe_count-=1
+               #artist.hipe_count = hipe_count
+               #print(hipe_count)
                artist.last_hipe_month = date.month
                artist.save()
                return True

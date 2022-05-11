@@ -18,6 +18,7 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views import View
+from django.http import HttpResponseNotAllowed
 from rest_framework.decorators import api_view,permission_classes
 from Boom.permissions import *
 # def create_advertisement (request, artistID):
@@ -135,16 +136,25 @@ def Up_Ad(request, pk):
     target_atad = Artwork_advertisement.objects.get(id=pk)
     order_counter_query = Order_counter.objects.all()
     order_counter = order_counter_query.first()
-    target_atad.order_value=order_counter.order_counter
-    target_atad.Hipe = True
-    target_atad.save()
-    order_counter.order_counter=order_counter.order_counter+1
-    order_counter.save()
-    ad_list = Artwork_advertisement.objects.all().order_by('order_value')
-    serializer = AdvertisementSerializer(data=ad_list, many=True)
-    if serializer.is_valid():
-         serializer.save()
-    return  Response(serializer.data)
+    print(request.user.user.username)
+    artist_q = Artist.objects.filter(national_id_number=int(request.user.user.username))
+    artist = artist_q.first()
+    if(target_atad.Hipe_num<2 and target_atad.artist.user.user.username == artist.user.user.username):
+       target_atad.order_value=order_counter.order_counter
+       target_atad.Hipe = True
+       target_atad.Hipe_num+=1
+       artist.hipe_count=artist.hipe_count-1
+       artist.save()
+       target_atad.save()
+       order_counter.order_counter=order_counter.order_counter+1
+       order_counter.save()
+       ad_list = Artwork_advertisement.objects.all().order_by('order_value').reverse()
+       serializer = AdvertisementSerializer(data=ad_list, many=True)
+       if serializer.is_valid():
+            serializer.save()
+       return  Response(serializer.data)
+    else:
+       return Response("You cant use Nardeban for this advertisment")
 
 
 
@@ -162,7 +172,7 @@ class view_advertisements(generics.ListAPIView):
 
     def list(self, request):
         # Note the use of `get_queryset()` instead of `self.queryset`
-        queryset = self.get_queryset().all().order_by('order_value')
+        queryset = self.get_queryset().all().order_by('order_value').reverse()
         serializer = AdvertisementSerializer(queryset, many=True)
         return Response(serializer.data)
 

@@ -221,7 +221,7 @@ class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artwork_advertisement
         # fields = '__all__'
-        fields = ['id', 'name', 'style', 'artist', 'length_in_cm', 'width_in_cm', 'date', 'description', 'image_1',
+        fields = ['id', 'name', 'style', 'artist', 'length_in_cm', 'width_in_cm', 'date', 'description', 'price', 'image_1',
                   'image_2', 'image_3', 'image_4', 'image_5',]
         extra_kwrags = {'artist': {'required': False}}
         read_only_fields = ['artist']

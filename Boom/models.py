@@ -51,7 +51,7 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser ,models.Model):
-    username = models.CharField(max_length=200 , null=True , unique=True)
+    username = models.CharField(max_length=200 , unique=True)
     is_artist = models.BooleanField(default=False)
     is_expert = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False) 
@@ -64,22 +64,22 @@ class User(AbstractBaseUser ,models.Model):
     USERNAME_FIELD='username'
 
 class Artist(models.Model):
-    name = models.CharField(max_length=200, null=True)
-    lastname = models.CharField(max_length=200 , null=True)
-    national_id_number = models.IntegerField(null=True , unique=True)
-    birth_date = models.DateField(null=True , blank=True)
-    phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=True, blank=False, unique=True)
-    password = models.CharField(max_length=200,null=True)
-    free_post_artwork = models.IntegerField(null=True , default=2)
-    created_at = models.DateTimeField(auto_now_add=True , null=True)
-    address = models.CharField(max_length=400 , null=True)#change2
-    email = models.EmailField(max_length=254,null=True,unique=True)#change2
-    artfield = models.CharField(max_length=200,null=True)#change2
-    stylework =  models.CharField(max_length=200,null=True)#change2
+    name = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200 )
+    national_id_number = models.IntegerField(unique=True)
+    birth_date = models.DateField()
+    phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
+    password = models.CharField(max_length=200)
+    free_post_artwork = models.IntegerField(default=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    address = models.CharField(max_length=400)#change2
+    email = models.EmailField(max_length=254,unique=True)#change2
+    artfield = models.CharField(max_length=200)#change2
+    stylework =  models.CharField(max_length=200)#change2
     Experience_in_month = models.IntegerField(null=True)#change2
-    hipe_count = models.IntegerField(default=2)
     budget = models.IntegerField(default=10000000)
     last_hipe_month = models.IntegerField(default=0)
+    hipe_count = models.IntegerField(default=2)
   #  _id = models.AutoField(primary_key=True, editable=False)#change2
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
@@ -95,9 +95,9 @@ class Artist(models.Model):
 
 class Customer(models.Model):
  #   _id = models.AutoField(primary_key=True, editable=False)
-    name = models.CharField(max_length=200 ,null=True)
-    lastname = models.CharField(max_length=200 ,null=True)
-    phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
+    name = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
+    phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
     password = models.CharField(max_length=200 ,null=True)
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -119,11 +119,11 @@ class Customer(models.Model):
 
 class Expert(models.Model):
 #    _id = models.AutoField(primary_key=True, editable=False)
-    name = models.CharField(max_length=200 ,null=True )
-    lastname = models.CharField(max_length=200 ,null=True)
+    name = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
     national_id_number = models.IntegerField(unique=True)
     birth_date = models.DateField()
-    phone = models.DecimalField(max_digits=11 , decimal_places=0 , null=False, blank=False, unique=True)
+    phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
     password = models.CharField(max_length=200 ,null=True)
 #21
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -142,30 +142,32 @@ class Expert(models.Model):
 class Artwork_advertisement (models.Model):
 #    _id = models.AutoField(primary_key=True, editable=False)
 
-    name = models.CharField(null=True,max_length=200)
-    style = models.CharField (null=True,max_length=200,)
+    name = models.CharField(max_length=200)
+    style = models.CharField (max_length=200,)
     artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     description =  models.CharField (max_length=200,null=True,blank=True)
     price = models.IntegerField(default=0)
   #  examined_price = models.IntegerField(default=0) change2
+
     Admin_perm = models.BooleanField(default=False)
     STATUS = {
         ('sold','sold'),
         ('available' ,'available'),
     }
-    height_in_cm = models.FloatField(null=True)
     length_in_cm = models.FloatField()
     width_in_cm = models.FloatField()
     order_value = models.IntegerField(default=0)
     Hipe = models.BooleanField(default=False)
+    Hipe_num = models.IntegerField(default=0)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
-    image_1 = models.ImageField(null=True,upload_to='Boom/media')
-    image_2 = models.ImageField(null=True,upload_to='Boom/media')
-    image_3 = models.ImageField(null=True,upload_to='Boom/media')
-    image_4 = models.ImageField(null=True,upload_to='Boom/media')
-    image_5 = models.ImageField(null=True,upload_to='Boom/media')
+    image_1 = models.ImageField(upload_to='Boom/media')
+    image_2 = models.ImageField(upload_to='Boom/media')
+    image_3 = models.ImageField(upload_to='Boom/media')
+    image_4 = models.ImageField(upload_to='Boom/media')
+    image_5 = models.ImageField(upload_to='Boom/media')
     createAt = models.DateTimeField(auto_now_add=True , null=True)
     date = models.DateField(null=True , blank=True)
+
     def __str__(self):
         return self.name
 
@@ -176,11 +178,11 @@ class Artwork_advertisement (models.Model):
 
 class Expert_comment(models.Model):#change2
   #  _id = models.AutoField(primary_key=True, editable=False)
-    artwork_advertisement = models.ForeignKey(Artwork_advertisement, null=True, on_delete=models.SET_NULL)
-    expert = models.ForeignKey(Expert, null=True, on_delete=models.SET_NULL)
+    artwork_advertisement = models.ForeignKey(Artwork_advertisement,null=True, on_delete=models.SET_NULL)
+    expert = models.ForeignKey(Expert, on_delete=models.SET_NULL,null=True)
     description = models.CharField(max_length=200, null=True)
     price = models.IntegerField(default=0)
-    createAt = models.DateTimeField(auto_now_add=True , null=True)
+    createAt = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.expert.name + " " + self.artwork_advertisement.name
 
@@ -188,13 +190,13 @@ class Expert_comment(models.Model):#change2
 
 class Sample_artwork(models.Model):#change2
    # _id = models.AutoField(primary_key=True, editable=False)
-    name = models.CharField(max_length=200, null=True)
-    artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-    style = models.CharField(max_length=200, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    artist = models.ForeignKey(User,null=True, on_delete=models.SET_NULL)
+    style = models.CharField(max_length=200)
     materials = models.CharField(max_length=200, null=True, blank=True)
-    date_created = models.DateField(auto_now_add=True , null=True)
-    image = models.ImageField(null=True , blank=True,upload_to='Boom/media')
-    description = models.CharField(max_length=200, null=True)
+    date_created = models.DateField(auto_now_add=True )
+    image = models.ImageField(upload_to='Boom/media')
+    description = models.CharField(max_length=200)
 
 
 #################################################################################
