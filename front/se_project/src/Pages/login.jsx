@@ -66,14 +66,10 @@ import Input_text from '../components/input_form';
  
 // export default Login;
 
-const Login = () => {
+const Login = (props) => {
 
     const {userName, setUserName}=useState("");
     const {password, setPassword}=useState("");
-
-    function validateFormFields() {
-        return userName.length > 0 && password.length > 0;
-    }
 
     return ( 
         <div className='bg-image' style={{backgroundImage:color}}>
@@ -81,7 +77,7 @@ const Login = () => {
             <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
             <div className='container flex-column min-vh-100' >
                 <div className="row d-flex justify-content-center " >  
-                    <form onSubmit={this.handleSubmit}>
+                    
                         <div className="col-md-4">
                             <form  className="form-control">
                                 <div className="mb-3">
@@ -99,11 +95,11 @@ const Login = () => {
                                     <label className="form-check-label me-1" data-ng-model="rememberMe"  style={{fontSize:'0.9vw'}}>مرا به یاد بسپار</label>
                                 </div>
                                 <div className="mb-3">
-                                    <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' disabled={!validateFormFields()} /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
                                 </div>
                             </form>
                         </div>
-                    </form> 
+                    
                 </div>
             </div>
             <Footer/>

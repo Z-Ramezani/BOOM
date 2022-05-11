@@ -4,8 +4,8 @@ import axios from 'axios';
 import Button from '../components/button';
 import Input_text from '../components/input_form';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-const UserInformation = () => {
-    const {names, setNames}=useState;
+const UserInformation = (props) => {
+    const {names, setNames}=useState("");
     useEffect(() => {
         fetchNames();
     }, []);
@@ -100,7 +100,7 @@ const UserInformation = () => {
             });
     };
 
-    const [password, setPassword]=useState([]);
+    const [password, setPassword]=useState("");
     useEffect(() => {
         fetchPassword();
     }, []);

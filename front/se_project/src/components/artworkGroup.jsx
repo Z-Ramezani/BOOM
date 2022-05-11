@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import ArtworkAdMainPage from '../components/artworkAdMainPage';
 
-const ArtworkGroup = () => {
+const ArtworkGroup = (props) => {
 
     return (
         <div>

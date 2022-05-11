@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
@@ -60,8 +62,56 @@ import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
  
 // export default TicketPart;
 
-const TicketPart = () => {
-    
+const TicketPart = (props) => {
+
+    const {count, setCount}=useState("");
+    useEffect(() => {
+        fetchCount();
+    }, []);
+    const fetchCount = () => {
+        axios
+            .get('http://localhost:8000/api/count')
+            .then((res) => {
+                // console.log(res);
+                setCount(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [valueDecrease, setValueDecrease]=useState([]);
+    useEffect(() => {
+        fetchValueDecrease();
+    }, []);
+    const fetchValueDecrease = () => {
+        axios
+            .get('http://localhost:8000/api/valueDecrease')
+            .then((res) => {
+                // console.log(res);
+                setValueDecrease(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const [valueIncrease, setValueIncrease]=useState([]);
+    useEffect(() => {
+        fetchValueIncrease();
+    }, []);
+    const fetchValueIncrease = () => {
+        axios
+            .get('http://localhost:8000/api/valueIncrease')
+            .then((res) => {
+                // console.log(res);
+                setValueIncrease(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     return ( 
         <div>
                 <Navbar/>
@@ -71,16 +121,16 @@ const TicketPart = () => {
                     <div className='container w-75 p-3'>
                         <div className='d-flex mb-3'>
                             <label className="form-label ps-2 mt-2"  style={{fontSize:'1.1vw'}}>تعداد تیکت باقیمانده</label>
-                            <input type="text" class="form-control" disabled value={this.state.count} style={{width:'3.5vw', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
+                            <input type="text" class="form-control" disabled value={count} style={{width:'3.5vw', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
                         </div>
-                        <Button width='auto' height='auto' fontSize='1.17vw' text='خرید تیکت' dir='LTR' onClick={this.setValueIncrease}/>
+                        <Button width='auto' height='auto' fontSize='1.17vw' text='خرید تیکت' dir='LTR' onClick={valueIncrease}/>
                     </div>
                     <HorizontalLine value='آگهی اثر هنری'/>
                     <div>
                         <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                             <ArtworkAdAdditionalInfo showCostInput/>
                             <div style={{marginRight:'3.5%'}}>
-                                <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'ارسال درخواست ثبت آگهی' dir='LTR' onClick={this.setValueDecrease}/>
+                                <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'ارسال درخواست ثبت آگهی' dir='LTR' onClick={valueDecrease}/>
                             </div>
                         </div>
                         <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
@@ -92,7 +142,7 @@ const TicketPart = () => {
                                 <div className='ms-2'>
                                     <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'حذف' /*onClick*//>
                                 </div>
-                                <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'خرید نردبان' onClick={this.setValueDecrease}/>
+                                <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'خرید نردبان' onClick={valueDecrease}/>
                             </div>
                         </div>
                     </div>

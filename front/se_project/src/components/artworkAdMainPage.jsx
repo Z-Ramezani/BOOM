@@ -2,7 +2,7 @@ import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import x from "../assets/ig.jpg";
 
-const ArtworkAdMainPage = () => {
+const ArtworkAdMainPage = (props) => {
 
     return ( 
         <div className="">
@@ -20,7 +20,7 @@ const ArtworkAdMainPage = () => {
                         <div className="card-text">
                            
                             <h2 class="card-text" style={{color:'#222222',fontSize:'1vw',width:'vw'}}>نام هنرمند {/*recive from back*/}</h2>
-                            <a href={this.handlePage}/*recive from back*/ class="stretched-link"></a>
+                            <a href={props.handlePage}/*recive from back*/ class="stretched-link"></a>
                             <br></br>
                             <div className="row" dir="LTR">
                                 <div className="col-4" dir="LTR" style={{paddingRight:'0%'}}>
@@ -29,7 +29,7 @@ const ArtworkAdMainPage = () => {
                                 </div>
                                 <div className="col ps-0">
                                     <div>{
-                                            this.props.showLadder ?
+                                            props.showLadder ?
                                             <div>
                                                 <i class="bi bi-ladder"></i>
                                             </div>

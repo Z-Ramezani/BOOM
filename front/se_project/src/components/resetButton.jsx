@@ -1,5 +1,5 @@
 import {Component} from 'react';
-const ResetButton = () => {
+const ResetButton = (props) => {
     return ( 
         <div>
             <div className="d-grid gap-2 d-md-flex justify-content-md-end">

@@ -57,7 +57,7 @@ import ExportOpinion from '../components/exportOpinion';
 // export default ArtworkAd;
 
 
-const ArtworkAd = () => {
+const ArtworkAd = (props) => {
     const [visibilityButton, setVisibilityButton] = useState("block");
     const [visibilityCost, setVisibilityCost] = useState("none");
 

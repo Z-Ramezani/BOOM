@@ -6,7 +6,7 @@ import Input_text from '../components/input_form';
 import ResetButton from '../components/resetButton';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
-const Resume = () => {
+const Resume = (props) => {
     const [artisticBackground, setArtisticBackground]=useState([]);
     useEffect(() => {
         fetchArtisticBackground();

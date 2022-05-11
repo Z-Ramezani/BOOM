@@ -4,7 +4,7 @@ import { Component } from "react";
 import logo from '../../assets/images/logo.png';
 import '../navBar/navBar.css';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return ( 
     <div>
             <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
@@ -27,10 +27,10 @@ const NavBar = () => {
                     </li>
 
                     <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
+                      <a className="nav-link active" aria-current={props.ariacurrent} href={props.href}>صفحه اصلی</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="../../Pages/guide">راهنمای سایت</a>
+                      <a className="nav-link" href={props.href}>راهنمای سایت</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#" style={{fontSize:'1.1vw'}}>درباره ما</a>

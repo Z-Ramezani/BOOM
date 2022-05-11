@@ -149,7 +149,7 @@ import ResetButton from '../components/resetButton';
 // export default ArtistSignUp;
 
 
-const ArtistSignUp = () => {
+const ArtistSignUp = (props) => {
 
     const [names, setNames]=useState("");
     const [codeNumber, setcodeNumber]=useState("");

@@ -30,7 +30,7 @@ import Resume from '../components/resume';
  
 // export default ViewArtistProfile;
 
-const ViewArtistProfile = () => {
+const ViewArtistProfile = (props) => {
   return ( 
     <div className='d-flex flex-column min-vh-100'>
           <Navbar/>

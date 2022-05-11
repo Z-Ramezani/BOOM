@@ -101,7 +101,7 @@ import axios from 'axios';
 // }
 // export default Guide;
 
-const Guide = () => {
+const Guide = (props) => {
     return ( 
         <div>
             <Navbar/>

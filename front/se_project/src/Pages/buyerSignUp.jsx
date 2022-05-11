@@ -78,7 +78,7 @@ import ResetButton from '../components/resetButton';
 //   export default BuyerSighUp;
 
 
-const BuyerSighUp = () => {
+const BuyerSighUp = (props) => {
     const [names, setNames]=useState("");
     const [phone, setPhone]=useState("");
     const [password, setPassword]=useState("");

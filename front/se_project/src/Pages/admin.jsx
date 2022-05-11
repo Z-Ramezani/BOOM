@@ -32,7 +32,7 @@ import ArtworkAdAdditionalInfo from '../components/artworkAdAdditionalInfo';
  
 // export default Admin;
 
-const Admin = () => {
+const Admin = (props) => {
     return ( 
         <div>
             <Navbar/>

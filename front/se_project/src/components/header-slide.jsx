@@ -2,7 +2,7 @@ import { Component } from "react";
 import a from "../assets/11.jpg";
 import b from "../assets/11.jpg";
 import c from "../assets/11.jpg";
-const HeaderSlide = () => {
+const HeaderSlide = (props) => {
     return ( 
         <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
             <div className='carousel-indicators'>

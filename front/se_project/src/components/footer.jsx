@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { MDBFooter } from 'mdb-react-ui-kit';
 import logo from '../assets/images/logo.png';
-const Footer = () => {
+const Footer = (props) => {
   return (  
     <div className="mt-auto navbar-fixed-bottom">
       <div className="sticky-bottom" style={{ backgroundColor:"#f9ffff"}}>

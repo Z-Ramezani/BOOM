@@ -1,5 +1,5 @@
 import {Component} from 'react';
-const ExportOpinion = () => {
+const ExportOpinion = (props) => {
 
     return ( 
         <div className='row' style={{paddingBottom:'1vw'}}>

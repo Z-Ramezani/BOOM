@@ -34,7 +34,7 @@ import HeaderSlide from '../components/header-slide';
  
 // export default MainPage;
 
-const MainPage = () => {
+const MainPage = (props) => {
     return ( 
         <div>
             <Navbar/>

@@ -7,7 +7,7 @@ import c from "../assets/11.jpg";
 import d from "../assets/11.jpg";
 import e from "../assets/11.jpg";
 
-const ArtworkAdAdditionalInfo = ({props}) => {
+const ArtworkAdAdditionalInfo = (props) => {
 
     const [names, setNames]=useState([]);
     useEffect(() => {
@@ -105,7 +105,7 @@ const ArtworkAdAdditionalInfo = ({props}) => {
         <div className="">
                 <div class="row g-0 position-relative" dir="LTR">
                     <div class="col-md-6 mb-md-0 p-md-4">{
-                        this.props.showImages ?
+                        props.showImages ?
                             <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
                                 <div className='carousel-indicators'>
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
@@ -150,7 +150,7 @@ const ArtworkAdAdditionalInfo = ({props}) => {
 
                     <div class="col-md-6 p-4 ps-md-0" dir="RTL">{
                         /*for just show informations:   */
-                        this.props.showText ? 
+                        props.showText ? 
                             <div>
                                 <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
                                 <br/>
@@ -163,7 +163,7 @@ const ArtworkAdAdditionalInfo = ({props}) => {
                                 <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                                 <br/>
                                 <div>{
-                                        this.props.showCostText ?
+                                        props.showCostText ?
                                             <h2 class="mt-0" dir="RTL" style={{fontSize:'1.1vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
                                         : <div></div>
                                     }
@@ -221,7 +221,7 @@ const ArtworkAdAdditionalInfo = ({props}) => {
                                 </div>
                                 
                                 <div>{
-                                    this.props.showCostInput ?
+                                    props.showCostInput ?
                                         <div className='row mb-2'>     
                                             <div class='col row'>
                                                 <label className='col-4 col-form-label' style={{marginRight:'0%',marginLeft:'-0.1vw', fontSize:'1.1vw'}}>قیمت</label>
