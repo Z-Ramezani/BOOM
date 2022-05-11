@@ -1,6 +1,7 @@
 import { Component } from "react";
 import x from "../assets/ig.jpg";
 
+<<<<<<< Updated upstream
 class ArtworkAdMainPage extends Component {
     state = {  } 
     render() { 
@@ -18,6 +19,24 @@ class ArtworkAdMainPage extends Component {
                             نام اثر {/*recive from back*/}
                         </h5>
                         <div className="card-text">
+=======
+const ArtworkAdMainPage = (props) => {
+
+    return ( 
+        <div className="">
+                <div class="card shadow bg-white rounded">
+                
+                     <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                     <figcaption class="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
+                    ۲۰*۳۰ cm{/*recive from back*/}
+                    </figcaption>
+                
+                     <div class="card-body pt-0">
+                         <h5 class="card-title" style={{color:'#BB1542',fontSize:'1.9vw', fontWeight:'bold'}}>
+                             نام اثر {/*recive from back*/}
+                         </h5>
+                         <div className="card-text">
+>>>>>>> Stashed changes
                            
                             <h2 class="card-text" style={{color:'#222222',fontSize:'1vw',width:'vw'}}>نام هنرمند {/*recive from back*/}</h2>
                             <a href="#"/*recive from back*/ class="stretched-link"></a>
