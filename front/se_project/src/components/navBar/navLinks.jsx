@@ -57,35 +57,34 @@ const NavLinks = (props) => {
             <div className=" navbar-collapse" id="navbarSupportedContent"> 
                 <ul className="navbar-nav ml-auto"> 
                     <li className="nav-item dropdown rtl">
-                        Testtttt
-                        {/* <link class="nav-link" to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> */}
+                        <Link class="nav-link" to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle"></i>
-                        {/* </link> */}
+                        </Link>
                         <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        {/* <li><link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</link></li> */}
-                        {/* <li><link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</link></li> */}
-                        {/* <li><link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</link></li> */}
+                        <li><Link class="dropdown-item" to="artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
+                        <li><Link class="dropdown-item" to="TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
+                        <li><Link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</Link></li>
                         </ul>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link active" aria-current="page" to="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
-                    {/* <NavLink to="../../Pages/guide" text='راهنمای سایت' />
-                    <NavLink  to="#" text='درباره‌ما'/> */}
+                    <NavLink to="guide" text='راهنمای سایت' />
+                    <NavLink  to="#" text='درباره‌ما'/>
                     <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
                         <li className="nav-item dropdown rtl">
                         <Link className="nav-link" to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
                             ثبت نام
                         </Link>
                         <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            {/* <li><link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</link></li> */}
-                            {/* <li><link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</link></li> */}
+                            <li><Link class="dropdown-item" to="artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
+                            <li><Link class="dropdown-item" to="buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
                         </ul>
                         </li>
                         <li className="nav-item mx-2">
-                        {/* <link className="nav-link" to="#">|</link> */}
+                        <Link className="nav-link" to="#">|</Link>
                         </li>
-                        {/* <NavLink  to="#" text="ورود"/> */}
+                        <NavLink  to="login" text="ورود"/>
                     </ul>
                 </ul>
             </div>
