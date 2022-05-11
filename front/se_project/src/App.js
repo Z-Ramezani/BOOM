@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {BrowserRouter, BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom';
+import {BrowserRouter, BrowserRouter as Router, Link, NavLink, Route, Routes, Switch} from 'react-router-dom';
 import Button from './components/button';
 import 'bootstrap';
 import './components/navBar/navBar.css';
@@ -26,6 +26,7 @@ import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
+import NavLinks from './components/navBar/navLinks';
 
 class App extends Component {
   render() { 
@@ -39,6 +40,8 @@ class App extends Component {
               {/* components */}
               <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
               <Route path='/navBar/navBar' element={<NavBar/>}/>
+              <Route path='/navBar/navLink' element={<navLink/>}/>
+              <Route path='/navBar/navLinks' element={<NavLinks/>}/>
               <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
               <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
               <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
@@ -70,7 +73,13 @@ class App extends Component {
         {/* </AlertProvider> */}
         
       </>
-      
+    //   <div>
+    //   <h1>Home</h1>
+    //   <nav>
+    //     <Link to="/">Home</Link> |{" "}
+    //     <Link to="about">About</Link>
+    //   </nav>
+    // </div>
     );
   }
 }

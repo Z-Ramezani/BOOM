@@ -26,5 +26,6 @@ import ArtworkAdMainPage from './components/artworkAdMainPage';
 import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
 import ExportProfile from './Pages/exportProfile';
+import ExportOpinion from './components/exportOpinion';
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);

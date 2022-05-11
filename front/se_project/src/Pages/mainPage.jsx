@@ -5,6 +5,7 @@ import Breadcrumbb from '../components/breadcrumb';
 import Footer from '../components/Footer/footer';
 import ArtworkGroup from '../components/artworkGroup';
 import HeaderSlide from '../components/header-slide';
+import {BrowserRouter, BrowserRouter as Router, Link, Route, Routes, Switch} from 'react-router-dom';
 class MainPage extends Component {
     state = { 
          // ads: []
