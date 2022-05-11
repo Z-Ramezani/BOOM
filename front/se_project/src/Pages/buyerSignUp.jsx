@@ -83,10 +83,6 @@ const BuyerSighUp = (props) => {
     const [phone, setPhone]=useState("");
     const [password, setPassword]=useState("");
 
-    function validateFormFields() {
-        return password.length > 0 && names.length > 0 && phone.length > 0;
-    }
-
     return ( 
         <div>
               <Navbar/>
