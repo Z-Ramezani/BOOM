@@ -1,3 +1,5 @@
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
 import '../navBar/navBar.css';
@@ -58,5 +60,4 @@ const NavBar = (props) => {
       </div>
    );
 }
- 
 export default NavBar;

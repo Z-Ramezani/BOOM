@@ -25,7 +25,10 @@ import ViewArtistProfile from './Pages/viewArtistProfile';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import MainPage from './Pages/mainPage';
 import UserInformation from './components/userInformation';
-import ExportProfile from './Pages/exportProfile';
+import HorizontalLine from './components/horizontalLine/horizontalLine';
 import ExportOpinion from './components/exportOpinion';
+import ArtworkGroup from './components/artworkGroup';
+import Resume from './components/resume';
+
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);

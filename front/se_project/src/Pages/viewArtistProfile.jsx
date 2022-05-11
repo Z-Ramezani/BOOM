@@ -9,14 +9,8 @@ import Resume from '../components/resume';
 import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 import x from "../assets/ig.jpg";
 
-class ViewArtistProfile extends Component {
+const ViewArtistProfile = (props) => {
 
-  render() {
-    
-    const {names, setNames}=this.setState;
-    const {birthay, setBirthay}=this.setState;
-    const {dataUserAccount, setDataUserAccount}=this.setState;
-    const {showNumber, setShowNumber}=this.setState;
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
@@ -48,7 +42,6 @@ class ViewArtistProfile extends Component {
             <Footer/>
         </div>                    
     );
-  }
 }
  
 export default ViewArtistProfile;

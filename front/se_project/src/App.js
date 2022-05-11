@@ -1,8 +1,8 @@
 import {Component} from 'react';
 import {BrowserRouter, BrowserRouter as Router, Link, NavLink, Route, Routes, Switch} from 'react-router-dom';
-import Button from './components/button';
 import 'bootstrap';
 import './components/navBar/navBar.css';
+import Button from './components/button';
 import Breadcrumbb from './components/breadcrumb';
 import Input_text from './components/input_form';
 import Guide from './Pages/guide';
@@ -25,18 +25,16 @@ import ResetButton from './components/resetButton';
 import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
-import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 import NavLinks from './components/navBar/navLinks';
-
-class App extends Component {
-  render() { 
-
-    return (
-      
-      <>
-        {/* <AlertProvider template={AlertTemplate} {...Options}> */}
-          <BrowserRouter>
+import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
+  
+const App = () => {
+  return ( 
+    <BrowserRouter>
             <Routes>
+              {/* <Route exact path='/' exact element={<MainPage />} /> */}
+              <Route index element={<MainPage/>}/>
+
               {/* components */}
               <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
               <Route path='/navBar/navBar' element={<NavBar/>}/>
@@ -56,7 +54,6 @@ class App extends Component {
               <Route path='/userInformation' element={<UserInformation/>}/>
               
               {/* Pages */}
-              <Route index element={<MainPage/>}/>
               <Route path='/admin' element={<Admin/>}/>
               <Route path='/artistProfile' element={<ArtistProfile/>}/>
               <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
@@ -70,19 +67,7 @@ class App extends Component {
               <Route path='/' Component={App}/>
             </Routes>
           </BrowserRouter>
-        {/* </AlertProvider> */}
-        
-      </>
-    //   <div>
-    //   <h1>Home</h1>
-    //   <nav>
-    //     <Link to="/">Home</Link> |{" "}
-    //     <Link to="about">About</Link>
-    //   </nav>
-    // </div>
-    );
-  }
+   );
 }
  
 export default App;
-

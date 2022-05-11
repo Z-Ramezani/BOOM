@@ -26,7 +26,7 @@ import {Component} from 'react';
  
 // export default ExportOpinion;
 
-const ExportOpinion = () => {
+const ExportOpinion = (props) => {
     return ( 
         <div className='row' style={{paddingBottom:'1vw'}}>
             <div className='col'>

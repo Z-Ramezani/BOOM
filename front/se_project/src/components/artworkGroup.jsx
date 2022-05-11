@@ -16,32 +16,26 @@ import ArtworkAdMainPage from '../components/artworkAdMainPage';
 //                     <div className='col'>
 //                         <ArtworkAdMainPage/>
 //                     </div>      
-                     
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
- 
-// export default ArtworkGroup;
+const ArtworkGroup = (props) => {
 
-const ArtworkGroup = () => {
-    return ( 
+    return (
         <div>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">    
-                <div className='col'>
-                    <ArtworkAdMainPage/>
-                </div>
-                <div className='col'>
-                    <ArtworkAdMainPage/>
-                </div>
-                <div className='col'>
-                    <ArtworkAdMainPage/>
-                </div>      
-                    
+                <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">    
+                    <div className='col'>
+                        <ArtworkAdMainPage/>
+                    </div>
+                    <div className='col'>
+                        <ArtworkAdMainPage/>
+                    </div>
+                    <div className='col'>
+                        <ArtworkAdMainPage/>
+                    </div>      
+                     
             </div>
-        </div>
-     );
-}
+       </div>
+      );
+     }
+ 
+
  
 export default ArtworkGroup;
