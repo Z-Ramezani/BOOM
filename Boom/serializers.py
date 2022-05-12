@@ -16,8 +16,6 @@ from django import forms
 # from .backends import ArtistBackend , ExpertBackend , CustomerBackend
 
 
-
-
 JWT_PAYLOAD_HANDLER = api_settings.JWT_PAYLOAD_HANDLER
 JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 
@@ -31,58 +29,41 @@ JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 
 
 class UserSerializer(serializers.ModelSerializer):
-
     class Meta:
-
         model = User
-        fields = ['username' , 'password' , 'is_active' , 'is_artist' , 'is_expert' , 'is_customer'  ]
+        fields = ['username', 'password', 'is_active', 'is_artist', 'is_expert', 'is_customer']
+
 
 class ArtistSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Artist
-        fields = ['name' , 'lastname' , 'birth_date' , 'phone' ,'national_id_number', 'free_post_artwork' , 'created_at' , 'password'  ]
+        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'free_post_artwork', 'created_at',
+                  'password']
 
 
 class ExpertSerializer(serializers.ModelSerializer):
-    
-
     class Meta:
-
         model = Expert
-        fields = ['name' , 'lastname' , 'birth_date' , 'phone' ,'national_id_number' ]
-
+        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number']
 
 
 class CustomerSerializer(serializers.ModelSerializer):
-    
-
     class Meta:
-
         model = Customer
-        fields = ['name' , 'lastname' , 'phone' ]
-
-
-
-
+        fields = ['name', 'lastname', 'phone']
 
 
 class RegisterArtistSerializer(ArtistSerializer):
-    
     class Meta:
         model = Artist
-        fields = ['name' , 'lastname' , 'birth_date' , 'phone' ,'national_id_number' , 'password' ,  ]
+        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'password', ]
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        
-
-
         artist = users.objects.create(
             username=validated_data['national_id_number'])
         artist.set_password(validated_data['password'])
         artist.save()
-
 
         User.objects.create_artist(
             username=validated_data['national_id_number'],
@@ -92,7 +73,6 @@ class RegisterArtistSerializer(ArtistSerializer):
             is_expert=False,
             is_customer=False)
 
-        
         user1 = Artist.objects.create(
             name=validated_data['name'],
             lastname=validated_data['lastname'],
@@ -102,20 +82,18 @@ class RegisterArtistSerializer(ArtistSerializer):
             password=validated_data['password'],
             free_post_artwork=2,
             user=User.objects.get(username=validated_data['national_id_number'])
-             )
-        
-        return  user1
+        )
+
+        return user1
+
 
 class RegisterExpertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Expert
-        fields = ['name' , 'lastname' , 'birth_date' , 'phone' ,'national_id_number' , 'password' ,  ]
+        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'password', ]
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        
-
-
         expert = users.objects.create(
             username=validated_data['national_id_number'])
         expert.set_password(validated_data['password'])
@@ -128,7 +106,7 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
             is_artist=False,
             is_expert=True,
             is_customer=False)
-        
+
         user1 = Expert.objects.create(
             name=validated_data['name'],
             lastname=validated_data['lastname'],
@@ -136,30 +114,23 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
             birth_date=validated_data['birth_date'],
             phone=validated_data['phone'],
             password=validated_data['password'],
-            
-            
-             )
-        
-        return  user1
+
+        )
+
+        return user1
+
 
 class RegisterCustomerSerializer(serializers.ModelSerializer):
-    
     class Meta:
-
         model = Customer
-        fields = ['name' , 'lastname' , 'phone' , 'password'  ]
+        fields = ['name', 'lastname', 'phone', 'password']
         extra_kwargs = {'password': {'write_only': True}}
 
-
     def create(self, validated_data):
-        
-
-
         customer = users.objects.create(
             username=validated_data['phone'])
         customer.set_password(validated_data['password'])
         customer.save()
-
 
         User.objects.create_customer(
             username=validated_data['phone'],
@@ -168,7 +139,6 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
             is_artist=False,
             is_expert=False,
             is_customer=True)
-
 
         user1 = Customer.objects.create(
             name=validated_data['name'],
@@ -179,10 +149,7 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
         return user1
 
 
-
-
 class LoginSerializers(serializers.Serializer):
-
     username = serializers.CharField()
     password = serializers.CharField()
 
@@ -191,18 +158,13 @@ class LoginSerializers(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError('Incorrect Credentials Passed.')
-        
-
-
-
-
 
 
 # class LoginArtistSerializers(serializers.Serializer):
 
 #     username = serializers.CharField()
 #     password = serializers.CharField()
-#     is_artist = serializers.BooleanField(default=False) 
+#     is_artist = serializers.BooleanField(default=False)
 
 #     def validate(self, data):
 #         user = authenticate(**data)
@@ -212,61 +174,69 @@ class LoginSerializers(serializers.Serializer):
 
 # and user.is_active
 
-class Artist_Profile_Serializers(serializers.ModelSerializer):#change2
+class Artist_Profile_Serializers(serializers.ModelSerializer):  # change2
     class Meta:
         model = Artist
-        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone' ,'address', 'password']
-        #fields = '__all__'
+        fields = ['name', 'lastname', 'birth_date', 'created_at', 'email', 'phone', 'address', 'password']
+        # fields = '__all__'
 
 
-class Artist_Profile_show_Serializers(serializers.ModelSerializer):#change2
+class Artist_Profile_show_Serializers(serializers.ModelSerializer):  # change2
     class Meta:
         model = Artist
-        fields = ['name' , 'lastname' , 'birth_date' , 'created_at' , 'email' ,'phone']
-        #fields = '__all__'
+        fields = ['name', 'lastname', 'birth_date', 'created_at', 'email', 'phone']
+        # fields = '__all__'
 
 
+class Artist_ticket_Serializers(serializers.ModelSerializer):  # change2
+    class Meta:
+        model = Artist
+        fields = ['free_post_artwork']
 
-class Artist_Experience_Serializer(serializers.ModelSerializer):#change2
+
+class Artist_Experience_Serializer(serializers.ModelSerializer):  # change2
     class Meta:
         model = Artist
         fields = ['artfield', 'stylework', 'Experience_in_month']
 
 
-
-class Sample_artwork_Serializer(serializers.ModelSerializer):#changw2
+class Sample_artwork_Serializer(serializers.ModelSerializer):  # changw2
     class Meta:
         model = Sample_artwork
-        fields =  ['name','artist','style','materials','description','date_created' , 'image']
-        extra_kwrags = {'artist':{'required':False}}
-        read_only_fields =['artist','date_created']
+        fields = ['name', 'artist', 'style', 'materials', 'description', 'date_created', 'image']
+        extra_kwrags = {'artist': {'required': False}}
+        read_only_fields = ['artist', 'date_created']
 
 
 class advertisementCreate(forms.ModelForm):
-    class Meta :
+    class Meta:
         model = Artwork_advertisement
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ['name', 'style', 'artist', 'length_in_cm', 'width_in_cm', 'date', 'description']
+        extra_kwrags = {'artist': {'required': False}}
+        read_only_fields = ['artist']
 
 
 class AdvertisementSerializer(serializers.ModelSerializer):
-    class Meta :
+    class Meta:
         model = Artwork_advertisement
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ['id', 'name', 'style', 'artist', 'length_in_cm', 'width_in_cm', 'date', 'description', 'price', 'image_1',
+                  'image_2', 'image_3', 'image_4', 'image_5',]
+        extra_kwrags = {'artist': {'required': False}}
+        read_only_fields = ['artist']
 
 
-class Comment_Serializer(serializers.ModelSerializer):#changw2
+class Comment_Serializer(serializers.ModelSerializer):  # changw2
     class Meta:
         model = Expert_comment
         fields = "__all__"
 
 
-
-
 class Save_Comment_Serializer():
-
     class Meta:
         model = Expert_comment
-        fields = ["artwork_advertisement", "expert", "description" , "price"]
+        fields = ["artwork_advertisement", "expert", "description", "price"]
 
     def save(self, **kwargs):
         User = self.context["request"].user
