@@ -15,16 +15,14 @@ class Expert_Profile_Details(generics.RetrieveAPIView):
     serializer_class = ExpertinfoSerializer
     permission_classes = [IsAuthenticated]
 
-# class Expert_Profile_Records(generics.RetrieveAPIView, pk):
+# class Expert_Profile_Records(generics.RetrieveAPIView):
 #     QuerySet = Expert_comment.objects.get(Expert = pk)
 #     serializer_class = ExpertRecordsSerializer
 #     permission_classes = [IsAuthenticated]
-#     #??
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
-def Expert_Profile_Records(request,pk):
-    record = Expert_comment.objects.filter(Expert = pk)
-    record_serializer = Expert_Profile_Records(record, many=True)
+def Expert_Profile_Records(request, pk):
+    record = Expert_comment.objects.filter(expert = pk)
+    record_serializer = ExpertRecordsSerializer(record, many=True)
     return Response(record_serializer.data)
-

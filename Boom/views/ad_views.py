@@ -28,11 +28,11 @@ class add_advertisements(generics.CreateAPIView):
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
     
-    def create(self, request, *args, **kwargs):
-        artist = get_object_or_404(Artist, user=self.request.user)
-        artist.decreaseToken()
+    # def create(self, request, *args, **kwargs):
+    #     artist = get_object_or_404(Artist, user=self.request.user)
+    #     artist.decreaseToken()
 
-        return super().create(request, *args, **kwargs)
+    #     return super().create(request, *args, **kwargs)
 
 
 class view_advertisements(generics.ListAPIView):
