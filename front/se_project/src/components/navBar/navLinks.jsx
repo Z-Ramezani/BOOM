@@ -69,8 +69,8 @@ const NavLinks = (props) => {
                     <li className="nav-item">
                         <Link className="nav-link active" aria-current="page" to="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
-                    <NavLink to="guide" text='راهنمای سایت' />
-                    <NavLink  to="#" text='درباره‌ما'/>
+                    <Link to="guide" className="nav-link" >راهنمای سایت</Link>
+                    <Link  to="#" className="nav-link">درباره‌ما</Link>
                     <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
                         <li className="nav-item dropdown rtl">
                         <Link className="nav-link" to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
@@ -84,7 +84,8 @@ const NavLinks = (props) => {
                         <li className="nav-item mx-2">
                         <Link className="nav-link" to="#">|</Link>
                         </li>
-                        <NavLink  to="login" text="ورود"/>
+                        <Link  to="login" className="nav-link">ورود</Link>
+                        
                     </ul>
                 </ul>
             </div>
