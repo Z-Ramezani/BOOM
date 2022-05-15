@@ -2,7 +2,7 @@ import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import x from "../assets/ig.jpg";
 
-const ArtworkAdMainPage = (props) => {
+
 
 
 const ArtworkAdMainPage = (props) => {
@@ -44,5 +44,5 @@ const ArtworkAdMainPage = (props) => {
             </div>
      );
 }
-}
+
 export default ArtworkAdMainPage;

@@ -65,53 +65,53 @@ import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 const TicketPart = (props) => {
 
-    const {count, setCount}=useState("");
-    useEffect(() => {
-        fetchCount();
-    }, []);
-    const fetchCount = () => {
-        axios
-            .get('http://localhost:8000/api/count')
-            .then((res) => {
-                // console.log(res);
-                setCount(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+     const {count, setCount}=useState("");
+//     useEffect(() => {
+//         fetchCount();
+//     }, []);
+//     const fetchCount = () => {
+//         axios
+//             .get('http://localhost:8000/api/count')
+//             .then((res) => {
+//                 // console.log(res);
+//                 setCount(res.data);
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//             });
+//     };
 
-    const [valueDecrease, setValueDecrease]=useState([]);
-    useEffect(() => {
-        fetchValueDecrease();
-    }, []);
-    const fetchValueDecrease = () => {
-        axios
-            .get('http://localhost:8000/api/valueDecrease')
-            .then((res) => {
-                // console.log(res);
-                setValueDecrease(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+     const [valueDecrease, setValueDecrease]=useState([]);
+//     useEffect(() => {
+//         fetchValueDecrease();
+//     }, []);
+//     const fetchValueDecrease = () => {
+//         axios
+//             .get('http://localhost:8000/api/valueDecrease')
+//             .then((res) => {
+//                 // console.log(res);
+//                 setValueDecrease(res.data);
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//             });
+//     };
 
-    const [valueIncrease, setValueIncrease]=useState([]);
-    useEffect(() => {
-        fetchValueIncrease();
-    }, []);
-    const fetchValueIncrease = () => {
-        axios
-            .get('http://localhost:8000/api/valueIncrease')
-            .then((res) => {
-                // console.log(res);
-                setValueIncrease(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+     const [valueIncrease, setValueIncrease]=useState([]);
+//     useEffect(() => {
+//         fetchValueIncrease();
+//     }, []);
+//     const fetchValueIncrease = () => {
+//         axios
+//             .get('http://localhost:8000/api/valueIncrease')
+//             .then((res) => {
+//                 // console.log(res);
+//                 setValueIncrease(res.data);
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//             });
+//     };
 
     return ( 
         <div>
