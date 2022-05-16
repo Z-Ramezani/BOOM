@@ -19,7 +19,7 @@ import MainPage from './Pages/mainPage';
 import HorizontalLine from './components/horizontalLine/horizontalLine';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import ArtworkGroup from './components/artworkGroup';
-import ExportOpinion from './components/exportOpinion';
+import ExportOpinion from './components/expertOpinion';
 import HeaderSlide from './components/header-slide';
 import ResetButton from './components/resetButton';
 import Resume from './components/resume';
@@ -27,6 +27,8 @@ import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
 import NavLinks from './components/navBar/navLinks';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
+import ExportProfile from './Pages/expertProfile';
+import ViewExpertProfile from './Pages/viewExpertProfile';
   
 const App = () => {
   return ( 
@@ -64,6 +66,9 @@ const App = () => {
               <Route path='/mainPage' element={<MainPage/>}/>
               <Route path='/TicketPart' element={<TicketPart/>}/>
               <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
+              <Route path='/exportProfile' element={<ExportProfile/>}/>
+              <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
+
               <Route path='/' Component={App}/>
             </Routes>
           </BrowserRouter>

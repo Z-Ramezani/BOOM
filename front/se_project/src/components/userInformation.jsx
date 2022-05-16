@@ -133,7 +133,6 @@ const UserInformation = (props) => {
 
     return (
         <div>
-            <HorizontalLine value='اطلاعات کاربری'/>
             <form style={{backgroundColor:'#F9FFFF'}}>
                 <div className='container w-75 p-3 p-3 rounded mb-5'>
                     <div className='row justify-content-center'>
@@ -214,7 +213,11 @@ const UserInformation = (props) => {
                     <form className='col-3 justify-content-end'>
                             <div class="form-group " style={{width:'15vw', height:'15vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
                                 <input type="file" class="form-control-file"/>
+                               
                             </div>
+                            <figcaption class="figure-caption" dir="RTL" style={{marginRight:'0.2vw',fontSize:'0.9vw'}} >
+                                        تاریخ ثبت حساب کاربری: {/*recive from back*/}
+                                </figcaption>
                       </form>
                     <div className='row mb-2' >
                         <div className='justify-content-center mt-0 mx-0' >

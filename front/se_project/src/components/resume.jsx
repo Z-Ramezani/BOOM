@@ -6,61 +6,59 @@ import Input_text from '../components/input_form';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 const Resume = (props) => {
-    const [artisticBackground, setArtisticBackground]=useState([]);
-    useEffect(() => {
-        fetchArtisticBackground();
-    }, []);
-    const fetchArtisticBackground = () => {
-        axios
-            .get('http://localhost:8000/api/artisticBackground')
-            .then((res) => {
-                // console.log(res);
-                setArtisticBackground(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+     const [artisticBackground, setArtisticBackground]=useState([]);
+    // useEffect(() => {
+    //     fetchArtisticBackground();
+    // }, []);
+    // const fetchArtisticBackground = () => {
+    //     axios
+    //         .get('http://localhost:8000/api/artisticBackground')
+    //         .then((res) => {
+    //             // console.log(res);
+    //             setArtisticBackground(res.data);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // };
 
     const [workStyle, setWorkStyle]=useState([]);
-    useEffect(() => {
-        fetchWorkStyle();
-    }, []);
-    const fetchWorkStyle = () => {
-        axios
-            .get('http://localhost:8000/api/workStyle')
-            .then((res) => {
-                // console.log(res);
-                setWorkStyle(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+    // useEffect(() => {
+    //     fetchWorkStyle();
+    // }, []);
+    // const fetchWorkStyle = () => {
+    //     axios
+    //         .get('http://localhost:8000/api/workStyle')
+    //         .then((res) => {
+    //             // console.log(res);
+    //             setWorkStyle(res.data);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // };
 
-    const [experience, setExperience]=useState([]);
-    useEffect(() => {
-        fetchExperience();
-    }, []);
-    const fetchExperience = () => {
-        axios
-            .get('http://localhost:8000/api/experience')
-            .then((res) => {
-                // console.log(res);
-                setExperience(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+     const [experience, setExperience]=useState([]);
+    // useEffect(() => {
+    //     fetchExperience();
+    // }, []);
+    // const fetchExperience = () => {
+    //     axios
+    //         .get('http://localhost:8000/api/experience')
+    //         .then((res) => {
+    //             // console.log(res);
+    //             setExperience(res.data);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // };
 
     return (
         <div>
-            <HorizontalLine value='سوابق کاری'/>
             <form>
                 <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
-
                         <div className='row mb-2'>     
                             <div class='col row '>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه هنری</label>
