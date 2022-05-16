@@ -7,52 +7,52 @@ import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 const Resume = (props) => {
      const [artisticBackground, setArtisticBackground]=useState([]);
-    // useEffect(() => {
-    //     fetchArtisticBackground();
-    // }, []);
-    // const fetchArtisticBackground = () => {
-    //     axios
-    //         .get('http://localhost:8000/api/artisticBackground')
-    //         .then((res) => {
-    //             // console.log(res);
-    //             setArtisticBackground(res.data);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
+    useEffect(() => {
+        fetchArtisticBackground();
+    }, []);
+    const fetchArtisticBackground = () => {
+        axios
+            .get('http://localhost:8000/api/artisticBackground')
+            .then((res) => {
+                // console.log(res);
+                setArtisticBackground(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     const [workStyle, setWorkStyle]=useState([]);
-    // useEffect(() => {
-    //     fetchWorkStyle();
-    // }, []);
-    // const fetchWorkStyle = () => {
-    //     axios
-    //         .get('http://localhost:8000/api/workStyle')
-    //         .then((res) => {
-    //             // console.log(res);
-    //             setWorkStyle(res.data);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
+    useEffect(() => {
+        fetchWorkStyle();
+    }, []);
+    const fetchWorkStyle = () => {
+        axios
+            .get('http://localhost:8000/api/workStyle')
+            .then((res) => {
+                // console.log(res);
+                setWorkStyle(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
      const [experience, setExperience]=useState([]);
-    // useEffect(() => {
-    //     fetchExperience();
-    // }, []);
-    // const fetchExperience = () => {
-    //     axios
-    //         .get('http://localhost:8000/api/experience')
-    //         .then((res) => {
-    //             // console.log(res);
-    //             setExperience(res.data);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
+    useEffect(() => {
+        fetchExperience();
+    }, []);
+    const fetchExperience = () => {
+        axios
+            .get('http://localhost:8000/api/experience')
+            .then((res) => {
+                // console.log(res);
+                setExperience(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     return (
         <div>
