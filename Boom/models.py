@@ -183,6 +183,8 @@ class Expert_comment(models.Model):#change2
     description = models.CharField(max_length=200, null=True)
     price = models.IntegerField(default=0)
     createAt = models.DateTimeField(auto_now_add=True)
+    fieldofExpertise = models.CharField(max_length=200, null=True)
+    backgroundinMonth = models.DecimalField(max_digits=10, decimal_places=0, null=False, blank=False,default=0)  # سابقه کاری
     def __str__(self):
         return self.expert.name + " " + self.artwork_advertisement.name
 

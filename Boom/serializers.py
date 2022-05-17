@@ -233,7 +233,7 @@ class Comment_Serializer(serializers.ModelSerializer):  # changw2
         fields = "__all__"
 
 
-class Save_Comment_Serializer():
+class Save_Comment_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Expert_comment
         fields = ["artwork_advertisement", "expert", "description", "price"]
@@ -248,8 +248,30 @@ class Save_Comment_Serializer():
         validated_data["expert"] = expert
         self.instance = self.create(validated_data)
         return self.instance
+class ExpertinfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Expert
+        fields = ["name", "lastname", "phone", "createAt", "fieldofExpertise", "backgroundinMonth"]
 
+class ExpertRecordsSerializer(serializers.ModelSerializer):
+    art_name = serializers.ReadOnlyField(source = 'artwork_advertisement.name')
+    art_length_in_cm = serializers.ReadOnlyField(source = 'artwork_advertisement.length_in_cm')
+    art_width_in_cm = serializers.ReadOnlyField(source = 'artwork_advertisement.width_in_cm')
+    art_style = serializers.ReadOnlyField(source = 'artwork_advertisement.style')
+    art_createAt = serializers.ReadOnlyField(source = 'artwork_advertisement.createAt')
+    art_description = serializers.ReadOnlyField(source = 'artwork_advertisement.description')
+    art_price = serializers.ReadOnlyField(source = 'artwork_advertisement.price')
+    art_image_1 = serializers.ReadOnlyField(source = 'artwork_advertisement.image_1')
+    art_image_2 = serializers.ReadOnlyField(source = 'artwork_advertisement.image_2')
+    art_image_3 = serializers.ReadOnlyField(source = 'artwork_advertisement.image_3')
+    art_image_4 = serializers.ReadOnlyField(source = 'artwork_advertisement.image_4')
+    art_image_5 = serializers.ReadOnlyField(source = 'artwork_advertisement.image_5')
 
+    class Meta:
+        model = Expert_comment
+        fields = ["art_name", "price", "description", 'art_height_in_cm', 'art_length_in_cm',
+                  'art_width_in_cm', 'art_style', 'art_createAt', 'art_description', 'art_price',
+                  'art_image_1', 'art_image_2', 'art_image_3', 'art_image_4', 'art_image_5']
 
 
 
