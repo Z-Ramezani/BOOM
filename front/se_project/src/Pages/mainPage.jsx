@@ -42,6 +42,12 @@ const MainPage = (props) => {
             <Breadcrumbb is1OrNot='true' first='صفحه اصلی'/>
             <div className='d-flex flex-column min-vh-100'>
                 <div className='container w-75 p-3'>
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
                     <ArtworkGroup/>
                     <ArtworkGroup/>
                     <ArtworkGroup/>

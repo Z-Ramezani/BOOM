@@ -10,7 +10,6 @@ import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 import x from "../assets/ig.jpg";
 
 const ViewArtistProfile = (props) => {
-
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
@@ -50,3 +49,4 @@ const ViewArtistProfile = (props) => {
 }
  
 export default ViewArtistProfile;
+
