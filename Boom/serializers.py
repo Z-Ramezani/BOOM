@@ -282,4 +282,15 @@ class Save_Comment_Serializer():
 
 
 
+#added by hidden9 for update password
+
+class UsersSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = users
+        fields = '__all__'
+
+
+
+
 

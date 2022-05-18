@@ -28,7 +28,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 #Local import
 
 # from ..models import Artist , Expert , Artwork_advertisement , Customer
-from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  , LoginSerializers
+from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  , LoginSerializers 
 from rest_framework import permissions
 from Boom.permissions import *
 
@@ -134,3 +134,22 @@ class LoginAPI(generics.GenericAPIView):
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]})
+
+
+
+@api_view(['PUT'])
+@permission_classes([Is_anybody,])
+def updatePassword(request, pk):
+    user = User.objects.get(id=pk)
+
+    data = request.data
+
+    user.password = data['password']
+    user.save()
+
+    serializer = UserSerializer(user, many=False)
+
+    return Response(serializer.data)
+
+
+
