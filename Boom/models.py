@@ -147,6 +147,8 @@ class Artwork_advertisement (models.Model):
     artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     description =  models.CharField (max_length=200,null=True,blank=True)
     price = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
   #  examined_price = models.IntegerField(default=0) change2
 
     Admin_perm = models.BooleanField(default=False)
