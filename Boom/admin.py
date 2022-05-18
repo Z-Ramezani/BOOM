@@ -9,3 +9,4 @@ admin.site.register(Artwork_advertisement)
 admin.site.register(User)
 admin.site.register(Expert_comment)#change2
 admin.site.register(Sample_artwork)#change2
+admin.site.register(Order_counter)

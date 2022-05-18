@@ -18,6 +18,7 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views import View
+from django.http import HttpResponseNotAllowed
 from rest_framework.decorators import api_view,permission_classes
 from Boom.permissions import *
 # def create_advertisement (request, artistID):
@@ -96,12 +97,72 @@ from Boom.permissions import *
 # cbv crud
 
 class add_advertisements(generics.CreateAPIView):
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [Is_authenticated_artist,Able_to_advertise]
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
+    def perform_create(self, serializer):
+        username = self.request.user.user.username
+        artist = Artist.objects.get(national_id_number=username)
+        order_counter_query = Order_counter.objects.all()
+        order_counter = order_counter_query.first()
+        artist.free_post_artwork = artist.free_post_artwork -1
+        artist.save()
+        serializer.save(artist=self.request.user.user,order_value = order_counter.order_counter)
+        order_counter.order_counter = order_counter.order_counter + 1
+        order_counter.save()
+
     # Artwork_advertisement.objects.get(Artist)
     # Artist.free_post_artwork_decreaser()
     # Artist.save()
+
+@api_view(['GET'])
+@permission_classes([able_to_buy,])
+def buy_ticket(request):
+    username = request.user.user.username
+    artist = Artist.objects.filter(national_id_number=int(username))
+    my_artist = artist.first()
+    my_artist.budget= my_artist.budget - 50000
+    my_artist.free_post_artwork = my_artist.free_post_artwork + 1
+    my_artist.save()
+    serializer = Artist_ticket_Serializers(data=artist, many=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([able_to_buy,able_to_Hipe,])
+def Up_Ad(request, pk):
+    target_atad = Artwork_advertisement.objects.get(id=pk)
+    order_counter_query = Order_counter.objects.all()
+    order_counter = order_counter_query.first()
+    print(request.user.user.username)
+    artist_q = Artist.objects.filter(national_id_number=int(request.user.user.username))
+    artist = artist_q.first()
+    if(target_atad.Hipe_num<2 and target_atad.artist.user.user.username == artist.user.user.username):
+       target_atad.order_value=order_counter.order_counter
+       target_atad.Hipe = True
+       target_atad.Hipe_num+=1
+       artist.hipe_count=artist.hipe_count-1
+       artist.save()
+       target_atad.save()
+       order_counter.order_counter=order_counter.order_counter+1
+       order_counter.save()
+       ad_list = Artwork_advertisement.objects.all().order_by('order_value').reverse()
+       serializer = AdvertisementSerializer(data=ad_list, many=True)
+       if serializer.is_valid():
+            serializer.save()
+       return  Response(serializer.data)
+    else:
+       return Response("You cant use Nardeban for this advertisment")
+
+
+
+
+
+
+
+
 
 
 class view_advertisements(generics.ListAPIView):
@@ -109,9 +170,15 @@ class view_advertisements(generics.ListAPIView):
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
 
+    def list(self, request):
+        # Note the use of `get_queryset()` instead of `self.queryset`
+        queryset = self.get_queryset().all().order_by('order_value').reverse()
+        serializer = AdvertisementSerializer(queryset, many=True)
+        return Response(serializer.data)
+
 
 class update_advertisements(generics.RetrieveUpdateAPIView):
-    permission_classes = [Is_artist_obj_managment_readonly]
+    permission_classes = [Is_artist_obj_managment_readonly,]
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
 

@@ -48,7 +48,6 @@ class RegisterArtistAPI(generics.GenericAPIView):
             "refresh": str(refresh),
             "access": str(refresh.access_token),
         }
-
         return Response({
             "user": serializer.data,
             "refresh": res["refresh"],

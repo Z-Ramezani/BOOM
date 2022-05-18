@@ -16,5 +16,7 @@ urlpatterns = [
      path('<int:pk>/update_advertisements/', adv.update_advertisements.as_view()),
      path('<int:pk>/delete_advertisements/', adv.delete_advertisements.as_view()),
      path("review/create", comment.review_artwork),
-     path("review/product/<int:artwork_id>", comment.reviews_of_artwork)
+     path("review/product/<int:artwork_id>", comment.reviews_of_artwork),
+     path("hipe/<pk>", adv.Up_Ad),
+     path("buy_ticket", adv.buy_ticket),
 ]
