@@ -147,6 +147,8 @@ class Artwork_advertisement (models.Model):
     artist = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     description =  models.CharField (max_length=200,null=True,blank=True)
     price = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
   #  examined_price = models.IntegerField(default=0) change2
 
     Admin_perm = models.BooleanField(default=False)
@@ -183,6 +185,8 @@ class Expert_comment(models.Model):#change2
     description = models.CharField(max_length=200, null=True)
     price = models.IntegerField(default=0)
     createAt = models.DateTimeField(auto_now_add=True)
+    fieldofExpertise = models.CharField(max_length=200, null=True)
+    backgroundinMonth = models.DecimalField(max_digits=10, decimal_places=0, null=False, blank=False,default=0)  # سابقه کاری
     def __str__(self):
         return self.expert.name + " " + self.artwork_advertisement.name
 

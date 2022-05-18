@@ -49,11 +49,14 @@ class Is_artist_or_Readonly(permissions.BasePermission):#ه منظور تغیی�
 class Is_artist_obj_managment_readonly (permissions.BasePermission):#ه منظور مدیریت آگهی و نمونه کارها توسط شخص هنرمند
 
        def has_object_permission(self, request, view, obj ):
+            print(obj.artist.user.user.username)
+            print(request.user.username)
+            print("end")
             return bool(
                 request.method in permissions.SAFE_METHODS and request.user or
                 request.user.is_authenticated and
                 request.user and request.user.user.is_artist and
-                request.user == obj.artist.user.user
+                request.user.username == obj.artist.user.user.username
             )
 
 class Is_expert_or_Readonly(permissions.BasePermission):#به منظور تغییر پروفایل برای کارشناس

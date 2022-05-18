@@ -24,7 +24,8 @@ urlpatterns = [
     path('users/', include('Boom.urls.user_urls')),
     path('artist_profile/', include('Boom.urls.artist_profile_urls')),#change2
     path('advertisment/'      , include('Boom.urls.ad_urls')),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    path('expert_profile/', include('Boom.urls.expertProfile_urls')),
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

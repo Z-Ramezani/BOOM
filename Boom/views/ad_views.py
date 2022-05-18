@@ -178,7 +178,7 @@ class view_advertisements(generics.ListAPIView):
 
 
 class update_advertisements(generics.RetrieveUpdateAPIView):
-    permission_classes = [Is_artist_obj_managment_readonly]
+    permission_classes = [Is_artist_obj_managment_readonly,]
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
 
