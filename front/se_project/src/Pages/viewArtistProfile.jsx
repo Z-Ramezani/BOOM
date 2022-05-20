@@ -17,31 +17,26 @@ const ViewArtistProfile = (props) => {
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='نمایش حساب کاربری هنرمند'/>
             <HorizontalLine value='اطلاعات فردی'/>
             <form style={{backgroundColor:'#F9FFFF'}}>
-                <div className='container w-75 rounded'>
+                <div className='container w-75 p-3 p-3 rounded mb-1'>
                     <div className='row justify-content-center'>
-                        <div class="row position-relative" dir="LTR"  >
-                            <div class="col-md-5 p-md-4">
-                                    <img class="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "9vw", maxWidth:'100%',maxHeight:'100%',marginLeft:'5vw'}}/>
-                                    <figcaption class="figure-caption" dir="RTL" style={{marginRight:'9.5vw',fontSize:'0.9vw'}} >
+                        <div class="row g-0 position-relative" dir="LTR"  >
+                            <div class="col-md-6 p-md-4">
+                                    <img class="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                    <figcaption class="figure-caption" dir="RTL" style={{marginRight:'18.2vw',fontSize:'0.9vw'}} >
                                     تاریخ ثبت حساب کاربری: {/*recive from back*/}
                                     </figcaption>
                                 </div>
-                            <div class="col-md-6 p-4 ps-md-0" dir="RTL" style={{marginLeft:'7.8%'}}>
-                                    <h2 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام و نام‌خانوادگی: {/*recive from back*/}</h2>
+                            <div class="col-md-6 p-4 ps-md-0" dir="RTL">
+                                    <h5 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام و نام‌خانوادگی: {/*recive from back*/}</h5>
                                     <h2 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سال تولد : {/*recive from back*/}</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-            <HorizontalLine value='سوابق کاری'/>
-            <div className='container w-75 p-3 my-1' style={{marginLeft:'10.5%'}} >
-                <h2  style={{fontSize:'90%', fontWeight:'bold'}}>زمینه هنری: {/*recive from back*/}</h2>
-                <h2 className='mt-3' style={{fontSize:'90%', fontWeight:'bold'}}>سبک‌ کاری: {/*recive from back*/}</h2>
-                <h2 className='mt-3' style={{fontSize:'90%', fontWeight:'bold'}}> سابقه فعالیت: {/*recive from back*/}</h2>
-            </div> 
+            <div className='container w-75 p-3 p-3 rounded mb-5' ><Resume/></div> 
             <HorizontalLine value='نمونه آثار'/>
-            <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
+            <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                 <ShowArtworkAdInfo/>
             </div> 
             <Footer/>

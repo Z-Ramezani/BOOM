@@ -5,11 +5,11 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import UserInformation from '../components/userInformation';
-import ExpertResume from '../components/expertResume';
+import ExportResume from '../components/exportResume';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 
-class ExpertProfile extends Component {
+class ExportProfile extends Component {
     state = {  } 
     render() { 
         return (
@@ -17,8 +17,7 @@ class ExpertProfile extends Component {
                 <Navbar/>
                 <Breadcrumbb is1OrNot='true' first='حساب کاربری'/>
                 <UserInformation/>
-                <HorizontalLine value='سوابق کاری'/>
-                <ExpertResume/>
+                <ExportResume/>
                 <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                     <ShowArtworkAdCost/>
                     <h2 class="mt-0 text-danger" style={{fontSize:'1.3vw', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
@@ -30,4 +29,4 @@ class ExpertProfile extends Component {
     }
 }
  
-export default ExpertProfile;
+export default ExportProfile;

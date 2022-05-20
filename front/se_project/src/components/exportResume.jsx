@@ -2,12 +2,13 @@ import { Component } from 'react';
 import HorizontalLine from './horizontalLine/horizontalLine';
 import Input_text from './input_form';
 import Button from './button';
-class ExpertResume extends Component {
+class ExportResume extends Component {
     render() { 
         const {activityfield, setactivityfield}=this.setState;
         const {experience, setExperience}=this.setState;
         return (
             <div>
+                <HorizontalLine value='سوابق کاری'/>
                 <form>
                     <div className='container w-75 p-3 p-3 rounded mb-5' >
                         <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
@@ -47,4 +48,4 @@ class ExpertResume extends Component {
     }
 }
  
-export default ExpertResume;
+export default ExportResume;

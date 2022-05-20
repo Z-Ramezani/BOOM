@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import {Component} from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import color from '../assets/images/color.png'
 import Input_text from '../components/input_form';
+import App from '../App';
 // class Login extends Component {
 //   render() { 
 //     const {userName, setUserName}=this.setState;
@@ -71,6 +72,23 @@ const Login = (props) => {
     const {userName, setUserName}=useState("");
     const {password, setPassword}=useState("");
 
+    const navigator = useNavigate();
+
+    let sendData = () => {
+        console.log("ASDAASDASDASDd")
+        axios.post('http://hidden.pythonanywhere.com/users/login', {userName, password})
+            .then(res => {
+                App.user = res.data.data;
+                console.log('hello');
+                navigator('/');
+            })
+            .catch(err => console.log('not'))
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
     return ( 
         <div className='bg-image' style={{backgroundImage:color}}>
             <Navbar/>
@@ -79,13 +97,13 @@ const Login = (props) => {
                 <div className="row d-flex justify-content-center " >  
                     
                         <div className="col-md-4">
-                            <form  className="form-control">
+                            <form  className="form-control" onSubmit={handleSubmit}>
                                 <div className="mb-3">
-                                    <label for="InputEmail1" className="form-label"  style={{fontSize:'1.1vw'}}>نام کاربری</label>
+                                    <label forhtml="InputEmail1" className="form-label"  style={{fontSize:'1.1vw'}}>نام کاربری</label>
                                     <Input_text type="text" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                                    <label forhtml="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
                                     <Input_text type="text" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                     <a className='nav-link' href='#' style={{fontSize:'0.7vw',color:'#222222',marginTop:'0%'}} >بازیابی رمز عبور</a>
 
@@ -95,7 +113,7 @@ const Login = (props) => {
                                     <label className="form-check-label me-1" data-ng-model="rememberMe"  style={{fontSize:'0.9vw'}}>مرا به یاد بسپار</label>
                                 </div>
                                 <div className="mb-3">
-                                    <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button  width= '100%' height= '5%' text= 'ورود' fontSize='1.5vw' onClick={sendData}/>
                                 </div>
                             </form>
                         </div>

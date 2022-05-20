@@ -14,9 +14,7 @@ const ArtistProfile = (props) => {
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='حساب کاربری' second='اطلاعات حساب کاربری'/>
-            <HorizontalLine value='اطلاعات کاربری'/>
             <UserInformation/>
-            <HorizontalLine value='سوابق کاری'/>
             <Resume/>
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
