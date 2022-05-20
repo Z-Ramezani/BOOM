@@ -61,15 +61,15 @@ const NavLinks = (props) => {
                         <i className="bi bi-person-circle"></i>
                         </Link>
                         <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><Link class="dropdown-item" to="../../artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
-                        <li><Link class="dropdown-item" to="../../TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
+                        <li><Link class="dropdown-item" to="artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
+                        <li><Link class="dropdown-item" to="TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
                         <li><Link class="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</Link></li>
                         </ul>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link active" aria-current="page" to="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
-                    <Link to='../../Guide' className="nav-link" >راهنمای سایت</Link>
+                    <Link to="guide" className="nav-link" >راهنمای سایت</Link>
                     <Link  to="#" className="nav-link">درباره‌ما</Link>
                     <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
                         <li className="nav-item dropdown rtl">
@@ -77,15 +77,14 @@ const NavLinks = (props) => {
                             ثبت نام
                         </Link>
                         <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><Link class="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
-                            <li><Link class="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
+                            <li><Link class="dropdown-item" to="artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
+                            <li><Link class="dropdown-item" to="buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
                         </ul>
                         </li>
                         <li className="nav-item mx-2">
                         <Link className="nav-link" to="#">|</Link>
                         </li>
-                        {/* کارای مسخره زهرا */}
-                        <Link  to="../../viewArtistProfile" className="nav-link">ورود</Link>
+                        <Link  to="login" className="nav-link">ورود</Link>
                         
                     </ul>
                 </ul>

@@ -26,7 +26,7 @@ import {Component} from 'react';
  
 // export default ExportOpinion;
 
-const ExpertOpinion = (props) => {
+const ExportOpinion = (props) => {
     return ( 
         <div className='row' style={{paddingBottom:'1vw'}}>
             <div className='col'>
@@ -47,4 +47,4 @@ const ExpertOpinion = (props) => {
      );
 }
  
-export default ExpertOpinion;
+export default ExportOpinion;

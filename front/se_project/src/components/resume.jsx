@@ -6,7 +6,7 @@ import Input_text from '../components/input_form';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 const Resume = (props) => {
-     const [artisticBackground, setArtisticBackground]=useState([]);
+    const [artisticBackground, setArtisticBackground]=useState([]);
     useEffect(() => {
         fetchArtisticBackground();
     }, []);
@@ -38,7 +38,7 @@ const Resume = (props) => {
             });
     };
 
-     const [experience, setExperience]=useState([]);
+    const [experience, setExperience]=useState([]);
     useEffect(() => {
         fetchExperience();
     }, []);
@@ -56,9 +56,11 @@ const Resume = (props) => {
 
     return (
         <div>
+            <HorizontalLine value='سوابق کاری'/>
             <form>
                 <div className='container w-75 p-3 p-3 rounded mb-5' >
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
+
                         <div className='row mb-2'>     
                             <div class='col row '>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه هنری</label>

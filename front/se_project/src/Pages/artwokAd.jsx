@@ -5,7 +5,7 @@ import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
-import ExpertOpinion from '../components/expertOpinion';
+import ExportOpinion from '../components/exportOpinion';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 // class ArtworkAd extends Component {
@@ -91,7 +91,7 @@ const ArtworkAd = (props) => {
                     <HorizontalLine value='نظرات کارشناسان'/>
                     <div className='container w-75 p-3'>
                         <div className='shadow bg-white rounded'>
-                            <ExpertOpinion/>
+                            <ExportOpinion/>
                         </div>
                         <a className='nav-link' href='#' style={{fontSize:'0.8vw',color:'#BB1542'}} >مشاهده همه نظرات</a>
                     </div>

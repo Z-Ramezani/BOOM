@@ -1,31 +1,28 @@
 import { Component } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import x from "../assets/ig.jpg";
-
-
-
 
 const ArtworkAdMainPage = (props) => {
     return ( 
         <div className="">
                 <div className="card shadow bg-white rounded">
                 
-                     <img  src={x}/*get the first img from back */ alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                     <img src={props.image} alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                      <figcaption className="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
-                    ۲۰*۳۰ cm{/*recive from back*/}
+                        {props.size}
                     </figcaption>
                 
                      <div className="card-body pt-0">
                          <h5 className="card-title" style={{color:'#BB1542',fontSize:'1.9vw', fontWeight:'bold'}}>
-                             نام اثر {/*recive from back*/}
+                            {props.artworkName}
                          </h5>
                          <div className="card-text">                           
-                            <h2 className="card-text" style={{color:'#222222',fontSize:'1vw',width:'vw'}}>نام هنرمند {/*recive from back*/}</h2>
-                            <a href={props.handlePage}/*recive from back*/ className="stretched-link"></a>
+                            <h2 className="card-text" style={{color:'#222222',fontSize:'1vw',width:'vw'}}>{props.artistName}</h2>
+                            <Link to={props.handlePage} className="stretched-link"></Link>
                             <br></br>
                             <div className="row" dir="LTR">
                                 <div className="col-4" dir="LTR" style={{paddingRight:'0%'}}>
-                                    <h4 className="card-text"  style={{color:'#222222',fontSize:'1.5vw',marginBottom:'0%'}}>999,000{/*recive from back*/}</h4>
+                                    <h4 className="card-text"  style={{color:'#222222',fontSize:'1.5vw',marginBottom:'0%'}}>{props.cost}</h4>
                                     <h4 className="card-text"  style={{color:'#222222',fontSize:'0.9vw',marginTop:'0%'}}>تومان</h4>
                                 </div>
                                 <div className="col ps-0">
