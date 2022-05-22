@@ -29,6 +29,7 @@ import NavLinks from './components/navBar/navLinks';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 import ExportProfile from './Pages/expertProfile';
 import ViewExpertProfile from './Pages/viewExpertProfile';
+import AboutUs from './Pages/aboutUs';
   
 const App = () => {
   return ( 
@@ -68,6 +69,7 @@ const App = () => {
               <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
               <Route path='/exportProfile' element={<ExportProfile/>}/>
               <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
+              <Route path='/AboutUs' element={<AboutUs/>}/>
 
               <Route path='/' Component={App}/>
             </Routes>
