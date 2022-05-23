@@ -23,13 +23,13 @@ const ArtworkGroup = (props) => {
         <div>
                 <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">    
                     <div className='col'>
-                        <Link className="nav-link" to="artwokAd"><ArtworkAdMainPage/></Link>
+                        <ArtworkAdMainPage/>
                     </div>
                     <div className='col'>
-                        <Link className="nav-link" to="artwokAd"><ArtworkAdMainPage/></Link>
+                        <ArtworkAdMainPage/>
                     </div>
                     <div className='col'>
-                        <Link className="nav-link" to="artwokAd"><ArtworkAdMainPage/></Link>
+                        <ArtworkAdMainPage/>
                     </div>      
                      
             </div>
