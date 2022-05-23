@@ -24,7 +24,7 @@ const NavLinks = (props) => {
                         <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><Link className="dropdown-item" to="../../artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
                         <li><Link className="dropdown-item" to="../../TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
-                        <li><Link className="dropdown-item" to="#" style={{fontSize:'0.8vw'}} onclick='../logout'>خروج</Link></li>
+                        <li><Link className="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</Link></li>
                         </ul>
                     </li>
                     <li className="nav-item">
@@ -43,10 +43,9 @@ const NavLinks = (props) => {
                         </ul>
                         </li>
                         <li className="nav-item mx-2">
-                        <Link className="nav-link" to="#">|</Link>
+                        <Link className="nav-link disabled" to="#">|</Link>
                         </li>
-                        {/* کارای مسخره زهرا */}
-                        <Link  to="../../viewArtistProfile" className={"nav-link " + (url === "/viewArtistProfile" ?"active" : "")}>ورود</Link>
+                        <Link  to="../../login" className="nav-link">ورود</Link>
                         
                     </ul>
                 </ul>

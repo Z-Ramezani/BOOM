@@ -10,7 +10,6 @@ import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 import x from "../assets/ig.jpg";
 
 const ViewArtistProfile = (props) => {
-
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
@@ -21,14 +20,14 @@ const ViewArtistProfile = (props) => {
                     <div className='row justify-content-center'>
                         <div class="row position-relative" dir="LTR"  >
                             <div class="col-md-5 p-md-4">
-                                    <img class="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "9vw", maxWidth:'100%',maxHeight:'100%',marginLeft:'5vw'}}/>
-                                    <figcaption class="figure-caption" dir="RTL" style={{marginRight:'9.5vw',fontSize:'0.9vw'}} >
+                                    <img className="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "9vw", maxWidth:'100%',maxHeight:'100%',marginLeft:'5vw'}}/>
+                                    <figcaption className="figure-caption" dir="RTL" style={{marginRight:'9.5vw',fontSize:'0.9vw'}} >
                                     تاریخ ثبت حساب کاربری: {/*recive from back*/}
                                     </figcaption>
                                 </div>
-                            <div class="col-md-6 p-4 ps-md-0" dir="RTL" style={{marginLeft:'7.8%'}}>
-                                    <h2 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام و نام‌خانوادگی: {/*recive from back*/}</h2>
-                                    <h2 class="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سال تولد : {/*recive from back*/}</h2>
+                            <div className="col-md-6 p-4 ps-md-0" dir="RTL" style={{marginLeft:'7.8%'}}>
+                                    <h2 className="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام و نام‌خانوادگی: {/*recive from back*/}</h2>
+                                    <h2 className="mt-3" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سال تولد : {/*recive from back*/}</h2>
                             </div>
                         </div>
                     </div>
@@ -50,3 +49,4 @@ const ViewArtistProfile = (props) => {
 }
  
 export default ViewArtistProfile;
+
