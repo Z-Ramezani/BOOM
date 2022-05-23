@@ -28,7 +28,7 @@ const Guide = (props) => {
                     </div>
                     
                     <div className='container me-4' style={{fontSize:'1.1vw'}}>
-                        <h5><strong  style={{fontSize:'1.1vw'}}>۱. ثبت نام</strong></h5>
+                        <h5><strong>۱. ثبت نام</strong></h5>
                         <div className='text-muted'>
                         <p className='me-3'><small>
                                 اولین مرحله برای کار با بوم، ثبت‌نام به عنوان یکی از کاربران کارشناس، هنرمند و خریدار است. 

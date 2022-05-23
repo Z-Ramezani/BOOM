@@ -6,6 +6,9 @@ import Breadcrumbb from '../components/breadcrumb';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import x from "../assets/ig.jpg";
+import a from "../assets/11.jpg";
+import b from "../assets/11.jpg";
+import c from "../assets/11.jpg";
 const AboutUs = (props) => {
     return ( 
         <div>
@@ -13,85 +16,65 @@ const AboutUs = (props) => {
             <Breadcrumbb is1OrNot='true' first='درباره ما' />
             <div className='container w-75 p-3 mt-4'>
                 <div className='d-flex flex-column min-vh-100'>
-                <h5><strong  style={{fontSize:'120%',color:'#C70039'}}>جامعه جهانی هنرمندان و نقاشان بزرگترین دارایی ماست.</strong></h5>
-                <h6><strong className='me-2' style={{fontSize:'90%',color:'#CC3737'}}>وقتی به بوم می‌پیوندید، به بازار هنر می‌پیوندید – دنیایی برای هنرمندان مستقل.</strong></h6>
-                <br/>
-                <h6 className='me-2' style={{fontSize:'90%'}}>ما، گروهی از دانشجویان دانشگاه اصفهان دور هم جمع شده‌ایم تا واسطه شویم میان شما علاقمندان و هنرمندان.</h6>
-                {/* https://mobirise.com/bootstrap-template/about-us-page-template/
-                هرکاری میکنم خروجی ندارم  :| */}
-                                    {/* <section class="carousel slide" >
-                                        <div class="container text-center">
-                                            <div class="carousel slide" data-ride="carousel" role="listbox" id="testimonials-slider1-3-carousel">
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item">
-                                                        <div class="user col-md-8">
-                                                                <img className='user_image' src={x} alt="" title="" media-simple="true"/>
-                                                            <div class="user_text pb-3">
-                                                                <p class="mbr-fonts-style display-7">
-                                                                    Good afternoon. I am very pleased with the quality of the work of your employee representing your wonderful company.
-                                                                </p>
-                                                            </div>
-                                                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                                                Helen
-                                                            </div>
-                                                            <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                                                DESIGNER
-                                                            </div>
-                                                        </div>
-                                                    </div><div class="carousel-item">
-                                                        <div class="user col-md-8">
-                                                            <div class="user_image">
-                                                                <img src={x} alt="" title="" media-simple="true"/>
-                                                            </div>
-                                                            <div class="user_text pb-3">
-                                                                <p class="mbr-fonts-style display-7">
-                                                                    All issues are resolved promptly. In communication, the employees are pleasant, helpful. Always offer new ideas, new ways to develop, improve our project.
-                                                                </p>
-                                                            </div>
-                                                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                                                Linda
-                                                            </div>
-                                                            <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                                                DEVELOPER
-                                                            </div>
-                                                        </div>
-                                                    </div><div class="carousel-item active">
-                                                        <div class="user col-md-8">
-                                                            <div class="user_image">
-                                                                <img src={x} alt="" title="" media-simple="true"/>
-                                                            </div>
-                                                            <div class="user_text pb-3">
-                                                                <p class="mbr-fonts-style display-7">
-                                                                    Excellent client manager. He is always accurate, all promises are fulfilled, all questions get answers, the company presents very attentive and positive approach.
-                                                                </p>
-                                                            </div>
-                                                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                                                Linda
-                                                            </div>
-                                                            <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                                                DEVELOPER
-                                                            </div>
-                                                        </div>
-                                                    </div></div>
-
-                                                <div class="carousel-controls">
-                                                    <a class="carousel-control-prev" role="button" data-slide="prev" href="#testimonials-slider1-3-carousel">
-                                                    <span aria-hidden="true" class="mbri-arrow-prev mbr-iconfont"></span>
-                                                    <span class="sr-only">Previous</span>
-                                                    </a>
-                                                    
-                                                    <a class="carousel-control-next" role="button" data-slide="next" href="#testimonials-slider1-3-carousel">
-                                                    <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span>
-                                                    <span class="sr-only">Next</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section> */}
+                    <h5><strong  style={{fontSize:'2vw',color:'#C70039'}}>جامعه جهانی هنرمندان و نقاشان بزرگترین دارایی ماست.</strong></h5>
+                    <h6><strong className='me-2' style={{fontSize:'1.1vw',color:'#CC3737'}}>وقتی به بوم می‌پیوندید، به بازار هنر می‌پیوندید – دنیایی برای هنرمندان مستقل.</strong></h6>
+                    <br/>
+                    <h6 className='me-2' style={{fontSize:'1.1vw'}}>ما، گروهی از دانشجویان دانشگاه اصفهان دور هم جمع شده‌ایم تا واسطه شویم میان شما علاقمندان و هنرمندان.</h6>
+                    
+                    <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
+                        <div className='carousel-indicators'>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div className='carousel-inner'>
+                            <div className='carousel-item active'>
+                                <div class="col-md-8">
+                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                    <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                        Nourieh
+                                    </div>
+                                    <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                        DEVELOPER
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='carousel-item'>
+                                <div class="col-md-8">
+                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                    <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                        dcsdcsdc
+                                    </div>
+                                    <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                        DEVELOPER
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='carousel-item'>
+                                <div class="col-md-8">
+                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                    <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                        scljkdscksd
+                                    </div>
+                                    <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                        DEVELOPER
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button className='carousel-control-prev' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span className='carousel-control-prev-icon' aria-hidden="true"></span>
+                            <span className='visually-hidden'>Previous</span>
+                        </button>
+                        <button className='carousel-control-next' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span className='carousel-control-next-icon' aria-hidden="true"></span>
+                            <span className='visually-hidden'>Next</span>
+                        </button>
+                    </div>
+                    <Footer/>
+                </div>
             </div>
-        <Footer/>
         </div>
-    </div>
     );
 }
 export default AboutUs;
