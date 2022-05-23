@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import x from "../assets/ig.jpg";
 import a from "../assets/11.jpg";
-import b from "../assets/11.jpg";
+import b from "../assets/B.png";
 import c from "../assets/11.jpg";
 const AboutUs = (props) => {
     return ( 
@@ -20,28 +20,26 @@ const AboutUs = (props) => {
                     <h6><strong className='me-2' style={{fontSize:'1.1vw',color:'#CC3737'}}>وقتی به بوم می‌پیوندید، به بازار هنر می‌پیوندید – دنیایی برای هنرمندان مستقل.</strong></h6>
                     <br/>
                     <h6 className='me-2' style={{fontSize:'1.1vw'}}>ما، گروهی از دانشجویان دانشگاه اصفهان دور هم جمع شده‌ایم تا واسطه شویم میان شما علاقمندان و هنرمندان.</h6>
-                    
+                    <div className='container w-25 p-3 text-center'>
                     <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
-                        <div className='carousel-indicators'>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
+                        
                         <div className='carousel-inner'>
                             <div className='carousel-item active'>
+                            <div class="row d-flex justify-content-center">
                                 <div class="col-md-8">
-                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
-                                    <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                    <img src={b} className='rounded-circle' media-simple="true"/>
+                                    <div>
                                         Nourieh
                                     </div>
-                                    <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                    <div>
                                         DEVELOPER
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div className='carousel-item'>
-                                <div class="col-md-8">
-                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                <div class="col-md-8" style={{margin:'auto'}}>
+                                    <img className="img-circle" src={x}  media-simple="true"style={{ maxWidth:'100%',maxHeight:'100%', borderRadius:'10vw'}}/>
                                     <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
                                         dcsdcsdc
                                     </div>
@@ -51,8 +49,8 @@ const AboutUs = (props) => {
                                 </div>
                             </div>
                             <div className='carousel-item'>
-                                <div class="col-md-8">
-                                    <img className="img-circle" src={x}  media-simple="true"style={{blockSize: "10vw", maxWidth:'100%',maxHeight:'100%'}}/>
+                                <div class="col-md-8" style={{margin:'auto'}}>
+                                    <img className="img-circle" src={x}  media-simple="true"style={{ maxWidth:'100%',maxHeight:'100%', borderRadius:'10vw'}}/>
                                     <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
                                         scljkdscksd
                                     </div>
@@ -70,6 +68,7 @@ const AboutUs = (props) => {
                             <span className='carousel-control-next-icon' aria-hidden="true"></span>
                             <span className='visually-hidden'>Next</span>
                         </button>
+                    </div>
                     </div>
                     <Footer/>
                 </div>
