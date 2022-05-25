@@ -1,91 +1,84 @@
 from pyexpat import model
 from django.db import models
-from django.contrib.auth.models import User as users
-from phonenumber_field.modelfields import PhoneNumberField
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import  AbstractUser
 from django.conf import settings
 from datetime import datetime,date
 from django.db.models.fields import BLANK_CHOICE_DASH
+from django.conf import settings
 # Create your models here.
 
 
 
 
 
-class UserManager(BaseUserManager):
+# class UserManager(BaseUserManager):
 
-    def create_artist(self , username , password=None , **kwargs ):
+    # def create_artist(self , username , password=None , **kwargs ):
 
-        if username is None:
-            raise TypeError('Users must have a username.')
+    #     if username is None:
+    #         raise TypeError('Users must have a username.')
 
-        user = self.model(username = username)
-        user.set_password(password)
-        user.is_artist = True
-        user.user = users.objects.get(username=username)
-        user.save(using=self._db)
-        return user
+    #     user = self.model(username = username)
+    #     user.set_password(password)
+    #     user.is_artist = True
+    #     user.user = users.objects.get(username=username)
+    #     user.save(using=self._db)
+    #     return user
 
-    def create_expert(self , username , password=None , **kwargs ):
+    # def create_expert(self , username , password=None , **kwargs ):
 
-        if username is None:
-            raise TypeError('Users must have a username.')
+    #     if username is None:
+    #         raise TypeError('Users must have a username.')
 
-        user = self.model(username = username)
-        user.set_password(password)
-        user.is_expert = True
-        user.user = users.objects.get(username=username)
-        user.save(using=self._db)
-        return user
+    #     user = self.model(username = username)
+    #     user.set_password(password)
+    #     user.is_expert = True
+    #     user.user = users.objects.get(username=username)
+    #     user.save(using=self._db)
+    #     return user
 
-    def create_customer(self , username , password=None , **kwargs ):
+    # def create_customer(self , username , password=None , **kwargs ):
 
-        if username is None:
-            raise TypeError('Users must have a username.')
+    #     if username is None:
+    #         raise TypeError('Users must have a username.')
 
-        user = self.model(username = username)
-        user.set_password(password)
-        user.is_customer = True
-        user.user = users.objects.get(username=username)
-        user.save(using=self._db)
-        return user
+    #     user = self.model(username = username)
+    #     user.set_password(password)
+    #     user.is_customer = True
+    #     user.user = users.objects.get(username=username)
+    #     user.save(using=self._db)
+    #     return user
 
-class User(AbstractBaseUser ,models.Model):
-    username = models.CharField(max_length=200 , unique=True)
+class User(AbstractUser):
+
     is_artist = models.BooleanField(default=False)
     is_expert = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False) 
-    is_active = models.BooleanField(default=True) 
-    user = models.OneToOneField(users, on_delete=models.CASCADE, null=True)
 
-
-    objects=UserManager()
-
-    USERNAME_FIELD='username'
 
 class Artist(models.Model):
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200 )
     national_id_number = models.IntegerField(unique=True)
-    birth_date = models.DateField()
+    birth_date = models.DateField(null=True, blank=True)
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
     password = models.CharField(max_length=200)
     free_post_artwork = models.IntegerField(default=2)
     created_at = models.DateTimeField(auto_now_add=True)
-    address = models.CharField(max_length=400)#change2
-    email = models.EmailField(max_length=254,unique=True)#change2
-    artfield = models.CharField(max_length=200)#change2
-    stylework =  models.CharField(max_length=200)#change2
+    address = models.CharField(max_length=400, null=True)#change2
+    email = models.EmailField(max_length=254,unique=True, null=True)#change2
+    artfield = models.CharField(max_length=200, null=True)#change2
+    stylework =  models.CharField(max_length=200, null=True)#change2
     Experience_in_month = models.IntegerField(null=True)#change2
-    budget = models.IntegerField(default=10000000)
-    last_hipe_month = models.IntegerField(default=0)
-    hipe_count = models.IntegerField(default=2)
+    budget = models.IntegerField(default=10000000, null=True)
+    last_hipe_month = models.IntegerField(default=0, null=True)
+    hipe_count = models.IntegerField(default=2, null=True)
   #  _id = models.AutoField(primary_key=True, editable=False)#change2
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
-    USERNAME_FIELD = 'national_id_number'
-    objects = UserManager()
+    #USERNAME_FIELD = 'national_id_number'
+    # objects = UserManager()
 
     def __str__(self):
         return self.name + " " +self.lastname
@@ -97,14 +90,14 @@ class Customer(models.Model):
  #   _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
-    phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
+    phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True )
     password = models.CharField(max_length=200 ,null=True)
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
-    USERNAME_FIELD = 'phone'
+   # USERNAME_FIELD = 'phone'
 
-    objects = UserManager()
+    # objects = UserManager()
 
 
 
@@ -121,16 +114,16 @@ class Expert(models.Model):
 #    _id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
-    national_id_number = models.IntegerField(unique=True)
+    national_id_number = models.IntegerField(unique=True )
     birth_date = models.DateField()
     phone = models.DecimalField(max_digits=11 , decimal_places=0 , unique=True)
     password = models.CharField(max_length=200 ,null=True)
 #21
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
-    USERNAME_FIELD = 'national_id_number'
+   # USERNAME_FIELD = 'national_id_number'
 
-    objects = UserManager()
+    # objects = UserManager()
 
 
     def __str__(self):
@@ -149,7 +142,7 @@ class Artwork_advertisement (models.Model):
     price = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
-  #  examined_price = models.IntegerField(default=0) change2
+    #examined_price = models.IntegerField(default=0) change2
 
     Admin_perm = models.BooleanField(default=False)
     STATUS = {

@@ -2,17 +2,23 @@ from venv import create
 from webbrowser import get
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import update_last_login
-from django.contrib.auth.models import User as users
+# from django.contrib.auth.models import User 
 from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
-from .models import *
+from .models import Artist , Customer , Expert , Expert_comment , Sample_artwork , Artwork_advertisement 
+from rest_framework.response import Response
 # from django.contrib.auth import authenticate
 # from rest_framework_simplejwt.settings import api_settings
 # from django.contrib.auth.models import update_last_login
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth.hashers import make_password
 from django import forms
+from rest_framework import generics
 
+
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 # from .backends import ArtistBackend , ExpertBackend , CustomerBackend
 
 
@@ -37,41 +43,41 @@ class UserSerializer(serializers.ModelSerializer):
 class ArtistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artist
-        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'free_post_artwork', 'created_at',
-                  'password']
+        fields = "__all__"
 
 
 class ExpertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Expert
-        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number']
+        fields = "__all__"
 
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['name', 'lastname', 'phone']
+        fields = "__all__"
 
 
 class RegisterArtistSerializer(ArtistSerializer):
     class Meta:
         model = Artist
-        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'password', ]
+        fields = "__all__"
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        artist = users.objects.create(
-            username=validated_data['national_id_number'])
+        artist = User.objects.create(
+            username=validated_data['national_id_number'],is_artist=True)
         artist.set_password(validated_data['password'])
+        
         artist.save()
 
-        User.objects.create_artist(
-            username=validated_data['national_id_number'],
-            password=validated_data['password'],
-            is_active=True,
-            is_artist=True,
-            is_expert=False,
-            is_customer=False)
+        # User.objects.create_artist(
+        #     username=validated_data['national_id_number'],
+        #     password=validated_data['password'],
+        #     is_active=True,
+        #     is_artist=True,
+        #     is_expert=False,
+        #     is_customer=False)
 
         user1 = Artist.objects.create(
             name=validated_data['name'],
@@ -81,6 +87,7 @@ class RegisterArtistSerializer(ArtistSerializer):
             phone=validated_data['phone'],
             password=validated_data['password'],
             free_post_artwork=2,
+
             user=User.objects.get(username=validated_data['national_id_number'])
         )
 
@@ -94,18 +101,18 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        expert = users.objects.create(
-            username=validated_data['national_id_number'])
+        expert = User.objects.create(
+            username=validated_data['national_id_number'],is_expert=True)
         expert.set_password(validated_data['password'])
         expert.save()
 
-        User.objects.create_expert(
-            username=validated_data['national_id_number'],
-            password=validated_data['password'],
-            is_active=True,
-            is_artist=False,
-            is_expert=True,
-            is_customer=False)
+        # User.objects.create_expert(
+        #     username=validated_data['national_id_number'],
+        #     password=validated_data['password'],
+        #     is_active=True,
+        #     is_artist=False,
+        #     is_expert=True,
+        #     is_customer=False)
 
         user1 = Expert.objects.create(
             name=validated_data['name'],
@@ -127,18 +134,18 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        customer = users.objects.create(
-            username=validated_data['phone'])
+        customer = User.objects.create(
+            username=validated_data['phone'],is_customer=True)
         customer.set_password(validated_data['password'])
         customer.save()
 
-        User.objects.create_customer(
-            username=validated_data['phone'],
-            password=validated_data['password'],
-            is_active=True,
-            is_artist=False,
-            is_expert=False,
-            is_customer=True)
+        # User.objects.create_customer(
+        #     username=validated_data['phone'],
+        #     password=validated_data['password'],
+        #     is_active=True,
+        #     is_artist=False,
+        #     is_expert=False,
+        #     is_customer=True)
 
         user1 = Customer.objects.create(
             name=validated_data['name'],
@@ -279,7 +286,7 @@ class ExpertRecordsSerializer(serializers.ModelSerializer):
 class UsersSerializers(serializers.ModelSerializer):
 
     class Meta:
-        model = users
+        model = User
         fields = '__all__'
 
 
