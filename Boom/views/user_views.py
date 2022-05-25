@@ -176,15 +176,39 @@ class Get_customer(generics.GenericAPIView):
 
 
 
-# class Get_artist_with_token(generics.GenericAPIView):
-#     serializer_class = ArtistSerializer
-#     def get(self, request , pk):
+class Get_artist_with_token(generics.GenericAPIView):
+    serializer_class = ArtistSerializer
+    def get(self, request , pk):
 
-#         artist = AuthToken.objects.get(digest=pk)
-#         # test_user = artist["user"][1]
-#         # print (test_user)
-#         retUser = Artist.objects.get(user=artist)
-#         serializer = ArtistSerializer(retUser, many=False)
-#         return Response(serializer.data)
+        artist = AuthToken.objects.get(digest=pk)
+        test_user = artist.user
+        # print (test_user)
+        retUser = Artist.objects.get(user=test_user)
+        serializer = ArtistSerializer(retUser, many=False)
+        return Response(serializer.data)
 
 
+class Get_expert_with_token(generics.GenericAPIView):
+    serializer_class = ArtistSerializer
+    def get(self, request , pk):
+
+        expert = AuthToken.objects.get(digest=pk)
+        test_user = expert.user
+        # print (test_user)
+        retUser = Expert.objects.get(user=test_user)
+        serializer = ExpertSerializer(retUser, many=False)
+        return Response(serializer.data)
+
+
+
+
+class Get_customer_with_token(generics.GenericAPIView):
+    serializer_class = ArtistSerializer
+    def get(self, request , pk):
+
+        customer = AuthToken.objects.get(digest=pk)
+        test_user = customer.user
+        # print (test_user)
+        retUser = Customer.objects.get(user=test_user)
+        serializer = CustomerSerializer(retUser, many=False)
+        return Response(serializer.data)
