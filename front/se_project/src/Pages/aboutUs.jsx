@@ -18,8 +18,7 @@ const AboutUs = (props) => {
                     <h6><strong className='me-2' style={{fontSize:'1.1vw',color:'#CC3737'}}>وقتی به بوم می‌پیوندید، به بازار هنر می‌پیوندید – دنیایی برای هنرمندان مستقل.</strong></h6>
                     <br/>
                     <h6 className='me-2' style={{fontSize:'1.1vw'}}>ما، گروهی از دانشجویان دانشگاه اصفهان دور هم جمع شده‌ایم تا واسطه شویم میان شما علاقمندان و هنرمندان.</h6>
-                    <AboutUsMember/>
-                    
+                    <AboutUsMember/>                  
                     <p className='mt-5' style={{fontSize:'1vw'}}>راه‌های ارتباطی:</p>
                     <div className='d-flex text-center'>
                     <div className='mx-5' ><i class="bi bi-telephone-fill"></i>

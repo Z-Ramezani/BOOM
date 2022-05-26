@@ -81,7 +81,7 @@ const TicketPart = (props) => {
                             </div>
                         </div>
                         <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                            <ShowArtworkAdCost/>
+                            <ShowArtworkAdCost showCost/>
                             <div className='d-flex' style={{marginRight:'2%'}}>
                                 <div className='ms-2'>
                                     <Button width= 'auto' height= 'auto' fontSize='1.17vw' text= 'ویرایش' /*onClick*//>
