@@ -38,8 +38,8 @@ const NavLinks = (props) => {
                             ثبت نام
                         </Link>
                         <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><Link class="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
-                            <li><Link class="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
+                            <li><Link className="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
+                            <li><Link className="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
                         </ul>
                         </li>
                         <li className="nav-item mx-2">

@@ -68,7 +68,7 @@ const TicketPart = (props) => {
                     <div className='container w-75 p-3'>
                         <div className='d-flex mb-3'>
                             <label className="form-label ps-2 mt-2"  style={{fontSize:'1.1vw'}}>تعداد تیکت باقیمانده</label>
-                            <input type="text" class="form-control" disabled value={count} style={{width:'3.5vw', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
+                            <input type="text" className="form-control" disabled value={count} style={{width:'3.5vw', height:'auto' , backgroundColor:'#f9ffff'}} ></input>
                         </div>
                         <Button width='auto' height='auto' fontSize='1.17vw' text='خرید تیکت' dir='LTR' onClick={valueIncrease}/>
                     </div>

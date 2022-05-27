@@ -18,8 +18,8 @@ const ViewArtistProfile = (props) => {
             <form style={{backgroundColor:'#F9FFFF'}}>
                 <div className='container w-75 rounded'>
                     <div className='row justify-content-center'>
-                        <div class="row position-relative" dir="LTR"  >
-                            <div class="col-md-5 p-md-4">
+                        <div className="row position-relative" dir="LTR"  >
+                            <div className="col-md-5 p-md-4">
                                     <img className="img-fluid" src={x}/*get the first img from back */ alt="profile image"  style={{blockSize: "9vw", maxWidth:'100%',maxHeight:'100%',marginLeft:'5vw'}}/>
                                     <figcaption className="figure-caption" dir="RTL" style={{marginRight:'9.5vw',fontSize:'0.9vw'}} >
                                     تاریخ ثبت حساب کاربری: {/*recive from back*/}

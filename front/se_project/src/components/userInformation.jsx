@@ -138,7 +138,7 @@ const UserInformation = (props) => {
                     <div className='row justify-content-center'>
                       <div className='col-9'>
                         <div className='row mb-2'>     
-                            <div class='col row '>
+                            <div className='col row '>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام و نام‌خانوادگی</label>
                                 <div className='col-6'> 
                                     <Input_text type="text" value={names} onChange={(e)=>setNames(e.target.value)}/>
@@ -211,11 +211,11 @@ const UserInformation = (props) => {
                                 
                     </div>
                     <form className='col-3 justify-content-end'>
-                            <div class="form-group " style={{width:'15vw', height:'15vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
-                                <input type="file" class="form-control-file"/>
+                            <div className="form-group " style={{width:'15vw', height:'15vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
+                                <input type="file" className="form-control-file"/>
                                
                             </div>
-                            <figcaption class="figure-caption" dir="RTL" style={{marginRight:'0.2vw',fontSize:'0.9vw'}} >
+                            <figcaption className="figure-caption" dir="RTL" style={{marginRight:'0.2vw',fontSize:'0.9vw'}} >
                                         تاریخ ثبت حساب کاربری: {/*recive from back*/}
                                 </figcaption>
                       </form>
