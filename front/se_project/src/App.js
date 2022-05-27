@@ -30,6 +30,7 @@ import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 import ExportProfile from './Pages/expertProfile';
 import ViewExpertProfile from './Pages/viewExpertProfile';
 // import Logout from './components/logout';
+import CreateSubmitExpertOpinion from './components/createSubmitExpertOpinion';
   
 const App = () => {
   return ( 
@@ -55,6 +56,7 @@ const App = () => {
               <Route path='/resetButton' element={<ResetButton/>}/>
               <Route path='/resume' element={<Resume/>}/>
               <Route path='/userInformation' element={<UserInformation/>}/>
+              <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
               {/* <Route path='/logout' element={<Logout/>}/> */}
               
               {/* Pages */}

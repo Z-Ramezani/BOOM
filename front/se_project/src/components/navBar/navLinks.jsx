@@ -45,7 +45,7 @@ const NavLinks = (props) => {
                         <li className="nav-item mx-2">
                         <Link className="nav-link disabled" to="#">|</Link>
                         </li>
-                        <Link  to="../../login" className="nav-link">ورود</Link>
+                        <Link  to="../Guide" className={"nav-link " + (url === "/Guide" ? "active": "")}>ورود</Link>
                         
                     </ul>
                 </ul>
