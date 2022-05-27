@@ -8,6 +8,7 @@ import ExportOpinion from '../components/exportOpinion';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 class ArtworkAd extends Component {
+    
     showText=()=>{
         this.setState({visibilityButton: 'none'});
         this.setState({visibilityCost: 'block'});

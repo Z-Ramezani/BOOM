@@ -26,12 +26,32 @@ import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
+import axios from 'axios';
+
+const url = 'http://hidden.pythonanywhere.com/users';
 
 class App extends Component {
-  render() { 
 
+  state = {
+    user: null,
+  }
+
+  componentDidMount=async()=>{
+    const token = localStorage.getItem('token');
+    if(!token){
+      this.setState({user : null});
+      return;
+    }
+    const res = await axios.post(url, {token});
+    if(!res.data.user){
+      this.setState({user : null});
+      return;
+    }
+    this.setState({user: res.data.user});
+  }
+
+  render() { 
     return (
-      
       <>
         {/* <AlertProvider template={AlertTemplate} {...Options}> */}
           <BrowserRouter>
@@ -41,6 +61,7 @@ class App extends Component {
               <Route path='/navBar' element={<NavBar/>}/>
               <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
               <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
+              <Route path='/artworkGroup/:id' element={<ArtworkAd/>}/> {/*check this that is correctly work or no!!!!*/}
               <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
               <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
               <Route path='/button' element={<Button/>}/>
@@ -59,7 +80,7 @@ class App extends Component {
               <Route path='/admin' element={<Admin/>}/>
               <Route path='/artistProfile' element={<ArtistProfile/>}/>
               <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
-              <Route path="/artworkAd" element={<ArtworkAd/>}/>
+              {/* <Route path="/artworkAd" element={<ArtworkAd/>}/> */}
               <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
               <Route path='/guide' element={<Guide/>}/>
               <Route path='/login' element={<Login/>}/>

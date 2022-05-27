@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import Button from "../components/button";
 import Breadcrumbb from "../components/breadcrumb";
 import Navbar from "../components/navBar/navBar";
@@ -6,33 +7,35 @@ import Footer from "../components/Footer/footer";
 import color from "../assets/images/color.png";
 // import InputText from "../components/input_form";
 import axios from "axios";
+import axiosInstance from "../api/axios";
 
 // import { instance } from "../api/InstanceAPI";
 
 const url = 'http://hidden.pythonanywhere.com/users/login';
 
 const Login = () => {
+  // const navigator = useNavigate();
+
   const [username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(name, email);
 		try{
 			const res = await axios.post(url, {
 				username,password
 			})
+      localStorage.setItem('token' , res.data.token);
+      // navigator(`/app`);
+      // window.location = '/buyerSignUp';
 			console.log(res);
 		} catch(e) {
+      alert('please first create an account');
 			console.log(e.response);
 		}
   };
 
-
-  // function validateFormFields() {
-  //     return (userName.length > 0) && (password.length > 0);
-  // }
   return (
     <div className="bg-image" style={{ backgroundImage: color }}>
       <Navbar />

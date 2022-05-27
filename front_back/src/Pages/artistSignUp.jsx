@@ -10,9 +10,10 @@ import axios from "axios";
 const url1 = "http://hidden.pythonanywhere.com/users/register";
 
 const ArtistSignUp = () => {
-  const [names, setNames] = useState("");
-  const [codeNumber, setcodeNumber] = useState("");
-  const [birthay, setBirthay] = useState("");
+  const [name, setName] = useState("");
+	const [lastname, setLastname] = useState("");
+  const [national_id_number, setNational_id_number] = useState("");
+  const [birth_date, setBirth_date] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -22,29 +23,25 @@ const ArtistSignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(email);
     try {
       const res = await axios.post(url1, {
-        names,
-        codeNumber,
-        birthay,
+        name,
+				lastname,
+        national_id_number,
+        birth_date,
         phone,
         email,
         address,
         password,
         showNumber,
       });
+      localStorage.setItem('token' , res.data.token);
       console.log(res);
     } catch (e) {
+      alert('this user exist with this mobile phone!')
       console.log(e.response);
     }
   };
-
-  // function validateFormFields() {
-  //     return email.length > 0 && password.length > 0 && names.length > 0
-  //     && codeNumber.length > 0 && birthay.length > 0 && phone.length > 0
-  //     && address.length > 0  && showNumber.length>0;
-  // }
 
   return (
     <div>
@@ -67,17 +64,39 @@ const ArtistSignUp = () => {
                       className="col-4 col-form-label"
                       style={{ fontSize: "1.1vw" }}
                     >
-                      نام و نام‌خانوادگی
+                      نام 
                     </label>
                     <div className="col-8">
                       <input
-													className='form-input'
+													className='form-input mb-2'
 													id="flname"
                         type="text"
-                        value={names}
-                        onChange={(e) => setNames(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
+
+
+
+										<label
+												htmlFor='lname' 
+                      className="col-4 col-form-label"
+                      style={{ fontSize: "1.1vw" }}
+                    >
+                      نام خانوادگی 
+                    </label>
+                    <div className="col-8">
+                      <input
+													className='form-input mb-4'
+													id="lname"
+                        type="text"
+                        value={lastname}
+                        onChange={(e) => setLastname(e.target.value)}
+                      />
+                    </div>
+
+
+
                   </div>
                   <div className="col row">
                     <label
@@ -92,8 +111,8 @@ const ArtistSignUp = () => {
 													className='form-input'
 													id="national"
                         type="text"
-                        value={codeNumber}
-                        onChange={(e) => setcodeNumber(e.target.value)}
+                        value={national_id_number}
+                        onChange={(e) => setNational_id_number(e.target.value)}
                       />
                     </div>
                   </div>
@@ -113,8 +132,8 @@ const ArtistSignUp = () => {
 													className='form-input'
 													id="birth"
                         type="date"
-                        value={birthay}
-                        onChange={(e) => setBirthay(e.target.value)}
+                        value={birth_date}
+                        onChange={(e) => setBirth_date(e.target.value)}
                       />
                     </div>
                   </div>

@@ -4,8 +4,10 @@ import Breadcrumbb from "../components/breadcrumb";
 import Navbar from "../components/navBar/navBar";
 import Footer from "../components/Footer/footer";
 import ResetButton from "../components/resetButton";
+import axiosInstance from "../api/axios";
+import { useNavigate } from "react-router-dom";
 
-import {useState } from "react";
+import { useState } from "react";
 // import color from "../assets/images/color.png";
 import axios from "axios";
 
@@ -14,13 +16,11 @@ import axios from "axios";
 const buyerURL = "https://hidden.pythonanywhere.com/users/register/customer";
 
 const BuyerSighUp = () => {
- 
-  // function validateFormFields() {
-  //     return password.length > 0 && names.length > 0 && phone.length > 0;
 
-  // }
+  // const navigator = useNavigate();
 
-  const [names, setNames] = useState("");
+  const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,11 +28,14 @@ const BuyerSighUp = () => {
     e.preventDefault();
     try {
       const res = await axios.post(buyerURL, {
-        names,
+        name,
+        lastname,
         phone,
         password,
       });
+      localStorage.setItem('token' , res.data.token);
       console.log(res);
+      // navigator(`/app`);
     } catch (e) {
       console.log(e.response);
     }
@@ -48,27 +51,28 @@ const BuyerSighUp = () => {
         third="به عنوان خریدار"
       />
       <div className="d-flex flex-column min-vh-100">
-        <form style={{ marginTop: "auto" }}   onSubmit={handleSubmit}>
+        <form style={{ marginTop: "auto" }} onSubmit={handleSubmit}>
           <div className="container w-75 p-3 shadow mb-5 bg-white rounded">
             <div className="row justify-content-center">
               <div className="row mb-2">
                 <div className="col row ">
                   <label
-                    htmlFor="names"
+                    htmlFor="flname"
                     className="col-4 col-form-label"
                     style={{ fontSize: "1.1vw" }}
                   >
-                    نام و نام‌خانوادگی
+                    نام
                   </label>
                   <div className="col-8">
                     <input
-                      type="text"
                       className="form-input"
-                      id="names"
-                      value={names}
-                      onChange={(e) => setNames(e.target.value)}
+                      id="flname"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       style={{
                         width: "100%",
+                        marginRight: "-5rem",
                         border: "1px solid #979797",
                         borderRadius: "5px",
                         outline: "none",
@@ -76,11 +80,39 @@ const BuyerSighUp = () => {
                     />
                   </div>
                 </div>
-                <div className="col row">
+                <div className="row col">
+                  <label
+                    htmlFor="lname"
+                    className="col-4 col-form-label"
+                    style={{ fontSize: "1.1vw" }}
+                  >
+                    نام خانوادگی
+                  </label>
+                  <div className="col-8">
+                    <input
+                      className="form-input"
+                      id="lname"
+                      type="text"
+                      value={lastname}
+                      onChange={(e) => setLastname(e.target.value)}
+                      style={{
+                        width: "100%",
+                        marginRight: "-3rem",
+                        border: "1px solid #979797",
+                        borderRadius: "5px",
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="row mb-2">
+                <div className="row">
                   <label
                     htmlFor="phone"
                     className="col-sm-3 col-form-label mx-auto"
-                    style={{ fontSize: "1.1vw" }}
+                    style={{ fontSize: "1.1vw", marginRight: "-8rem" }}
                   >
                     شماره تماس
                   </label>
@@ -92,7 +124,7 @@ const BuyerSighUp = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       style={{
-                        width: "100%",
+                        marginRight: "-8rem",
                         border: "1px solid #979797",
                         borderRadius: "5px",
                         outline: "none",
@@ -101,53 +133,54 @@ const BuyerSighUp = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mb-2">
-                <div className="row col">
-                  <label
-                    htmlFor="password"
-                    className="col-sm-4 col-form-label"
-                    style={{ fontSize: "1.1vw" }}
-                  >
-                    رمز عبور
-                  </label>
-                  <div className="col-8">
-                    <input
-                      type="password"
-                      className="form-input"
-                      id="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      style={{
-                        width: "100%",
-                        border: "1px solid #979797",
-                        borderRadius: "5px",
-                        outline: "none",
-                      }}
-                    />
-                  </div>
+
+              <div className="row col">
+                <label
+                  htmlFor="password"
+                  className="col-sm-4 col-form-label"
+                  style={{ fontSize: "1.1vw" }}
+                >
+                  رمز عبور
+                </label>
+                <div className="col-8">
+                  <input
+                    type="password"
+                    className="form-input"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    style={{
+                      width: "100%",
+                      marginRight: "-5rem",
+                      border: "1px solid #979797",
+                      borderRadius: "5px",
+                      outline: "none",
+                    }}
+                  />
                 </div>
-                <div className="row col">
-                  <label
-									   htmlFor="password2"
-                    className="col-sm-3 col-form-label  mx-auto"
-                    style={{ fontSize: "1.1vw" }}
-                  >
-                    تکرار رمز عبور
-                  </label>
-                  <div className="col-8">
-                    {/* <input type="password" /> */}
-										<input
-                      type="password"
-                      className="form-input"
-                      id="password2"
-                      style={{
-                        width: "100%",
-                        border: "1px solid #979797",
-                        borderRadius: "5px",
-                        outline: "none",
-                      }}
-                    />
-                  </div>
+              </div>
+              <div className="row col">
+                <label
+                  htmlFor="password2"
+                  className="col-sm-3 col-form-label  mx-auto"
+                  style={{ fontSize: "1.1vw" }}
+                >
+                  تکرار رمز عبور
+                </label>
+                <div className="col-8">
+                  {/* <input type="password" /> */}
+                  <input
+                    type="password"
+                    className="form-input"
+                    id="password2"
+                    style={{
+                      width: "100%",
+                      marginRight: "-2rem",
+                      border: "1px solid #979797",
+                      borderRadius: "5px",
+                      outline: "none",
+                    }}
+                  />
                 </div>
               </div>
             </div>
