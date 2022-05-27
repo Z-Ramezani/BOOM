@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Yekan;
+    src: url('../src/assets/fonts/Yekan.eot') format('eot');
+    src: url('../src/assets/fonts/Yekan.ttf') format('ttf');
+    src: url('../src/assets/fonts/Yekan.woff') format('woff');
+}
+
+*{
+    font-family: 'Yekan';
+ }
+
+ body
+ {
+     background-color: #f9ffff;
+ }
