@@ -2,7 +2,6 @@ import { Component, useEffect, useState } from 'react';
 import NavLink from "./navLink";
 import {Link, useLocation} from 'react-router-dom';
 import '../navBar/navLinks.css';
-import {Link} from 'react-router-dom';
 
 const NavLinks = (props) => {
     // const history = useHistory();
