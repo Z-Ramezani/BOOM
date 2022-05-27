@@ -14,9 +14,29 @@ class SetArtworkInfo  extends Component {
             <div class="row g-0 position-relative" dir="LTR">
                 <div class="col-md-6 mb-md-0 p-md-4">
                     <form>
-                        <div class="form-group" style={{width:'23vw', height:'23vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
-                            <input type="file" class="form-control-file"/>
+                        
+                    {/* آپلود همزمان */}
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <span class="btn btn-default btn-file">
+                                <input id="input-2" name="input2[]" type="file" class="" multiple data-show-upload="false" data-show-caption="true"/>
+                                <figcaption class="figure-caption" dir="RTL" style={{marginRight:'0.2vw',fontSize:'1.3vw'}} >
+                                    آپلود 5 عکس از اثر
+                                </figcaption>
+                            </span>
                         </div>
+                    </div>
+
+                {/* آپلود جداگانه */}
+                        {/* <div class="form-group" style={{width:'23vw', height:'23vw', border:'0.11vw solid #e1e1e1', borderRadius:'0.2vw'}}>
+                            <input type="file" class="file" multiple/>
+                            <input type="file" class="file" multiple/>
+                            <input type="file" class="file" multiple/>
+                            <input type="file" class="file" multiple/>
+                            <input type="file" class="file" multiple/>
+
+                        </div> */}
+
                     </form>
                 </div>
                 <div class="col-md-6 p-4 ps-md-0" dir="RTL">
