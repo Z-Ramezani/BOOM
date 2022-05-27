@@ -41,7 +41,7 @@ const ViewExpertProfile = (props) => {
 
             </div> 
             <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                    <ShowArtworkAdCost/>
+                    <ShowArtworkAdCost showCost/>
                     <h2 className="mt-0 text-danger" style={{fontSize:'110%', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
                     <h2 className="mt-0" style={{fontSize:'100%' }}>تومان {/*recive from back*/}</h2>
 

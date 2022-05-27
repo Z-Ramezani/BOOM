@@ -30,6 +30,8 @@ import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 import ExportProfile from './Pages/expertProfile';
 import ViewExpertProfile from './Pages/viewExpertProfile';
 // import Logout from './components/logout';
+import AboutUs from './Pages/aboutUs';
+import ExpertProfile from './Pages/expertProfile';
   
 const App = () => {
   return ( 
@@ -68,8 +70,9 @@ const App = () => {
               <Route path='/mainPage' element={<MainPage/>}/>
               <Route path='/TicketPart' element={<TicketPart/>}/>
               <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
-              <Route path='/exportProfile' element={<ExportProfile/>}/>
+              <Route path='/expertProfile' element={<ExpertProfile/>}/>
               <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
+              <Route path='/AboutUs' element={<AboutUs/>}/>
 
               <Route path='/' Component={App}/>
             </Routes>

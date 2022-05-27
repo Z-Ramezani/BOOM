@@ -29,7 +29,7 @@ const Footer = (props) => {
               </div>
             </div>
 
-            <a className="navbar-brand" href="#" style={{marginLeft:'14%', marginTop:'0.5vw', marginRight:'-14vw'}}>
+            <a className="navbar-brand" style={{marginLeft:'14%', marginTop:'0.5vw', marginRight:'-14vw'}}>
               <img 
                 className="img-fluid"
                 src={logo}

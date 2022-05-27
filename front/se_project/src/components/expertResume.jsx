@@ -2,6 +2,7 @@ import { Component } from 'react';
 import HorizontalLine from './horizontalLine/horizontalLine';
 import Input_text from './input_form';
 import Button from './button';
+
 class ExpertResume extends Component {
     render() { 
         const {activityfield, setactivityfield}=this.setState;

@@ -15,7 +15,7 @@ const NavBar = (props) => {
               <span class="navbar-toggler-icon"></span>
             </button>
             <NavLinks/>
-            <a className="navbar-brand d-flex justify-content-end" href="#">
+            <a className="navbar-brand d-flex justify-content-end">
             <img 
               className="img-fluid"
               src={logo}

@@ -6,7 +6,7 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 import Resume from '../components/resume';
-import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
+import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 import x from "../assets/ig.jpg";
 
 const ViewArtistProfile = (props) => {
@@ -41,7 +41,7 @@ const ViewArtistProfile = (props) => {
             </div> 
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
-                <ShowArtworkAdInfo/>
+                <ShowArtworkAdCost/>
             </div> 
             <Footer/>
         </div>                    

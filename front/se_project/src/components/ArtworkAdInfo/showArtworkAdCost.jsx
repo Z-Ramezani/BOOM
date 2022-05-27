@@ -60,9 +60,15 @@ const ShowArtworkAdCost = (props) => {
                         <br/>
                         <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                         <br/>
-                        <div>
-                            <h2 class="mt-0" dir="RTL" style={{fontSize:'1.1vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
-                        </div>
+                        {
+                        props.ShowCost ?
+                            <div>
+                                <h2 class="mt-0" dir="RTL" style={{fontSize:'1.1vw', fontWeight:'bold'}}>{/*recive from back*/} قیمت:</h2>
+                            </div>
+                            :
+                            <div></div>
+                         }
+                        
                         <br/>
                         <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                     </div>
