@@ -1,8 +1,8 @@
 import {Component} from 'react';
-import {BrowserRouter, BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom';
-import Button from './components/button';
+import {BrowserRouter, BrowserRouter as Router, Link, NavLink, Route, Routes, Switch} from 'react-router-dom';
 import 'bootstrap';
 import './components/navBar/navBar.css';
+import Button from './components/button';
 import Breadcrumbb from './components/breadcrumb';
 import Input_text from './components/input_form';
 import Guide from './Pages/guide';
@@ -19,26 +19,31 @@ import MainPage from './Pages/mainPage';
 import HorizontalLine from './components/horizontalLine/horizontalLine';
 import ArtworkAdMainPage from './components/artworkAdMainPage';
 import ArtworkGroup from './components/artworkGroup';
-import ExportOpinion from './components/exportOpinion';
+import ExportOpinion from './components/expertOpinion';
 import HeaderSlide from './components/header-slide';
 import ResetButton from './components/resetButton';
 import Resume from './components/resume';
 import UserInformation from './components/userInformation';
 import NavBar from './components/navBar/navBar';
+import NavLinks from './components/navBar/navLinks';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
-
-class App extends Component {
-  render() { 
-
-    return (
-      
-      <>
-        {/* <AlertProvider template={AlertTemplate} {...Options}> */}
-          <BrowserRouter>
+import ExportProfile from './Pages/expertProfile';
+import ViewExpertProfile from './Pages/viewExpertProfile';
+import AboutUs from './Pages/aboutUs';
+import ExpertProfile from './Pages/expertProfile';
+  
+const App = () => {
+  return ( 
+    <BrowserRouter>
             <Routes>
+              {/* <Route exact path='/' exact element={<MainPage />} /> */}
+              <Route index element={<MainPage/>}/>
+
               {/* components */}
               <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
               <Route path='/navBar/navBar' element={<NavBar/>}/>
+              <Route path='/navBar/navLink' element={<navLink/>}/>
+              <Route path='/navBar/navLinks' element={<NavLinks/>}/>
               <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
               <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
               <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
@@ -53,7 +58,6 @@ class App extends Component {
               <Route path='/userInformation' element={<UserInformation/>}/>
               
               {/* Pages */}
-              <Route index element={<MainPage/>}/>
               <Route path='/admin' element={<Admin/>}/>
               <Route path='/artistProfile' element={<ArtistProfile/>}/>
               <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
@@ -64,16 +68,14 @@ class App extends Component {
               <Route path='/mainPage' element={<MainPage/>}/>
               <Route path='/TicketPart' element={<TicketPart/>}/>
               <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
+              <Route path='/expertProfile' element={<ExpertProfile/>}/>
+              <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
+              <Route path='/AboutUs' element={<AboutUs/>}/>
+
               <Route path='/' Component={App}/>
             </Routes>
           </BrowserRouter>
-        {/* </AlertProvider> */}
-        
-      </>
-      
-    );
-  }
+   );
 }
  
 export default App;
-

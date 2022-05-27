@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import { useState } from 'react';
 import Button from '../components/button';
 import Input_text from '../components/input_form';
 import Breadcrumbb from '../components/breadcrumb';
@@ -6,25 +7,20 @@ import Navbar from '../components/navBar/navBar';
 import Footer from '../components/Footer/footer';
 import ResetButton from '../components/resetButton';
 
-class ArtistSignUp extends Component {
-  render() { 
-    const {names, setNames}=this.setState;
-    const {codeNumber, setcodeNumber}=this.setState;
-    const {birthay, setBirthay}=this.setState;
-    const {phone, setPhone}=this.setState;
-    const {email, setEmail}=this.setState;
-    const {address, setAddress}=this.setState;
-    const {password, setPassword}=this.setState;
-    //const {gender, setGender}=this.setState;
-    const {showNumber, setShowNumber}=this.setState;
 
-    function validateFormFields() {
-        return email.length > 0 && password.length > 0 && names.length > 0
-        && codeNumber.length > 0 && birthay.length > 0 && phone.length > 0
-        && address.length > 0  && showNumber.length>0;
-    }
+const ArtistSignUp = (props) => {
 
-    return (
+    const [names, setNames]=useState("");
+    const [codeNumber, setcodeNumber]=useState("");
+    const [birthay, setBirthay]=useState("");
+    const [phone, setPhone]=useState("");
+    const [email, setEmail]=useState("");
+    const [address, setAddress]=useState("");
+    const [password, setPassword]=useState("");
+    //const [gender, setGender]=useState("");
+    const [showNumber, setShowNumber]=useState("");
+
+    return ( 
         <div>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند یا کارشناس'/>
@@ -129,10 +125,10 @@ class ArtistSignUp extends Component {
                                     <ResetButton/>
                                 </div>
                                 <div className='mx-1'>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw' disabled={!validateFormFields()} /*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw'/>
                                 </div> 
                                 <div className='mx-1 '>
-                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw' disabled={!validateFormFields()}/*reference=''*//*sholde use axios library for connect backend in next edit*//>
+                                    <Button width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw'/>
                                 </div>
                             </div>   
                         </div>
@@ -141,8 +137,7 @@ class ArtistSignUp extends Component {
             <Footer/>
             </div>     
         </div> 
-    );
-  }
+     );
 }
  
 export default ArtistSignUp;
