@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
-import '../navBar/navBar.css';
+import './navLinks.css';
 import NavLink from "./navLink";
 import NavLinks from "./navLinks";
 import {Outlet, Link} from 'react-router-dom';
