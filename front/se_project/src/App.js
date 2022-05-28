@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import { useState, useEffect } from 'react';
+import logic from './logic';
 import {BrowserRouter, BrowserRouter as Router, Link, NavLink, Route, Routes, Switch} from 'react-router-dom';
 import 'bootstrap';
 import './components/navBar/navLinks.css';
@@ -33,6 +35,15 @@ import ViewExpertProfile from './Pages/viewExpertProfile';
 import CreateSubmitExpertOpinion from './components/createSubmitExpertOpinion';
   
 const App = () => {
+
+  const [userLogged, setUserLogged] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const loggedIn = await logic.isUserLoggedIn;
+      if (loggedIn) setUserLogged(true);
+    })();
+  }, [userLogged]);
+
   return ( 
     <BrowserRouter>
             <Routes>
