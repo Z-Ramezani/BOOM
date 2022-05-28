@@ -166,7 +166,7 @@ def Up_Ad(request, pk):
 
 
 class view_advertisements(generics.ListAPIView):
-    permission_classes = [IsAuthenticated,]
+    permission_classes = []
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
 
