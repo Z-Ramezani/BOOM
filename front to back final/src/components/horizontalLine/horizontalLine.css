@@ -1,0 +1,23 @@
+.text-hr {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  width: 75%;
+  margin: 1px 5%;
+  color: #444;
+  direction:ltr;
+  margin-right: 13%;
+}
+
+.text-hr::after {
+  flex: 1;
+  background: #282727;
+  content: "";
+  height: 0.1vw;
+}
+
+.text-hr__text {
+  padding-right: 15px;
+  order: 1;
+  padding: 0 0 0 15px;
+}
