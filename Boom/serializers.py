@@ -97,7 +97,7 @@ class RegisterArtistSerializer(ArtistSerializer):
 class RegisterExpertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Expert
-        fields = ['name', 'lastname', 'birth_date', 'phone', 'national_id_number', 'password', ]
+        fields = "__all__"
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -122,6 +122,8 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
             phone=validated_data['phone'],
             password=validated_data['password'],
 
+            user=User.objects.get(username=validated_data['national_id_number'])
+
         )
 
         return user1
@@ -130,7 +132,7 @@ class RegisterExpertSerializer(serializers.ModelSerializer):
 class RegisterCustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['name', 'lastname', 'phone', 'password']
+        fields = "__all__"
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -154,6 +156,24 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
         )
         return user1
+
+
+
+class LogInSerializer(TokenObtainPairSerializer): # new
+    @classmethod
+
+    # def validate(self, data):
+    #     user = authenticate(**data)
+    #     if user and user.is_active:
+    #         return user
+    #     raise serializers.ValidationError('Incorrect Credentials Passed.')
+    def get_token(cls, user):
+        token = super().get_token(user)
+        user_data = UserSerializer(user).data
+        for key, value in user_data.items():
+            if key != 'id':
+                token[key] = value
+        return token
 
 
 class LoginSerializers(serializers.Serializer):

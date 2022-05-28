@@ -25,10 +25,13 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import RefreshToken
 # from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import get_user_model
+from rest_framework import generics
+from rest_framework_simplejwt.views import TokenObtainPairView
 #Local import
 
 # from ..models import Artist , Expert , Artwork_advertisement , Customer
-from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  , LoginSerializers, ArtistSerializer , ExpertSerializer , CustomerSerializer
+from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  ,LoginSerializers, ArtistSerializer , ExpertSerializer , CustomerSerializer , LogInSerializer
 from rest_framework import permissions
 from Boom.permissions import *
 from django.contrib.auth import get_user_model
@@ -38,25 +41,39 @@ User = get_user_model()
 
 
 
-class RegisterArtistAPI(generics.GenericAPIView):
+# class RegisterArtistAPI(generics.GenericAPIView):
+#     serializer_class = RegisterArtistSerializer
+#     # permission_classes = [Is_anybody,]
+#     def post(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.save()
+#         refresh = RefreshToken.for_user(user)
+#         res = {
+#             "refresh": str(refresh),
+#             "access": str(refresh.access_token),
+#         }
+
+#         return Response({
+#             "user": serializer.data,
+#             "refresh": res["refresh"],
+#             "token": res["access"]
+#         }, status=status.HTTP_201_CREATED)
+
+
+
+
+class SignUpArtistView(generics.CreateAPIView):
+    queryset = Artist.objects.all()
     serializer_class = RegisterArtistSerializer
-    permission_classes = [Is_anybody,]
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        refresh = RefreshToken.for_user(user)
-        res = {
-            "refresh": str(refresh),
-            "access": str(refresh.access_token),
-        }
 
-        return Response({
-            "user": serializer.data,
-            "refresh": res["refresh"],
-            "token": res["access"]
-        }, status=status.HTTP_201_CREATED)
+class SignUpCustomerView(generics.CreateAPIView):
+    queryset = Customer.objects.all()
+    serializer_class = RegisterCustomerSerializer
 
+class SignUpExpertView(generics.CreateAPIView):
+    queryset = Expert.objects.all()
+    serializer_class = RegisterExpertSerializer
 
 
 
@@ -64,7 +81,7 @@ class RegisterArtistAPI(generics.GenericAPIView):
 
 class RegisterExpertAPI(generics.GenericAPIView):
     serializer_class = RegisterExpertSerializer
-    permission_classes = [Is_anybody,]
+    # permission_classes = [Is_anybody,]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -84,7 +101,7 @@ class RegisterExpertAPI(generics.GenericAPIView):
 
 class RegisterCustomerAPI(generics.GenericAPIView):
     serializer_class = RegisterCustomerSerializer
-    permission_classes = [Is_anybody,]
+    # permission_classes = [Is_anybody,]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -105,42 +122,54 @@ class RegisterCustomerAPI(generics.GenericAPIView):
 
 
 
-# class LoginAPI(generics.GenericAPIView):
-#     serializer_class = LoginSerializers
-
-#     def post(self, request):
-        
-
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-        
-#         return Response({
-#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]})
-
-
-
 class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginSerializers
-    permission_classes = [Is_anybody,]
+
     def post(self, request):
         
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
-
-
-
-
-
         
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]})
 
 
+
+class LogInAPI(TokenObtainPairView):
+    serializer_class = LogInSerializer
+    
+    # serializer_class = LoginSerializers
+    # http_method_names = ['get', 'head', 'post']
+    # # permission_classes = [Is_anybody,]
+    # def post(self, request):
+    #     self.http_method_names.append("GET")
+
+    #     serializer = self.get_serializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     user = serializer.validated_data
+
+
+
+
+
+        
+    #     return Response({
+    #         "user": UserSerializer(user, context=self.get_serializer_context()).data,
+    #         "token": AuthToken.objects.create(user)[1]})
+
+# class LogInView(generics.GenericAPIView): # new
+#     serializer_class = LogInSerializer
+
+#     def post(self , request):
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.validated_data
+#         return Response({
+#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
+#             "token": AuthToken.objects.create(user)[1]})
 
 
 
