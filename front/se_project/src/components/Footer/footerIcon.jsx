@@ -6,16 +6,16 @@ class FooterIcon extends Component {
             <div>
                 <div className='col-md-4' style={{marginRight:'3vw'}}>
                         <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-envelope img-fluid"></i>
+                          <i className="bi bi-envelope img-fluid"></i>
                         </a>
                         <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-linkedin"></i>
+                          <i className="bi bi-linkedin"></i>
                         </a>
                         <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-instagram"></i>
+                          <i className="bi bi-instagram"></i>
                         </a>
                         <a href='' className='me-4 text-reset'>
-                          <i class="bi bi-telegram"></i>
+                          <i className="bi bi-telegram"></i>
                         </a>
                     </div>
             </div>

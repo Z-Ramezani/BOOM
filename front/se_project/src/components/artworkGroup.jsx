@@ -1,8 +1,7 @@
 import {Component} from 'react';
 import { Link } from 'react-router-dom';
 import ArtworkAdMainPage from '../components/artworkAdMainPage';
-
-      
+    
 const ArtworkGroup = (props) => {
 
     return (
