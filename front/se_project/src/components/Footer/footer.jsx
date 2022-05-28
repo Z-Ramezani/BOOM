@@ -2,7 +2,7 @@ import { Component } from "react";
 import { MDBFooter } from 'mdb-react-ui-kit';
 import logo from '../../assets/images/logo.png';
 import FooterIcon from "./footerIcon";
-import { Nav } from "react-bootstrap";
+// import { Nav } from "react-bootstrap";
 import NavLink from "../navBar/navLink";
 
 class Footer extends Component {

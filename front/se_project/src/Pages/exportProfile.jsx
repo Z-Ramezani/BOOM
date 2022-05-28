@@ -20,9 +20,9 @@ class ExportProfile extends Component {
                 <ExportResume/>
                 <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                     <ShowArtworkAdCost/>
-                    <h2 class="mt-0 text-danger" style={{fontSize:'1.3vw', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
+                    <h2 className="mt-0 text-danger" style={{fontSize:'1.3vw', fontWeight:'bold', }}> قیمت پیشنهادی کارشناس: {/*recive from back*/}</h2>
                     <br/>
-                    <h2 class="mt-0 text-danger" style={{fontSize:'1.1vw', fontWeight:'bold', }}> توضیحات: {/*recive from back*/}</h2>
+                    <h2 className="mt-0 text-danger" style={{fontSize:'1.1vw', fontWeight:'bold', }}> توضیحات: {/*recive from back*/}</h2>
                 </div>
             </div>
         );

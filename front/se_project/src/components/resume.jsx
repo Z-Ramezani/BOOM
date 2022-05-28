@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import Button from '../components/button';
-import Input_text from '../components/input_form';
+import InputText from '../components/input_form';
 import HorizontalLine from '../components/horizontalLine/horizontalLine';
 
 class Resume extends Component {
@@ -16,10 +16,10 @@ class Resume extends Component {
                     <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
 
                         <div className='row mb-2'>     
-                            <div class='col row '>
+                            <div className='col row '>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه هنری</label>
                                 <div className='col-4'>
-                                    <Input_text type="text" value={artisticBackground} onChange={(e)=>setartisticBackground(e.target.value)}/>
+                                    <InputText type="text" value={artisticBackground} onChange={(e)=>setartisticBackground(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@ class Resume extends Component {
                             <div className='col row'>
                                 <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>سبک کاری</label>
                                 <div className='col-4'>
-                                    <Input_text type="text" value={workStyle} onChange={(e)=>setWorkStyle(e.target.value)}/>
+                                    <InputText type="text" value={workStyle} onChange={(e)=>setWorkStyle(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ class Resume extends Component {
                             <div className="col row ">
                                 <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سابقه فعالیت</label>
                                 <div className='col-4'>
-                                    <Input_text type="text" value={experience} onChange={(e)=>setExperience(e.target.value)} placeholder="سال"/>
+                                    <InputText type="text" value={experience} onChange={(e)=>setExperience(e.target.value)} placeholder="سال"/>
                                 </div>
                             </div>
                         </div>     

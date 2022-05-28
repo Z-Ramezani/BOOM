@@ -11,8 +11,7 @@ const ArtworkAdMainPage = (props) => {
     // useEffect(async ()=>{
     //     const response = await axios.get(`http://hidden.pythonanywhere.com/advertisment/view_advertisements/${props.match.params.id}`);
     //     setAd(response.data.data); 
-    // })    /*this should write in artworkAd and delete from here!!!!!!!!!!!!!!!!!!!!
-
+    // })
     return ( 
         <div className="">
                 <div className="card shadow bg-white rounded">

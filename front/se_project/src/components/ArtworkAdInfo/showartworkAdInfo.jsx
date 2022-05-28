@@ -16,8 +16,8 @@ class ShowArtworkAdInfo extends Component {
         const {cost, setCost}=this.setState;
         return (
             <div className="">
-                <div class="row g-0 position-relative" dir="LTR">
-                    <div class="col-md-6 mb-md-0 p-md-4">
+                <div className="row g-0 position-relative" dir="LTR">
+                    <div className="col-md-6 mb-md-0 p-md-4">
                             <div id="carouselExampleIndicators" className='carousel slide' data-bs-ride="carousel">
                                 <div className='carousel-indicators'>
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className='active' aria-current="true" aria-label="Slide 1"></button>
@@ -55,20 +55,20 @@ class ShowArtworkAdInfo extends Component {
                         
                     </div>
 
-                    <div class="col-md-6 p-4 ps-md-0" dir="RTL">
+                    <div className="col-md-6 p-4 ps-md-0" dir="RTL">
                             <div>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>نام اثر: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>ابعاد اثر: {/*recive from back*/}*{/*recive from back*/} سانتی متر</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>سبک کار: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>متریال استفاده شده: {/*recive from back*/}</h2>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>تاریخ ایجاد اثر: {/*recive from back*/}</h2>
                                 <br/>
                                 <br/>
-                                <h2 class="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
+                                <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                             </div>
                     </div>
                 </div>

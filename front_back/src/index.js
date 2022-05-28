@@ -45,4 +45,4 @@ import TicketPart from './Pages/TicketPart';
 // App.use(cors(corsOptions));
 
 const root= ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ArtistSignUp/>);
+root.render(<App/>);

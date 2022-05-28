@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import HorizontalLine from './horizontalLine/horizontalLine';
-import InputText from './input_form';
+import Input_text from './input_form';
 import Button from './button';
-class ExportResume extends Component {
+
+class ExpertResume extends Component {
     render() { 
         const {activityfield, setactivityfield}=this.setState;
         const {experience, setExperience}=this.setState;
         return (
             <div>
-                <HorizontalLine value='سوابق کاری'/>
                 <form>
                     <div className='container w-75 p-3 p-3 rounded mb-5' >
                         <div className='row justify-content-center' style={{backgroundColor:'#F9FFFF'}}>
@@ -16,7 +16,7 @@ class ExportResume extends Component {
                                 <div className='col row '>
                                     <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>زمینه فعالیت</label>
                                     <div className='col-4'>
-                                        <InputText type="text" value={activityfield} onChange={(e)=>setactivityfield(e.target.value)}/>
+                                        <Input_text type="text" value={activityfield} onChange={(e)=>setactivityfield(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@ class ExportResume extends Component {
                                 <div className="col row ">
                                     <label  className="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سابقه فعالیت</label>
                                     <div className='col-4'>
-                                        <InputText type="text" value={experience} onChange={(e)=>setExperience(e.target.value)} placeholder="سال"/>
+                                        <Input_text type="text" value={experience} onChange={(e)=>setExperience(e.target.value)} placeholder="سال"/>
                                     </div>
                                 </div>
                             </div>     
@@ -48,4 +48,4 @@ class ExportResume extends Component {
     }
 }
  
-export default ExportResume;
+export default ExpertResume;

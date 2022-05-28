@@ -9,8 +9,8 @@ class Breadcrumbb extends Component {
                     {
                         this.props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{this.props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{this.props.first}</li>
                                 </ol>
                             </nav>
                         </div> 
@@ -22,9 +22,9 @@ class Breadcrumbb extends Component {
                     {
                         this.props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{this.props.second}</li>
-                                    <li class="breadcrumb-item">{this.props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{this.props.second}</li>
+                                    <li className="breadcrumb-item">{this.props.first}</li>
                                 </ol>
                             </nav>
                         </div> 
@@ -36,10 +36,10 @@ class Breadcrumbb extends Component {
                     {
                         this.props.is3OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{this.props.third}</li>
-                                    <li class="breadcrumb-item">{this.props.second}</li>
-                                    <li class="breadcrumb-item">{this.props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{this.props.third}</li>
+                                    <li className="breadcrumb-item">{this.props.second}</li>
+                                    <li className="breadcrumb-item">{this.props.first}</li>
                                 </ol>
                             </nav>
                         </div> 
