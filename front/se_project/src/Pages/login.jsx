@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import {Component} from 'react';
 import axios from 'axios';
-import logic from '../logic';
 import { useLocation } from 'react-router-dom';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
@@ -15,32 +14,8 @@ const Login = (props) => {
     const {userName, setUserName}=useState("");
     const {password, setPassword}=useState("");
 
-    const [messageError, setMessageError] = useState("");
-    const [, pushLocation] = useLocation();
-
-    async function handleOnSubmit(e) {
-        e.preventDefault();
-        const {
-        userName: { value: userName },
-        password: { value: password }
-        } = e.target;
-        e.target.reset();
-
-        try {
-        await logic.loginUser(userName, password);
-        pushLocation("/nuevabusqueda");
-        } catch (error) {
-        setMessageError(error.message);
-        }
-    }
-
     return ( 
         <div className='bg-image' style={{backgroundImage:color}}>
-            {messageError && (
-                <div className="message-error">
-                <p>{messageError}</p>
-                </div>
-            )}
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
             <div className='container flex-column min-vh-100' >

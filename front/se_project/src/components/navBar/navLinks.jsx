@@ -2,7 +2,6 @@ import { Component, useEffect, useState } from 'react';
 import NavLink from "./navLink";
 import {Link, useLocation} from 'react-router-dom';
 import '../navBar/navLinks.css';
-import logic from '../../logic';
 import axios from 'axios';
 
 const NavLinks = (props) => {
@@ -12,14 +11,6 @@ const NavLinks = (props) => {
     useEffect(()=> {
         setUrl(location.pathname);
     }, [location]);
-
-    const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
-    useEffect(() => {
-        (async () => {
-        const loggedIn = await logic.isUserLoggedIn;
-        if (loggedIn) setnavbarUserIsLogged(true);
-        })();
-    }, [navbarUserIsLogged]);
 
     const [auth, setAuth] = useState(false);
 
@@ -55,7 +46,7 @@ const NavLinks = (props) => {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <Link className= {"nav-link " + (url === "/mainPage" ?"active" : "")} aria-current="page" to='../../mainPage' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
+                        <Link className= {"nav-link " + (url === "/mainPage" ?"active" : "")} aria-current="page" to='/' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
                     <Link to='../../Guide' className={"nav-link " + (url === "/Guide" ?"active" : "")} >راهنمای سایت</Link>
                     <Link  to="../../AboutUs" className={"nav-link " + (url === "/AboutUs" ?"active" : "")}>درباره‌ما</Link>
