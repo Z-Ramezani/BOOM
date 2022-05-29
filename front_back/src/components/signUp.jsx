@@ -36,14 +36,13 @@ const SignUp = (props) => {
                                         <Input_text type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
                                     </div>
                                 </div>
-                                <div className='col row'>
-                                    <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>کدملی</label>
-                                    <div className="col-8">
-                                        <Input_text type="text" value={national_id_number} onChange={(e)=>setNational_id_number(e.target.value)}/>
+                                <div class='col row '>
+                                    <label className='col-sm-3 col-form-label mx-auto' style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
+                                    <div className='col-8'> 
+                                        <Input_text type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
-
                             <div className='row mb-2'>
                                 <div class="col row ">
                                     <label  class="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سال تولد</label>
@@ -54,11 +53,10 @@ const SignUp = (props) => {
                                 <div className='col row'>
                                     <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                     <div className="col-8">
-                                        <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+                                        <Input_text type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
-
                             <div className='row '>
                                 <div className="row col">
                                     <label  class="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>ایمیل</label>
@@ -66,7 +64,6 @@ const SignUp = (props) => {
                                         <Input_text type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                                     </div>
                                 </div>
-
                                 <div class="row col ">
                                     <label  class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>راه ارتباطی جهت نمایش در آگهی</label>
                                     <div class="col-8">
@@ -74,7 +71,21 @@ const SignUp = (props) => {
                                     </div>
                                 </div>
                             </div>
-
+                            <div className='row mb-2'>
+                            <div className='col row'>
+                                    <label className="col-sm-4 col-form-label " style={{fontSize:'1.1vw'}}>کدملی</label>
+                                    <div className="col-8">
+                                        <Input_text type="number"  min="0" value={national_id_number} onChange={(e)=>setNational_id_number(e.target.value)}/>
+                                    </div>
+                                </div>
+                                <div class="row col">
+                                    <label class="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                                    <div class="col-8">
+                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                    </div>
+                                </div>
+                               
+                            </div>
                             <div className='row mb-2'>
                                 <div class="row col">
                                     <label  class="col-sm-3 col-form-label" style={{fontSize:'1.1vw'}}>آدرس</label>
@@ -82,46 +93,7 @@ const SignUp = (props) => {
                                         <Input_text type="text" value={address} onChange={(e)=>setAddress(e.target.value)}/>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div className='row mb-2'>
-                                <div class="row col">
-                                    <label class="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                                    </div>
-                                </div>
-                                <div class="row col">
-                                    <label class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>تکرار رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='row mb-2'>
-                            <div class='col row '>
-                                    <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
-                                    <div className='col-8'> 
-                                        <Input_text type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
-                                    </div>
-                                </div>
-                            </div>
-                                    
-                            <div className='row mb-2 '>
-                                <fieldset class="row">
-                                    <label class="col-form-label col-sm-2" style={{fontSize:'1.1vw'}}>جنسیت</label>
-                                    <div class="d-flex col mt-2" required>
-                                        <div class="form-check">
-                                            <label class="form-check-label" style={{fontSize:'1.1vw'}}>زن</label>
-                                            <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label me-5" style={{fontSize:'1.1vw'}}>مرد</label>
-                                                <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>      
+                            </div>     
                         </div>
                     </div>
                 </div>
@@ -133,14 +105,17 @@ const SignUp = (props) => {
                                 <ResetButton/>
                             </div>
                             <div className='mx-1'>
-                                <Button type= 'submit' width= 'auto' height= 'auto' text='ثبت‌نام' fontSize='1.17vw'/>
+                                <Button type= 'submit' width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw'/>
                             </div> 
+                            <div className='mx-1 '>
+                                <Button type= 'submit' twidth= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw'/>
+                            </div>
                         </div>   
                     </div>
                 </div>
             </form>
         <Footer/>
-        </div>     
+        </div>   
     </div> 
  );
 };
