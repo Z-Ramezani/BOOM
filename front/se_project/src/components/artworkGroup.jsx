@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import x from "../assets/ig.jpg";
+import { Link } from 'react-router-dom';
 import ArtworkAdMainPage from '../components/artworkAdMainPage';
+    
 
 
 class ArtworkGroup extends Component {
@@ -29,9 +31,11 @@ class ArtworkGroup extends Component {
                 })
             }
             </div>
-        );
+      );
+     }
     }
-}
+ 
+
  
 export default ArtworkGroup;  
 

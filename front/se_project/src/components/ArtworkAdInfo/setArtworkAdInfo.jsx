@@ -63,7 +63,7 @@ class SetArtworkInfo  extends Component {
                             </div>
                         </div>
                         <div className="row mb-2 form-group">
-                            <label htmlFor="exampleFormControlTextarea1" style={{marginBottom:'2%', fontSize:'1.1vw'}}>توضیحات تکمیلی</label>
+                            <label for="exampleFormControlTextarea1" style={{marginBottom:'2%', fontSize:'1.1vw'}}>توضیحات تکمیلی</label>
                             <textarea className="col-4 form-control" id="exampleFormControlTextarea1" rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
                         </div>
                     

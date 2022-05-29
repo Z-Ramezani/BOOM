@@ -45,6 +45,27 @@ class ShowArtworkAdCost extends Component {
                                         <span className='visually-hidden'>Next</span>
                                     </button>
                                 </div>
+                                <div className='carousel-item'>
+                                    <img src={b} className='d-block w-100' alt="img2" style={{width:'30vw', height:'30vw'}}/>
+                                </div>
+                                <div className='carousel-item'>
+                                    <img src={c} className='d-block w-100' alt="img3" style={{width:'30vw', height:'30vw'}}/>
+                                </div>
+                                <div className='carousel-item'>
+                                    <img src={d} className='d-block w-100' alt="img4" style={{width:'30vw', height:'30vw'}}/>
+                                </div>
+                                <div className='carousel-item'>
+                                    <img src={e} className='d-block w-100' alt="img5" style={{width:'30vw', height:'30vw'}}/>
+                                </div>
+                            </div>
+                            <button className='carousel-control-prev' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span className='carousel-control-prev-icon' aria-hidden="true"></span>
+                                <span className='visually-hidden'>Previous</span>
+                            </button>
+                            <button className='carousel-control-next' type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span className='carousel-control-next-icon' aria-hidden="true"></span>
+                                <span className='visually-hidden'>Next</span>
+                            </button>
                             
                         </div>
     
@@ -67,10 +88,14 @@ class ShowArtworkAdCost extends Component {
                                     <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                                 </div>
                         </div>
+                        <br/>
+                        <h2 className="mt-0" style={{fontSize:'1.1vw', fontWeight:'bold'}}>توضیحات تکمیلی: {/*recive from back*/}</h2>
                     </div>
                 </div>
-            );
-        }
+            </div>
+        </div>
+    );
 }
+
  
 export default ShowArtworkAdCost;

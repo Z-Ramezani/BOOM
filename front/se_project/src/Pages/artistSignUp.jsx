@@ -1,6 +1,10 @@
 import { useState } from "react";
 // import Button from "../components/button";
 // import InputText from "../components/input_form";
+import {Component} from 'react';
+import { useState } from "react";
+import Button from "../components/button";
+import Input_text from "../components/input_form";
 import Breadcrumbb from "../components/breadcrumb";
 import Navbar from "../components/navBar/navBar";
 import Footer from "../components/Footer/footer";

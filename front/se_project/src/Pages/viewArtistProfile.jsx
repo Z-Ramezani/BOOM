@@ -9,21 +9,14 @@ import Resume from '../components/resume';
 import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 import x from "../assets/ig.jpg";
 
-class ViewArtistProfile extends Component {
-
-  render() {
-    
-    const {names, setNames}=this.setState;
-    const {birthay, setBirthay}=this.setState;
-    const {dataUserAccount, setDataUserAccount}=this.setState;
-    const {showNumber, setShowNumber}=this.setState;
+const ViewArtistProfile = (props) => {
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
             <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='آگهی اثر' third='نمایش حساب کاربری هنرمند'/>
             <HorizontalLine value='اطلاعات فردی'/>
             <form style={{backgroundColor:'#F9FFFF'}}>
-                <div className='container w-75 p-3 p-3 rounded mb-1'>
+                <div className='container w-75 rounded'>
                     <div className='row justify-content-center'>
                         <div className="row g-0 position-relative" dir="LTR"  >
                             <div className="col-md-6 p-md-4">
@@ -40,15 +33,20 @@ class ViewArtistProfile extends Component {
                     </div>
                 </div>
             </form>
-            <div className='container w-75 p-3 p-3 rounded mb-5' ><Resume/></div> 
+            <HorizontalLine value='سوابق کاری'/>
+            <div className='container w-75 p-3 my-1' style={{marginLeft:'10.5%'}} >
+                <h2  style={{fontSize:'90%', fontWeight:'bold'}}>زمینه هنری: {/*recive from back*/}</h2>
+                <h2 className='mt-3' style={{fontSize:'90%', fontWeight:'bold'}}>سبک‌ کاری: {/*recive from back*/}</h2>
+                <h2 className='mt-3' style={{fontSize:'90%', fontWeight:'bold'}}> سابقه فعالیت: {/*recive from back*/}</h2>
+            </div> 
             <HorizontalLine value='نمونه آثار'/>
-            <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
+            <div className='container w-75 p-3 shadow bg-white rounded mb-5'>
                 <ShowArtworkAdInfo/>
             </div> 
             <Footer/>
         </div>                    
     );
-  }
 }
  
 export default ViewArtistProfile;
+

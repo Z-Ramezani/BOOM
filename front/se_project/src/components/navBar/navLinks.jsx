@@ -1,48 +1,91 @@
-import { Component } from 'react';
+import { Component, useEffect, useState } from 'react';
 import NavLink from "./navLink";
+import {Link, useLocation} from 'react-router-dom';
+import '../navBar/navLinks.css';
+import logic from '../../logic';
+import axios from 'axios';
 
-class NavLinks extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto"> 
-                        <li className="nav-item dropdown rtl">
-                            <a className="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i className="bi bi-person-circle"></i>
-                            </a>
-                            <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a className="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</a></li>
-                            <li><a className="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</a></li>
-                            <li><a className="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>خروج</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#" style={{fontSize:'1.1vw'}}>صفحه اصلی</a>
-                        </li>
-                        <NavLink href="../../Pages/guide" text='راهنمای سایت' />
-                        <NavLink  href="#" text='درباره‌ما'/>
-                        <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
-                            <li className="nav-item dropdown rtl">
-                            <a className="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
-                                ثبت نام
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</a></li>
-                                <li><a className="dropdown-item" href="#" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</a></li>
-                            </ul>
-                            </li>
-                            <li className="nav-item mx-2">
-                            <a className="nav-link" href="#">|</a>
-                            </li>
-                            <NavLink  href="#" text="ورود"/>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-        );
+const NavLinks = (props) => {
+    // const history = useHistory();
+    const location = useLocation();
+    const [url, setUrl] = useState(null);
+    useEffect(()=> {
+        setUrl(location.pathname);
+    }, [location]);
+
+    const [navbarUserIsLogged, setnavbarUserIsLogged] = useState(false);
+    useEffect(() => {
+        (async () => {
+        const loggedIn = await logic.isUserLoggedIn;
+        if (loggedIn) setnavbarUserIsLogged(true);
+        })();
+    }, [navbarUserIsLogged]);
+
+    const [auth, setAuth] = useState(false);
+
+
+
+    function requireAuth() {
+    axios.post("http://localhost:3001/checkLogged")
+    .then(function (response) { 
+    if (response.data.user) {
+        setAuth(true);
+        return true;
+    }else{
+        setAuth(false);
+        return false;
     }
+    })
+    }
+
+    return ( 
+        <div>
+            <div>
+                {/* Fix this line */}
+            <div className=" navbar-collapse" id="navbarSupportedContent"> 
+                <ul className="navbar-nav ml-auto"> 
+                    <li className="nav-item dropdown rtl">
+                        <Link className={"nav-link " + ((url === "/artistProfile" || url === "/TicketPart") ?"active" : "")} to="#" activeStyle id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i className="bi bi-person-circle"></i>
+                        </Link>
+                        <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><Link className="dropdown-item" to="../../artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
+                        <li><Link className="dropdown-item" to="../../TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
+                        <li><Link className="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</Link></li>
+                        </ul>
+                    </li>
+                    <li className="nav-item">
+                        <Link className= {"nav-link " + (url === "/mainPage" ?"active" : "")} aria-current="page" to='../../mainPage' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
+                    </li>
+                    <Link to='../../Guide' className={"nav-link " + (url === "/Guide" ?"active" : "")} >راهنمای سایت</Link>
+                    <Link  to="#" className={"nav-link " + (url === "#" ?"active" : "")}>درباره‌ما</Link>
+                    <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
+                        {!props.navbarUserIsLogged ? (
+                            <>
+                                <li className="nav-item dropdown rtl" >
+                                    <Link className={"nav-link " + ((url === "/artistSignUp" || url === "/buyerSignUp") ?"active" : "")} to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
+                                        ثبت نام
+                                    </Link>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li><Link className="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
+                                        <li><Link className="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
+                                    </ul>
+                                    </li>
+                                    <li className="nav-item mx-2">
+                                    <Link className="nav-link disabled" to="#">|</Link>
+                                </li>
+                            </>
+                        ) : <></>
+                    }
+                       
+                        <Link  to="../../Login" className={"nav-link " + (url === "/Login" ? "active": "")}>ورود</Link>
+                        
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        </div>
+     );
 }
  
 export default NavLinks;
