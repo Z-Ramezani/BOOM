@@ -5,7 +5,7 @@ const CarouselItemss = (props) => {
         <div>
             <div class="col-md-12"  style={{margin:'auto'}}>
                 <img src={props.src} className='img-responsive' media-simple="true" style={{height:'10vw',width:'10vw'}}/>
-                <div style={{fontSize:'1.2vw'}}><strong>
+                <div style={{fontSize:'1.1vw'}}><strong>
                     {props.textone}
                 </strong></div>  
                 <div style={{fontSize:'1vw'}}>

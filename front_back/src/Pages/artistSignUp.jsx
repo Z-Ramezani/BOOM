@@ -20,7 +20,6 @@ const ArtistSignUp = () => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
-  //const [gender, setGender]= useState("");
   const [showNumber, setShowNumber] = useState("");
 
   const handleSubmit = async (e) => {

@@ -50,8 +50,8 @@ const Login = () => {
                           <Input_text type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
                       </div>
                       <div className="mb-3">
-                          <label htmlFor="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
-                          <Input_text type="text" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                          <label for="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                          <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                           <a className='nav-link' href='#' style={{fontSize:'0.7vw',color:'#222222',marginTop:'0%'}} >بازیابی رمز عبور</a>
 
                       </div>

@@ -25,7 +25,7 @@ import TicketPart from './Pages/TicketPart';
 // import Guide from './Pages/guide';
 // import TicketPart from './Pages/TicketPart';
 // import Button from './components/button';
-// import InputText from './components/input_form';
+
 // import ResetButton from './components/resetButton';
 // import ArtistProfile from './Pages/artistProfile';
 // import Admin from './Pages/admin'; 
