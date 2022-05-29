@@ -15,7 +15,7 @@ class Is_authenticated_artist(permissions.BasePermission):#ورود صرفا ه�
            return bool(
                request.method in permissions.SAFE_METHODS and request.user or
                request.user.is_authenticated and
-               request.user and request.user.user.is_artist
+               request.user and request.user.is_artist
            )
 
 
@@ -41,22 +41,22 @@ class Is_artist_or_Readonly(permissions.BasePermission):#ه منظور تغیی�
         return bool(
             request.method in permissions.SAFE_METHODS and request.user or
             request.user.is_authenticated and
-            request.user and request.user.user.is_artist and
-            request.user == obj.user.user
+            request.user and request.user.is_artist and
+            request.user == obj.user
         )
 
 
 class Is_artist_obj_managment_readonly (permissions.BasePermission):#ه منظور مدیریت آگهی و نمونه کارها توسط شخص هنرمند
 
        def has_object_permission(self, request, view, obj ):
-            print(obj.artist.user.user.username)
+            print(obj.artist)
             print(request.user.username)
             print("end")
             return bool(
                 request.method in permissions.SAFE_METHODS and request.user or
                 request.user.is_authenticated and
-                request.user and request.user.user.is_artist and
-                request.user.username == obj.artist.user.user.username
+                request.user and request.user.is_artist and
+                request.user == obj.artist
             )
 
 class Is_expert_or_Readonly(permissions.BasePermission):#به منظور تغییر پروفایل برای کارشناس
@@ -65,8 +65,8 @@ class Is_expert_or_Readonly(permissions.BasePermission):#به منظور تغی�
         return bool(
             request.method in permissions.SAFE_METHODS and request.user or
             request.user.is_authenticated and
-            request.user and request.user.user.is_artist and
-            request.user == obj.user.user
+            request.user and request.user.is_artist and
+            request.user == obj.user
         )
 class Is_authenticated_expert(permissions.BasePermission): # تشخیص صرفا کارشناس بودن
     def has_permission(self, request, view):
@@ -74,7 +74,7 @@ class Is_authenticated_expert(permissions.BasePermission): # تشخیص صرفا
         return bool(
             request.method in permissions.SAFE_METHODS and request.user or
             request.user.is_authenticated and
-            request.user and request.user.user.is_expert
+            request.user and request.user.is_expert
         )
 
 
@@ -85,14 +85,14 @@ class Is_expert_obj_managment_readonly(permissions.BasePermission):#مدیریت
         return bool(
             request.method in permissions.SAFE_METHODS and request.user or
             request.user.is_authenticated and
-            request.user and request.user.user.is_expert and
-            request.user == obj.artist.user.user
+            request.user and request.user.is_expert and
+            request.user == obj.artist
         )
 
 class able_to_buy(permissions.BasePermission): #اجازه خرید با توجه به بودجه
     def has_permission(self, request, view):
         if(request.user and request.user.is_authenticated):
-            username = request.user.user.username
+            username = request.user.username
           #  print(username)
             artist_q = Artist.objects.filter(national_id_number=username)
             artist = artist_q.first()
@@ -109,7 +109,7 @@ class able_to_buy(permissions.BasePermission): #اجازه خرید با توج�
 class able_to_Hipe(permissions.BasePermission): #اجازه نردبان زدن
     def has_permission(self, request, view):
         if(request.user and request.user.is_authenticated):
-           username = request.user.user.username
+           username = request.user.username
            artist_q = Artist.objects.filter(national_id_number=username)
            artist = artist_q.first()
            date = datetime.date.today()

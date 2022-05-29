@@ -123,7 +123,7 @@ class Sample_artwork_save(generics.CreateAPIView):
     serializer_class = Sample_artwork_Serializer
     permission_classes = [Is_authenticated_artist,]
     def perform_create(self, serializer):
-        serializer.save(artist=self.request.user.user)
+        serializer.save(artist=self.request.user)
 
 ###########################
 

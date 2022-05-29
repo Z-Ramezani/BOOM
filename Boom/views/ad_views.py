@@ -101,13 +101,13 @@ class add_advertisements(generics.CreateAPIView):
     queryset = Artwork_advertisement.objects.all()
     serializer_class = AdvertisementSerializer
     def perform_create(self, serializer):
-        username = self.request.user.user.username
+        username = self.request.user.username
         artist = Artist.objects.get(national_id_number=username)
         order_counter_query = Order_counter.objects.all()
         order_counter = order_counter_query.first()
         artist.free_post_artwork = artist.free_post_artwork -1
         artist.save()
-        serializer.save(artist=self.request.user.user,order_value = order_counter.order_counter)
+        serializer.save(artist=self.request.user,order_value = order_counter.order_counter)
         order_counter.order_counter = order_counter.order_counter + 1
         order_counter.save()
 
@@ -118,7 +118,7 @@ class add_advertisements(generics.CreateAPIView):
 @api_view(['GET'])
 @permission_classes([able_to_buy,])
 def buy_ticket(request):
-    username = request.user.user.username
+    username = request.user.username
     artist = Artist.objects.filter(national_id_number=int(username))
     my_artist = artist.first()
     my_artist.budget= my_artist.budget - 50000
@@ -136,10 +136,10 @@ def Up_Ad(request, pk):
     target_atad = Artwork_advertisement.objects.get(id=pk)
     order_counter_query = Order_counter.objects.all()
     order_counter = order_counter_query.first()
-    print(request.user.user.username)
-    artist_q = Artist.objects.filter(national_id_number=int(request.user.user.username))
+    print(request.user.username)
+    artist_q = Artist.objects.filter(national_id_number=int(request.user.username))
     artist = artist_q.first()
-    if(target_atad.Hipe_num<2 and target_atad.artist.user.user.username == artist.user.user.username):
+    if(target_atad.Hipe_num<2 and target_atad.artist.username == artist.username):
        target_atad.order_value=order_counter.order_counter
        target_atad.Hipe = True
        target_atad.Hipe_num+=1
