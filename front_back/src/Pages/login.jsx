@@ -28,7 +28,7 @@ const Login = () => {
 			})
       localStorage.setItem('token' , res.data.token);
       navigator(`/`);
-      // window.location = '/buyerSignUp';
+      // window.location = '/';
 			console.log(res);
 		} catch(e) {
       alert('please first create an account');
@@ -46,11 +46,11 @@ const Login = () => {
               <div className="col-md-4">
                   <form className="form-control" onSubmit={handleSubmit}>
                       <div className="mb-3">
-                          <label for="InputEmail1" className="form-label"  style={{fontSize:'1.1vw'}}>نام کاربری</label>
+                          <label htmlFor="InputEmail1" className="form-label"  style={{fontSize:'1.1vw'}}>نام کاربری</label>
                           <Input_text type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
                       </div>
                       <div className="mb-3">
-                          <label for="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                          <label htmlFor="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
                           <Input_text type="text" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                           <a className='nav-link' href='#' style={{fontSize:'0.7vw',color:'#222222',marginTop:'0%'}} >بازیابی رمز عبور</a>
 

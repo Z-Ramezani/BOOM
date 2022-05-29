@@ -1,29 +1,35 @@
 import {Component} from 'react';
-import axios from 'axios';
-import { useState } from 'react';
+import axios from 'axios'; 
 import { Link } from 'react-router-dom';
 // import x from "../assets/ig.jpg";
 import ArtworkAdMainPage from '../components/artworkAdMainPage';
-
 
 class ArtworkGroup extends Component {
     state = { 
         ads : []
      } 
-
      async componentDidMount(){
-        const response = await axios.get('http://hidden.pythonanywhere.com/advertisment/view_advertisements');
-        this.setState({ads : response.data.data});
+        const response = await axios.get('http://hidden.pythonanywhere.com/advertisment/view_advertisements/');
+        console.log(response.data);
+        this.setState({ads : response.data});
      }
 
     render() { 
         return (
-            <div /* className="row row-cols-1 row-cols-md-3 g-4 mb-4" */> 
+            <div className="row row-cols-1 row-cols-md-3 g-4 mb-4" > 
             {
-                this.state.ads.map((ads)=>{
+                this.state.ads.map((ad)=>{
                     return(
                         <div className='col-4'>
-                            <ArtworkAdMainPage image={ads.image_1} size={ads.size} artworkName={ads.name} artistName={ads.artist} cost={ads.price} to={`/artworkGroup/${ads.id}`}/>
+                            <ArtworkAdMainPage 
+                            image={ad.image_1} 
+                            length_in_cm={ad.length_in_cm} 
+                            width_in_cm={ad.width_in_cm}
+                            artworkName={ad.name} 
+                            artistName={ad.artist} 
+                            cost={ad.price} 
+                            //ladder
+                            to={`/artworkGroup/${ad.id}`}/>
                         </div>
                     )
                 })
@@ -32,7 +38,6 @@ class ArtworkGroup extends Component {
         );
     }
 }
- 
 export default ArtworkGroup;  
 
 // const ArtworkGroup = (props) => {

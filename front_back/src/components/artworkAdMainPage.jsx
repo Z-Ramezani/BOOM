@@ -18,7 +18,7 @@ const ArtworkAdMainPage = (props) => {
                 
                      <img src={props.image} alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                      <figcaption className="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
-                        {props.size}
+                        {props.length_in_cm}*{props.width_in_cm}
                     </figcaption>
                 
                      <div className="card-body pt-0">
@@ -31,8 +31,8 @@ const ArtworkAdMainPage = (props) => {
                             <br></br>
                             <div className="row" dir="LTR">
                                 <div className="col-4" dir="LTR" style={{paddingRight:'0%'}}>
-                                    <h4 className="card-text"  style={{color:'#222222',fontSize:'1.5vw',marginBottom:'0%'}}>{props.cost}</h4>
-                                    <h4 className="card-text"  style={{color:'#222222',fontSize:'0.9vw',marginTop:'0%'}}>تومان</h4>
+                                    <div><h4 className="card-text"  style={{color:'#222222',fontSize:'1.5vw',marginBottom:'0%'}}>{props.cost}</h4></div>
+                                    <div><h4 className="card-text"  style={{color:'#222222',fontSize:'0.9vw',marginTop:'0%'}}>تومان</h4></div>
                                 </div>
                                 <div className="col ps-0">
                                     <div>{

@@ -9,9 +9,9 @@ import ResetButton from "../components/resetButton";
 import axios from "axios";
 import SignUp from '../components/signUp';
 
-const url1 = "http://hidden.pythonanywhere.com/users/register";
+const url1 = "http://hidden.pythonanywhere.com/users/register/expert";
 
-const ArtistSignUp = () => {
+const ExpertSignUp = () => {
   const [name, setName] = useState("");
 	const [lastname, setLastname] = useState("");
   const [national_id_number, setNational_id_number] = useState("");
@@ -52,4 +52,4 @@ const ArtistSignUp = () => {
  );
 };
 
-export default ArtistSignUp;
+export default ExpertSignUp;
