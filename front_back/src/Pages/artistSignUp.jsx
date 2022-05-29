@@ -46,6 +46,8 @@ const ArtistSignUp = () => {
 
   return ( 
     <div>
+        <Navbar/>
+        <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند'/>
         <SignUp onSubmit={handleSubmit}/>
     </div> 
  );

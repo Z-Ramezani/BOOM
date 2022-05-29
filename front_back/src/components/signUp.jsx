@@ -22,8 +22,7 @@ const SignUp = (props) => {
 
   return ( 
     <div>
-        <Navbar/>
-        <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان هنرمند یا کارشناس'/>
+
         <div className='d-flex flex-column min-vh-100'>
             <form style={{marginTop: 'auto'}} onSubmit={props.onSubmit}>
                 <div className='container w-75 p-3 shadow p-3 mb-5 bg-white rounded mt-4' >
@@ -105,11 +104,8 @@ const SignUp = (props) => {
                                 <ResetButton/>
                             </div>
                             <div className='mx-1'>
-                                <Button type= 'submit' width= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان هنرمند' fontSize='1.17vw'/>
+                                <Button type= 'submit' width= 'auto' height= 'auto' text= 'ثبت‌نام' fontSize='1.17vw'/>
                             </div> 
-                            <div className='mx-1 '>
-                                <Button type= 'submit' twidth= 'auto' height= 'auto' text= 'ثبت‌نام به عنوان کارشناس' fontSize='1.17vw'/>
-                            </div>
                         </div>   
                     </div>
                 </div>

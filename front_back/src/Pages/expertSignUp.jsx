@@ -47,6 +47,8 @@ const ExpertSignUp = () => {
 
   return ( 
     <div>
+        <Navbar/>
+        <Breadcrumbb is3OrNot='true' first='صفحه اصلی' second='ثبت‌نام ' third='به عنوان کارشناس'/>
         <SignUp onSubmit={handleSubmit}/>
     </div> 
  );

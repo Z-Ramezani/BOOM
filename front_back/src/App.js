@@ -32,6 +32,9 @@ import ViewExpertProfile from './Pages/viewExpertProfile';
 import Logout from './components/logout';
 import AboutUs from './Pages/aboutUs';
 import axios from 'axios';
+import CreateSubmitExpertOpinion from './components/createSubmitExpertOpinion';
+import SignUp from './components/signUp';
+import ExpertSignUp from './Pages/expertSignUp';
 
 const url = 'http://hidden.pythonanywhere.com/users';
 
@@ -60,6 +63,8 @@ const App = () => {
               <Route path='/resume' element={<Resume/>}/>
               <Route path='/userInformation' element={<UserInformation/>}/>
               <Route path='/logout' element={<Logout/>}/>
+              <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
+              <Route path='/SignUp' element={<SignUp/>}/>
               
               {/* Pages */}
               <Route path='/admin' element={<Admin/>}/>
@@ -75,6 +80,7 @@ const App = () => {
               <Route path='/expertProfile' element={<ExpertProfile/>}/>
               <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
               <Route path='/AboutUs' element={<AboutUs/>}/>
+              <Route path='/expertSignUp' element={<ExpertSignUp/>}/>
 
               <Route path='/' Component={App}/>
             </Routes>

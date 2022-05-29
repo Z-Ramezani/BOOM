@@ -31,21 +31,28 @@ const NavLinks = (props) => {
                         <Link className= {"nav-link " + (url === "/mainPage" ?"active" : "")} aria-current="page" to='../../mainPage' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
                     <Link to='../../Guide' className={"nav-link " + (url === "/Guide" ?"active" : "")} >راهنمای سایت</Link>
-                    <Link  to="../../AboutUs" className={"nav-link " + (url === "#" ?"active" : "")}>درباره‌ما</Link>
+                    <Link  to="#" className={"nav-link " + (url === "#" ?"active" : "")}>درباره‌ما</Link>
                     <ul className="nav navbar navbar-left d-flex d-inline-flex p-0 justify-content-start">
-                        <li className="nav-item dropdown rtl">
-                        <Link className={"nav-link " + ((url === "/artistSignUp" || url === "/buyerSignUp") ?"active" : "")} to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
-                            ثبت نام
-                        </Link>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><Link class="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند یا کارشناس</Link></li> 
-                            <li><Link class="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
-                        </ul>
-                        </li>
-                        <li className="nav-item mx-2">
-                        <Link className="nav-link disabled" to="#">|</Link>
-                        </li>
-                        <Link  to="../../login" className="nav-link">ورود</Link>
+                        {!props.navbarUserIsLogged ? (
+                            <>
+                                <li className="nav-item dropdown rtl" >
+                                    <Link className={"nav-link " + ((url === "/artistSignUp" || url === "/buyerSignUp") ?"active" : "")} to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
+                                        ثبت نام
+                                    </Link>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li><Link className="dropdown-item" to="../../artistSignUp" style={{fontSize:'0.8vw'}}>ثبت نام هنرمند</Link></li> 
+                                        <li><Link className="dropdown-item" to="../../expertSignUp" style={{fontSize:'0.8vw'}}>ثبت نام کارشناس</Link></li>
+                                        <li><Link className="dropdown-item" to="../../buyerSignUp" style={{fontSize:'0.8vw'}}>ثبت نام خریدار</Link></li>
+                                    </ul>
+                                    </li>
+                                    <li className="nav-item mx-2">
+                                    <Link className="nav-link disabled" to="#">|</Link>
+                                </li>
+                            </>
+                        ) : <></>
+                    }
+                       
+                        <Link  to="../../Login" className={"nav-link " + (url === "/Login" ? "active": "")}>ورود</Link>
                         
                     </ul>
                 </ul>
