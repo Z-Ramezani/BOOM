@@ -19,7 +19,6 @@ const ArtistSignUp = () => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
-  //const [gender, setGender]= useState("");
   const [showNumber, setShowNumber] = useState("");
 
   const handleSubmit = async (e) => {
@@ -27,7 +26,7 @@ const ArtistSignUp = () => {
     try {
       const res = await axios.post(url1, {
         name,
-				lastname,
+		lastname,
         national_id_number,
         birth_date,
         phone,
@@ -60,14 +59,13 @@ const ArtistSignUp = () => {
                                         <Input_text type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
                                     </div>
                                 </div>
-                                <div className='col row'>
-                                    <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>کدملی</label>
-                                    <div className="col-8">
-                                        <Input_text type="text" value={national_id_number} onChange={(e)=>setNational_id_number(e.target.value)}/>
+                                <div class='col row '>
+                                    <label className='col-sm-3 col-form-label mx-auto' style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
+                                    <div className='col-8'> 
+                                        <Input_text type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
-
                             <div className='row mb-2'>
                                 <div class="col row ">
                                     <label  class="col-4 col-form-label" style={{fontSize:'1.1vw'}}>سال تولد</label>
@@ -78,11 +76,10 @@ const ArtistSignUp = () => {
                                 <div className='col row'>
                                     <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                     <div className="col-8">
-                                        <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+                                        <Input_text type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
-
                             <div className='row '>
                                 <div className="row col">
                                     <label  class="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>ایمیل</label>
@@ -90,7 +87,6 @@ const ArtistSignUp = () => {
                                         <Input_text type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                                     </div>
                                 </div>
-
                                 <div class="row col ">
                                     <label  class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>راه ارتباطی جهت نمایش در آگهی</label>
                                     <div class="col-8">
@@ -98,7 +94,21 @@ const ArtistSignUp = () => {
                                     </div>
                                 </div>
                             </div>
-
+                            <div className='row mb-2'>
+                            <div className='col row'>
+                                    <label className="col-sm-4 col-form-label " style={{fontSize:'1.1vw'}}>کدملی</label>
+                                    <div className="col-8">
+                                        <Input_text type="number"  min="0" value={national_id_number} onChange={(e)=>setNational_id_number(e.target.value)}/>
+                                    </div>
+                                </div>
+                                <div class="row col">
+                                    <label class="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                                    <div class="col-8">
+                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                    </div>
+                                </div>
+                               
+                            </div>
                             <div className='row mb-2'>
                                 <div class="row col">
                                     <label  class="col-sm-3 col-form-label" style={{fontSize:'1.1vw'}}>آدرس</label>
@@ -106,46 +116,7 @@ const ArtistSignUp = () => {
                                         <Input_text type="text" value={address} onChange={(e)=>setAddress(e.target.value)}/>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div className='row mb-2'>
-                                <div class="row col">
-                                    <label class="col-sm-4 col-form-label" style={{fontSize:'1.1vw'}}>رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                                    </div>
-                                </div>
-                                <div class="row col">
-                                    <label class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>تکرار رمز عبور</label>
-                                    <div class="col-8">
-                                        <Input_text type="password"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='row mb-2'>
-                            <div class='col row '>
-                                    <label className='col-4 col-form-label' style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
-                                    <div className='col-8'> 
-                                        <Input_text type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
-                                    </div>
-                                </div>
-                            </div>
-                                    
-                            <div className='row mb-2 '>
-                                <fieldset class="row">
-                                    <label class="col-form-label col-sm-2" style={{fontSize:'1.1vw'}}>جنسیت</label>
-                                    <div class="d-flex col mt-2" required>
-                                        <div class="form-check">
-                                            <label class="form-check-label" style={{fontSize:'1.1vw'}}>زن</label>
-                                            <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label me-5" style={{fontSize:'1.1vw'}}>مرد</label>
-                                                <input class="justify-content-right form-check-input" type="radio" name='gridRadios'/>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>      
+                            </div>     
                         </div>
                     </div>
                 </div>
