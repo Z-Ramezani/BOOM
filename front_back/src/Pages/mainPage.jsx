@@ -22,8 +22,6 @@ class MainPage extends Component {
                 <div className='d-flex flex-column min-vh-100'>
                     <div className='container w-75 p-3'>
                         <ArtworkGroup/>
-                        <ArtworkGroup/>
-                        <ArtworkGroup/>
                     </div>
                     <Footer/>
                 </div>
