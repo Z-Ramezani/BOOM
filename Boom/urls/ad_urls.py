@@ -19,4 +19,5 @@ urlpatterns = [
      path("review/product/<int:artwork_id>", comment.reviews_of_artwork),
      path("hipe/<pk>", adv.Up_Ad),
      path("buy_ticket", adv.buy_ticket),
+     path("get_advertisement/<pk>" , adv.get_advertisement.as_view()),
 ]
