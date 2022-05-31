@@ -87,6 +87,14 @@ class RegisterArtistSerializer(ArtistSerializer):
             phone=validated_data['phone'],
             password=validated_data['password'],
             free_post_artwork=2,
+            address=validated_data['address'],
+            email=validated_data['email'],
+            artfield=validated_data['artfield'],
+            stylework=validated_data['stylework'],
+            Experience_in_month=validated_data['Experience_in_month'],
+            
+            last_hipe_month=validated_data['last_hipe_month'],
+            hipe_count=validated_data['hipe_count'],
 
             user=User.objects.get(username=validated_data['national_id_number'])
         )
