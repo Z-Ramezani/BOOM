@@ -57,7 +57,7 @@ const BuyerSighUp = () => {
                                   </div>
                               </div>
                               <div className='col row'>
-                                  <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
+                                  <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                   <div className="col-8">
                                       <Input_text type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                   </div>
@@ -71,9 +71,9 @@ const BuyerSighUp = () => {
                                   </div>
                               </div>
                               <div class="row col">
-                                  <label class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
+                                  <label class="col-sm-3 col-form-label  mx-auto" style={{fontSize:'1.1vw'}}>نام خانوادگی</label>
                                   <div class="col-8">
-                                      <Input_text type="password"/>
+                                      <Input_text type="text"/>
                                   </div>
                               </div>
                           </div>   

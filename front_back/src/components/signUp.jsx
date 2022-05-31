@@ -52,7 +52,7 @@ const SignUp = (props) => {
                                 <div className='col row'>
                                     <label className="col-sm-3 col-form-label mx-auto" style={{fontSize:'1.1vw'}}>شماره تماس</label>
                                     <div className="col-8">
-                                        <Input_text type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+                                        <Input_text type="tel" /*pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"*/ value={phone} onChange={(e)=>setPhone(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
