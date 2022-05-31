@@ -13,7 +13,7 @@ const ArtworkAd = (props) => {
     const [ad, setAd] = useState({});
 
     useEffect(async ()=>{
-        const response = await axios.get(`https://hidden.pythonanywhere.com/advertisment/get_advertisement/${props.match.params.id}`);
+        const response = await axios.get(`https://hidden.pythonanywhere.com/advertisment/view_advertisement/${props.match.params.id}`);
         setAd(response.data.data); 
     })
 

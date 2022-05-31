@@ -37,8 +37,6 @@ import SignUp from './components/signUp';
 import ExpertSignUp from './Pages/expertSignUp';
 import useToken from './components/useToken.js';
 
-// const url = 'http://hidden.pythonanywhere.com/users';
-
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
 }
@@ -57,7 +55,9 @@ const App = () => {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<Login/>} setToken={setToken}/>
+        <Route index element={<MainPage/>}/>
+          <Route path='/login' element={<Login setToken={setToken}/>} />
+          <Route path='/' Component={App}/>
         </Routes>
       </BrowserRouter>
     );
@@ -75,6 +75,9 @@ const App = () => {
         <Route path='/navBar/navLinks' element={<NavLinks/>}/>
         <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
         <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
+
+        <Route path="/artworkGroup/:id" element={<ArtworkAd/>}/>
+
         <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
         <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
         <Route path='/button' element={<Button/>}/>
@@ -93,7 +96,7 @@ const App = () => {
         <Route path='/admin' element={<Admin/>}/>
         <Route path='/artistProfile' element={<ArtistProfile/>}/>
         <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
-        <Route path="/artworkAd" element={<ArtworkAd/>}/>
+        {/* <Route path="/artworkAd" element={<ArtworkAd/>}/> */}
         <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
         <Route path='/guide' element={<Guide/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -112,6 +115,7 @@ const App = () => {
 }
  
 export default App;
+// const url = 'http://hidden.pythonanywhere.com/users';
   // componentDidMount=async()=>{
   //   const token = localStorage.getItem('token');
   //   if(!token){

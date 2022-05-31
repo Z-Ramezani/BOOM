@@ -18,7 +18,7 @@ const ArtworkAdMainPage = (props) => {
                 
                      <img src={props.image} alt="art image"  style={{blockSize: "20vw", maxWidth:'100%',maxHeight:'100%'}}/>
                      <figcaption className="figure-caption" dir="LTR" style={{marginLeft:'1vw',fontSize:'0.9vw'}} >
-                        {props.length_in_cm}*{props.width_in_cm}
+                        {props.length_in_cm}*{props.width_in_cm} cm
                     </figcaption>
                 
                      <div className="card-body pt-0">

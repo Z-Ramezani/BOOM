@@ -9,7 +9,7 @@ import ResetButton from "../components/resetButton";
 import axios from "axios";
 import SignUp from '../components/signUp';
 
-const url1 = "http://hidden.pythonanywhere.com/users/register";
+const url1 = "https://hidden.pythonanywhere.com/users/register";
 
 const ArtistSignUp = () => {
   const [name, setName] = useState("");
@@ -27,7 +27,7 @@ const ArtistSignUp = () => {
     try {
       const res = await axios.post(url1, {
         name,
-		    lastname,
+		lastname,
         national_id_number,
         birth_date,
         phone,
