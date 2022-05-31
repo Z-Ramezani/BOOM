@@ -1,4 +1,4 @@
-# Django Import 
+# Django Import
 from django.shortcuts import render
 from django.http import JsonResponse
 # from django.contrib.auth.models import User
@@ -19,7 +19,7 @@ from knox.models import AuthToken
 # from rest_framework.permissions import AllowAny
 # from rest_framework.generics import RetrieveAPIView
 from rest_framework.decorators import api_view
-# Rest Framework JWT 
+# Rest Framework JWT
 # from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 # from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -122,24 +122,54 @@ class RegisterCustomerAPI(generics.GenericAPIView):
 
 
 
+
+class LogInAPI(generics.GenericAPIView):
+    serializer_class = LogInSerializer
+
+
+# class LoginAPI(generics.GenericAPIView):
+#     serializer_class = LoginSerializers
+
+#     def post(self, request):
+
+
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.validated_data
+
+#         return Response({
+#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
+#             "token": AuthToken.objects.create(user)[1]})
+
+
+
 class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginSerializers
+    # permission_classes = [Is_anybody,]
 
     def post(self, request):
-        
+
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
+
         
+
+
+
+
+
+
+
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]})
 
 
 
-class LogInAPI(TokenObtainPairView):
-    serializer_class = LogInSerializer
+# class LogInAPI(TokenObtainPairView):
+#     serializer_class = LogInSerializer
     
     # serializer_class = LoginSerializers
     # http_method_names = ['get', 'head', 'post']

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ibe&2g38fj@z7hwgoxxh&pdzz3kr$ar-+vvzupj^r5jfcnqtnz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SITE_ID = 1
 # Application definition
@@ -112,6 +112,17 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
+]
+
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'http://127.0.0.1'
 ]
 
 ROOT_URLCONF = 'Boomproj.urls'
