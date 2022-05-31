@@ -37,106 +37,77 @@ import SignUp from './components/signUp';
 import ExpertSignUp from './Pages/expertSignUp';
 import useToken from './components/useToken.js';
 
-const url = 'http://hidden.pythonanywhere.com/users';
+// const url = 'http://hidden.pythonanywhere.com/users';
+
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+
 
 const App = () => {
-  const { token, setToken } = useToken();
+  const token = getToken();
   
   if(!token) {
     return (
       <BrowserRouter>
         <Routes>
-          {/* <Route exact path='/' exact element={<MainPage />} /> */}
-          <Route index element={<MainPage/>}/>
-
-          {/* components */}
-          <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
-          <Route path='/navBar/navBar' element={<NavBar/>}/>
-          <Route path='/navBar/navLink' element={<navLink/>}/>
-          <Route path='/navBar/navLinks' element={<NavLinks/>}/>
-          <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
-          <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
-          <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
-          <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
-          <Route path='/button' element={<Button/>}/>
-          <Route path='/expertOpinion' element={<ExpertOpinion/>}/>
-          <Route path='/footer' element={<Footer/>}/>
-          <Route path='/header-slide' element={<HeaderSlide/>}/>
-          <Route path='/input_form' element={<Input_text/>}/>
-          <Route path='/resetButton' element={<ResetButton/>}/>
-          <Route path='/resume' element={<Resume/>}/>
-          <Route path='/userInformation' element={<UserInformation/>}/>
-          <Route path='/logout' element={<Logout/>}/>
-          <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
-          <Route path='/SignUp' element={<SignUp/>}/>
-          
-          {/* Pages */}
-          <Route path='/admin' element={<Admin/>}/>
-          <Route path='/artistProfile' element={<ArtistProfile/>}/>
-          <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
-          <Route path="/artworkAd" element={<ArtworkAd/>}/>
-          <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
-          <Route path='/guide' element={<Guide/>}/>
           <Route path='/login' element={<Login/>} setToken={setToken}/>
-          <Route path='/mainPage' element={<MainPage/>}/>
-          <Route path='/TicketPart' element={<TicketPart/>}/>
-          <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
-          <Route path='/expertProfile' element={<ExpertProfile/>}/>
-          <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
-          <Route path='/AboutUs' element={<AboutUs/>}/>
-          <Route path='/expertSignUp' element={<ExpertSignUp/>}/>
-
-          <Route path='/' Component={App}/>
         </Routes>
       </BrowserRouter>
-      );
+    );
   }
   return ( 
     <BrowserRouter>
-            <Routes>
-              {/* <Route exact path='/' exact element={<MainPage />} /> */}
-              <Route index element={<MainPage/>}/>
+      <Routes>
+        {/* <Route exact path='/' exact element={<MainPage />} /> */}
+        <Route index element={<MainPage/>}/>
 
-              {/* components */}
-              <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
-              <Route path='/navBar/navBar' element={<NavBar/>}/>
-              <Route path='/navBar/navLink' element={<navLink/>}/>
-              <Route path='/navBar/navLinks' element={<NavLinks/>}/>
-              <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
-              <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
-              <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
-              <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
-              <Route path='/button' element={<Button/>}/>
-              <Route path='/expertOpinion' element={<ExpertOpinion/>}/>
-              <Route path='/footer' element={<Footer/>}/>
-              <Route path='/header-slide' element={<HeaderSlide/>}/>
-              <Route path='/input_form' element={<Input_text/>}/>
-              <Route path='/resetButton' element={<ResetButton/>}/>
-              <Route path='/resume' element={<Resume/>}/>
-              <Route path='/userInformation' element={<UserInformation/>}/>
-              <Route path='/logout' element={<Logout/>}/>
-              <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
-              <Route path='/SignUp' element={<SignUp/>}/>
-              
-              {/* Pages */}
-              <Route path='/admin' element={<Admin/>}/>
-              <Route path='/artistProfile' element={<ArtistProfile/>}/>
-              <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
-              <Route path="/artworkAd" element={<ArtworkAd/>}/>
-              <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
-              <Route path='/guide' element={<Guide/>}/>
-              <Route path='/login' element={<Login/>}/>
-              <Route path='/mainPage' element={<MainPage/>}/>
-              <Route path='/TicketPart' element={<TicketPart/>}/>
-              <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
-              <Route path='/expertProfile' element={<ExpertProfile/>}/>
-              <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
-              <Route path='/AboutUs' element={<AboutUs/>}/>
-              <Route path='/expertSignUp' element={<ExpertSignUp/>}/>
+        {/* components */}
+        <Route path='/horizontalLine/horizontalLine' element={<HorizontalLine/>}/>
+        <Route path='/navBar/navBar' element={<NavBar/>}/>
+        <Route path='/navBar/navLink' element={<navLink/>}/>
+        <Route path='/navBar/navLinks' element={<NavLinks/>}/>
+        <Route path='/showArtworkAdCost' element={<ShowArtworkAdCost/>}/>
+        <Route path='/artworkAdMainPage' element={<ArtworkAdMainPage/>}/>
+        <Route path='/artworkGroup' element={<ArtworkGroup/>}/>
+        <Route path='/breadcrumb' element={<Breadcrumbb/>}/>
+        <Route path='/button' element={<Button/>}/>
+        <Route path='/expertOpinion' element={<ExpertOpinion/>}/>
+        <Route path='/footer' element={<Footer/>}/>
+        <Route path='/header-slide' element={<HeaderSlide/>}/>
+        <Route path='/input_form' element={<Input_text/>}/>
+        <Route path='/resetButton' element={<ResetButton/>}/>
+        <Route path='/resume' element={<Resume/>}/>
+        <Route path='/userInformation' element={<UserInformation/>}/>
+        <Route path='/logout' element={<Logout/>}/>
+        <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
+        <Route path='/SignUp' element={<SignUp/>}/>
+        
+        {/* Pages */}
+        <Route path='/admin' element={<Admin/>}/>
+        <Route path='/artistProfile' element={<ArtistProfile/>}/>
+        <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
+        <Route path="/artworkAd" element={<ArtworkAd/>}/>
+        <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
+        <Route path='/guide' element={<Guide/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/mainPage' element={<MainPage/>}/>
+        <Route path='/TicketPart' element={<TicketPart/>}/>
+        <Route path='/viewArtistProfile' element={<ViewArtistProfile/>}/>
+        <Route path='/expertProfile' element={<ExpertProfile/>}/>
+        <Route path='/viewExpertProfile' element={<ViewExpertProfile/>}/>
+        <Route path='/AboutUs' element={<AboutUs/>}/>
+        <Route path='/expertSignUp' element={<ExpertSignUp/>}/>
 
-              <Route path='/' Component={App}/>
-            </Routes>
-          </BrowserRouter>
+        <Route path='/' Component={App}/>
+      </Routes>
+    </BrowserRouter>
    );
 }
  

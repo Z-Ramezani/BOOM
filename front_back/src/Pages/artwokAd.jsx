@@ -10,12 +10,12 @@ import ExpertOpinion from '../components/expertOpinion';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 const ArtworkAd = (props) => {
-    // const [ad, setAd] = useState({});
+    const [ad, setAd] = useState({});
 
-    // useEffect(async ()=>{
-    //     const response = await axios.get(`http://hidden.pythonanywhere.com/advertisment/view_advertisements/${props.match.params.id}`);
-    //     setAd(response.data.data); 
-    // })
+    useEffect(async ()=>{
+        const response = await axios.get(`https://hidden.pythonanywhere.com/advertisment/get_advertisement/${props.match.params.id}`);
+        setAd(response.data.data); 
+    })
 
     const [visibilityButton, setVisibilityButton] = useState("block");
     const [visibilityCost, setVisibilityCost] = useState("none");

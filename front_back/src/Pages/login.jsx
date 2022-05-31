@@ -24,7 +24,7 @@ async function loginUser(credentials) {
     .then(data => data.json())
  }
 
-const Login = ({ setToken }) => {
+ export default function Login({ setToken }) {
   // const navigator = useNavigate();
 
   const [username, setUsername ] = useState("");
@@ -57,7 +57,7 @@ const Login = ({ setToken }) => {
   }
 
   return ( 
-      <div className='bg-image' style={{backgroundImage:color}}>
+      <div className='bg-image login-wrapper' style={{backgroundImage:color}}>
         <Navbar/>
         <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
         <div className='container flex-column min-vh-100' >
@@ -91,7 +91,6 @@ const Login = ({ setToken }) => {
       </div>
   );
 }
-export default Login;
 
 Login.propTypes = {
   setToken: PropTypes.func.isRequired
