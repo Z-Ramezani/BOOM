@@ -34,7 +34,7 @@ const ArtistSignUp = () => {
         email,
         address,
         password,
-        showNumber,
+        // showNumber,
       });
       localStorage.setItem('token' , res.data.token);
       console.log(res);

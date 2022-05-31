@@ -51,17 +51,17 @@ function getToken() {
 const App = () => {
   const token = getToken();
   
-  if(!token) {
-    return (
-      <BrowserRouter>
-        <Routes>
-        <Route index element={<MainPage/>}/>
-          <Route path='/login' element={<Login setToken={setToken}/>} />
-          <Route path='/' Component={App}/>
-        </Routes>
-      </BrowserRouter>
-    );
-  }
+  // if(!token) {
+  //   return (
+  //     <BrowserRouter>
+  //       <Routes>
+  //       <Route index element={<MainPage/>}/>
+  //         <Route path='/login' element={<Login setToken={setToken}/>} />
+  //         <Route path='/' Component={App}/>
+  //       </Routes>
+  //     </BrowserRouter>
+  //   );
+  // }
   return ( 
     <BrowserRouter>
       <Routes>
