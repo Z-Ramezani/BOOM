@@ -18,6 +18,10 @@ urlpatterns = [
      path('get_artist_with_token/<pk>' , vi.Get_artist_with_token.as_view() , name="get_artist_token"),
      path('get_expert_with_token/<pk>' , vi.Get_expert_with_token.as_view() , name="get_expert_token"),
      path('get_customer_with_token/<pk>' , vi.Get_customer_with_token.as_view() , name="get_customer"),
+     path('update/artist/<pk>' , vi.update_artist),
+     path('update/expert/<pk>' , vi.update_expert),
+     path('update/customer/<pk>' , vi.update_customer),
+
     # path('update' , vi.updatePassword),
 
 ]

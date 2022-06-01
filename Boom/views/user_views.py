@@ -7,30 +7,24 @@ from rest_framework import status
 from Boom.models import Artist , Expert , Expert_comment , Artwork_advertisement , Customer , Sample_artwork  , Order_counter
 from django.shortcuts import render,redirect
 from Boom.serializers import advertisementCreate
-# Rest Framework Import
+
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
 from rest_framework.response import Response
-# from rest_framework.serializers import Serializer
+
 from rest_framework import generics , permissions
-# from rest_framework.authtoken.models import Token
-# from rest_framework.viewsets import ModelViewSet
+
 from knox.models import AuthToken
-# from rest_framework.permissions import AllowAny
-# from rest_framework.generics import RetrieveAPIView
+
 from rest_framework.decorators import api_view
-# Rest Framework JWT
-# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-# from rest_framework_simplejwt.views import TokenObtainPairView
+
 from rest_framework_simplejwt.tokens import RefreshToken
-# from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
+
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user_model
 from rest_framework import generics
 from rest_framework_simplejwt.views import TokenObtainPairView
-#Local import
 
-# from ..models import Artist , Expert , Artwork_advertisement , Customer
 from ..serializers import RegisterCustomerSerializer, RegisterExpertSerializer , RegisterArtistSerializer  , UserSerializer  ,LoginSerializers, ArtistSerializer , ExpertSerializer , CustomerSerializer , LogInSerializer
 from rest_framework import permissions
 from Boom.permissions import *
@@ -40,25 +34,6 @@ User = get_user_model()
 
 
 
-
-# class RegisterArtistAPI(generics.GenericAPIView):
-#     serializer_class = RegisterArtistSerializer
-#     # permission_classes = [Is_anybody,]
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.save()
-#         refresh = RefreshToken.for_user(user)
-#         res = {
-#             "refresh": str(refresh),
-#             "access": str(refresh.access_token),
-#         }
-
-#         return Response({
-#             "user": serializer.data,
-#             "refresh": res["refresh"],
-#             "token": res["access"]
-#         }, status=status.HTTP_201_CREATED)
 
 
 
@@ -123,24 +98,79 @@ class RegisterCustomerAPI(generics.GenericAPIView):
 
 
 
-class LogInAPI(generics.GenericAPIView):
-    serializer_class = LogInSerializer
+@api_view(['PUT'])
+def update_artist(self , request , pk):
+
+    req = request.data
+    artist = Artist.objects.get(national_id_number=pk)
+    user = User.objects.get(username=pk)
+    user.username = req['national_id_number'],
+    user.password = req['password'],
+    artist.name=req['name'],
+    artist.lastname=req['lastname'],
+    artist.national_id_number=req['national_id_number'],
+    artist.birth_date=req['birth_date'],
+    artist.phone=req['phone'],
+    artist.password=req['password'],
+
+    artist.address=req['address'],
+    artist.email=req['email'],
+    artist.artfield=req['artfield'],
+    artist.stylework=req['stylework'],
+    artist.Experience_in_month=req['Experience_in_month'],
+    
+    artist.last_hipe_month=req['last_hipe_month'],
+    artist.hipe_count=req['hipe_count']
+
+    user.save()
+    artist.save()
+    serializer = ArtistSerializer(artist, many=False)
+    return Response(serializer.data)
 
 
-# class LoginAPI(generics.GenericAPIView):
-#     serializer_class = LoginSerializers
-
-#     def post(self, request):
 
 
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
 
-#         return Response({
-#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]})
+@api_view(['PUT'])
+def update_expert(self , request , pk):
 
+        req = request.data
+        expert = Expert.objects.get(national_id_number=pk)
+        user = User.objects.get(username=pk)
+        user.username = req['national_id_number'],
+        user.password = req['password'],
+        expert.name=req['name'],
+        expert.lastname=req['lastname'],
+        expert.national_id_number=req['national_id_number'],
+        expert.birth_date=req['birth_date'],
+        expert.phone=req['phone'],
+        expert.password=req['password'],
+
+        user.save()
+        expert.save()
+        serializer = ExpertSerializer(expert, many=False)
+        return Response(serializer.data)
+
+
+
+
+@api_view(['PUT'])
+def update_customer(self , request , pk):
+
+    req = request.data
+    customer = Customer.objects.get(national_id_number=pk)
+    user = User.objects.get(username=pk)
+    user.username = req['national_id_number'],
+    user.password = req['password'],
+    customer.name=req['name'],
+    customer.lastname=req['lastname'],
+
+    customer.phone=req['phone'],
+    customer.password=req['password'],
+    user.save()
+    customer.save()
+    serializer = CustomerSerializer(customer, many=False)
+    return Response(serializer.data)
 
 
 class LoginAPI(generics.GenericAPIView):
@@ -167,39 +197,9 @@ class LoginAPI(generics.GenericAPIView):
             "token": AuthToken.objects.create(user)[1]})
 
 
+class LogInAPI(TokenObtainPairView):
+    serializer_class = LogInSerializer
 
-# class LogInAPI(TokenObtainPairView):
-#     serializer_class = LogInSerializer
-    
-    # serializer_class = LoginSerializers
-    # http_method_names = ['get', 'head', 'post']
-    # # permission_classes = [Is_anybody,]
-    # def post(self, request):
-    #     self.http_method_names.append("GET")
-
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     user = serializer.validated_data
-
-
-
-
-
-        
-    #     return Response({
-    #         "user": UserSerializer(user, context=self.get_serializer_context()).data,
-    #         "token": AuthToken.objects.create(user)[1]})
-
-# class LogInView(generics.GenericAPIView): # new
-#     serializer_class = LogInSerializer
-
-#     def post(self , request):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         return Response({
-#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-#             "token": AuthToken.objects.create(user)[1]})
 
 
 
