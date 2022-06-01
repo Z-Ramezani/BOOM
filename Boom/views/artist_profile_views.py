@@ -20,7 +20,7 @@ from Boom.permissions import *
 class Artist_Profile_Datails(generics.RetrieveAPIView):
     queryset = Artist.objects.all()
     serializer_class = Artist_Profile_show_Serializers
-    permission_classes = [IsAuthenticated]
+    permission_classes = []
 
 
 
@@ -62,7 +62,7 @@ class Artist_Profile_Datails_list(generics.ListAPIView):
 class Artist_Experience_Datails(generics.RetrieveAPIView):
     queryset = Artist.objects.all()
     serializer_class = Artist_Experience_Serializer
-    permission_classes = [Is_anybody,]
+    permission_classes = []
 
 
 #@api_view(["GET"])
