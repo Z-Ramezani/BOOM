@@ -106,8 +106,9 @@ class add_advertisements(generics.CreateAPIView):
         order_counter_query = Order_counter.objects.all()
         order_counter = order_counter_query.first()
         artist.free_post_artwork = artist.free_post_artwork -1
+        artist_name = artist.name + " " +artist.lastname
         artist.save()
-        serializer.save(artist=self.request.user,order_value = order_counter.order_counter)
+        serializer.save(artist=self.request.user,artist_name=artist_name,order_value = order_counter.order_counter)
         order_counter.order_counter = order_counter.order_counter + 1
         order_counter.save()
 
@@ -158,8 +159,10 @@ def Up_Ad(request, pk):
 
 
 
-
-
+class get_advertisement(RetrieveAPIView):
+    permission_classes = []
+    queryset = Artwork_advertisement.objects.all()
+    serializer_class = AdvertisementSerializer
 
 
 
