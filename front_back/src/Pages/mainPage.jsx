@@ -6,14 +6,14 @@ import Footer from '../components/Footer/footer';
 import ArtworkGroup from '../components/artworkGroup';
 import HeaderSlide from '../components/header-slide';
 import { MDBInput, MDBCol } from "mdbreact";
+
+function getToken() {
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    return userToken?.token
+  }
 class MainPage extends Component {
-    state = { 
-         // ads: []
-     } 
-    // async componentDidMount(){
-    //     const response = await axios.get(/'url from back'/);
-    // this.setState.ads({ads: response./this is based on back variables/});
-    // }
+    state = {  } 
     render() { 
         return (
             <div>

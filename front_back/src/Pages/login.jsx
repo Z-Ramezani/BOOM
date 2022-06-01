@@ -31,23 +31,6 @@ async function loginUser(credentials) {
   const [username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-	// 	try{
-	// 		const res = await axios.post(url, {
-	// 			username,password
-	// 		})
-  //     localStorage.setItem('token' , res.data.token);
-  //     navigator(`/`);
-  //     // window.location = '/';
-	// 		console.log(res);
-	// 	} catch(e) {
-  //     alert('please first create an account');
-	// 		console.log(e.response);
-	// 	}
-  // };
-
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
@@ -55,6 +38,9 @@ async function loginUser(credentials) {
       password
     });
     setToken(token);
+    console.log(token);
+    alert("شما با موفقیت وارد شدید!")
+    window.location = '/';
   }
 
   return ( 
@@ -98,3 +84,18 @@ Login.propTypes = {
   setToken: PropTypes.func.isRequired
 }
 
+// const handleSubmit = async (e) => {
+  //   e.preventDefault();
+	// 	try{
+	// 		const res = await axios.post(url, {
+	// 			username,password
+	// 		})
+  //     localStorage.setItem('token' , res.data.token);
+  //     navigator(`/`);
+  //     // window.location = '/';
+	// 		console.log(res);
+	// 	} catch(e) {
+  //     alert('please first create an account');
+	// 		console.log(e.response);
+	// 	}
+  // };

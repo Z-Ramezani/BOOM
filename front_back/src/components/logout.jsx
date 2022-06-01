@@ -1,14 +1,20 @@
-import React, {Component} from 'react';
 import axios from 'axios';
 
-class Logout extends React.Component {
-//     componentDidMount() { 
-//         localStorage.removeItem('token');
-//         window.location = '/'
-//     }
+function getToken() {
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    return userToken?.token
+}
 
-    render () {
-        return null;
-    }
+function removeToken(userToken){
+    sessionStorage.removeItem('token');
+  }
+
+const Logout = (props) => {
+
+    const token = getToken();
+    removeToken(token);
+    window.location = '/';
+    return null;
 }
 export default Logout;

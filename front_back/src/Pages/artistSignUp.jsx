@@ -6,8 +6,7 @@ import Breadcrumbb from "../components/breadcrumb";
 import Navbar from "../components/navBar/navBar";
 import Footer from "../components/Footer/footer";
 import ResetButton from "../components/resetButton";
-import axios from "axios";
-import SignUp from '../components/signUp';
+import axios from "axios";;
 
 const url1 = "https://hidden.pythonanywhere.com/users/register";
 
