@@ -24,7 +24,7 @@ const NavLinks = (props) => {
                         <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><Link className="dropdown-item" to="../../artistProfile" style={{fontSize:'0.8vw'}}>اطلاعات حساب کاربری</Link></li>
                         <li><Link className="dropdown-item" to="../../TicketPart" style={{fontSize:'0.8vw'}}>ثبت آگهی و تیکت</Link></li>
-                        <li><Link className="dropdown-item" to="#" style={{fontSize:'0.8vw'}}>خروج</Link></li>
+                        <li><Link className="dropdown-item" to="../logout" style={{fontSize:'0.8vw'}}>خروج</Link></li>
                         </ul>
                     </li>
                     <li className="nav-item">

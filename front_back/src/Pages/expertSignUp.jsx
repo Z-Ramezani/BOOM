@@ -7,7 +7,6 @@ import Navbar from "../components/navBar/navBar";
 import Footer from "../components/Footer/footer";
 import ResetButton from "../components/resetButton";
 import axios from "axios";
-import SignUp from '../components/signUp';
 
 const url1 = "http://hidden.pythonanywhere.com/users/register/expert";
 

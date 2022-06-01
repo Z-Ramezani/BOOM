@@ -33,9 +33,7 @@ import Logout from './components/logout';
 import AboutUs from './Pages/aboutUs';
 import axios from 'axios';
 import CreateSubmitExpertOpinion from './components/createSubmitExpertOpinion';
-import SignUp from './components/signUp';
 import ExpertSignUp from './Pages/expertSignUp';
-import useToken from './components/useToken.js';
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -47,21 +45,27 @@ function getToken() {
   return userToken?.token
 }
 
+function removeToken(userToken){
+  sessionStorage.removeItem('token');
+}
 
 const App = () => {
   const token = getToken();
   
-  // if(!token) {
-  //   return (
-  //     <BrowserRouter>
-  //       <Routes>
-  //       <Route index element={<MainPage/>}/>
-  //         <Route path='/login' element={<Login setToken={setToken}/>} />
-  //         <Route path='/' Component={App}/>
-  //       </Routes>
-  //     </BrowserRouter>
-  //   );
-  // }
+  if(!token) {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<MainPage/>}/>
+          <Route path='/artistSignUp' element={<ArtistSignUp/>}/>
+          <Route path='/buyerSignUp' element={<BuyerSighUp/>}/>
+          <Route path='/login' element={<Login setToken={setToken}/>} />
+          <Route path='/expertSignUp' element={<ExpertSignUp/>}/>
+          <Route path='/' Component={App}/>
+        </Routes>
+      </BrowserRouter>
+    );
+  }
   return ( 
     <BrowserRouter>
       <Routes>
@@ -90,7 +94,6 @@ const App = () => {
         <Route path='/userInformation' element={<UserInformation/>}/>
         <Route path='/logout' element={<Logout/>}/>
         <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
-        <Route path='/SignUp' element={<SignUp/>}/>
         
         {/* Pages */}
         <Route path='/admin' element={<Admin/>}/>

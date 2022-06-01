@@ -8,8 +8,34 @@ import UserInformation from '../components/userInformation';
 import Resume from '../components/resume';
 import SetArtworkAdInfo from '../components/ArtworkAdInfo/setArtworkAdInfo';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
+import axiosInstance from '../api/axios';
 
-const ArtistProfile = (props) => { 
+class ArtistProfile extends Component {
+  state = {
+    profs: ["1"],
+  };
+
+  async componentDidMount() {
+    const res = await axiosInstance.get("artist_profile/update/4");
+    console.log(res);
+    this.setState({ profs: res });
+  }
+
+  handleEdit = async (prof) => {
+    const res = await axiosInstance.put(`artist_profile/update/4/${prof.id}`, prof);
+    console.log("updated:", res);
+    const updatedProf = [...this.state.profs];
+    const index = updatedProf.indexOf(prof);
+    updatedProf[index] = { ...prof };
+    this.setState({ profs: updatedProf });
+  };
+
+  handleDelete = async (prof) => {
+    const res = await axiosInstance.delete(`artist_profile/update/4/${prof.id}`);
+    const newProfs = this.state.profs.filter((p) => p.id !== prof.id);
+    this.setState({ profs: newProfs });
+  };
+  render() {
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
@@ -26,17 +52,44 @@ const ArtistProfile = (props) => {
                 </div>
             </div>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
-                <ShowArtworkAdCost/>
+                {/* <ShowArtworkAdCost/>
                 <div className='d-flex' style={{marginRight:'3.5%'}}>
                   <div className='ms-2'>
-                    <Button width= 'auto' height= 'auto' text= 'ویرایش' dir='LTR' fontSize='1.17vw'/*onClick*//>
+                    <Button width= 'auto' height= 'auto' text= 'ویرایش' dir='LTR' fontSize='1.17vw'/>
                   </div>
-                  <Button width= 'auto' height= 'auto' text= 'حذف' dir='LTR' fontSize='1.17vw'/*onClick*//>
+                  <Button width= 'auto' height= 'auto' text= 'حذف' dir='LTR' fontSize='1.17vw'/>
+                </div> */}
+            {this.state.profs.map((prof, index) => {
+            return (
+              <div className="d-flex" style={{ marginRight: "3.5%" }}>
+                <div className="ms-2"  key={index}>
+                  <Button
+                    width="auto"
+                    height="auto"
+                    text="ویرایش"
+                    dir="LTR"
+                    fontSize="1.17vw" 
+										onClick={() => {this.handleEdit(prof)}} 
+                  />
                 </div>
+								<div className="ms-2"  key={index+1}>
+                <Button
+                  width="auto"
+                  height="auto"
+                  text="حذف"
+                  dir="LTR"
+                  fontSize="1.17vw" 
+									onClick={() => {this.handleDelete(prof)}}
+                />
+								</div>
+              </div>
+            );
+          })}
             </div>
         <Footer/>
       </div>         
    );
+    }
 }
  
 export default ArtistProfile;
