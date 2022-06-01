@@ -8,36 +8,57 @@ import color from "../assets/images/color.png";
 import Input_text from "../components/input_form";
 import axios from "axios";
 import axiosInstance from "../api/axios";
+import PropTypes from 'prop-types';
+import setToken from '../App';
 
 // import { instance } from "../api/InstanceAPI";
 
 const url = 'http://hidden.pythonanywhere.com/users/login';
+async function loginUser(credentials) {
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
 
-const Login = () => {
-  const navigator = useNavigate();
+ export default function Login({ setToken }) {
+  // const navigator = useNavigate();
 
   const [username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+	// 	try{
+	// 		const res = await axios.post(url, {
+	// 			username,password
+	// 		})
+  //     localStorage.setItem('token' , res.data.token);
+  //     navigator(`/`);
+  //     // window.location = '/';
+	// 		console.log(res);
+	// 	} catch(e) {
+  //     alert('please first create an account');
+	// 		console.log(e.response);
+	// 	}
+  // };
+
+  const handleSubmit = async e => {
     e.preventDefault();
-		try{
-			const res = await axios.post(url, {
-				username,password
-			})
-      localStorage.setItem('token' , res.data.token);
-      navigator(`/`);
-      // window.location = '/';
-			console.log(res);
-		} catch(e) {
-      alert('please first create an account');
-			console.log(e.response);
-		}
-  };
+    const token = await loginUser({
+      username,
+      password
+    });
+    setToken(token);
+  }
 
   return ( 
-      <div className='bg-image' style={{backgroundImage:color}}>
+      <div className='bg-image login-wrapper' style={{backgroundImage:color}}>
         <Navbar/>
         <Breadcrumbb is2OrNot='true' first='صفحه اصلی' second='ورود'/>
         <div className='container flex-column min-vh-100' >
@@ -50,7 +71,7 @@ const Login = () => {
                           <Input_text type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
                       </div>
                       <div className="mb-3">
-                          <label for="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
+                          <label htmlFor="InputPassword1" className="form-label"  style={{fontSize:'1.1vw'}}>رمز عبور</label>
                           <Input_text type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                           <a className='nav-link' href='#' style={{fontSize:'0.7vw',color:'#222222',marginTop:'0%'}} >بازیابی رمز عبور</a>
 
@@ -71,5 +92,9 @@ const Login = () => {
       </div>
   );
 }
-export default Login;
+
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
+}
 

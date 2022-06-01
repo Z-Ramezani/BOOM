@@ -28,7 +28,7 @@ const NavLinks = (props) => {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <Link className= {"nav-link " + (url === "/mainPage" ?"active" : "")} aria-current="page" to='../../mainPage' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
+                        <Link className= {"nav-link " + (url === "/" ?"active" : "")} aria-current="page" to='/' style={{fontSize:'1.1vw'}}>صفحه اصلی</Link>
                     </li>
                     <Link to='../../Guide' className={"nav-link " + (url === "/Guide" ?"active" : "")} >راهنمای سایت</Link>
                     <Link  to="../../AboutUs" className={"nav-link " + (url === "/AboutUs" ?"active" : "")}>درباره‌ما</Link>
@@ -36,7 +36,7 @@ const NavLinks = (props) => {
                         {!props.navbarUserIsLogged ? (
                             <>
                                 <li className="nav-item dropdown rtl" >
-                                    <Link className={"nav-link " + ((url === "/artistSignUp" || url === "/buyerSignUp") ?"active" : "")} to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
+                                    <Link className={"nav-link " + ((url === "/artistSignUp" || url === "/buyerSignUp" || url === "/expertSignUp") ?"active" : "")} to="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{fontSize:'1.1vw'}}>
                                         ثبت نام
                                     </Link>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">

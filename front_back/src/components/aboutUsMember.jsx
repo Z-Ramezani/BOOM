@@ -16,39 +16,39 @@ const AboutUsMember = (props) => {
                     <div className='carousel-inner'>
                         <div className='carousel-item active'>
                             <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={MH} textone='MohammadHossein Houshmand' texttwo='BackEnd'/>                                       
+                                <CarouselItemss src={MH} textone='محمدحسین هوشمند' texttwo='BackEnd'/>                                       
                             </div>
                         </div>
                         <div className='carousel-item'>
                             <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={AA} textone='Ali AbbasMollaei' texttwo='BackEnd'/>                                       
-                            </div>
-                        </div>
-                        
-                        <div className='carousel-item'>
-                            <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={MB} textone='Mikaeil Bagherli' texttwo='BackEnd'/>                                       
-                            </div>
-                        </div>
-                        <div className='carousel-item'>
-                            <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={NM} textone='Nourieh Sadat Madanian' texttwo='FrontEnd'/>
+                                <CarouselItemss src={AA} textone='علی عباس ملایی' texttwo='BackEnd'/>                                       
                             </div>
                         </div>
                         
                         <div className='carousel-item'>
                             <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={MS} textone='Maryam Shafizadegan' texttwo='FrontEnd'/>
+                                <CarouselItemss src={MB} textone='میکائیل باقرلی' texttwo='BackEnd'/>                                       
                             </div>
                         </div>
                         <div className='carousel-item'>
                             <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={ZR} textone='Zahra Ramezani' texttwo='FrontEnd'/>
+                                <CarouselItemss src={NM} textone='نوریه سادات مدنیان' texttwo='FrontEnd'/>
+                            </div>
+                        </div>
+                        
+                        <div className='carousel-item'>
+                            <div class="row d-flex justify-content-center">
+                                <CarouselItemss src={MS} textone='مریم شفیع‌زادگان' texttwo='FrontEnd'/>
                             </div>
                         </div>
                         <div className='carousel-item'>
                             <div class="row d-flex justify-content-center">
-                                <CarouselItemss src={AN} textone='Ali Narimani' texttwo='FrontEnd'/>
+                                <CarouselItemss src={ZR} textone='زهرا رمضانی' texttwo='FrontEnd'/>
+                            </div>
+                        </div>
+                        <div className='carousel-item'>
+                            <div class="row d-flex justify-content-center">
+                                <CarouselItemss src={AN} textone='علی نریمانی' texttwo='FrontEnd'/>
                             </div>
                         </div>
                     </div>

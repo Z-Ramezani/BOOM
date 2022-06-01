@@ -10,17 +10,17 @@ import ExpertOpinion from '../components/expertOpinion';
 import ShowArtworkAdCost from '../components/ArtworkAdInfo/showArtworkAdCost';
 
 const ArtworkAd = (props) => {
-    // const [ad, setAd] = useState({});
+    const [ad, setAd] = useState({});
 
-    // useEffect(async ()=>{
-    //     const response = await axios.get(`http://hidden.pythonanywhere.com/advertisment/view_advertisements/${props.match.params.id}`);
-    //     setAd(response.data.data); 
-    // })
+    useEffect(async ()=>{
+        const response = await axios.get(`https://hidden.pythonanywhere.com/advertisment/view_advertisement/${props.match.params.id}`);
+        setAd(response.data.data); 
+    })
 
     const [visibilityButton, setVisibilityButton] = useState("block");
     const [visibilityCost, setVisibilityCost] = useState("none");
 
-    function showText(props) {
+    function showText() {
         setVisibilityButton("none");
         setVisibilityCost("block");
     }
@@ -38,11 +38,11 @@ const ArtworkAd = (props) => {
                             <div className='col'>
                                 <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>نام هنرمند : {/*recive from back*/}</h2>
                             </div>
-                            <div className='col' style={{marginLeft:'32.8%'}}>
-                                <Button width= 'auto' height= 'auto' text= 'مشاهده راه ارتباطی' dir='RTL' onClick={showText} fontSize='1.1vw'/>
-                            </div>
-                            <div className='col' >
-                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}>۰۹۱۳۰۰۰۰۰۰۰{/*recive from back*/}</h2>
+                            {/* <div className='col' style={{marginLeft:'32.8%', display:visibilityButton}}>
+                                <Button width= 'auto' height= 'auto' text= 'مشاهده راه ارتباطی' dir='RTL' onClick={(showText)} fontSize='1.1vw'/>
+                            </div> */}
+                            <div className='col'>
+                                <h2 class="mt-0" style={{fontSize:'1.2vw', fontWeight:'bold'}}> راه ارتباطی: ۰۹۱۳۰۰۰۰۰۰۰{/*recive from back*/}</h2>
                             </div>
                             <a className='nav-link' href='#' style={{fontSize:'0.8vw',color:'#BB1542'}} >مشاهده سابقه کاری هنرمند</a>
                         </div>
@@ -52,7 +52,6 @@ const ArtworkAd = (props) => {
                         <div className='shadow bg-white rounded'>
                             <ExpertOpinion/>
                         </div>
-                        <a className='nav-link' href='#' style={{fontSize:'0.8vw',color:'#BB1542'}} >مشاهده همه نظرات</a>
                     </div>
                     <Footer/>
             </div>

@@ -25,7 +25,7 @@ class ArtworkGroup extends Component {
                             image={ad.image_1} 
                             length_in_cm={ad.length_in_cm} 
                             width_in_cm={ad.width_in_cm}
-                            artworkName={ad.name} 
+                            artworkName={ad.artist_name} 
                             artistName={ad.artist} 
                             cost={ad.price} 
                             //ladder
