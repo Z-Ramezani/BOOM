@@ -9,14 +9,14 @@ import Resume from '../components/resume';
 import SetArtworkAdInfo from '../components/ArtworkAdInfo/setArtworkAdInfo';
 import ShowArtworkAdInfo from '../components/ArtworkAdInfo/showartworkAdInfo';
 
-class ArtistProfile extends Component {
-
-  render() { 
+const ArtistProfile = (props) => { 
     return (
         <div className='d-flex flex-column min-vh-100'>
             <Navbar/>
             <Breadcrumbb is2OrNot='true' first='حساب کاربری' second='اطلاعات حساب کاربری'/>
+            <HorizontalLine value='اطلاعات کاربری'/>
             <UserInformation/>
+            <HorizontalLine value='سوابق کاری'/>
             <Resume/>
             <HorizontalLine value='نمونه آثار'/>
             <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
@@ -24,8 +24,8 @@ class ArtistProfile extends Component {
                 <div style={{marginRight:'3.5%'}}>
                     <Button width= 'auto' height= 'auto' text= 'ثبت' dir='LTR' fontSize='1.17vw'/*onClick*//>
                 </div>
-              </div>
-              <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
+            </div>
+            <div className='container w-75 p-3 shadow p-3 bg-white rounded mb-5'>
                 <ShowArtworkAdInfo/>
                 <div className='d-flex' style={{marginRight:'3.5%'}}>
                   <div className='ms-2'>
@@ -34,10 +34,9 @@ class ArtistProfile extends Component {
                   <Button width= 'auto' height= 'auto' text= 'حذف' dir='LTR' fontSize='1.17vw'/*onClick*//>
                 </div>
             </div>
-            <Footer/>
-        </div>                    
-    );
-  }
+        <Footer/>
+      </div>         
+   );
 }
  
 export default ArtistProfile;

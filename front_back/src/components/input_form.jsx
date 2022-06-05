@@ -1,14 +1,10 @@
 import {Component} from 'react';
-
-class InputText extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div className="mx-auto">
-                <input type= {this.props.type} className='form-control' required  placeholder={this.props.placeholder}></input> 
+const Input_text = (props) => {
+    return ( 
+        <div class="mx-auto">
+                <input type= {props.type} pattern={props.pattern} min={props.min} className='form-control' required  placeholder={props.placeholder} onChange={props.onChange}></input> 
             </div>
-        );
-    }
+     );
 }
  
-export default InputText;
+export default Input_text;
