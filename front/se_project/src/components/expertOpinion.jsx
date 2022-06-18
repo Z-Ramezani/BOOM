@@ -1,7 +1,5 @@
 import {Component} from 'react';
 
-
-
 const ExpertOpinion = (props) => {
     return ( 
         <div className='row' style={{paddingBottom:'1vw'}}>
@@ -15,9 +13,9 @@ const ExpertOpinion = (props) => {
                     قیمت پیشنهادی:{/*recive from back*/}
                 </h2>
             </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label style={{marginBottom:'1%',marginRight:'1.1vw',fontSize:'1vw'}}>توضیحات تکمیلی</label>
-                    <textarea class="col-4 form-control"  rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
+                    <textarea className="col-4 form-control"  rows="3" style={{width:'85%',marginRight:'7%'}}></textarea>
                 </div>
         </div>
      );

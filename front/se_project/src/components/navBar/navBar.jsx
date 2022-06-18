@@ -2,18 +2,17 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Component } from "react";
 import logo from '../../assets/images/logo.png';
-import '../navBar/navBar.css';
 import NavLink from "./navLink";
 import NavLinks from "./navLinks";
 import {Outlet, Link} from 'react-router-dom';
-
+import './navLinks.css';
 const NavBar = (props) => {
   return ( 
       <div>
         <nav className="navbar navbar-expand-lg navbar-light p-0" style={{backgroundColor:"#ECFDFD"}}>
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <div className="container-fluid">
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
             <NavLinks/>
             <a className="navbar-brand d-flex justify-content-end">

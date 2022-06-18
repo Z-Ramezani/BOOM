@@ -1,7 +1,8 @@
 import {Component} from 'react';
+import { useState, useEffect } from 'react';
 import {BrowserRouter, BrowserRouter as Router, Link, NavLink, Route, Routes, Switch} from 'react-router-dom';
 import 'bootstrap';
-import './components/navBar/navBar.css';
+import './components/navBar/navLinks.css';
 import Button from './components/button';
 import Breadcrumbb from './components/breadcrumb';
 import Input_text from './components/input_form';
@@ -29,10 +30,13 @@ import NavLinks from './components/navBar/navLinks';
 import ShowArtworkAdCost from './components/ArtworkAdInfo/showArtworkAdCost';
 import ExportProfile from './Pages/expertProfile';
 import ViewExpertProfile from './Pages/viewExpertProfile';
+// import Logout from './components/logout';
 import AboutUs from './Pages/aboutUs';
 import ExpertProfile from './Pages/expertProfile';
+import CreateSubmitExpertOpinion from './components/createSubmitExpertOpinion';
   
 const App = () => {
+
   return ( 
     <BrowserRouter>
             <Routes>
@@ -56,6 +60,8 @@ const App = () => {
               <Route path='/resetButton' element={<ResetButton/>}/>
               <Route path='/resume' element={<Resume/>}/>
               <Route path='/userInformation' element={<UserInformation/>}/>
+              <Route path='/createSubmitExpertOpinion' element={<CreateSubmitExpertOpinion/>}/>
+              {/* <Route path='/logout' element={<Logout/>}/> */}
               
               {/* Pages */}
               <Route path='/admin' element={<Admin/>}/>

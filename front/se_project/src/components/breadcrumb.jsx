@@ -9,8 +9,8 @@ const Breadcrumbb = (props) => {
                     {
                         props.is1OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{props.first}</li>
                                 </ol>
                             </nav>
                         </div> 
@@ -22,9 +22,9 @@ const Breadcrumbb = (props) => {
                     {
                         props.is2OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{props.second}</li>
-                                    <li class="breadcrumb-item">{props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{props.second}</li>
+                                    <li className="breadcrumb-item">{props.first}</li>
                                 </ol>
                             </nav>
                         </div> 
@@ -36,10 +36,10 @@ const Breadcrumbb = (props) => {
                     {
                         props.is3OrNot ? <div dir='ltr' style={{color:'#222222', fontSize: '0.55vw'}}>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">{props.third}</li>
-                                    <li class="breadcrumb-item">{props.second}</li>
-                                    <li class="breadcrumb-item">{props.first}</li>
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item">{props.third}</li>
+                                    <li className="breadcrumb-item">{props.second}</li>
+                                    <li className="breadcrumb-item">{props.first}</li>
                                 </ol>
                             </nav>
                         </div> 

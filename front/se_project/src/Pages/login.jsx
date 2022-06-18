@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {Component} from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Button from '../components/button';
 import Breadcrumbb from '../components/breadcrumb';
 import Navbar from '../components/navBar/navBar';
